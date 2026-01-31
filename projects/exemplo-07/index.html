@@ -1,142 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Landing page interativa com animação inovadora de empilhamento de cards usando GSAP. Showcase de animações web modernas."
+		/>
+		<meta
+			name="keywords"
+			content="animação, cards, stacking, GSAP, landing page, interativo"
+		/>
+		<meta name="author" content="Camila Teixeira" />
+		<meta
+			name="robots"
+			content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+		/>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Landing page com animação de empilhamento de cards">
+		<!-- Canonical URL -->
+		<link
+			rel="canonical"
+			href="https://showcase-landing-pages.com/projects/exemplo-07/"
+		/>
 
-  <!-- Performance Hints -->
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" as="script">
+		<!-- Open Graph / Social Media -->
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:title"
+			content="Card Stacking Animation - Landing Page Interativa"
+		/>
+		<meta
+			property="og:description"
+			content="Landing page com animação inovadora de empilhamento de cards usando GSAP."
+		/>
+		<meta
+			property="og:url"
+			content="https://showcase-landing-pages.com/projects/exemplo-07/"
+		/>
+		<meta property="og:locale" content="pt_BR" />
 
-  <link rel="stylesheet" href="./css/style.css">
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Card Stacking Animation - Landing Page Interativa"
+		/>
+		<meta
+			name="twitter:description"
+			content="Landing page com animação inovadora de empilhamento de cards."
+		/>
 
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "CreativeWork",
+				"name": "Card Stacking Animation",
+				"description": "Landing page com animação inovadora de empilhamento de cards usando GSAP",
+				"creator": {
+					"@type": "Person",
+					"name": "Camila Teixeira"
+				}
+			}
+		</script>
 
-  <title>Card Stacking Animation</title>
-</head>
+		<!-- Performance Hints -->
+		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- Preload Critical Resources -->
+		<link
+			rel="preload"
+			href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+			as="script"
+		/>
 
-<body>
-  <header class="header relative h-screen flex items-center justify-center">
-    <div class="imgs-container">
-      <div>
-        <img height="160" width="160" src="./assets/header/b-1.svg" alt="">
-      </div>
-      <div>
-        <img height="160" width="160" src="./assets/header/b-2.svg" alt="">
-      </div>
-      <div>
-        <img height="160" width="160" src="./assets/header/b-3.svg" alt="">
-      </div>
-      <div>
-        <img height="160" width="160" src="./assets/header/b-4.svg" alt="">
-      </div>
-      <div>
-        <img height="160" width="160" src="./assets/header/b-5.svg" alt="">
-      </div>
-      <div>
-        <img height="160" width="160" src="./assets/header/b-6.svg" alt="">
-      </div>
-      <div>
-        <img height="160" width="160" src="./assets/header/b-7.svg" alt="">
-      </div>
-      <div>
-        <img height="160" width="160" src="./assets/header/b-8.svg" alt="">
-      </div>
+		<link rel="stylesheet" href="./css/style.css" />
 
-    </div>
-    <svg class="absolute" id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-      <rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
-      <g transform="translate(426.07902585753374 271.78695326947144)">
-        <path
-          d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
-          fill="#5F7A6F"></path>
-      </g>
-    </svg>
-    <h1 class="">
-      <span class="text-left">Landing </span>
-      <span class="text-right"> Page </span>
-    </h1>
-  </header>
+		<title>Card Stacking Animation</title>
+	</head>
 
-  <div class="relative">
-    <div class="card-item">
-      <div class="card-inner is--yellow">
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-    <div class="card-item">
-      <div class="card-inner is--green">
-        <div class="card-content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam asperiores dolores facere officiis. Explicabo ea ipsum exercitationem nulla a delectus atque aspernatur, pariatur suscipit esse in veniam nostrum nobis libero.
+	<body>
+		<!-- Skip to main content -->
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
+			>Skip to main content</a
+		>
 
-        </div>
-      </div>
-    </div>
-    <div class="card-item">
-      <div class="card-inner is--blue">
-         <div class="card-content">
-          03
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam asperiores dolores facere officiis. Explicabo ea ipsum exercitationem nulla a delectus atque aspernatur, pariatur suscipit esse in veniam nostrum nobis libero.
-          
-        </div>
-      </div>
-    </div>
-    <div class="card-item">
-      <div class="card-inner is--grey">04</div>
-    </div>
-    <div class="card-item">
-      <div class="card-inner is--coral">05</div>
-    </div>
-    <div class="card-item">
-      <div class="card-inner is--sage">06</div>
-    </div>
-  </div>
+		<header
+			class="header relative h-screen flex items-center justify-center"
+			role="banner"
+		>
+			<div class="imgs-container">
+				<div>
+					<img height="160" width="160" src="./assets/header/b-1.svg" alt="" />
+				</div>
+				<div>
+					<img height="160" width="160" src="./assets/header/b-2.svg" alt="" />
+				</div>
+				<div>
+					<img height="160" width="160" src="./assets/header/b-3.svg" alt="" />
+				</div>
+				<div>
+					<img height="160" width="160" src="./assets/header/b-4.svg" alt="" />
+				</div>
+				<div>
+					<img height="160" width="160" src="./assets/header/b-5.svg" alt="" />
+				</div>
+				<div>
+					<img height="160" width="160" src="./assets/header/b-6.svg" alt="" />
+				</div>
+				<div>
+					<img height="160" width="160" src="./assets/header/b-7.svg" alt="" />
+				</div>
+				<div>
+					<img height="160" width="160" src="./assets/header/b-8.svg" alt="" />
+				</div>
+			</div>
+			<svg
+				class="absolute"
+				id="visual"
+				viewBox="0 0 900 600"
+				width="900"
+				height="600"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				version="1.1"
+			>
+				<rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
+				<g transform="translate(426.07902585753374 271.78695326947144)">
+					<path
+						d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
+						fill="#5F7A6F"
+					></path>
+				</g>
+			</svg>
+			<h1 class="">
+				<span class="text-left">Landing </span>
+				<span class="text-right"> Page </span>
+			</h1>
+		</header>
 
-  <footer class="relative h-screen flex items-center justify-center">
-    <svg class="absolute" id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-      <rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
-      <g transform="translate(426.07902585753374 271.78695326947144)">
-        <path
-          d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
-          fill="#5F7A6F"></path>
-      </g>
-    </svg>
-    <h2 class="text-white relative z-10 text-6xl font-bold">
-      Pronto para começar?
-    </h2>
-  </footer>
+		<main id="main-content" class="relative" role="main">
+			<div class="card-item">
+				<div class="card-inner is--yellow">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--green">
+					<div class="card-content">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+						asperiores dolores facere officiis. Explicabo ea ipsum
+						exercitationem nulla a delectus atque aspernatur, pariatur suscipit
+						esse in veniam nostrum nobis libero.
+					</div>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--blue">
+					<div class="card-content">
+						03 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+						asperiores dolores facere officiis. Explicabo ea ipsum
+						exercitationem nulla a delectus atque aspernatur, pariatur suscipit
+						esse in veniam nostrum nobis libero.
+					</div>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--grey">04</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--coral">05</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--sage">06</div>
+			</div>
+		</main>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+		<footer class="relative h-screen flex items-center justify-center">
+			<svg
+				class="absolute"
+				id="visual"
+				viewBox="0 0 900 600"
+				width="900"
+				height="600"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				version="1.1"
+			>
+				<rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
+				<g transform="translate(426.07902585753374 271.78695326947144)">
+					<path
+						d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
+						fill="#5F7A6F"
+					></path>
+				</g>
+			</svg>
+			<h2 class="text-white relative z-10 text-6xl font-bold">
+				Pronto para começar?
+			</h2>
+		</footer>
 
+		<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+		<!-- GSAP -->
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Draggable.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/InertiaPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Draggable.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/InertiaPlugin.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
 
-  <!-- MY SCRIPT -->
-  <script src="./js/script.js"></script>
-
-
-</body>
-
+		<!-- MY SCRIPT -->
+		<script src="./js/script.js"></script>
+	</body>
 </html>

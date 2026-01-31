@@ -35,6 +35,18 @@ button *,
 	mix-blend-mode: difference;
 }
 
+.custom-cursor--clicking {
+	transform: scale(0.8);
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.custom-cursor--hovering {
+	width: 25px;
+	height: 25px;
+	background: rgba(255, 255, 255, 1);
+	border-width: 1px;
+}
+
 .custom-cursor-trail {
 	width: 12px;
 	height: 12px;
@@ -47,19 +59,7 @@ button *,
 	mix-blend-mode: difference;
 }
 
-.custom-cursor.clicking {
-	transform: scale(0.8);
-	background: rgba(255, 255, 255, 0.2);
-}
-
-.custom-cursor.hovering {
-	width: 25px;
-	height: 25px;
-	background: rgba(255, 255, 255, 1);
-	border-width: 1px;
-}
-
-.custom-cursor-trail.hovering {
+.custom-cursor-trail--hovering {
 	width: 8px;
 	height: 8px;
 	opacity: 0.8;
@@ -128,7 +128,7 @@ header p {
 	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.project-preview {
+.project-card__preview {
 	width: 100%;
 	height: 240px;
 	background: linear-gradient(135deg, #4d4a5e 0%, #3d3b4c 100%);
@@ -143,20 +143,20 @@ header p {
 	letter-spacing: 4px;
 }
 
-.project-card:nth-child(even) .project-preview {
+.project-card:nth-child(even) .project-card__preview {
 	background: linear-gradient(135deg, #48465b 0%, #302e3b 100%);
 }
 
-.project-card:hover .project-preview {
+.project-card:hover .project-card__preview {
 	background: linear-gradient(135deg, #797993 0%, #4d4a5e 100%);
 }
 
-.project-info {
+.project-card__info {
 	padding: 2rem;
 	background: #3d3b4c;
 }
 
-.project-info h3 {
+.project-card__info h3 {
 	font-size: 1.3rem;
 	margin-bottom: 1rem;
 	color: #ffffff;
@@ -165,7 +165,7 @@ header p {
 	text-transform: uppercase;
 }
 
-.project-info p {
+.project-card__info p {
 	color: #b1b0bc;
 	line-height: 1.8;
 	margin-bottom: 1.5rem;
@@ -173,13 +173,13 @@ header p {
 	font-weight: 300;
 }
 
-.project-tags {
+.project-card__tags {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.6rem;
 }
 
-.tag {
+.project-card__tag {
 	background: transparent;
 	padding: 0.5rem 1rem;
 	border-radius: 2px;
@@ -192,7 +192,7 @@ header p {
 	transition: all 0.3s ease;
 }
 
-.tag:hover {
+.project-card__tag:hover {
 	background: rgba(255, 255, 255, 0.1);
 	border-color: #ffffff;
 }
@@ -243,12 +243,12 @@ footer a:hover {
 		gap: 1.5rem;
 	}
 
-	.project-preview {
+	.project-card__preview {
 		height: 200px;
 		font-size: 3rem;
 	}
 
-	.project-info {
+	.project-card__info {
 		padding: 1.5rem;
 	}
 }
