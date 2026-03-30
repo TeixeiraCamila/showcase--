@@ -1,210 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="./css/style.css" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-		/>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Pôsteres</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="header__title">Gerador de Pôsteres</h1>
+      <p class="header__subtitle">Crie pôsteres para Notion</p>
+    </header>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Gerador de Pôsteres</title>
-	</head>
+    <main class="main">
+      <form class="form" id="form">
+        <input class="form__input" type="text" id="title" placeholder="Título" required>
+        
+        <div class="form__row">
+          <input class="form__input" type="text" id="year" placeholder="Ano" maxlength="4">
+          <input class="form__input" type="text" id="genre" placeholder="Gênero">
+        </div>
+        
+        <input class="form__input" type="text" id="nativeTitle" placeholder="Título Original">
+        
+        <div class="form__row">
+          <input class="form__input" type="text" id="directedBy" placeholder="Diretor">
+          <input class="form__input" type="text" id="writtenBy" placeholder="Escritor">
+        </div>
+        
+        <input class="form__input" type="text" id="starring1" placeholder="Elenco 1">
+        <input class="form__input" type="text" id="starring2" placeholder="Elenco 2">
+        
+        <div class="form__actions">
+          <label class="btn btn--secondary">
+            Escolher Imagem
+            <input type="file" id="imageUpload" accept="image/*" hidden>
+          </label>
+          <button type="submit" class="btn btn--primary">Gerar</button>
+          <button type="reset" class="btn btn--ghost">Limpar</button>
+        </div>
+      </form>
 
-	<body>
-		<div class="poster-generator">
-			<div class="poster-generator__header">
-				<h1 class="poster-generator__title">🎬 Gerador de Pôsteres</h1>
-				<p class="poster-generator__subtitle">
-					Crie pôsteres semi-profissionais para seu Notion
-				</p>
-			</div>
+      <div class="preview">
+        <div class="poster" id="poster">
+          <div class="poster__image" id="posterImage">
+            <span class="poster__placeholder">Adicione uma imagem</span>
+          </div>
+          <div class="poster__info">
+            <div class="poster__title-row">
+              <span class="poster__title" id="previewTitle"></span>
+              <span class="poster__year" id="previewYear"></span>
+            </div>
+            <div class="poster__details" id="posterDetails"></div>
+          </div>
+        </div>
+        <button class="btn btn--download u-hidden" id="downloadBtn">Baixar PNG</button>
+      </div>
+    </main>
+  </div>
 
-			<div class="poster-generator__main">
-				<div class="card poster-generator__form-card">
-					<h2 class="card__title">Informações</h2>
+  <canvas id="canvas"></canvas>
+  <div id="toast" class="toast"></div>
 
-					<div class="form__group">
-						<label class="form__label" for="title">Título *</label>
-						<input
-							class="form__input"
-							type="text"
-							id="title"
-							placeholder="Ex: SEMANTIC ERROR"
-						/>
-					</div>
-
-					<div class="form__grid-2">
-						<div class="form__group">
-							<label class="form__label" for="year">Ano</label>
-							<input
-								class="form__input"
-								type="number"
-								id="year"
-								placeholder="2022"
-								min="1000"
-								max="9999"
-								maxlength="4"
-							/>
-						</div>
-						<div class="form__group">
-							<label class="form__label" for="genre">Gênero</label>
-							<input
-								class="form__input"
-								type="text"
-								id="genre"
-								placeholder="COMEDY ROMANCE"
-							/>
-						</div>
-					</div>
-
-					<div class="form__group">
-						<label class="form__label" for="nativeTitle">Título Original</label>
-						<input
-							class="form__input"
-							type="text"
-							id="nativeTitle"
-							placeholder="시맨틱 에러"
-						/>
-					</div>
-
-					<div class="form__grid-2">
-						<div class="form__group">
-							<label class="form__label" for="directedBy">Dirigido por</label>
-							<input
-								class="form__input"
-								type="text"
-								id="directedBy"
-								placeholder="KIM SOO JUNG"
-							/>
-						</div>
-
-						<div class="form__group">
-							<label class="form__label" for="writtenBy">Escrito por</label>
-							<input
-								class="form__input"
-								type="text"
-								id="writtenBy"
-								placeholder="JASAN"
-							/>
-						</div>
-					</div>
-
-					<div class="form__group">
-						<label class="form__label">Elenco (até 2 atores)</label>
-						<input
-							class="form__input"
-							type="text"
-							id="starring1"
-							placeholder="PARK SEO HAM"
-							style="margin-bottom: 10px"
-						/>
-						<input
-							class="form__input"
-							type="text"
-							id="starring2"
-							placeholder="PARK JAE CHAN"
-						/>
-					</div>
-
-					<div class="form__group">
-						<label class="form__label" for="imageUpload"
-							>Imagem do Pôster *</label
-						>
-						<input
-							type="file"
-							id="imageUpload"
-							accept="image/*"
-							style="display: none"
-						/>
-						<button
-							class="btn btn--secondary"
-							id="imageUploadBtn"
-							onclick="document.getElementById('imageUpload').click()"
-						>
-							Escolher Imagem
-						</button>
-					</div>
-
-					<button class="btn btn--primary" onclick="generatePoster()">
-						Gerar Pôster
-					</button>
-				</div>
-
-				<div class="card poster-generator__preview-card">
-					<h2 class="card__title">Preview</h2>
-
-					<div class="preview">
-						<div class="preview__area" id="previewArea">
-							<div class="preview__placeholder" id="placeholder">
-								<div>
-									📷<br />
-									Preencha os dados e gere seu pôster
-								</div>
-							</div>
-							<div id="posterContent" class="u-hidden preview__content">
-								<img
-									id="posterPreview"
-									class="preview__image"
-									alt="Preview do Pôster"
-								/>
-								<div class="preview__info">
-									<div class="info__title-year">
-										<div class="info__title" id="previewTitle"></div>
-										<div class="info__year" id="previewYear"></div>
-									</div>
-
-									<div class="info__row" id="nativeRow">
-										<div class="info__label">native title</div>
-										<div class="info__value" id="previewNative"></div>
-									</div>
-
-									<div class="info__row" id="genreRow">
-										<div class="info__label">genre</div>
-										<div class="info__value" id="previewGenre"></div>
-									</div>
-
-									<div class="info__row" id="directorRow">
-										<div class="info__label">directed by</div>
-										<div class="info__value" id="previewDirector"></div>
-									</div>
-
-									<div class="info__row" id="writerRow">
-										<div class="info__label">written by</div>
-										<div class="info__value" id="previewWriter"></div>
-									</div>
-
-									<div class="info__row" id="starringRow">
-										<div class="info__label">starring</div>
-										<div class="info__value" id="previewStarring"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<button
-							class="btn btn--download u-hidden"
-							id="downloadBtn"
-							onclick="downloadPoster()"
-						>
-							⬇️ Baixar Pôster
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<canvas id="posterCanvas"></canvas>
-
-		<footer class="footer" role="contentinfo">
-			<a href="../../index.html" class="footer__link back-button"
-				>← Voltar ao Showcase</a
-			>
-			<p class="footer__text">&copy; 2025. Todos os direitos reservados.</p>
-		</footer>
-
-		<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-		<script src="./js/script.js"></script>
-	</body>
+  <script src="./js/script.js"></script>
+</body>
 </html>

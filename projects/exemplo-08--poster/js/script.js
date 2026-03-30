@@ -1,305 +1,252 @@
-// Variável global para armazenar a imagem carregada
-let uploadedImage = null;
+const W = 500;
+const H = 350;
+const PAD = 16;
+const IMG_W = 0.6;
 
-// Cache de elementos DOM para melhor performance
-const elements = {
-	imageUpload: document.getElementById('imageUpload'),
-	imageUploadBtn: document.getElementById('imageUploadBtn'),
-	title: document.getElementById('title'),
-	year: document.getElementById('year'),
-	nativeTitle: document.getElementById('nativeTitle'),
-	genre: document.getElementById('genre'),
-	directedBy: document.getElementById('directedBy'),
-	writtenBy: document.getElementById('writtenBy'),
-	starring1: document.getElementById('starring1'),
-	starring2: document.getElementById('starring2'),
-	placeholder: document.getElementById('placeholder'),
-	posterContent: document.getElementById('posterContent'),
-	downloadBtn: document.getElementById('downloadBtn'),
-	posterPreview: document.getElementById('posterPreview'),
-	previewTitle: document.getElementById('previewTitle'),
-	previewYear: document.getElementById('previewYear'),
-	previewNative: document.getElementById('previewNative'),
-	previewGenre: document.getElementById('previewGenre'),
-	previewDirector: document.getElementById('previewDirector'),
-	previewWriter: document.getElementById('previewWriter'),
-	previewStarring: document.getElementById('previewStarring'),
-	nativeRow: document.getElementById('nativeRow'),
-	genreRow: document.getElementById('genreRow'),
-	directorRow: document.getElementById('directorRow'),
-	writerRow: document.getElementById('writerRow'),
-	starringRow: document.getElementById('starringRow'),
-	posterCanvas: document.getElementById('posterCanvas'),
+let image = null;
+let toastTimer = null;
+
+const $ = id => document.getElementById(id);
+
+const form = $('form');
+const inputs = {
+  title: $('title'),
+  year: $('year'),
+  genre: $('genre'),
+  nativeTitle: $('nativeTitle'),
+  directedBy: $('directedBy'),
+  writtenBy: $('writtenBy'),
+  starring1: $('starring1'),
+  starring2: $('starring2'),
 };
+const poster = $('poster');
+const posterImage = $('posterImage');
+const posterDetails = $('posterDetails');
+const previewTitle = $('previewTitle');
+const previewYear = $('previewYear');
+const downloadBtn = $('downloadBtn');
+const imageUpload = $('imageUpload');
+const canvas = $('canvas');
 
-// Constantes de cores para consistência no Canvas
-const SHADOW_GREY = '#292b2a'; // dark-gray da paleta
-const PREVIEW_BG = '#e8e4df';
-
-/**
- * Mostra toast de notificação
- * @param {string} text - Texto da notificação
- * @param {string} type - Tipo: 'success', 'error', 'warning'
- */
-function showToast(text, type = 'success') {
-	const colors = {
-		success: 'linear-gradient(to right, #00b09b, #96c93d)',
-		error: 'linear-gradient(to right, #ff5f6d, #ffc371)',
-		warning: 'linear-gradient(to right, #ff9a9e, #fecfef)',
-	};
-
-	Toastify({
-		text,
-		duration: type === 'error' ? 4000 : 3000,
-		backgroundColor: colors[type],
-		stopOnFocus: true,
-	}).showToast();
+function toast(msg) {
+  const el = $('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2500);
 }
 
-/**
- * Coleta dados do formulário
- * @returns {Object} Dados do formulário
- */
-function getFormData() {
-	return {
-		title: elements.title.value.trim(),
-		year: elements.year.value.trim(),
-		nativeTitle: elements.nativeTitle.value.trim(),
-		genre: elements.genre.value.trim(),
-		directedBy: elements.directedBy.value.trim(),
-		writtenBy: elements.writtenBy.value.trim(),
-		starring: [
-			elements.starring1.value.trim(),
-			elements.starring2.value.trim(),
-		].filter((s) => s),
-	};
+function getData() {
+  return {
+    title: inputs.title.value.trim(),
+    year: inputs.year.value.trim(),
+    genre: inputs.genre.value.trim(),
+    nativeTitle: inputs.nativeTitle.value.trim(),
+    directedBy: inputs.directedBy.value.trim(),
+    writtenBy: inputs.writtenBy.value.trim(),
+    starring: [
+      inputs.starring1.value.trim(),
+      inputs.starring2.value.trim(),
+    ].filter(Boolean),
+  };
 }
 
-// Event listener para upload de imagem
-elements.imageUpload.addEventListener('change', function (e) {
-	const file = e.target.files[0];
+function saveData() {
+  localStorage.setItem('posterData', JSON.stringify(getData()));
+  localStorage.setItem('posterImage', image || '');
+}
 
-	if (file) {
-		const reader = new FileReader();
-		reader.onload = function (event) {
-			uploadedImage = event.target.result;
-			// Feedback visual do arquivo carregado
-			elements.imageUploadBtn.textContent = `Imagem: ${file.name.substring(
-				0,
-				20
-			)}... (Trocar)`;
-		};
-		reader.readAsDataURL(file);
-	} else {
-		elements.imageUploadBtn.textContent = 'Escolher Imagem';
-		uploadedImage = null;
-	}
+function loadData() {
+  try {
+    const data = JSON.parse(localStorage.getItem('posterData'));
+    if (data) {
+      Object.keys(data).forEach(key => {
+        if (inputs[key]) inputs[key].value = data[key] || '';
+        if (key === 'starring' && Array.isArray(data[key])) {
+          inputs.starring1.value = data[key][0] || '';
+          inputs.starring2.value = data[key][1] || '';
+        }
+      });
+    }
+    const savedImg = localStorage.getItem('posterImage');
+    if (savedImg) {
+      image = savedImg;
+      updatePosterImage();
+    }
+  } catch (e) {}
+}
+
+function updatePosterImage() {
+  if (image) {
+    posterImage.innerHTML = `<img src="${image}" alt="Poster">`;
+  } else {
+    posterImage.innerHTML = '<span class="poster__placeholder">Adicione uma imagem</span>';
+  }
+}
+
+function updatePreview() {
+  const d = getData();
+  
+  previewTitle.textContent = d.title.toUpperCase();
+  previewYear.textContent = d.year;
+  
+  let html = '';
+  const add = (label, value) => {
+    if (value) {
+      html += `<div class="poster__detail"><span class="poster__detail-label">${label}</span><br><span class="poster__detail-value">${value.toUpperCase()}</span></div>`;
+    }
+  };
+  
+  add('native title', d.nativeTitle);
+  add('genre', d.genre);
+  add('directed by', d.directedBy);
+  add('written by', d.writtenBy);
+  if (d.starring.length) add('starring', d.starring.join(', '));
+  
+  posterDetails.innerHTML = html;
+  
+  if (d.title && image) {
+    downloadBtn.classList.remove('u-hidden');
+  } else {
+    downloadBtn.classList.add('u-hidden');
+  }
+}
+
+function download() {
+  if (!image || !inputs.title.value.trim()) {
+    toast('Adicione título e imagem');
+    return;
+  }
+  
+  const ctx = canvas.getContext('2d');
+  canvas.width = W;
+  canvas.height = H;
+  
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, W, H);
+  
+  const img = new Image();
+  img.onload = () => {
+    const imgAreaW = W * IMG_W;
+    const infoAreaW = W - imgAreaW;
+    
+    const imgRatio = img.width / img.height;
+    let drawW = imgAreaW - PAD * 2;
+    let drawH = drawW / imgRatio;
+    
+    const imgY = PAD + (H - PAD * 2 - drawH) / 2;
+    
+    ctx.drawImage(img, PAD, imgY, drawW, drawH);
+    
+    ctx.fillStyle = '#000';
+    ctx.font = '900 18px Impact, Arial Black, sans-serif';
+    ctx.textBaseline = 'top';
+    
+    const d = getData();
+    let y = PAD + 8;
+    
+    const title = d.title.toUpperCase();
+    const titleW = infoAreaW - PAD - 50;
+    const words = title.split(' ');
+    let line = '';
+    
+    for (const word of words) {
+      const test = line + word + ' ';
+      if (ctx.measureText(test).width > titleW && line) {
+        ctx.fillText(line.trim(), imgAreaW, y);
+        y += 20;
+        line = word + ' ';
+      } else {
+        line = test;
+      }
+    }
+    ctx.fillText(line.trim(), imgAreaW, y);
+    
+    if (d.year) {
+      ctx.font = '300 14px Arial';
+      ctx.textAlign = 'right';
+      ctx.fillText(d.year, W - PAD, PAD + 8);
+      ctx.textAlign = 'left';
+    }
+    
+    y += 30;
+    ctx.font = 'italic 9px Arial';
+    ctx.fillStyle = '#888';
+    
+    const addInfo = (label, value) => {
+      if (value) {
+        ctx.fillText(label, imgAreaW, y);
+        y += 12;
+        ctx.fillStyle = '#000';
+        ctx.font = '600 9px Arial';
+        ctx.fillText(value.toUpperCase(), imgAreaW, y);
+        y += 16;
+        ctx.fillStyle = '#888';
+        ctx.font = 'italic 9px Arial';
+      }
+    };
+    
+    addInfo('native title', d.nativeTitle);
+    addInfo('genre', d.genre);
+    addInfo('directed by', d.directedBy);
+    addInfo('written by', d.writtenBy);
+    if (d.starring.length) addInfo('starring', d.starring.join(', '));
+    
+    const link = document.createElement('a');
+    const name = d.title.replace(/\s+/g, '-').toLowerCase().substring(0, 20);
+    link.download = `poster-${name}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    
+    toast('Download iniciado');
+  };
+  
+  img.onerror = () => toast('Erro ao carregar imagem');
+  img.src = image;
+}
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!image) {
+    toast('Selecione uma imagem');
+    return;
+  }
+  updatePreview();
+  saveData();
+  toast('Pôster gerado');
 });
 
-/**
- * Atualiza o preview com dados do formulário
- * @param {Object} data - Dados do formulário
- */
-function updatePreview(data) {
-	elements.posterPreview.src = uploadedImage;
-	elements.previewTitle.textContent = data.title.toUpperCase();
-	elements.previewYear.textContent = data.year;
-	elements.previewNative.textContent = data.nativeTitle;
-	elements.previewGenre.textContent = data.genre.toUpperCase();
-	elements.previewDirector.textContent = data.directedBy.toUpperCase();
-	elements.previewWriter.textContent = data.writtenBy.toUpperCase();
-	elements.previewStarring.innerHTML = data.starring
-		.map((s) => s.toUpperCase())
-		.join('<br>');
+form.addEventListener('reset', () => {
+  image = null;
+  updatePosterImage();
+  posterDetails.innerHTML = '';
+  previewTitle.textContent = '';
+  previewYear.textContent = '';
+  downloadBtn.classList.add('u-hidden');
+  localStorage.removeItem('posterData');
+  localStorage.removeItem('posterImage');
+});
 
-	// Mostrar/ocultar linhas baseado nos valores preenchidos
-	elements.nativeRow.style.display = data.nativeTitle ? 'block' : 'none';
-	elements.genreRow.style.display = data.genre ? 'block' : 'none';
-	elements.directorRow.style.display = data.directedBy ? 'block' : 'none';
-	elements.writerRow.style.display = data.writtenBy ? 'block' : 'none';
-	elements.starringRow.style.display =
-		data.starring.length > 0 ? 'block' : 'none';
-}
+form.addEventListener('input', () => {
+  updatePreview();
+  saveData();
+});
 
-/**
- * Gera o preview do pôster baseado nos dados do formulário
- */
-function generatePoster() {
-	const data = getFormData();
+imageUpload.addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  
+  const reader = new FileReader();
+  reader.onload = ev => {
+    image = ev.target.result;
+    updatePosterImage();
+    updatePreview();
+    saveData();
+  };
+  reader.readAsDataURL(file);
+});
 
-	// Validação básica
-	if (!data.title || !uploadedImage) {
-		showToast(
-			'⚠️ Por favor, preencha pelo menos o título e adicione uma imagem!',
-			'warning'
-		);
-		return;
-	}
+downloadBtn.addEventListener('click', download);
 
-	// Validação do ano: deve ter exatamente 4 dígitos
-	if (data.year && (data.year.length !== 4 || !/^\d{4}$/.test(data.year))) {
-		showToast('⚠️ O ano deve ter exatamente 4 dígitos!', 'warning');
-		return;
-	}
-
-	// Atualizar preview: ocultar placeholder e mostrar conteúdo
-	elements.placeholder.classList.add('u-hidden');
-	elements.posterContent.classList.remove('u-hidden');
-	elements.downloadBtn.classList.remove('u-hidden');
-
-	updatePreview(data);
-}
-
-/**
- * Desenha informações no canvas
- * @param {CanvasRenderingContext2D} ctx - Contexto do canvas
- * @param {Object} data - Dados do formulário
- * @param {number} leftMargin - Margem esquerda
- * @param {number} rightMargin - Margem direita
- * @param {number} rowSpacing - Espaçamento entre linhas
- * @param {number} yPos - Posição Y atual
- * @returns {number} Nova posição Y
- */
-function drawPosterInfo(ctx, data, leftMargin, rightMargin, rowSpacing, yPos) {
-	const labelFont = 'italic 12px Arial, sans-serif';
-	const valueFont = '400 14px Arial, sans-serif';
-
-	function drawInfo(label, value) {
-		if (value) {
-			yPos += rowSpacing;
-			ctx.font = labelFont;
-			ctx.fillText(label, leftMargin, yPos);
-			yPos += 14;
-			ctx.font = valueFont;
-			ctx.fillText(value.toUpperCase(), leftMargin, yPos);
-		}
-	}
-
-	drawInfo('native title', data.nativeTitle);
-	drawInfo('genre', data.genre);
-	drawInfo('directed by', data.directedBy);
-	drawInfo('written by', data.writtenBy);
-
-	// Starring (Elenco) - Tratamento especial para várias linhas
-	if (data.starring.length > 0) {
-		yPos += rowSpacing;
-		ctx.font = labelFont;
-		ctx.fillText('starring', leftMargin, yPos);
-		yPos += 14;
-		ctx.font = valueFont;
-
-		data.starring.forEach((actor) => {
-			ctx.fillText(actor.toUpperCase(), leftMargin, yPos);
-			yPos += 18;
-		});
-	}
-
-	return yPos;
-}
-
-/**
- * Gera e baixa o pôster como imagem PNG usando Canvas
- */
-function downloadPoster() {
-	const data = getFormData();
-	const canvas = elements.posterCanvas;
-	const ctx = canvas.getContext('2d');
-
-	// Dimensões do pôster
-	const posterWidth = 500;
-	const posterHeight = 700; // Altura total fixa do pôster
-	const padding = 40;
-
-	// Imagem ocupa exatamente 60% da altura total
-	const imageHeight = posterHeight * 0.6;
-	const imageWidth = imageHeight / 1.4; // Mantém proporção 1:1.4
-
-	canvas.width = posterWidth;
-	canvas.height = posterHeight;
-
-	// Fundo bege da Polaroid
-	ctx.fillStyle = PREVIEW_BG;
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-	const img = new Image();
-	img.crossOrigin = 'anonymous';
-
-	img.onload = function () {
-		ctx.drawImage(img, padding, padding, imageWidth, imageHeight);
-
-		let yPos = padding + imageHeight + 40;
-		ctx.fillStyle = SHADOW_GREY;
-		const leftMargin = padding;
-		const rightMargin = posterWidth - padding;
-
-		// Desenhar título e ano
-		ctx.font = '900 40px Impact, Arial Black, sans-serif';
-		ctx.textAlign = 'left';
-
-		const titleText = data.title.toUpperCase();
-		const titleMaxWidth = rightMargin - leftMargin - 90;
-		const wrappedTitle = wrapText(ctx, titleText, titleMaxWidth);
-
-		wrappedTitle.forEach((line, index) => {
-			ctx.fillText(line, leftMargin, yPos + index * 20);
-		});
-
-		if (data.year) {
-			ctx.font = '300 30px Arial, sans-serif';
-			ctx.textAlign = 'right';
-			ctx.fillText(data.year, rightMargin, yPos);
-		}
-
-		yPos += wrappedTitle.length * 15;
-		ctx.textAlign = 'left';
-
-		// Desenhar informações com espaçamento otimizado
-		yPos = drawPosterInfo(ctx, data, leftMargin, rightMargin, 18, yPos);
-
-		// Download
-		try {
-			const link = document.createElement('a');
-			link.download = `polaroid-${data.title
-				.replace(/\s+/g, '-')
-				.toLowerCase()
-				.substring(0, 30)}.png`;
-			link.href = canvas.toDataURL('image/png');
-			document.body.appendChild(link);
-			link.click();
-			document.body.removeChild(link);
-			showToast('✅ Pôster baixado com sucesso!');
-		} catch (error) {
-			console.error('Erro ao baixar:', error);
-			showToast(
-				'❌ Erro ao gerar o download. Verifique se a imagem foi carregada corretamente.',
-				'error'
-			);
-		}
-	};
-
-	img.onerror = function () {
-		showToast('❌ Erro ao carregar a imagem. Verifique o arquivo.', 'error');
-	};
-
-	img.src = uploadedImage;
-}
-
-// Função auxiliar para quebra de linha de texto no canvas
-function wrapText(context, text, maxWidth) {
-	const words = text.split(' ');
-	const lines = [];
-	let currentLine = words[0];
-
-	for (let i = 1; i < words.length; i++) {
-		const word = words[i];
-		const width = context.measureText(currentLine + ' ' + word).width;
-		if (width < maxWidth) {
-			currentLine += ' ' + word;
-		} else {
-			lines.push(currentLine);
-			currentLine = word;
-		}
-	}
-	lines.push(currentLine);
-	return lines;
-}
+loadData();
+updatePreview();
