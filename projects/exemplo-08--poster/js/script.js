@@ -122,7 +122,7 @@ function download() {
   canvas.width = W;
   canvas.height = H;
   
-  ctx.fillStyle = '#fff';
+  ctx.fillStyle = '#ECE9E4';
   ctx.fillRect(0, 0, W, H);
   
   const img = new Image();
@@ -139,14 +139,14 @@ function download() {
     ctx.drawImage(img, PAD, imgY, drawW, drawH);
     
     ctx.fillStyle = '#000';
-    ctx.font = '900 18px Impact, Arial Black, sans-serif';
+    ctx.font = '900 22px Impact, Arial Black, sans-serif';
     ctx.textBaseline = 'top';
     
     const d = getData();
     let y = PAD + 8;
     
     const title = d.title.toUpperCase();
-    const titleW = infoAreaW - PAD - 50;
+      const titleW = infoAreaW - PAD - 50;
     const words = title.split(' ');
     let line = '';
     
@@ -154,7 +154,7 @@ function download() {
       const test = line + word + ' ';
       if (ctx.measureText(test).width > titleW && line) {
         ctx.fillText(line.trim(), imgAreaW, y);
-        y += 20;
+        y += 24;
         line = word + ' ';
       } else {
         line = test;
@@ -163,26 +163,26 @@ function download() {
     ctx.fillText(line.trim(), imgAreaW, y);
     
     if (d.year) {
-      ctx.font = '300 14px Arial';
+      ctx.font = '300 16px Arial';
       ctx.textAlign = 'right';
       ctx.fillText(d.year, W - PAD, PAD + 8);
       ctx.textAlign = 'left';
     }
     
     y += 30;
-    ctx.font = 'italic 9px Arial';
+    ctx.font = 'italic 10px Arial';
     ctx.fillStyle = '#888';
     
     const addInfo = (label, value) => {
       if (value) {
         ctx.fillText(label, imgAreaW, y);
-        y += 12;
+        y += 14;
         ctx.fillStyle = '#000';
-        ctx.font = '600 9px Arial';
+        ctx.font = '600 10px Arial';
         ctx.fillText(value.toUpperCase(), imgAreaW, y);
-        y += 16;
+        y += 18;
         ctx.fillStyle = '#888';
-        ctx.font = 'italic 9px Arial';
+        ctx.font = 'italic 10px Arial';
       }
     };
     
