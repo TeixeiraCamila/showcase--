@@ -1,0 +1,384 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.visual-side {
+  width: 45%;
+  position: relative;
+  overflow: hidden;
+  background-image: url('https://i.pinimg.com/736x/55/1e/8d/551e8dd4358d94fb064cd30bac3e30b2.jpg');
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.form-side {
+  width: 66%;
+  background: #dde6ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: -10%;
+  z-index: 1;
+  clip-path: polygon(
+    15% 0,
+    100% 0,
+    100% 100%,
+    15% 100%,
+    15% 88%,
+    8% 76%,
+    15% 64%,
+    8% 52%,
+    15% 40%,
+    8% 28%,
+    15% 16%,
+    8% 4%
+  );
+  -webkit-clip-path: polygon(
+    15% 0,
+    100% 0,
+    100% 100%,
+    15% 100%,
+    15% 88%,
+    8% 76%,
+    15% 64%,
+    8% 52%,
+    15% 40%,
+    8% 28%,
+    15% 16%,
+    8% 4%
+  );
+}
+
+.form-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+}
+
+.welcome-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.sub-text {
+  font-size: 16px;
+  color: #5d6d7e;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heart-emoji {
+  color: #3498db;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.google-btn {
+  flex: 1;
+  background: #f5f1ee;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.google-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.google-logo {
+  width: 18px;
+  height: 18px;
+}
+
+.social-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f5f1ee;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.social-circle:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.social-circle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: #8899a6;
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #b8c5d0;
+}
+
+.divider span {
+  padding: 0 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  background: #f5f1ee;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #2c3e50;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #a0aec0;
+}
+
+.form-group input:focus {
+  box-shadow: 0 0 0 2px #3498db;
+}
+
+.terms-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #5d6d7e;
+}
+
+.terms-check input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #b8c5d0;
+  cursor: pointer;
+  accent-color: #3498db;
+}
+
+.signup-btn {
+  width: 100%;
+  background: #f5f1ee;
+  border: none;
+  padding: 16px;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.signup-btn:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #2c3e50;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateX(150%);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.error {
+  background: #e74c3c;
+}
+
+.toast.success {
+  background: #27ae60;
+}
+
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.container.swap-animation .visual-side {
+  animation: slideOutLeft 0.8s ease forwards;
+}
+
+.container.swap-animation .form-side {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.container.swap-completed .form-side {
+  clip-path: polygon(
+    0 0,
+    85% 0,
+    85% 4%,
+    92% 16%,
+    85% 28%,
+    92% 40%,
+    85% 52%,
+    92% 64%,
+    85% 76%,
+    92% 88%,
+    85% 100%,
+    0 100%
+  );
+  -webkit-clip-path: polygon(
+    0 0,
+    85% 0,
+    85% 4%,
+    92% 16%,
+    85% 28%,
+    92% 40%,
+    85% 52%,
+    92% 64%,
+    85% 76%,
+    92% 88%,
+    85% 100%,
+    0 100%
+  );
+  margin-left: 0;
+  margin-right: -11%;
+  width: 71%;
+}
+
+.container.swap-completed .visual-side {
+  margin-right: -10%;
+  width: 66%;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .visual-side {
+    width: 100%;
+    height: 35vh;
+    min-height: 250px;
+  }
+
+  .form-side {
+    width: 100%;
+    margin-left: 0;
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 24px;
+  }
+
+  .social-buttons {
+    flex-wrap: wrap;
+  }
+
+  .google-btn {
+    width: 100%;
+  }
+
+  .welcome-text {
+    font-size: 24px;
+  }
+}
