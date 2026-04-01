@@ -51,15 +51,38 @@
 					<i data-lucide="cat"></i>
 					<span>Catpuccino</span>
 				</a>
-				<ul class="nav__menu">
-					<li><a href="#how-it-works" class="nav__link">The Lounge</a></li>
-					<li><a href="#menu" class="nav__link">Menu</a></li>
-					<li><a href="#adoption" class="nav__link">Adopt</a></li>
-					<li><a href="#visit" class="nav__link">Book</a></li>
-				</ul>
 				<button class="nav__toggle" aria-label="Toggle menu">
 					<i data-lucide="menu"></i>
 				</button>
+			</div>
+			<div class="nav__menu-wrapper">
+				<div class="nav__menu">
+					<div class="nav__menu-header">
+						<a href="#home" class="nav__logo">
+							<i data-lucide="cat"></i>
+							<span>Catpuccino</span>
+						</a>
+						<button class="nav__close" aria-label="Close menu">
+							<i data-lucide="x"></i>
+						</button>
+					</div>
+					<ul class="nav__menu-links">
+						<li><a href="#home" class="nav__link">Home</a></li>
+						<li><a href="#about" class="nav__link">About</a></li>
+						<li><a href="#how-it-works" class="nav__link">How It Works</a></li>
+						<li><a href="#experience" class="nav__link">Experience</a></li>
+						<li><a href="#menu" class="nav__link">Menu</a></li>
+						<li><a href="#cats" class="nav__link">Cats</a></li>
+						<li><a href="#adoption" class="nav__link">Adopt</a></li>
+						<li><a href="#experiences" class="nav__link">Experiences</a></li>
+						<li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+						<li><a href="#visit" class="nav__link">Visit</a></li>
+						<li><a href="#contact" class="nav__link">Contact</a></li>
+					</ul>
+					<div class="nav__menu-footer">
+						<a href="#visit" class="nav__cta">Book Your Visit</a>
+					</div>
+				</div>
 			</div>
 		</nav>
 
@@ -75,8 +98,8 @@
 					Relax, sip great coffee, and connect with rescued cats
 				</p>
 				<div class="hero__cta">
-					<a href="#visit" class="hero__btn hero__btn--primary">Book Your Visit</a>
-					<a href="#how-it-works" class="hero__btn hero__btn--secondary">See How It Works</a>
+					<a href="#visit" class="hero__btn hero__btn--primary">Book Your Spot</a>
+					<a href="#how-it-works" class="hero__btn hero__btn--secondary">Reserve Your Visit</a>
 				</div>
 			</div>
 			<div class="hero__scroll">
@@ -588,41 +611,127 @@
 				</div>
 
 				<div class="testimonials__wrapper">
-					<div class="testimonials__slider">
-						<div class="testimonials__card">
-							<div class="testimonials__card-rating">★★★★★</div>
-							<p class="testimonials__card-text">
-								"Amazing atmosphere, great coffee, and the cats made my day! I didn't want to leave."
-							</p>
-							<div class="testimonials__card-author">
-								<div class="testimonials__card-avatar">S</div>
-								<span class="testimonials__card-name">Sarah M.</span>
+					<div class="swiper testimonials__slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Amazing atmosphere, great coffee, and the cats made my day! I didn't want to leave."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">S</div>
+										<span class="testimonials__card-name">Sarah M.</span>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="testimonials__card">
-							<div class="testimonials__card-rating">★★★★★</div>
-							<p class="testimonials__card-text">
-								"Perfect place to relax and disconnect. The cats are so well cared for and friendly."
-							</p>
-							<div class="testimonials__card-author">
-								<div class="testimonials__card-avatar">J</div>
-								<span class="testimonials__card-name">James K.</span>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Perfect place to relax and disconnect. The cats are so well cared for and friendly."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">J</div>
+										<span class="testimonials__card-name">James K.</span>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="testimonials__card">
-							<div class="testimonials__card-rating">★★★★★</div>
-							<p class="testimonials__card-text">
-								"Loved the concept and ended up adopting a cat! The staff was super helpful."
-							</p>
-							<div class="testimonials__card-author">
-								<div class="testimonials__card-avatar">E</div>
-								<span class="testimonials__card-name">Emma L.</span>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Loved the concept and ended up adopting a cat! The staff was super helpful."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">E</div>
+										<span class="testimonials__card-name">Emma L.</span>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Best cat café ever! The coffee is excellent and the cats are adorable."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">M</div>
+										<span class="testimonials__card-name">Michael R.</span>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Brought my kids and they loved it! Such a lovely experience for the whole family."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">A</div>
+										<span class="testimonials__card-name">Amanda T.</span>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"The staff is amazing! They really care about the cats and it shows."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">D</div>
+										<span class="testimonials__card-name">David W.</span>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Been here three times already! Never disappoints. The purr-fect spot!"
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">L</div>
+										<span class="testimonials__card-name">Lisa P.</span>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Adopted my fur baby from here! The adoption process was smooth and wonderful."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">R</div>
+										<span class="testimonials__card-name">Rachel G.</span>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="testimonials__card">
+									<div class="testimonials__card-rating">★★★★★</div>
+									<p class="testimonials__card-text">
+										"Cat yoga weekend was incredible! So relaxing and fun with the kitties."
+									</p>
+									<div class="testimonials__card-author">
+										<div class="testimonials__card-avatar">K</div>
+										<span class="testimonials__card-name">Kevin H.</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
+
+					<button class="testimonials__arrow testimonials__arrow--prev" aria-label="Previous">
+						<i data-lucide="chevron-left"></i>
+					</button>
+					<button class="testimonials__arrow testimonials__arrow--next" aria-label="Next">
+						<i data-lucide="chevron-right"></i>
+					</button>
 					
-					<!-- Dots - Desktop Only with Paw Print (Lucide) -->
-					<div class="testimonials__dots">
+					<div class="testimonials__pagination">
 						<button class="testimonials__dot testimonials__dot--active" data-index="0" aria-label="Slide 1">
 							<i data-lucide="paw-print"></i>
 						</button>
@@ -845,7 +954,9 @@
 		</footer>
 
 		<!-- Lucide Icons (UI icons) -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="./assets/js/script.js" defer></script>
 	</body>
 </html>

@@ -55,13 +55,53 @@ function initNavigation() {
     // Seleciona os elementos necessários
     const nav = document.querySelector('.nav');
     const navToggle = document.querySelector('.nav__toggle');
+    const navClose = document.querySelector('.nav__close');
     const navMenu = document.querySelector('.nav__menu');
+    const navMenuWrapper = document.querySelector('.nav__menu-wrapper');
+    const floatingCats = document.querySelector('.floating-cats-container');
+    const homeSection = document.getElementById('home');
 
-    // === Menu Mobile ===
-    // Adiciona evento de clique no botão de menu mobile
+    // Função para abrir/fechar o menu
+    const toggleMenu = () => {
+        const isOpening = !navMenu.classList.contains('nav__menu--active');
+        
+        navMenu.classList.toggle('nav__menu--active');
+        navMenuWrapper.classList.toggle('nav__menu-wrapper--active');
+        
+        if (isOpening) {
+            nav.classList.add('nav--menu-open');
+        } else {
+            nav.classList.remove('nav--menu-open');
+        }
+        
+        document.body.style.overflow = isOpening ? 'hidden' : '';
+    };
+
+    // Função para fechar o menu
+    const closeMenu = () => {
+        navMenu.classList.remove('nav__menu--active');
+        navMenuWrapper.classList.remove('nav__menu-wrapper--active');
+        nav.classList.remove('nav--menu-open');
+        document.body.style.overflow = '';
+    };
+
+    // === Menu Mobile (Sidebar) ===
+    // Abre menu ao clicar no botão hamburger
     if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('nav__menu--active');
+        navToggle.addEventListener('click', toggleMenu);
+    }
+
+    // Fecha menu ao clicar no botão X
+    if (navClose) {
+        navClose.addEventListener('click', closeMenu);
+    }
+
+    // Fecha menu ao clicar no overlay
+    if (navMenuWrapper) {
+        navMenuWrapper.addEventListener('click', (e) => {
+            if (e.target === navMenuWrapper) {
+                closeMenu();
+            }
         });
     }
 
@@ -77,17 +117,42 @@ function initNavigation() {
             nav.style.background = 'rgba(255, 255, 255, 0.95)';
             nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         }
+
+        // Ocultar floating cats quando na seção #home
+        if (floatingCats && homeSection) {
+            const homeRect = homeSection.getBoundingClientRect();
+            const isInHome = homeRect.top <= 100 && homeRect.bottom >= 100;
+            
+            if (isInHome) {
+                floatingCats.classList.add('hidden');
+            } else {
+                floatingCats.classList.remove('hidden');
+            }
+        }
     });
 
     // === Fecha Menu ao Clicar em Link ===
     // Quando usuário clica em um link do menu, fecha o menu mobile
     document.querySelectorAll('.nav__link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu && navMenu.classList.contains('nav__menu--active')) {
-                navMenu.classList.remove('nav__menu--active');
-            }
-        });
+        link.addEventListener('click', closeMenu);
     });
+
+    // === Ocultar Floating Cats na Seção #home ===
+    // Verifica posição inicial ao carregar a página
+    if (floatingCats && homeSection) {
+        const checkHomeVisibility = () => {
+            const homeRect = homeSection.getBoundingClientRect();
+            const isInHome = homeRect.top <= 150 && homeRect.bottom >= 150;
+            
+            if (isInHome) {
+                floatingCats.classList.add('hidden');
+            } else {
+                floatingCats.classList.remove('hidden');
+            }
+        };
+        
+        checkHomeVisibility();
+    }
 
     // === Smooth Scroll ===
     // Faz scroll suave ao clicar em links que começam com #
@@ -154,54 +219,64 @@ function initMenuTabs() {
 
 /**
  * ============================================
- * SLIDER DE DEPOIMENTOS
+ * SLIDER DE DEPOIMENTOS (Swiper.js)
  * ============================================
- * Cria um slider interativo com dots (patinhas)
- * - Suporta swipe em mobile
- * - Dots são visíveis apenas em desktop
- * - Usa scroll-snap para controle de slides
- * - Funciona com qualquer número de depoimentos
+ * Slider interativo com autoplay
+ * - Autoplay com 5 segundos de delay
+ * - Paginação com bullets customizados
+ * - Loop contínuo
+ * - Desktop: 3 slides, Tablet: 2 slides, Mobile: 1 slide
  */
 function initTestimonialsSlider() {
     const slider = document.querySelector('.testimonials__slider');
-    const dots = document.querySelectorAll('.testimonials__dot');
     
-    if (!slider || dots.length === 0) return;
+    if (!slider || typeof Swiper === 'undefined') return;
 
-    // Função para atualizar dot ativo
-    const updateActiveDot = () => {
-        // Calcula qual slide está visível baseado no scroll
-        const cards = slider.querySelectorAll('.testimonials__card');
-        if (cards.length === 0) return;
-        
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 32; // 2rem = 32px
-        const scrollPosition = slider.scrollLeft;
-        
-        // Calcula o índice atual baseado na posição do scroll
-        const currentIndex = Math.round(scrollPosition / (cardWidth + gap));
-        
-        // Atualiza classe active nos dots
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('testimonials__dot--active', index === currentIndex);
-        });
-    };
-
-    // Evento: quando scrollar o slider, atualiza dot ativo
-    slider.addEventListener('scroll', updateActiveDot);
-
-    // Evento: clicar no dot para ir para aquele slide
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            const cards = slider.querySelectorAll('.testimonials__card');
-            const card = cards[index];
-            
-            if (card) {
-                card.scrollIntoView({
-                    behavior: 'smooth',
-                    inline: 'start'
-                });
-            }
-        });
+    const swiper = new Swiper('.testimonials__slider', {
+        slidesPerView: 1,
+        spaceBetween: 32,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
     });
+
+    // Navigation arrows
+    const prevBtn = document.querySelector('.testimonials__arrow--prev');
+    const nextBtn = document.querySelector('.testimonials__arrow--next');
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => swiper.slidePrev());
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => swiper.slideNext());
+    }
+
+    const dots = document.querySelectorAll('.testimonials__dot');
+    if (dots.length > 0) {
+        swiper.on('slideChange', () => {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('testimonials__dot--active', index === swiper.realIndex);
+            });
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                swiper.slideToLoop(index);
+            });
+        });
+    }
 }
