@@ -89,13 +89,12 @@ function initializeCardRotations() {
 	const cards = document.querySelectorAll('.project-card');
 
 	cards.forEach((card) => {
-		const rotation = Math.random() * 6 - 3; // Entre -3 e 3 graus
-		const translateY = Math.random() * 12 - 6; // Entre -6 e 6px
+		const rotation = Math.random() * 6 - 3;
+		const translateY = Math.random() * 12 - 6;
 
 		const transform = `rotate(${rotation}deg) translateY(${translateY}px)`;
 		card.style.setProperty('--card-transform', transform);
 
-		// Armazenar os valores para usar depois
 		card.dataset.rotation = rotation;
 		card.dataset.translateY = translateY;
 	});
@@ -108,7 +107,6 @@ function animateCardsEntry() {
 		const rotation = parseFloat(card.dataset.rotation);
 		const translateY = parseFloat(card.dataset.translateY);
 
-		// Estado inicial com a rotação e entrada
 		card.style.opacity = '0';
 		card.style.transform = `rotate(${rotation}deg) translateY(${
 			translateY + 30
@@ -122,9 +120,9 @@ function animateCardsEntry() {
 	});
 }
 
-// Custom cursor with optimized events
-const cursor = document.querySelector('.custom-cursor');
-const cursorTrail = document.querySelector('.custom-cursor-trail');
+// Custom cursor (BEM: cursor, cursor__trail)
+const cursor = document.querySelector('.cursor');
+const cursorTrail = document.querySelector('.cursor__trail');
 let mouseX = 0;
 let mouseY = 0;
 let trailX = 0;
@@ -156,11 +154,11 @@ function animateTrail() {
 animateTrail();
 
 document.addEventListener('mousedown', () => {
-	if (cursor) cursor.classList.add('custom-cursor--clicking');
+	if (cursor) cursor.classList.add('cursor_clicking');
 });
 
 document.addEventListener('mouseup', () => {
-	if (cursor) cursor.classList.remove('custom-cursor--clicking');
+	if (cursor) cursor.classList.remove('cursor_clicking');
 });
 
 // Detectar hover em elementos interativos
@@ -170,14 +168,13 @@ const interactiveElements = document.querySelectorAll(
 
 interactiveElements.forEach((el) => {
 	el.addEventListener('mouseenter', () => {
-		if (cursor) cursor.classList.add('custom-cursor--hovering');
-		if (cursorTrail) cursorTrail.classList.add('custom-cursor-trail--hovering');
+		if (cursor) cursor.classList.add('cursor_hovering');
+		if (cursorTrail) cursorTrail.classList.add('cursor__trail_hovering');
 	});
 
 	el.addEventListener('mouseleave', () => {
-		if (cursor) cursor.classList.remove('custom-cursor--hovering');
-		if (cursorTrail)
-			cursorTrail.classList.remove('custom-cursor-trail--hovering');
+		if (cursor) cursor.classList.remove('cursor_hovering');
+		if (cursorTrail) cursorTrail.classList.remove('cursor__trail_hovering');
 	});
 });
 
