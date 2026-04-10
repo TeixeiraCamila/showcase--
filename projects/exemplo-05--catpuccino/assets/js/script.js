@@ -45,136 +45,94 @@ function initYear() {
  * ============================================
  * NAVEGAÇÃO
  * ============================================
- * Controla o menu de navegação:
- * - Menu mobile (toggle)
- * - Efeito de scroll (nav fixa)
- * - Smooth scroll para links âncora
- * - Fecha menu ao clicar em um link
  */
 function initNavigation() {
-    // Seleciona os elementos necessários
     const nav = document.querySelector('.nav');
     const navToggle = document.querySelector('.nav__toggle');
-    const navClose = document.querySelector('.nav__close');
-    const navMenu = document.querySelector('.nav__menu');
-    const navMenuWrapper = document.querySelector('.nav__menu-wrapper');
+    const mobileWrap = document.querySelector('.nav__mobile-wrap');
+    const mobileClose = document.querySelector('.nav__mobile-close');
+    const backdrop = document.querySelector('.nav__mobile-backdrop');
+    const mobileLinks = document.querySelectorAll('.nav__mobile-link');
     const floatingCats = document.querySelector('.floating-cats-container');
-    const homeSection = document.getElementById('home');
 
-    // Função para abrir/fechar o menu
-    const toggleMenu = () => {
-        const isOpening = !navMenu.classList.contains('nav__menu--active');
-        
-        navMenu.classList.toggle('nav__menu--active');
-        navMenuWrapper.classList.toggle('nav__menu-wrapper--active');
-        
-        if (isOpening) {
-            nav.classList.add('nav--menu-open');
-        } else {
-            nav.classList.remove('nav--menu-open');
-        }
-        
-        document.body.style.overflow = isOpening ? 'hidden' : '';
-    };
-
-    // Função para fechar o menu
-    const closeMenu = () => {
-        navMenu.classList.remove('nav__menu--active');
-        navMenuWrapper.classList.remove('nav__menu-wrapper--active');
-        nav.classList.remove('nav--menu-open');
-        document.body.style.overflow = '';
-    };
-
-    // === Menu Mobile (Sidebar) ===
-    // Abre menu ao clicar no botão hamburger
+    // Abrir menu
     if (navToggle) {
-        navToggle.addEventListener('click', toggleMenu);
-    }
-
-    // Fecha menu ao clicar no botão X
-    if (navClose) {
-        navClose.addEventListener('click', closeMenu);
-    }
-
-    // Fecha menu ao clicar no overlay
-    if (navMenuWrapper) {
-        navMenuWrapper.addEventListener('click', (e) => {
-            if (e.target === navMenuWrapper) {
-                closeMenu();
-            }
+        navToggle.addEventListener('click', () => {
+            mobileWrap.classList.add('active');
+            navToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
     }
 
-    // === Efeito de Scroll ===
-    // Quando usuário scrolla, a nav muda de estilo
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            // Nav com scroll: mais opaque e sombra maior
-            nav.style.background = 'rgba(255, 255, 255, 0.98)';
-            nav.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
-        } else {
-            // Nav inicial: menos opaque e sombra menor
-            nav.style.background = 'rgba(255, 255, 255, 0.95)';
-            nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        }
+    // Fechar menu
+    const closeMenu = () => {
+        mobileWrap.classList.remove('active');
+        navToggle.classList.remove('active');
+        document.body.style.overflow = '';
+    };
 
-        // Ocultar floating cats quando na seção #home
-        if (floatingCats && homeSection) {
-            const homeRect = homeSection.getBoundingClientRect();
-            const isInHome = homeRect.top <= 100 && homeRect.bottom >= 100;
-            
-            if (isInHome) {
-                floatingCats.classList.add('hidden');
-            } else {
-                floatingCats.classList.remove('hidden');
-            }
-        }
-    });
+    if (mobileClose) {
+        mobileClose.addEventListener('click', closeMenu);
+    }
 
-    // === Fecha Menu ao Clicar em Link ===
-    // Quando usuário clica em um link do menu, fecha o menu mobile
-    document.querySelectorAll('.nav__link').forEach(link => {
+    if (backdrop) {
+        backdrop.addEventListener('click', closeMenu);
+    }
+
+    // Fechar ao clicar em link
+    mobileLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
-    // === Ocultar Floating Cats na Seção #home ===
-    // Verifica posição inicial ao carregar a página
-    if (floatingCats && homeSection) {
-        const checkHomeVisibility = () => {
+    // Fechar com Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileWrap?.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    // Scroll effect + Ocultar floating cats na seção #home
+    window.addEventListener('scroll', () => {
+        // Sombra na nav
+        if (window.scrollY > 50) {
+            nav.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+        } else {
+            nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+        }
+
+        // Ocultar floating cats quando na seção #home
+        if (floatingCats) {
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                const homeRect = homeSection.getBoundingClientRect();
+                const isInHome = homeRect.top <= 150 && homeRect.bottom >= 150;
+                floatingCats.classList.toggle('hidden', isInHome);
+            }
+        }
+    });
+
+    // Verificar posição inicial
+    if (floatingCats) {
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
             const homeRect = homeSection.getBoundingClientRect();
             const isInHome = homeRect.top <= 150 && homeRect.bottom >= 150;
-            
-            if (isInHome) {
-                floatingCats.classList.add('hidden');
-            } else {
-                floatingCats.classList.remove('hidden');
-            }
-        };
-        
-        checkHomeVisibility();
+            if (isInHome) floatingCats.classList.add('hidden');
+        }
     }
 
-    // === Smooth Scroll ===
-    // Faz scroll suave ao clicar em links que começam com #
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            
-            // Não faz nada se for apenas # ou #home
-            if (targetId === '#' || targetId === '#home') return;
+            if (targetId === '#') return;
             
             const target = document.querySelector(targetId);
             if (target) {
-                // Calcula posição considerando a altura da nav
-                const navHeight = nav ? nav.offsetHeight : 0;
+                e.preventDefault();
+                const navHeight = nav.offsetHeight;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                
-                // Scroll suave até o elemento
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
         });
     });
@@ -199,9 +157,13 @@ function initMenuTabs() {
             const targetTab = tab.dataset.tab;
 
             // Remove classe active de todas as abas
-            tabs.forEach(t => t.classList.remove('menu__tab--active'));
+            tabs.forEach(t => {
+                t.classList.remove('menu__tab--active');
+                t.setAttribute('aria-selected', 'false');
+            });
             // Adiciona classe active na aba clicada
             tab.classList.add('menu__tab--active');
+            tab.setAttribute('aria-selected', 'true');
 
             // Oculta todos os painéis
             panels.forEach(panel => {
