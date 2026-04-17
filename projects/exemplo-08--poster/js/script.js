@@ -1,7 +1,5 @@
-const W = 500;
-const H = 350;
-const PAD = 16;
-const IMG_W = 0.6;
+const W = 981;
+const PAD = 95;
 
 let image = null;
 let toastTimer = null;
@@ -18,6 +16,7 @@ const inputs = {
   writtenBy: $('writtenBy'),
   starring1: $('starring1'),
   starring2: $('starring2'),
+  imageUrl: $('imageUrl'),
 };
 const poster = $('poster');
 const posterImage = $('posterImage');
@@ -48,12 +47,14 @@ function getData() {
       inputs.starring1.value.trim(),
       inputs.starring2.value.trim(),
     ].filter(Boolean),
+    imageUrl: inputs.imageUrl.value.trim(),
   };
 }
 
 function saveData() {
   localStorage.setItem('posterData', JSON.stringify(getData()));
   localStorage.setItem('posterImage', image || '');
+  localStorage.setItem('posterImageUrl', inputs.imageUrl.value.trim());
 }
 
 function loadData() {
@@ -73,14 +74,19 @@ function loadData() {
       image = savedImg;
       updatePosterImage();
     }
+    const savedUrl = localStorage.getItem('posterImageUrl');
+    if (savedUrl) {
+      inputs.imageUrl.value = savedUrl;
+    }
   } catch (e) {}
 }
 
+const posterImageEl = posterImage;
 function updatePosterImage() {
   if (image) {
-    posterImage.innerHTML = `<img src="${image}" alt="Poster">`;
+    posterImageEl.innerHTML = `<img src="${image}" alt="Poster">`;
   } else {
-    posterImage.innerHTML = '<span class="poster__placeholder">Adicione uma imagem</span>';
+    posterImageEl.innerHTML = '<span class="poster__placeholder">Adicione uma imagem</span>';
   }
 }
 
@@ -119,78 +125,156 @@ function download() {
   }
   
   const ctx = canvas.getContext('2d');
-  canvas.width = W;
-  canvas.height = H;
-  
-  ctx.fillStyle = '#ECE9E4';
-  ctx.fillRect(0, 0, W, H);
+  const W = 981;
+  const PAD = 95;
+  const imgAreaW = 819;
+  const minImgH = 1229;
   
   const img = new Image();
+  img.crossOrigin = 'anonymous';
   img.onload = () => {
-    const imgAreaW = W * IMG_W;
-    const infoAreaW = W - imgAreaW;
-    
     const imgRatio = img.width / img.height;
-    let drawW = imgAreaW - PAD * 2;
+    let drawW = imgAreaW;
     let drawH = drawW / imgRatio;
     
-    const imgY = PAD + (H - PAD * 2 - drawH) / 2;
+    if (drawH > minImgH) {
+      drawH = minImgH;
+      drawW = drawH * imgRatio;
+    }
     
-    ctx.drawImage(img, PAD, imgY, drawW, drawH);
+    let finalImgH = minImgH;
+    let finalDrawY = PAD;
     
-    ctx.fillStyle = '#000';
-    ctx.font = '900 22px Impact, Arial Black, sans-serif';
+    if (drawH < minImgH) {
+      finalDrawY = PAD + (minImgH - drawH) / 2;
+    } else {
+      finalImgH = drawH;
+    }
+    
+    const imgBottom = finalDrawY + finalImgH;
+    
+    const infoX = PAD;
+    const infoY = imgBottom + 48;
+    const titleSize = 96;
+    const dataSize = 60;
+    const lineHeight = dataSize + 14;
+    const infoLineHeight = dataSize + 16;
+    
+    ctx.fillStyle = '#1e1e1e';
+    ctx.font = '700 ' + titleSize + 'px Inter, Arial, sans-serif';
     ctx.textBaseline = 'top';
     
     const d = getData();
-    let y = PAD + 8;
-    
     const title = d.title.toUpperCase();
-      const titleW = infoAreaW - PAD - 50;
+    const titleW = 819;
     const words = title.split(' ');
     let line = '';
+    let y = infoY;
     
     for (const word of words) {
       const test = line + word + ' ';
       if (ctx.measureText(test).width > titleW && line) {
-        ctx.fillText(line.trim(), imgAreaW, y);
-        y += 24;
+        ctx.fillText(line.trim(), infoX, y);
+        y += titleSize + 4;
         line = word + ' ';
       } else {
         line = test;
       }
     }
-    ctx.fillText(line.trim(), imgAreaW, y);
+    ctx.fillText(line.trim(), infoX, y);
+    
+    y += titleSize + 20;
     
     if (d.year) {
-      ctx.font = '300 16px Arial';
+      ctx.font = '700 ' + dataSize + 'px Inter, Arial, sans-serif';
       ctx.textAlign = 'right';
-      ctx.fillText(d.year, W - PAD, PAD + 8);
+      ctx.fillText(d.year, infoX + 819, y);
       ctx.textAlign = 'left';
     }
     
-    y += 30;
-    ctx.font = 'italic 10px Arial';
+    ctx.font = 'italic 400 ' + dataSize + 'px Inter, Arial, sans-serif';
     ctx.fillStyle = '#888';
     
-    const addInfo = (label, value) => {
+    const addInfo = (label, value, bold) => {
       if (value) {
-        ctx.fillText(label, imgAreaW, y);
-        y += 14;
-        ctx.fillStyle = '#000';
-        ctx.font = '600 10px Arial';
-        ctx.fillText(value.toUpperCase(), imgAreaW, y);
-        y += 18;
+        ctx.fillText(label, infoX, y);
+        y += infoLineHeight;
+        ctx.fillStyle = '#1e1e1e';
+        ctx.font = (bold ? '700' : '400') + ' ' + dataSize + 'px Inter, Arial, sans-serif';
+        ctx.fillText(value.toUpperCase(), infoX, y);
+        y += lineHeight;
         ctx.fillStyle = '#888';
-        ctx.font = 'italic 10px Arial';
+        ctx.font = 'italic 400 ' + dataSize + 'px Inter, Arial, sans-serif';
       }
     };
     
-    addInfo('native title', d.nativeTitle);
-    addInfo('genre', d.genre);
-    addInfo('directed by', d.directedBy);
-    addInfo('written by', d.writtenBy);
-    if (d.starring.length) addInfo('starring', d.starring.join(', '));
+    addInfo('native title', d.nativeTitle, false);
+    addInfo('genre', d.genre, true);
+    addInfo('directed by', d.directedBy, false);
+    addInfo('written by', d.writtenBy, true);
+    if (d.starring.length) addInfo('starring', d.starring.join(', '), false);
+    
+    const contentH = y + PAD;
+    canvas.width = W;
+    canvas.height = contentH;
+    
+    ctx.fillStyle = '#d9d9d9';
+    ctx.fillRect(0, 0, W, contentH);
+    
+    const drawX2 = PAD + (imgAreaW - drawW) / 2;
+    ctx.drawImage(img, drawX2, finalDrawY, drawW, drawH);
+    
+    ctx.fillStyle = '#1e1e1e';
+    ctx.font = '700 ' + titleSize + 'px Inter, Arial, sans-serif';
+    ctx.textBaseline = 'top';
+    
+    line = '';
+    y = infoY;
+    
+    for (const word of words) {
+      const test = line + word + ' ';
+      if (ctx.measureText(test).width > titleW && line) {
+        ctx.fillText(line.trim(), infoX, y);
+        y += titleSize + 4;
+        line = word + ' ';
+      } else {
+        line = test;
+      }
+    }
+    ctx.fillText(line.trim(), infoX, y);
+    
+    y += titleSize + 20;
+    
+    if (d.year) {
+      ctx.font = '700 ' + dataSize + 'px Inter, Arial, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(d.year, infoX + 819, y);
+      ctx.textAlign = 'left';
+    }
+    
+    y += lineHeight;
+    
+    ctx.font = 'italic 400 ' + dataSize + 'px Inter, Arial, sans-serif';
+    ctx.fillStyle = '#888';
+    
+    const addInfo2 = (label, value, bold) => {
+      if (value) {
+        ctx.fillText(label, infoX, y);
+        y += infoLineHeight;
+        ctx.fillStyle = '#1e1e1e';
+        ctx.font = (bold ? '700' : '400') + ' ' + dataSize + 'px Inter, Arial, sans-serif';
+        ctx.fillText(value.toUpperCase(), infoX, y);
+        y += lineHeight;
+        ctx.fillStyle = '#888';
+        ctx.font = 'italic 400 ' + dataSize + 'px Inter, Arial, sans-serif';
+      }
+    };
+    
+    addInfo2('native title', d.nativeTitle, false);
+    addInfo2('genre', d.genre, true);
+    addInfo2('directed by', d.directedBy, false);
+    addInfo2('written by', d.writtenBy, true);
+    if (d.starring.length) addInfo2('starring', d.starring.join(', '), false);
     
     const link = document.createElement('a');
     const name = d.title.replace(/\s+/g, '-').toLowerCase().substring(0, 20);
@@ -202,6 +286,7 @@ function download() {
   };
   
   img.onerror = () => toast('Erro ao carregar imagem');
+  img.crossOrigin = 'anonymous';
   img.src = image;
 }
 
@@ -218,6 +303,7 @@ form.addEventListener('submit', e => {
 
 form.addEventListener('reset', () => {
   image = null;
+  inputs.imageUrl.value = '';
   updatePosterImage();
   posterDetails.innerHTML = '';
   previewTitle.textContent = '';
@@ -225,9 +311,15 @@ form.addEventListener('reset', () => {
   downloadBtn.classList.add('u-hidden');
   localStorage.removeItem('posterData');
   localStorage.removeItem('posterImage');
+  localStorage.removeItem('posterImageUrl');
 });
 
 form.addEventListener('input', () => {
+  const url = inputs.imageUrl.value.trim();
+  if (url) {
+    image = url;
+    updatePosterImage();
+  }
   updatePreview();
   saveData();
 });
