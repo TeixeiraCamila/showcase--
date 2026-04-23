@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "ES2015",
+    "lib": ["ES2016", "DOM"],
+    "outDir": "./",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": false,
+    "moduleResolution": "bundler"
+  },
+  "include": ["quiz.ts"],
+  "exclude": ["node_modules"]
+}

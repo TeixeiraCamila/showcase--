@@ -1,0 +1,99 @@
+{
+  "quiz": [
+    {
+      "pergunta": "Qual é o resultado de 'typeof null' em JavaScript?",
+      "opcoes": ["null", "object", "undefined", "number"],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "O que acontece ao usar 'position: absolute' em um elemento?",
+      "opcoes": [
+        "Ele se posiciona relativo ao viewport",
+        "Ele se posiciona relativo ao elemento pai com position diferente de static",
+        "Ele ignora todos os elementos pais",
+        "Ele sempre fica fixo na tela"
+      ],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "Qual é a diferença entre '==' e '===' em JavaScript?",
+      "opcoes": [
+        "Não há diferença",
+        "'==' compara valor e tipo, '===' só valor",
+        "'==' faz coerção de tipo, '===' compara valor e tipo",
+        "'===' faz coerção de tipo"
+      ],
+      "respostaCorreta": 2
+    },
+    {
+      "pergunta": "O que o método 'Array.prototype.map()' retorna?",
+      "opcoes": [
+        "Um único valor",
+        "Um novo array com os resultados",
+        "O mesmo array modificado",
+        "Um boolean"
+      ],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "Qual é o comportamento padrão de 'overflow: hidden'?",
+      "opcoes": [
+        "Mostra scroll automaticamente",
+        "Oculta conteúdo que ultrapassa o container",
+        "Expande o container",
+        "Move o conteúdo para fora"
+      ],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "O que é o 'event bubbling'?",
+      "opcoes": [
+        "Evento que ocorre apenas no elemento pai",
+        "Propagação do evento do elemento filho para os ancestrais",
+        "Evento que não se propaga",
+        "Evento exclusivo de formulários"
+      ],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "Qual é a finalidade do 'debounce' em JavaScript?",
+      "opcoes": [
+        "Executar função várias vezes rapidamente",
+        "Atrasar execução até parar de chamar repetidamente",
+        "Cancelar funções assíncronas",
+        "Executar funções em paralelo"
+      ],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "O que o 'z-index' afeta?",
+      "opcoes": [
+        "A largura do elemento",
+        "A ordem de empilhamento no eixo z",
+        "A posição horizontal",
+        "A opacidade"
+      ],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "Qual é o resultado de: [1,2,3] + [4,5,6] em JavaScript?",
+      "opcoes": [
+        "[1,2,3,4,5,6]",
+        "'1,2,34,5,6'",
+        "Erro",
+        "[object Object]"
+      ],
+      "respostaCorreta": 1
+    },
+    {
+      "pergunta": "O que o método 'querySelectorAll' retorna?",
+      "opcoes": [
+        "Um array",
+        "Um NodeList",
+        "Um objeto HTML",
+        "Uma string"
+      ],
+      "respostaCorreta": 1
+    }
+  ]
+}

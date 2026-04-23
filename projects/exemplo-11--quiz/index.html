@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz JavaScript</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <header class="quiz-header">
+      <h1>Quiz JavaScript</h1>
+      <button class="reset-btn" onclick="restartQuiz()">Reset</button>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text" id="progressText">1 / 10</div>
+    </header>
+
+    <main class="quiz-content" id="quizContent">
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+    </main>
+
+    <div class="result" id="result" style="display: none;">
+      <h2>Resultado Final</h2>
+      <p class="score" id="score"></p>
+      <p class="message" id="message"></p>
+      <button onclick="restartQuiz()">Refazer Quiz</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

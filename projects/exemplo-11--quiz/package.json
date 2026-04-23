@@ -1,0 +1,12 @@
+{
+  "name": "exemplo-11-quiz",
+  "version": "1.0.0",
+  "description": "JavaScript Quiz com TypeScript",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
