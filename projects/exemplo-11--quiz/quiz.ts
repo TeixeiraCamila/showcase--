@@ -73,6 +73,7 @@ function loadProgress(): void {
     currentIndex = data.currentIndex || 0;
     answers = data.answers || [];
   }
+  updateResetButton();
 }
 
 /**
@@ -90,8 +91,18 @@ function clearProgress(): void {
 }
 
 // ------------------------------------------------------------
-// Funções de renderização
+// Funções de UI
 // ------------------------------------------------------------
+
+/**
+ * Atualiza visibilidade do botão reset
+ */
+function updateResetButton(): void {
+  const resetBtn = document.querySelector('.reset-btn') as HTMLElement;
+  if (resetBtn) {
+    resetBtn.style.display = answers.length > 0 ? 'block' : 'none';
+  }
+}
 
 /**
  * Atualiza a barra de progresso
@@ -233,6 +244,7 @@ function restartQuiz(): void {
   
   resultEl.style.display = 'none';
   quizContent.style.display = 'block';
+  updateResetButton();
   renderQuestion();
 }
 

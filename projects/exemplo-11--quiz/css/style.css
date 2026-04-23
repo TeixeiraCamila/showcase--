@@ -58,6 +58,7 @@ body {
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
+  display: none;
 }
 
 .reset-btn:hover {

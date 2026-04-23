@@ -47,6 +47,7 @@ function loadProgress() {
         currentIndex = data.currentIndex || 0;
         answers = data.answers || [];
     }
+    updateResetButton();
 }
 /**
  * Salva progresso atual no localStorage
@@ -61,8 +62,17 @@ function clearProgress() {
     localStorage.removeItem('quizProgress');
 }
 // ------------------------------------------------------------
-// Funções de renderização
+// Funções de UI
 // ------------------------------------------------------------
+/**
+ * Atualiza visibilidade do botão reset
+ */
+function updateResetButton() {
+    const resetBtn = document.querySelector('.reset-btn');
+    if (resetBtn) {
+        resetBtn.style.display = answers.length > 0 ? 'block' : 'none';
+    }
+}
 /**
  * Atualiza a barra de progresso
  */
@@ -188,6 +198,7 @@ function restartQuiz() {
     const quizContent = document.getElementById('quizContent');
     resultEl.style.display = 'none';
     quizContent.style.display = 'block';
+    updateResetButton();
     renderQuestion();
 }
 // ------------------------------------------------------------
