@@ -234,3 +234,15 @@ toggleBtn?.addEventListener('click', () => {
   const theme = document.documentElement.getAttribute('data-theme')
   setTheme(theme === 'dark' ? 'light' : 'dark')
 })
+
+// Tooltip preview following cursor
+const previewTooltip = document.querySelector('.project-card__preview')
+if (previewTooltip) {
+  document.addEventListener('mousemove', (e) => {
+    const preview = document.querySelector('.project-card__preview')
+    if (preview && preview.style.display === 'flex') {
+      preview.style.left = (e.clientX + 20) + 'px'
+      preview.style.top = (e.clientY + 20) + 'px'
+    }
+  })
+}
