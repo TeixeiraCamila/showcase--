@@ -8,7 +8,7 @@
   <meta name="description"
     content="Showcase de projetos web: landing pages, miniapps e exercícios em JavaScript vanilla. Exemplos de UI/UX, animações CSS, GSAP e APIs. Aprenda HTML5, CSS3 e JS construindo projetos reais." />
   <meta name="keywords" content="javascript, vanilla js, landing page, web design, HTML5, CSS3, GSAP, frontend, tutorial, examples, projetos web, UI design, animações CSS, javascript exercises" />
-  <meta name="author" content="Camila Teixeira" />
+  <meta name="author" content="Camila Cristina Teixeira" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="theme-color" content="#302e3b" />
   <meta name="generator" content="HTML5, CSS3, JavaScript" />
@@ -52,7 +52,7 @@
       "url": "https://teixeiracamila.github.io/showcase/",
       "creator": {
         "@type": "Person",
-        "name": "Camila Teixeira",
+        "name": "Camila Cristina Teixeira",
         "url": "https://github.com/TeixeiraCamila"
       },
       "about": [
@@ -84,7 +84,7 @@
 <body>
   <div class="cursor"></div>
   <div class="cursor__trail"></div>
-  <div class="project-card__preview"></div>
+  <div class="project-card__preview" aria-hidden="true"></div>
 
   <header class="header" role="banner">
     <div class="container">
@@ -99,14 +99,14 @@
       <section class="projects-grid" id="projectsGrid" aria-label="Projetos">
 
         <!-- Projeto 02 -->
-        <a href="projects/exemplo-02--real-state/index.html" class="project-card">
-          <div class="project-card__preview">02</div>
+        <a href="projects/exemplo-02--real-state/index.html" class="project-card" aria-label="Projeto 02: Real State - Landing page agência imobiliária">
+          <div class="project-card__preview" aria-hidden="true">02</div>
           <div class="project-card__info">
             <h3 class="project-card__title">REAL STATE</h3>
             <p class="project-card__description">
               Uma landing page moderna e responsiva com design clean e animações suaves.
             </p>
-            <div class="project-card__tags">
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
               <span class="project-card__tag">JAVASCRIPT</span>
@@ -115,30 +115,28 @@
         </a>
 
         <!-- Projeto 03 -->
-        <a href="projects/exemplo-03--infinite-slider/index.html" class="project-card">
-          <div class="project-card__preview">03</div>
+        <a href="projects/exemplo-03--infinite-slider/index.html" class="project-card" aria-label="Projeto 03: Infinite Slider - Galeria infinita com GSAP">
+          <div class="project-card__preview" aria-hidden="true">03</div>
           <div class="project-card__info">
             <h3 class="project-card__title">INFINITE SLIDER</h3>
             <p class="project-card__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit harum minus omnis eligendi, facilis
-              pariatur.
+              Galeria infinita de filmes com animação automática e pause no hover.
             </p>
-            <div class="project-card__tags">
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
-              <span class="project-card__tag">JAVASCRIPT</span>
               <span class="project-card__tag">GSAP</span>
             </div>
           </div>
         </a>
 
         <!-- Projeto 04 -->
-        <a href="projects/exemplo-04--notely/index.html" class="project-card">
-          <div class="project-card__preview">04</div>
+        <a href="projects/exemplo-04--notely/index.html" class="project-card" aria-label="Projeto 04: Notely - E-commerce de cadernos">
+          <div class="project-card__preview" aria-hidden="true">04</div>
           <div class="project-card__info">
             <h3 class="project-card__title">NOTELY</h3>
             <p class="project-card__description">Your story, your notebook</p>
-            <div class="project-card__tags">
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">Tailwindcss</span>
               <span class="project-card__tag">GSAP</span>
@@ -147,14 +145,14 @@
         </a>
 
         <!-- Projeto 05 -->
-        <a href="projects/exemplo-05--catpuccino/index.html" class="project-card">
-          <div class="project-card__preview">05</div>
+        <a href="projects/exemplo-05--catpuccino/index.html" class="project-card" aria-label="Projeto 05: Catpuccino - Cafeteria retrô-moderna">
+          <div class="project-card__preview" aria-hidden="true">05</div>
           <div class="project-card__info">
             <h3 class="project-card__title">CATPUCCINO</h3>
             <p class="project-card__description">
-              Café com aconchego para Gen Z Creators. Design retrô-moderno, earthy organic, light & dark mode.
+              Café com aconchego para Gen Z Creators. Design retrô-moderno, light & dark mode.
             </p>
-            <div class="project-card__tags">
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
               <span class="project-card__tag">JAVASCRIPT</span>
@@ -163,12 +161,12 @@
         </a>
 
         <!-- Projeto 06 -->
-        <a href="projects/exemplo-06--grounded/index.html" class="project-card">
-          <div class="project-card__preview">06</div>
+        <a href="projects/exemplo-06--grounded/index.html" class="project-card" aria-label="Projeto 06: Grounded Luxury Travel - Agência de viagens">
+          <div class="project-card__preview" aria-hidden="true">06</div>
           <div class="project-card__info">
             <h3 class="project-card__title">GROUNDED LUXURY TRAVEL</h3>
-            <p class="project-card__description">Your story, your notebook</p>
-            <div class="project-card__tags">
+            <p class="project-card__description">Agência de viagens comdesign premium e experiências exclusivas.</p>
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">Tailwindcss</span>
             </div>
@@ -176,12 +174,12 @@
         </a>
 
         <!-- Projeto 07 -->
-        <a href="projects/exemplo-07/index.html" class="project-card">
-          <div class="project-card__preview">07</div>
+        <a href="projects/exemplo-07/index.html" class="project-card" aria-label="Projeto 07: Card Stacking Animation - Animação de cartas">
+          <div class="project-card__preview" aria-hidden="true">07</div>
           <div class="project-card__info">
             <h3 class="project-card__title">CARD STACKING ANIMATION</h3>
-            <p class="project-card__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <div class="project-card__tags">
+            <p class="project-card__description">Animação interativa de cartas comStack e transições suaves.</p>
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
               <span class="project-card__tag">JAVASCRIPT</span>
@@ -190,27 +188,26 @@
         </a>
 
         <!-- Projeto 08 -->
-        <a href="projects/exemplo-08--poster/index.html" class="project-card">
-          <div class="project-card__preview">08</div>
+        <a href="projects/exemplo-08--poster/index.html" class="project-card" aria-label="Projeto 08: Poster Maker - Gerador de pôsteres">
+          <div class="project-card__preview" aria-hidden="true">08</div>
           <div class="project-card__info">
             <h3 class="project-card__title">POSTER MAKER</h3>
-            <p class="project-card__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <div class="project-card__tags">
+            <p class="project-card__description">Gerador de pôsteres com canvas e download.</p>
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
-              <span class="project-card__tag">JAVASCRIPT</span>
+              <span class="project-card__tag">Canvas</span>
             </div>
           </div>
         </a>
 
         <!-- Projeto 09 -->
-        <a href="projects/exemplo-09--resume/index.html" class="project-card">
-          <div class="project-card__preview">09</div>
+        <a href="projects/exemplo-09--resume/index.html" class="project-card" aria-label="Projeto 09: Resume Template - Currículo profissional">
+          <div class="project-card__preview" aria-hidden="true">09</div>
           <div class="project-card__info">
             <h3 class="project-card__title">RESUME TEMPLATE</h3>
-            <p class="project-card__description">Currículo profissional moderno com design responsivo e animações
-              suaves.</p>
-            <div class="project-card__tags">
+            <p class="project-card__description">Currículo profissional moderno com design responsivo e animações suaves.</p>
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
               <span class="project-card__tag">JAVASCRIPT</span>
@@ -219,12 +216,12 @@
         </a>
 
         <!-- Projeto 10 -->
-        <a href="projects/exemplo-10--signup-bears/index.html" class="project-card">
-          <div class="project-card__preview">10</div>
+        <a href="projects/exemplo-10--signup-bears/index.html" class="project-card" aria-label="Projeto 10: Sign Up Bears - Página de cadastro">
+          <div class="project-card__preview" aria-hidden="true">10</div>
           <div class="project-card__info">
             <h3 class="project-card__title">SIGN UP BEARS</h3>
             <p class="project-card__description">Página de cadastro moderna com login social e design encantador.</p>
-            <div class="project-card__tags">
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
               <span class="project-card__tag">JAVASCRIPT</span>
@@ -233,13 +230,12 @@
         </a>
 
         <!-- Projeto 11 -->
-        <a href="projects/exemplo-11--quiz/index.html" class="project-card">
-          <div class="project-card__preview">11</div>
+        <a href="projects/exemplo-11--quiz/index.html" class="project-card" aria-label="Projeto 11: JavaScript Quiz - Quiz interativo">
+          <div class="project-card__preview" aria-hidden="true">11</div>
           <div class="project-card__info">
             <h3 class="project-card__title">JAVASCRIPT QUIZ</h3>
-            <p class="project-card__description">Quiz interativo comlocalStorage, feedbackvisual e barra de progresso.
-            </p>
-            <div class="project-card__tags">
+            <p class="project-card__description">Quiz interativo com localStorage, feedbackvisual e barra de progresso.</p>
+            <div class="project-card__tags" aria-label="Tecnologias usadas">
               <span class="project-card__tag">HTML5</span>
               <span class="project-card__tag">CSS3</span>
               <span class="project-card__tag">JAVASCRIPT</span>
@@ -252,7 +248,7 @@
   </main>
 
   <footer class="footer" role="contentinfo">
-    <p class="footer__text">DESENVOLVIDO POR <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener">CAMILA TEIXEIRA</a></p>
+    <p class="footer__text">DESENVOLVIDO POR <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener">Camila Cristina Teixeira</a></p>
     <div class="footer__links">
       <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="GitHub">GITHUB</a>
       <span class="footer__separator" aria-hidden="true">|</span>

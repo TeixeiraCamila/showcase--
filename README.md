@@ -66,6 +66,6 @@ Ative GitHub Pages em Settings → Pages → main branch.
 
 ## Autora
 
-[Camila Teixeira](https://github.com/TeixeiraCamila)
+[Camila Cristina Teixeira](https://github.com/TeixeiraCamila)
 
 ![Visitors](https:// visitor-badge-ci0h7g6ox2-ct.a. shiftcdn.dev/TeixeiraCamila/showcase?label=Visitors&style=flat)
