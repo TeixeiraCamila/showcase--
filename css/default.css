@@ -1,0 +1,54 @@
+/* Reset - Common to all styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Common Base Styles */
+body {
+	min-height: 100vh;
+}
+
+/* Container */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Projects Grid */
+.projects-grid {
+	display: grid;
+}
+
+/* Project Card - Common Styles */
+.project-card {
+	overflow: hidden;
+	cursor: pointer;
+}
+
+/* Project Card Tags */
+.project-card__tags,
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Project Card Tag */
+.project-card__tag,
+.tag {
+	text-transform: uppercase;
+}
+
+/* Footer - Common Styles */
+.footer {
+	text-align: center;
+	padding: 3rem 2rem;
+}
+
+/* Media Query - Mobile */
+@media (max-width: 768px) {
+	.projects-grid {
+		grid-template-columns: 1fr;
+	}
+}

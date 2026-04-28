@@ -1,0 +1,115 @@
+/* CSS Custom Properties - Theme Variables */
+
+/* Default (Light Mode) - same as dark for main.css style */
+:root {
+  /* Background Colors */
+  --bg-primary: #302e3b;
+  --bg-secondary: #3d3b4c;
+  --bg-footer: #1e1e2a;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #797993;
+  --text-accent: #b1b0bc;
+  
+  /* Border Colors */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  
+  /* Card Colors */
+  --card-bg: #3d3b4c;
+  --card-preview-start: #4d4a5e;
+  --card-preview-end: #3d3b4c;
+  --card-preview-hover-start: #797993;
+  --card-preview-hover-end: #4d4a5e;
+  --card-alternate-start: #48465b;
+  --card-alternate-end: #302e3b;
+  
+  /* Tag Colors */
+  --tag-bg: transparent;
+  --tag-border: rgba(255, 255, 255, 0.2);
+  --tag-hover-bg: rgba(255, 255, 255, 0.1);
+  
+  /* Cursor Colors */
+  --cursor-color: #ffffff;
+  --cursor-trail-color: #ffffff;
+  
+  /* Shadow */
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  /* Background Colors */
+  --bg-primary: #302e3b;
+  --bg-secondary: #3d3b4c;
+  --bg-footer: #1e1e2a;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #797993;
+  --text-accent: #b1b0bc;
+  
+  /* Border Colors */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  
+  /* Card Colors */
+  --card-bg: #3d3b4c;
+  --card-preview-start: #4d4a5e;
+  --card-preview-end: #3d3b4c;
+  --card-preview-hover-start: #797993;
+  --card-preview-hover-end: #4d4a5e;
+  --card-alternate-start: #48465b;
+  --card-alternate-end: #302e3b;
+  
+  /* Tag Colors */
+  --tag-bg: transparent;
+  --tag-border: rgba(255, 255, 255, 0.2);
+  --tag-hover-bg: rgba(255, 255, 255, 0.1);
+  
+  /* Cursor Colors */
+  --cursor-color: #ffffff;
+  --cursor-trail-color: #ffffff;
+  
+  /* Shadow */
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Light Mode */
+:root[data-theme="light"] {
+  /* Background Colors */
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --bg-footer: #e8e8e8;
+  
+  /* Text Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-accent: #444444;
+  
+  /* Border Colors */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.2);
+  
+  /* Card Colors */
+  --card-bg: #ffffff;
+  --card-preview-start: #e0e0e0;
+  --card-preview-end: #f0f0f0;
+  --card-preview-hover-start: #cccccc;
+  --card-preview-hover-end: #dddddd;
+  --card-alternate-start: #d8d8d8;
+  --card-alternate-end: #f5f5f5;
+  
+  /* Tag Colors */
+  --tag-bg: transparent;
+  --tag-border: rgba(0, 0, 0, 0.2);
+  --tag-hover-bg: rgba(0, 0, 0, 0.05);
+  
+  /* Cursor Colors */
+  --cursor-color: #1a1a1a;
+  --cursor-trail-color: #1a1a1a;
+  
+  /* Shadow */
+  --shadow-color: rgba(0, 0, 0, 0.15);
+}

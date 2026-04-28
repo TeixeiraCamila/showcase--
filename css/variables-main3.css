@@ -1,0 +1,111 @@
+/* CSS Custom Properties - Theme Variables */
+
+/* Default (Light Mode) */
+:root {
+  /* Background Colors */
+  --bg-primary: rgba(235, 232, 232, 0.5);
+  --bg-secondary: #ffffff;
+  --bg-footer: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-info: #ffffff;
+  --bg-preview: #f5f5f5;
+  --bg-preview-end: #f0f0f0;
+  
+  /* Text Colors */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-accent: #cccccc;
+  --text-dark: #000000;
+  
+  /* Border Colors */
+  --border-color: #333333;
+  --border-light: #f0f0f0;
+  --border-gradient-start: transparent;
+  --border-gradient-mid: #dddddd;
+  --border-gradient-end: transparent;
+  
+  /* Tag Colors */
+  --tag-bg: #333333;
+  --tag-hover: #000000;
+  --tag-text: #ffffff;
+  --tag-hover-bg: rgba(255, 255, 255, 0.2);
+  
+  /* Cursor Colors */
+  --cursor-primary: #333333;
+  --cursor-secondary: #666666;
+  --cursor-box-shadow: rgba(33, 35, 41, 0.5);
+  --cursor-hover: #000000;
+  --cursor-hover-secondary: #1a1a1a;
+  --cursor-hover-box-shadow: rgba(0, 0, 0, 0.6);
+  --cursor-border-hover: rgba(255, 255, 255, 0.3);
+  --cursor-trail: rgba(51, 51, 51, 0.3);
+  --cursor-trail-hover: rgba(0, 0, 0, 0.5);
+  
+  /* Shadow Colors */
+  --shadow-sm: rgba(0, 0, 0, 0.05);
+  --shadow-md: rgba(0, 0, 0, 0.08);
+  --shadow-lg: rgba(0, 0, 0, 0.12);
+  --shadow-hover-sm: rgba(0, 0, 0, 0.08);
+  --shadow-hover-md: rgba(0, 0, 0, 0.15);
+  --shadow-hover-lg: rgba(0, 0, 0, 0.20);
+  
+  /* Gradient Colors */
+  --gradient-shine: rgba(255, 255, 255, 0.8);
+  --gradient-shine-subtle: rgba(0, 0, 0, 0.05);
+  --gradient-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  /* Background Colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #252525;
+  --bg-footer: #252525;
+  --bg-card: #2a2a2a;
+  --bg-card-info: #2a2a2a;
+  --bg-preview: #3a3a3a;
+  --bg-preview-end: #303030;
+  
+  /* Text Colors */
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --text-accent: #707070;
+  --text-dark: #ffffff;
+  
+  /* Border Colors */
+  --border-color: #f0f0f0;
+  --border-light: #3a3a3a;
+  --border-gradient-start: transparent;
+  --border-gradient-mid: #4a4a4a;
+  --border-gradient-end: transparent;
+  
+  /* Tag Colors */
+  --tag-bg: #f0f0f0;
+  --tag-hover: #ffffff;
+  --tag-text: #1a1a1a;
+  --tag-hover-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Cursor Colors */
+  --cursor-primary: #f0f0f0;
+  --cursor-secondary: #c0c0c0;
+  --cursor-box-shadow: rgba(240, 240, 240, 0.5);
+  --cursor-hover: #ffffff;
+  --cursor-hover-secondary: #e0e0e0;
+  --cursor-hover-box-shadow: rgba(255, 255, 255, 0.6);
+  --cursor-border-hover: rgba(0, 0, 0, 0.3);
+  --cursor-trail: rgba(240, 240, 240, 0.3);
+  --cursor-trail-hover: rgba(255, 255, 255, 0.5);
+  
+  /* Shadow Colors */
+  --shadow-sm: rgba(0, 0, 0, 0.3);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --shadow-hover-sm: rgba(0, 0, 0, 0.35);
+  --shadow-hover-md: rgba(0, 0, 0, 0.5);
+  --shadow-hover-lg: rgba(0, 0, 0, 0.6);
+  
+  /* Gradient Colors */
+  --gradient-shine: rgba(255, 255, 255, 0.3);
+  --gradient-shine-subtle: rgba(255, 255, 255, 0.1);
+  --gradient-hover: rgba(255, 255, 255, 0.15);
+}

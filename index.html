@@ -1,54 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-		/>
-		<meta
-			name="description"
-			content="Showcase de Landing Pages modernas desenvolvidas com HTML5, CSS3 e JavaScript. Exemplos de projetos premium com design responsivo e animações suaves."
-		/>
-		<meta
-			name="keywords"
-			content="landing pages, web design, HTML5, CSS3, JavaScript, showcase, responsive design"
-		/>
-		<meta name="author" content="Camila Teixeira" />
-		<meta
-			name="robots"
-			content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-		/>
-		<meta name="theme-color" content="#302e3b" />
 
-		<!-- Canonical URL -->
-		<link rel="canonical" href="https://showcase-landing-pages.com/" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description"
+    content="Showcase de Landing Pages modernas desenvolvidas com HTML5, CSS3 e JavaScript. Exemplos de projetos premium com design responsivo e animações suaves." />
+  <meta name="keywords" content="landing pages, web design, HTML5, CSS3, JavaScript, showcase, responsive design" />
+  <meta name="author" content="Camila Teixeira" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#302e3b" />
 
-		<!-- Open Graph / Social Media -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://showcase-landing-pages.com/" />
-		<meta property="og:title" content="Showcase - Landing Pages Modernas" />
-		<meta
-			property="og:description"
-			content="Galeria de landing pages premium com exemplos de projetos reais desenvolvidos com HTML5, CSS3 e JavaScript."
-		/>
-		<meta property="og:locale" content="pt_BR" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://showcase-landing-pages.com/" />
 
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Showcase - Landing Pages Modernas" />
-		<meta
-			name="twitter:description"
-			content="Galeria de landing pages premium com exemplos de projetos reais."
-		/>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://showcase-landing-pages.com/" />
+  <meta property="og:title" content="Showcase - Landing Pages Modernas" />
+  <meta property="og:description"
+    content="Galeria de landing pages premium com exemplos de projetos reais desenvolvidos com HTML5, CSS3 e JavaScript." />
+  <meta property="og:locale" content="pt_BR" />
 
-		<!-- Performance & Prefetch -->
-		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Showcase - Landing Pages Modernas" />
+  <meta name="twitter:description" content="Galeria de landing pages premium com exemplos de projetos reais." />
 
-		<!-- JSON-LD Structured Data -->
-		<script type="application/ld+json">
+  <!-- Performance & Prefetch -->
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "WebSite",
@@ -63,181 +48,210 @@
 			}
 		</script>
 
-		<title>Showcase - Landing Pages Modernas | HTML5 • CSS3 • JavaScript</title>
-		<link rel="stylesheet" href="./css/main3.css" />
-	</head>
-	<body>
-		<div class="cursor"></div>
-		<div class="cursor__trail"></div>
 
-		<header class="header" role="banner">
-			<h1 class="header__title">SHOWCASE</h1>
-			<p class="header__subtitle">LANDING PAGES // HTML + CSS + JS + Tailwindcss + GSAP</p>
-		</header>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
 
-		<main class="main" role="main">
-			<div class="container">
-				<div class="projects-grid" id="projectsGrid">
-					
-					<!-- Projeto 02 -->
-					<a href="projects/exemplo-02--real-state/index.html" class="project-card">
-						<div class="project-card__preview">02</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">REAL STATE</h3>
-							<p class="project-card__description">
-								Uma landing page moderna e responsiva com design clean e animações suaves.
-							</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-							</div>
-						</div>
-					</a>
+      if (!savedTheme) {
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-					<!-- Projeto 03 -->
-					<a href="projects/exemplo-03--infinite-slider/index.html" class="project-card">
-						<div class="project-card__preview">03</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">INFINITE SLIDER</h3>
-							<p class="project-card__description">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit harum minus omnis eligendi, facilis pariatur.
-							</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-								<span class="project-card__tag">GSAP</span>
-							</div>
-						</div>
-					</a>
+        document.documentElement.setAttribute(
+          "data-theme",
+          prefersDark ? "dark" : "light"
+        );
+      } else {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <title>Showcase - Landing Pages Modernas | HTML5 • CSS3 • JavaScript</title>
+  <link rel="stylesheet" href="./css/default.css" />
+  <link rel="stylesheet" href="./css/main3.css" />
+</head>
 
-					<!-- Projeto 04 -->
-					<a href="projects/exemplo-04--notely/index.html" class="project-card">
-						<div class="project-card__preview">04</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">NOTELY</h3>
-							<p class="project-card__description">Your story, your notebook</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">Tailwindcss</span>
-								<span class="project-card__tag">GSAP</span>
-							</div>
-						</div>
-					</a>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor__trail"></div>
 
-					<!-- Projeto 05 -->
-					<a href="projects/exemplo-05--catpuccino/index.html" class="project-card">
-						<div class="project-card__preview">05</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">CATPUCCINO</h3>
-							<p class="project-card__description">
-								Café com aconchego para Gen Z Creators. Design retrô-moderno, earthy organic, light & dark mode.
-							</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-							</div>
-						</div>
-					</a>
+  <header class="header" role="banner">
+    <div class="container">
+      <h1 class="header__title">SHOWCASE</h1>
+      <p class="header__subtitle">LANDING PAGES // HTML + CSS + JS + Tailwindcss + GSAP</p>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </header>
 
-					<!-- Projeto 06 -->
-					<a href="projects/exemplo-06--grounded/index.html" class="project-card">
-						<div class="project-card__preview">06</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">GROUNDED LUXURY TRAVEL</h3>
-							<p class="project-card__description">Your story, your notebook</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">Tailwindcss</span>
-							</div>
-						</div>
-					</a>
+  <main class="main" role="main">
+    <div class="container">
+      <div class="projects-grid" id="projectsGrid">
 
-					<!-- Projeto 07 -->
-					<a href="projects/exemplo-07/index.html" class="project-card">
-						<div class="project-card__preview">07</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">CARD STACKING ANIMATION</h3>
-							<p class="project-card__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-							</div>
-						</div>
-					</a>
+        <!-- Projeto 02 -->
+        <a href="projects/exemplo-02--real-state/index.html" class="project-card">
+          <div class="project-card__preview">02</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">REAL STATE</h3>
+            <p class="project-card__description">
+              Uma landing page moderna e responsiva com design clean e animações suaves.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+            </div>
+          </div>
+        </a>
 
-					<!-- Projeto 08 -->
-					<a href="projects/exemplo-08--poster/index.html" class="project-card">
-						<div class="project-card__preview">08</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">POSTER MAKER</h3>
-							<p class="project-card__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-							</div>
-						</div>
-					</a>
+        <!-- Projeto 03 -->
+        <a href="projects/exemplo-03--infinite-slider/index.html" class="project-card">
+          <div class="project-card__preview">03</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">INFINITE SLIDER</h3>
+            <p class="project-card__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit harum minus omnis eligendi, facilis
+              pariatur.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+              <span class="project-card__tag">GSAP</span>
+            </div>
+          </div>
+        </a>
 
-					<!-- Projeto 09 -->
-					<a href="projects/exemplo-09--resume/index.html" class="project-card">
-						<div class="project-card__preview">09</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">RESUME TEMPLATE</h3>
-							<p class="project-card__description">Currículo profissional moderno com design responsivo e animações suaves.</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-							</div>
-						</div>
-					</a>
+        <!-- Projeto 04 -->
+        <a href="projects/exemplo-04--notely/index.html" class="project-card">
+          <div class="project-card__preview">04</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">NOTELY</h3>
+            <p class="project-card__description">Your story, your notebook</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">Tailwindcss</span>
+              <span class="project-card__tag">GSAP</span>
+            </div>
+          </div>
+        </a>
 
-					<!-- Projeto 10 -->
-					<a href="projects/exemplo-10--signup-bears/index.html" class="project-card">
-						<div class="project-card__preview">10</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">SIGN UP BEARS</h3>
-							<p class="project-card__description">Página de cadastro moderna com login social e design encantador.</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-							</div>
-						</div>
-					</a>
+        <!-- Projeto 05 -->
+        <a href="projects/exemplo-05--catpuccino/index.html" class="project-card">
+          <div class="project-card__preview">05</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">CATPUCCINO</h3>
+            <p class="project-card__description">
+              Café com aconchego para Gen Z Creators. Design retrô-moderno, earthy organic, light & dark mode.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+            </div>
+          </div>
+        </a>
 
-					<!-- Projeto 11 -->
-					<a href="projects/exemplo-11--quiz/index.html" class="project-card">
-						<div class="project-card__preview">11</div>
-						<div class="project-card__info">
-							<h3 class="project-card__title">JAVASCRIPT QUIZ</h3>
-							<p class="project-card__description">Quiz interativo comlocalStorage, feedbackvisual e barra de progresso.</p>
-							<div class="project-card__tags">
-								<span class="project-card__tag">HTML5</span>
-								<span class="project-card__tag">CSS3</span>
-								<span class="project-card__tag">JAVASCRIPT</span>
-							</div>
-						</div>
-					</a>
+        <!-- Projeto 06 -->
+        <a href="projects/exemplo-06--grounded/index.html" class="project-card">
+          <div class="project-card__preview">06</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">GROUNDED LUXURY TRAVEL</h3>
+            <p class="project-card__description">Your story, your notebook</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">Tailwindcss</span>
+            </div>
+          </div>
+        </a>
 
-				</div>
-			</div>
-		</main>
+        <!-- Projeto 07 -->
+        <a href="projects/exemplo-07/index.html" class="project-card">
+          <div class="project-card__preview">07</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">CARD STACKING ANIMATION</h3>
+            <p class="project-card__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+            </div>
+          </div>
+        </a>
 
-		<footer class="footer" role="contentinfo">
-			<p class="footer__text">DESENVOLVIDO POR CAMILA</p>
-			<div class="footer__links">
-				<a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener noreferrer" class="footer__link">GITHUB</a>
-				<span class="footer__separator">|</span>
-				<a href="https://www.linkedin.com/in/teixeira-camila-cristina/" target="_blank" rel="noopener noreferrer" class="footer__link">LINKEDIN</a>
-			</div>
-		</footer>
+        <!-- Projeto 08 -->
+        <a href="projects/exemplo-08--poster/index.html" class="project-card">
+          <div class="project-card__preview">08</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">POSTER MAKER</h3>
+            <p class="project-card__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+            </div>
+          </div>
+        </a>
 
-		<script src="./js/main.js" defer></script>
-	</body>
+        <!-- Projeto 09 -->
+        <a href="projects/exemplo-09--resume/index.html" class="project-card">
+          <div class="project-card__preview">09</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">RESUME TEMPLATE</h3>
+            <p class="project-card__description">Currículo profissional moderno com design responsivo e animações
+              suaves.</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Projeto 10 -->
+        <a href="projects/exemplo-10--signup-bears/index.html" class="project-card">
+          <div class="project-card__preview">10</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">SIGN UP BEARS</h3>
+            <p class="project-card__description">Página de cadastro moderna com login social e design encantador.</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Projeto 11 -->
+        <a href="projects/exemplo-11--quiz/index.html" class="project-card">
+          <div class="project-card__preview">11</div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">JAVASCRIPT QUIZ</h3>
+            <p class="project-card__description">Quiz interativo comlocalStorage, feedbackvisual e barra de progresso.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">HTML5</span>
+              <span class="project-card__tag">CSS3</span>
+              <span class="project-card__tag">JAVASCRIPT</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer__text">DESENVOLVIDO POR CAMILA</p>
+    <div class="footer__links">
+      <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener noreferrer"
+        class="footer__link">GITHUB</a>
+      <span class="footer__separator">|</span>
+      <a href="https://www.linkedin.com/in/teixeira-camila-cristina/" target="_blank" rel="noopener noreferrer"
+        class="footer__link">LINKEDIN</a>
+    </div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+</body>
+
 </html>

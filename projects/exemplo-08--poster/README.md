@@ -1,30 +1,79 @@
-# Gerador de Pôsteres
+# Poster Maker - Documentação
 
-Crie pôsteres minimalistas para Notion.
+## Visão Geral
 
-## Como usar
+Projeto simples para criar posters verticais com imagem e informações personalizadas.
 
-1. Abra `index.html` no navegador
-2. Preencha os campos do formulário
-3. Selecione uma imagem
-4. Clique em "Gerar"
-5. Baixe o PNG
+## Como Usar
 
-## Funcionalidades
+1. Abra o arquivo `index.html` no navegador
+2. Preencha os campos:
+   - **Imagem**: Selecione uma imagem (jpg, png, etc)
+   - **Título**: Título principal do poster
+   - **Ano**: Ano de lançamento
+   - **Nomes**: Nomes separados por vírgula
+   - **Gênero**: Gênero do filme/evento
+   - **Dirigido por**: Nome do diretor
+3. Clique em **Preview** para atualizar
+4. Clique em **Download** para salvar o poster como imagem PNG
 
-- Preview em tempo real
-- Persistência com localStorage
-- Exportação em PNG (500×350px)
-- Layout responsivo
-- Estilo preto e branco
+## html2canvas
 
-## Estrutura
+Biblioteca JavaScript que captura elementos DOM e converte em imagem.
 
+### CDN
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 ```
-projeto/
-├── index.html
-├── css/
-│   └── style.css
-└── js/
-    └── script.js
+
+### Uso Básico
+
+```javascript
+html2canvas(elemento).then(canvas => {
+    // canvas é o elemento <canvas> gerado
+    const imagem = canvas.toDataURL('image/png');
+});
 ```
+
+### Download da Imagem
+
+```javascript
+html2canvas(elemento).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'poster.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+});
+```
+
+### Opções Comuns
+
+| Opção | Descrição | Padrão |
+|-------|-----------|--------|
+| `backgroundColor` | Cor de fundo | #ffffff |
+| `scale` | Escala da imagem (1-3) | 1 |
+| `width` | Largura específica | automático |
+| `height` | Altura específica | automático |
+| `useCORS` | Permite imagens cross-origin | false |
+
+### Exemplo com Opções
+
+```javascript
+html2canvas(elemento, {
+    backgroundColor: '#000000',
+    scale: 2,
+    useCORS: true
+}).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'poster.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+});
+```
+
+## Tecnologias
+
+- HTML5
+- Tailwind CSS (CDN)
+- JavaScript Vanilla
+- html2canvas (CDN)
