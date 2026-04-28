@@ -63,14 +63,20 @@ header p { font-size: 0.9rem; color: var(--text-primary); }
 	color: var(--text-primary);
 	font-size: 3rem;
 	font-weight: bold;
-	position: absolute;
+	position: fixed;
 	z-index: 1000;
 	border: 2px solid var(--border-solid);
 	box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 	pointer-events: none;
 }
 
-.project-info h3 {
+.project-card:hover .project-card__preview {
+	display: flex;
+}
+
+.project-card__preview.is-visible {
+	display: flex;
+}
 	font-size: 1rem;
 	color: inherit;
 	font-weight: 700;

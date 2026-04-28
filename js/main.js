@@ -236,13 +236,15 @@ toggleBtn?.addEventListener('click', () => {
 })
 
 // Tooltip preview following cursor
-const previewTooltip = document.querySelector('.project-card__preview')
-if (previewTooltip) {
-  document.addEventListener('mousemove', (e) => {
-    const preview = document.querySelector('.project-card__preview')
-    if (preview && preview.style.display === 'flex') {
-      preview.style.left = (e.clientX + 20) + 'px'
-      preview.style.top = (e.clientY + 20) + 'px'
-    }
-  })
-}
+document.addEventListener('mousemove', (e) => {
+  const card = e.target.closest('.project-card')
+  const preview = document.querySelector('.project-card__preview')
+  if (card && preview) {
+    preview.textContent = card.querySelector('.project-card__preview')?.textContent || ''
+    preview.style.left = (e.clientX + 15) + 'px'
+    preview.style.top = (e.clientY + 15) + 'px'
+    preview.classList.add('is-visible')
+  } else {
+    preview?.classList.remove('is-visible')
+  }
+})
