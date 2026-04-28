@@ -73,6 +73,8 @@ header p { font-size: 0.9rem; color: var(--text-primary); }
 .project-card__preview.is-visible {
 	display: flex;
 }
+
+.project-info h3 {
 	font-size: 1rem;
 	color: inherit;
 	font-weight: 700;
