@@ -6,67 +6,77 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description"
-    content="Showcase de Landing Pages modernas desenvolvidas com HTML5, CSS3 e JavaScript. Exemplos de projetos premium com design responsivo e animações suaves." />
-  <meta name="keywords" content="landing pages, web design, HTML5, CSS3, JavaScript, showcase, responsive design" />
+    content="Showcase de projetos web: landing pages, miniapps e exercícios em JavaScript vanilla. Exemplos de UI/UX, animações CSS, GSAP e APIs. Aprenda HTML5, CSS3 e JS construindo projetos reais." />
+  <meta name="keywords" content="javascript, vanilla js, landing page, web design, HTML5, CSS3, GSAP, frontend, tutorial, examples, projetos web, UI design, animações CSS, javascript exercises" />
   <meta name="author" content="Camila Teixeira" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="theme-color" content="#302e3b" />
-
+  <meta name="generator" content="HTML5, CSS3, JavaScript" />
+  
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://showcase-landing-pages.com/" />
+  <link rel="canonical" href="https://teixeiracamila.github.io/showcase/" />
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://showcase-landing-pages.com/" />
-  <meta property="og:title" content="Showcase - Landing Pages Modernas" />
+  <meta property="og:url" content="https://teixeiracamila.github.io/showcase/" />
+  <meta property="og:title" content="Showcase - Projetos Web em JavaScript" />
   <meta property="og:description"
-    content="Galeria de landing pages premium com exemplos de projetos reais desenvolvidos com HTML5, CSS3 e JavaScript." />
+    content="Galeria de projetos web: landing pages e miniapps em JavaScript vanilla. Exemplos reais para estudo e inspiração em HTML5, CSS3 e GSAP." />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Showcase - Projetos Web" />
+  <meta property="article:author" content="https://github.com/TeixeiraCamila" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Showcase - Landing Pages Modernas" />
-  <meta name="twitter:description" content="Galeria de landing pages premium com exemplos de projetos reais." />
+  <meta name="twitter:title" content="Showcase - Projetos Web em JavaScript" />
+  <meta name="twitter:description" content="Galeria de projetos web em JavaScript vanilla. Landing pages e miniapps para estudo." />
+  <meta name="twitter:creator" content="@TeixeiraCamila" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="apple-touch-icon" href="./favicon.svg" />
 
   <!-- Performance & Prefetch -->
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" href="./css/main.css" as="style" />
+  <link rel="preload" href="./js/main.js" as="script" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "Showcase Landing Pages",
-				"description": "Galeria de landing pages modernas desenvolvidas com HTML, CSS e JavaScript",
-				"url": "https://showcase-landing-pages.com/",
-				"creator": {
-					"@type": "Person",
-					"name": "Camila Teixeira",
-					"url": "https://github.com/TeixeiraCamila"
-				}
-			}
-		</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Showcase - Projetos Web",
+      "description": "Galeria de projetos web: landing pages e miniapps em JavaScript vanilla. Projetos reais para estudo.",
+      "url": "https://teixeiracamila.github.io/showcase/",
+      "creator": {
+        "@type": "Person",
+        "name": "Camila Teixeira",
+        "url": "https://github.com/TeixeiraCamila"
+      },
+      "about": [
+        {"@type": "Thing", "name": "JavaScript"},
+        {"@type": "Thing", "name": "HTML5"},
+        {"@type": "Thing", "name": "CSS3"},
+        {"@type": "Thing", "name": "GSAP"}
+      ]
+    }
+  </script>
 
-
+  <!-- Theme Detection -->
   <script>
     (function () {
       const savedTheme = localStorage.getItem("theme");
-
       if (!savedTheme) {
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-        document.documentElement.setAttribute(
-          "data-theme",
-          prefersDark ? "dark" : "light"
-        );
+        document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
       } else {
         document.documentElement.setAttribute("data-theme", savedTheme);
       }
     })();
   </script>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <title>Showcase - Landing Pages Modernas | HTML5 • CSS3 • JavaScript</title>
+  <title>Showcase - Projetos Web em JavaScript | HTML5 • CSS3 • GSAP</title>
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/default.css" />
 </head>
@@ -79,14 +89,14 @@
   <header class="header" role="banner">
     <div class="container">
       <h1 class="header__title">SHOWCASE</h1>
-      <p class="header__subtitle">LANDING PAGES // HTML + CSS + JS + Tailwindcss + GSAP</p>
-      <button id="theme-toggle">🌙</button>
+      <p class="header__subtitle">PROJETOS WEB // JS + HTML + CSS + GSAP</p>
+      <button id="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
     </div>
   </header>
 
-  <main class="main" role="main">
+  <main class="main" role="main" aria-label="Lista de projetos">
     <div class="container">
-      <div class="projects-grid" id="projectsGrid">
+      <section class="projects-grid" id="projectsGrid" aria-label="Projetos">
 
         <!-- Projeto 02 -->
         <a href="projects/exemplo-02--real-state/index.html" class="project-card">
@@ -242,13 +252,11 @@
   </main>
 
   <footer class="footer" role="contentinfo">
-    <p class="footer__text">DESENVOLVIDO POR CAMILA</p>
+    <p class="footer__text">DESENVOLVIDO POR <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener">CAMILA TEIXEIRA</a></p>
     <div class="footer__links">
-      <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener noreferrer"
-        class="footer__link">GITHUB</a>
-      <span class="footer__separator">|</span>
-      <a href="https://www.linkedin.com/in/teixeira-camila-cristina/" target="_blank" rel="noopener noreferrer"
-        class="footer__link">LINKEDIN</a>
+      <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="GitHub">GITHUB</a>
+      <span class="footer__separator" aria-hidden="true">|</span>
+      <a href="https://www.linkedin.com/in/teixeira-camila-cristina/" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="LinkedIn">LINKEDIN</a>
     </div>
   </footer>
 
