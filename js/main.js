@@ -234,17 +234,3 @@ toggleBtn?.addEventListener('click', () => {
   const theme = document.documentElement.getAttribute('data-theme')
   setTheme(theme === 'dark' ? 'light' : 'dark')
 })
-
-// Tooltip preview following cursor
-document.addEventListener('mousemove', (e) => {
-  const card = e.target.closest('.project-card')
-  const preview = document.querySelector('.project-card__preview')
-  if (card && preview) {
-    preview.textContent = card.querySelector('.project-card__preview')?.textContent || ''
-    preview.style.left = (e.clientX + 15) + 'px'
-    preview.style.top = (e.clientY + 15) + 'px'
-    preview.classList.add('is-visible')
-  } else {
-    preview?.classList.remove('is-visible')
-  }
-})

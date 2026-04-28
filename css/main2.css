@@ -36,7 +36,7 @@ header p { font-size: 0.9rem; color: var(--text-primary); }
 .projects-grid {
 	display: flex;
 	flex-direction: column;
-	gap: 0.3rem;
+	gap: 3rem;
 }
 
 .project-card {
@@ -68,10 +68,6 @@ header p { font-size: 0.9rem; color: var(--text-primary); }
 	border: 2px solid var(--border-solid);
 	box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 	pointer-events: none;
-}
-
-.project-card:hover .project-card__preview {
-	display: flex;
 }
 
 .project-card__preview.is-visible {
