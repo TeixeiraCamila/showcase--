@@ -1,0 +1,189 @@
+/* ===================================
+   Base Styles
+   =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --color-bg: #d9d9d9;
+  --color-text: #000000;
+  --color-text-secondary: #4b5563;
+  --color-border: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===================================
+   App
+   =================================== */
+.app__title {
+  text-align: center;
+}
+
+.app__container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===================================
+   Form
+   =================================== */
+.form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.form__group {
+  margin-bottom: 1rem;
+}
+
+.form__label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.form__input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.form__buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form__button {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.form__button--primary {
+  background: black;
+  color: white;
+  border: none;
+}
+
+.form__button--primary:hover {
+  background: #1f2937;
+}
+
+.form__button--secondary {
+  border: 2px solid black;
+  color: black;
+  background: transparent;
+}
+
+.form__button--secondary:hover {
+  background: black;
+  color: white;
+}
+
+/* ===================================
+   Poster
+   =================================== */
+#poster-preview {
+  aspect-ratio: 2/3;
+}
+
+.poster {
+  width: 400px;
+  background: var(--color-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.poster__preview {
+  padding: 1rem;
+}
+
+.poster__image {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster__image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.poster__info {
+  padding: 1rem;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.poster__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.poster__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.poster__year {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.poster__genre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.poster__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.poster__section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.poster__section-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+}

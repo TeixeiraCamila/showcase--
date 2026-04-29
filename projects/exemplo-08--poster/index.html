@@ -1,194 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poster Maker</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create custom posters for movies and events for free">
+  <meta name="keywords" content="poster maker, create poster, graphic design, movies">
+  <meta name="author" content="Poster Maker">
+  <meta name="robots" content="index, follow">
 
-        .poster-title {
-            font-family: 'Bebas Neue', sans-serif;
-        }
+  <meta property="og:title" content="Poster Maker">
+  <meta property="og:description" content="Create custom posters for movies and events for free">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.png">
 
-        .poster-content {
-            font-family: 'Inter', sans-serif;
-        }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Poster Maker">
+  <meta name="twitter:description" content="Create custom posters for movies and events for free">
 
-        #poster-preview {
-            aspect-ratio: 2/3;
-        }
-
-        #poster-image {
-            height: 100%;
-            min-height: 500px;
-        }
-    </style>
+  <title>Poster Maker</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23D9D9D9' width='100' height='70' rx='4'/><text y='55' x='50' font-size='40' text-anchor='middle' fill='black'>P</text></svg>" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
+
 <body class="bg-gray-100 min-h-screen p-8">
-    <div class="max-w-6xl mx-auto">
-        <h1 class="text-3xl font-bold text-black mb-8 text-center">Poster Maker</h1>
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold text-black mb-8 text-center app__title">Poster Maker</h1>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-xl font-semibold mb-4">Dados do Poster</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 app__container">
+      <div class="bg-white p-6 rounded-lg shadow-md form">
+        <h2 class="text-xl font-semibold mb-4 form__title">Poster Data</h2>
 
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Imagem</label>
-                        <input type="file" id="input-image" accept="image/*"
-                            class="w-full border border-gray-300 rounded p-2 text-sm">
-                    </div>
+        <div class="space-y-4">
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">Image</label>
+            <input type="file" id="input-image" accept="image/*" class="form__input">
+          </div>
 
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Título</label>
-                        <input type="text" id="input-title" placeholder="Título do filme/evento"
-                            class="w-full border border-gray-300 rounded p-2">
-                    </div>
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">Title</label>
+            <input type="text" id="input-title" placeholder="Movie/Event Title" class="form__input">
+          </div>
 
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Ano</label>
-                        <input type="text" id="input-year" placeholder="2024"
-                            class="w-full border border-gray-300 rounded p-2">
-                    </div>
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">Year</label>
+            <input type="text" id="input-year" placeholder="2024" class="form__input">
+          </div>
 
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Nomes (separe por vírgula)</label>
-                        <input type="text" id="input-names" placeholder="Nome 1, Nome 2, Nome 3"
-                            class="w-full border border-gray-300 rounded p-2">
-                    </div>
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">Names (comma separated)</label>
+            <input type="text" id="input-names" placeholder="Name 1, Name 2, Name 3" class="form__input">
+          </div>
 
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Gênero</label>
-                        <input type="text" id="input-genre" placeholder="Ação, Drama, Comédia"
-                            class="w-full border border-gray-300 rounded p-2">
-                    </div>
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">Genre</label>
+            <input type="text" id="input-genre" placeholder="Action, Drama, Comedy" class="form__input">
+          </div>
 
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Dirigido por</label>
-                        <input type="text" id="input-director" placeholder="Nome do diretor"
-                            class="w-full border border-gray-300 rounded p-2">
-                    </div>
-                </div>
-
-                <div class="flex gap-4 mt-6">
-                    <button id="btn-preview" class="flex-1 bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition">
-                        Preview
-                    </button>
-                    <button id="btn-download" class="flex-1 border-2 border-black text-black py-2 px-4 rounded hover:bg-black hover:text-white transition">
-                        Download
-                    </button>
-                </div>
-            </div>
-
-            <div class="flex justify-center items-start">
-                <div id="poster-container" class="bg-white shadow-lg overflow-hidden" style="width: 400px;">
-                    <div id="poster-preview" class="flex flex-col">
-                        <div id="poster-image" class="w-full flex items-center justify-center bg-gray-900 overflow-hidden">
-                            <img src="" class="w-full object-contain">
-                        </div>
-
-                        <div class="p-8 bg-white flex flex-col gap-3">
-                            <div class="flex items-baseline gap-4">
-                                <h2 id="poster-title" class="poster-title text-5xl text-black uppercase leading-tight">
-                                    Título
-                                </h2>
-                                <span id="poster-year" class="poster-content text-lg text-gray-600">Ano</span>
-                            </div>
-
-                            <p id="poster-genre" class="poster-content text-sm text-gray-600">Gênero</p>
-
-                            <div class="poster-content">
-                                <p class="text-xs text-gray-500 uppercase mb-1">Elenco</p>
-                                <p id="poster-names" class="text-sm font-semibold">Nomes</p>
-                            </div>
-
-                            <div class="poster-content">
-                                <p class="text-xs text-gray-500 uppercase mb-1">Dirigido por</p>
-                                <p id="poster-director" class="text-sm font-semibold">Diretor</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">Directed by</label>
+            <input type="text" id="input-director" placeholder="Director name" class="form__input">
+          </div>
         </div>
+
+        <div class="flex gap-4 mt-6 form__buttons">
+          <button id="btn-preview" class="form__button form__button--primary">Preview</button>
+          <button id="btn-download" class="form__button form__button--secondary">Download</button>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-start">
+        <div id="poster-container" class="poster">
+          <div id="poster-preview" class="poster__preview">
+            <div id="poster-image" class="poster__image">
+              <img src="" alt="Poster">
+            </div>
+
+            <div class="poster__info">
+              <div class="flex items-baseline gap-4 poster__header">
+                <h2 id="poster-title" class="poster__title">Title</h2>
+                <span id="poster-year" class="poster__year">Year</span>
+              </div>
+
+              <p id="poster-genre" class="poster__genre">Genre</p>
+
+              <div class="poster__section">
+                <p class="poster__section-label">Cast</p>
+                <p id="poster-names" class="poster__section-value">Names</p>
+              </div>
+
+              <div class="poster__section">
+                <p class="poster__section-label">Directed by</p>
+                <p id="poster-director" class="poster__section-value">Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script>
-        const inputImage = document.getElementById('input-image');
-        const inputTitle = document.getElementById('input-title');
-        const inputYear = document.getElementById('input-year');
-        const inputNames = document.getElementById('input-names');
-        const inputGenre = document.getElementById('input-genre');
-        const inputDirector = document.getElementById('input-director');
-
-        const posterImage = document.getElementById('poster-image');
-        const posterTitle = document.getElementById('poster-title');
-        const posterYear = document.getElementById('poster-year');
-        const posterNames = document.getElementById('poster-names');
-        const posterGenre = document.getElementById('poster-genre');
-        const posterDirector = document.getElementById('poster-director');
-
-        const btnPreview = document.getElementById('btn-preview');
-        const btnDownload = document.getElementById('btn-download');
-
-        let currentImage = null;
-
-        inputImage.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    currentImage = e.target.result;
-                    const img = posterImage.querySelector('img');
-                    if (img) {
-                        img.src = currentImage;
-                        img.className = 'w-full object-contain';
-                    } else {
-                        posterImage.innerHTML = `<img src="${currentImage}" class="w-full object-contain">`;
-                    }
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        function updatePoster() {
-            posterTitle.textContent = inputTitle.value || 'Título';
-            posterYear.textContent = inputYear.value || 'Ano';
-            posterNames.textContent = inputNames.value || 'Nomes';
-            posterGenre.textContent = inputGenre.value || 'Gênero';
-            posterDirector.textContent = inputDirector.value || 'Dirigido por';
-        }
-
-        inputTitle.addEventListener('input', updatePoster);
-        inputYear.addEventListener('input', updatePoster);
-        inputNames.addEventListener('input', updatePoster);
-        inputGenre.addEventListener('input', updatePoster);
-        inputDirector.addEventListener('input', updatePoster);
-
-        btnPreview.addEventListener('click', function() {
-            updatePoster();
-            alert('Preview atualizado!');
-        });
-
-        btnDownload.addEventListener('click', function() {
-            const posterElement = document.getElementById('poster-preview');
-
-            html2canvas(posterElement, {
-                backgroundColor: '#000000',
-                scale: 2
-            }).then(canvas => {
-                const link = document.createElement('a');
-                link.download = 'poster.png';
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-            }).catch(err => {
-                console.error('Erro ao gerar poster:', err);
-                alert('Erro ao gerar o poster. Tente novamente.');
-            });
-        });
-    </script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
