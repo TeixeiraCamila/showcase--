@@ -1,10 +1,10 @@
 /* Variables */
 @import './default.css';
-@import './variables-main3.css';
-
+@import './variables-main.css';
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 /* Body */
 body {
-	font-family: 'Courier New', monospace;
+	font-family: "Mukta", sans-serif;
 	background: var(--bg-primary);
 	min-height: 100vh;
 	overflow-x: hidden;

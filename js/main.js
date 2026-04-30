@@ -210,7 +210,7 @@ interactiveElements.forEach((el) => {
   })
 })
 
-const toggleBtn = document.getElementById('theme-toggle')
+const toggleBtn = document.querySelector('.theme-toggle')
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme)
@@ -220,7 +220,12 @@ function setTheme(theme) {
 
 function updateButton(theme) {
   if (!toggleBtn) return
-  toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙'
+  const bulb = document.getElementById('bulb')
+  if (bulb) {
+    bulb.style.transition = 'fill 0.3s ease, stroke 0.3s ease'
+    bulb.style.fill = theme === 'dark' ? '#666666' : '#FFD54D'
+    bulb.style.stroke = theme === 'dark' ? '#666666' : '#FFD54D'
+  }
 }
 
 // estado inicial (IMPORTANTE)
@@ -228,6 +233,19 @@ const currentTheme =
   document.documentElement.getAttribute('data-theme') || 'light'
 
 updateButton(currentTheme)
+
+// Define o estado inicial das cores do SVG com base no tema
+const initBulbColors = () => {
+  const theme = document.documentElement.getAttribute('data-theme') || 'light'
+  const bulb = document.getElementById('bulb')
+  if (bulb) {
+    bulb.style.fill = theme === 'dark' ? '#666666' : '#FFD54D'
+    bulb.style.stroke = theme === 'dark' ? '#666666' : '#FFD54D'
+  }
+}
+
+// executa após DOM estar pronto
+initBulbColors()
 
 // evento do botão
 toggleBtn?.addEventListener('click', () => {

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3 CDN - Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+  <section class="hero--bg">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <header class="header">
+      <nav class="nav container">
+        <h1>Meu Site</h1>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <span class="nav__link">Início</span>
+            <span class="nav__link nav__link--active">Início</span>
+          </li>
+          <li class="nav__item">
+            <span class="nav__link">Sobre</span>
+            <span class="nav__link nav__link--active">Sobre</span>
+          </li>
+          <li class="nav__item">
+            <span class="nav__link">Contato</span>
+            <span class="nav__link nav__link--active">Contato</span>
+          </li>
+        </ul>
+
+        <label for="menu-toggle" class="nav-mobile">
+          <span class="nav-mobile__line"></span>
+          <span class="nav-mobile__line"></span>
+          <span class="nav-mobile__line"></span>
+        </label>
+
+        <div class="nav-lateral">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <span class="nav__link">Início</span>
+              <span class="nav__link nav__link--active">Início</span>
+            </li>
+            <li class="nav__item">
+              <span class="nav__link">Sobre</span>
+              <span class="nav__link nav__link--active">Sobre</span>
+            </li>
+            <li class="nav__item">
+              <span class="nav__link">Contato</span>
+              <span class="nav__link nav__link--active">Contato</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="hero container hero-content">
+      <div class="hero-content--item">
+        <h2 class="hero__title">Lorem ipsum dolor sit</h2>
+        <div class="hero__content">
+          <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam soluta,</p>
+          <p class="hero__p">
+            <span class="hero__phrase hero__phrase--1">voluptate</span>
+            <span class="hero__phrase hero__phrase--2">quisquam</span>
+            <span class="hero__phrase hero__phrase--3">soluta</span>
+            <span class="hero__phrase hero__phrase--4">excepturi</span>
+            <span class="hero__phrase hero__phrase--5">voluptate</span>
+          </p>
+        </div>
+      </div>
+      <div class="hero-content--item hero-content--item--image">
+        <div class=" hero__image-container">
+          <img width="30" height="30" src="https://images.unsplash.com/photo-1561111107-6ae319e487c4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem do Hero" class="hero__image">
+          <p class="hero__image-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</body>
+
+</html>
