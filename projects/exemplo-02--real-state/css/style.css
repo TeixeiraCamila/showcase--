@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Clash+Display:wght@400;500;600;700&display=swap');
 @import url(./reset.css);
+
 * {
 	margin: 0;
 	padding: 0;
@@ -10,6 +11,7 @@
 	font-family: var(--font_inter);
 
 	--font_inter: 'Inter', sans-serif;
+	--font_clash: 'Clash Display', sans-serif;
 
 	--color_primary: #1d4734;
 	--color_secondary: #849fa8;
@@ -411,6 +413,7 @@ h3 {
 	opacity: 0;
 	transform: translateY(-10px);
 	transition: opacity 300ms ease, transform 300ms ease;
+  height: 100vh;
 }
 
 .header__menu-mobile.is-open {
