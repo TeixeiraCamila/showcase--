@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Landing page com informações relevantes sobre produtos e serviços" />
 
+  <link rel="preload" href="./css/fonts/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Variable.woff2" as="font"
+    type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./css/style.css" />
   <title>Modelo</title>
 </head>
@@ -21,10 +24,10 @@
       </button>
       <div class="nav__menu">
         <ul class="nav__list">
-          <li><a href="#item01">Lorem ipsum dolor</a></li>
-          <li><a href="#item02">Lorem ipsum dolor</a></li>
-          <li><a href="#item03">Lorem ipsum dolor</a></li>
-          <li><a href="#item05">Lorem ipsum dolor</a></li>
+          <li><a href="#hero">Lorem ipsum dolor</a></li>
+          <li><a href="#details">Lorem ipsum dolor</a></li>
+          <li><a href="#form">Lorem ipsum dolor</a></li>
+          <li><a href="#courses">Lorem ipsum dolor</a></li>
         </ul>
       </div>
       <button class="btn btn--primary">Button</button>
@@ -32,27 +35,29 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
+    <section id="hero" class="hero">
+      <div class="hero__container container">
 
-        <img src="./imgs/detail.png" alt="" class="img-float img-float--top">
-        <img src="./imgs/sparks.png" alt="" class="img-float img-float--left">
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, inventore facilis enim consequatur delectus
+        <img src="./imgs/detail.png" alt="" class="hero__image hero__image--top" loading="lazy">
+        <img src="./imgs/sparks.png" alt="" class="hero__image hero__image--left" loading="lazy">
+        <h2 class="hero__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, inventore facilis enim
+          consequatur delectus
           culpa molestias. Ducimus aspernatur sequi pariatur consequatur! </h2>
 
-        <ul>
-          <li><button class="btn btn--secundary">Button Secundary</button></li>
+        <ul class="hero__buttons">
+          <li><button class="btn btn--secondary">Button Secundary</button></li>
           <li><button class="btn btn--primary">Button Primary</button></li>
         </ul>
 
-        <img src="./imgs/arrow.png" alt="" class="img-float img-float--bottom">
+        <img src="./imgs/arrow.png" alt="" class="hero__image hero__image--bottom" loading="lazy">
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Quod, invento</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.Quod, invento</p>
+        <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </section>
-    <section class="details">
-      <div class="container">
+
+    <section id="details" class="details">
+      <div class="details__container container">
         <ul class="grid-circle">
           <li class="grid-circle__item"></li>
           <li class="grid-circle__item"></li>
@@ -84,9 +89,6 @@
           <li class="grid-circle__item"></li>
           <li class="grid-circle__item"></li>
           <li class="grid-circle__item"></li>
-          <li class="grid-circle__item"></li>
-          <li class="grid-circle__item"></li>
-
         </ul>
         <ul class="grid-cards">
           <li class="grid-cards__item">
@@ -96,7 +98,7 @@
               aliquid voluptatum rerum nulla? Culpa illum voluptatum rem corporis dolore tempora est quo architecto nisi
               dicta!
             </span>
-            <img src="./imgs/detail-blue.png" alt="" class="grid-cards__image">
+            <img src="./imgs/detail-blue.png" alt="" class="grid-cards__image" loading="lazy">
           </li>
           <li class="grid-cards__item">
             <h4 class="grid-cards__title">Lorem ipsum dolor</h4>
@@ -121,7 +123,7 @@
               aliquid voluptatum rerum nulla? Culpa illum voluptatum rem corporis dolore tempora est quo architecto nisi
               dicta!
             </span>
-            <img src="./imgs/detail-pink.png" alt="" class="grid-cards__image">
+            <img src="./imgs/detail-pink.png" alt="" class="grid-cards__image" loading="lazy">
           </li>
           <li class="grid-cards__item">
             <h4 class="grid-cards__title">Lorem ipsum dolor</h4>
@@ -142,7 +144,7 @@
           <li class="grid-cards__item">
             <h4 class="grid-cards__title">Lorem ipsum dolor</h4>
             <span class="grid-cards__text">
-              <img src="./imgs/detail-yellow.png" alt="" class="grid-cards__image">
+              <img src="./imgs/detail-yellow.png" alt="" class="grid-cards__image" loading="lazy">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi cupiditate deserunt minima quo
               aliquid voluptatum rerum nulla? Culpa illum voluptatum rem corporis dolore tempora est quo architecto nisi
               dicta!
@@ -152,28 +154,207 @@
         </ul>
       </div>
     </section>
-    <section class="form">
-      <div class="container">
-        <div class="form-text">
-          <h4>Lorem ipsum dolor </h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illo necessitatibus, perferendis repellat
-            animi deserunt laboriosam sapiente tempore ex, modi cumque repudiandae iure, hic debitis. Esse dolor
-            consectetur architecto numquam.</p>
-        </div>
-        <div class="form-itemns">
-          <input class="input" type="text" placeholder="Lorem ipsum dolor">
-          <input class="input" type="text" placeholder="Lorem ipsum dolor">
-          <input class="input" type="text" placeholder="Lorem ipsum dolor">
-          <button class="btn btn--primary">Send</button>
+    <section id="form" class="form">
+      <div class="form__container small-container">
+        <img src="./imgs/clip.png" alt="" class="form__image" loading="lazy">
+        <div class="form__content">
+          <div class="form__text">
+            <h4>Lorem ipsum dolor </h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illo necessitatibus, perferendis
+              repellat
+              animi deserunt laboriosam sapiente tempore ex, modi cumque repudiandae iure, hic debitis. Esse dolor
+              consectetur architecto numquam.</p>
+          </div>
+          <div class="form__inputs">
+            <label class="sr-only" for="name">Nome</label>
+            <input class="form__input" id="name" type="text" placeholder="Lorem ipsum dolor">
+            <label class="sr-only" for="email">Email</label>
+            <input class="form__input" id="email" type="text" placeholder="Lorem ipsum dolor">
+            <label class="sr-only" for="phone">Telefone</label>
+            <input class="form__input" id="phone" type="text" placeholder="Lorem ipsum dolor">
+            <button class="btn btn--primary">Send</button>
+          </div>
         </div>
       </div>
     </section>
+
+
+    <div class="content__container small-container">
+      <h4 class="content__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam sunt ipsam ut
+        tenetur
+        repudiandae dolores inventore ullam, placeat temporibus. Libero mollitia voluptatem corrupti nulla, distinctio
+        vero aspernatur rerum nam dicta.</h4>
+
+      <section class="tabs">
+        <div class="tabs__wrapper">
+          <input type="radio" name="tab" id="right" checked>
+          <input type="radio" name="tab" id="left">
+          <div class="tabs__tab-list">
+            <label class="tabs__tab" for="right">Right</label>
+            <label class="tabs__tab" for="left">Left</label>
+          </div>
+          <div class="tabs__panels">
+            <div class="tabs__panel" data-tab="right">
+
+              <h4 class="tabs__panel-title">Lorem ipsum dolor </h4>
+              <ul class="tabs__panel-details">
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+              </ul>
+
+              <div class="tabs__panel-prices">
+                <div class="tabs__panel-price">
+
+                  <div class="tabs__panel-price--text">
+                    <p> <b>R$ 1.567,98</b> </p>
+                  </div>
+                  <button class="btn--outline">Lorem ipsum </button>
+                </div>
+                <div class="tabs__panel-price">
+                  <div class="tabs__panel-price--text">
+                    <p> <small>De R$ 4.567,98</small> </p>
+                    <p> <b>por R$ 1.567,98</b> </p>
+                  </div>
+                  <button class="btn--outline">Lorem ipsum </button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="tabs__panel" data-tab="left">
+
+              <h4 class="tabs__panel-title">Lorem ipsum dolor </h4>
+              <ul class="tabs__panel-details">
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet
+                </li>
+              </ul>
+
+              <div class="tabs__panel-prices">
+                <div class="tabs__panel-price">
+
+                  <div class="tabs__panel-price--text">
+                    <p> <b>R$ 1.567,98</b> </p>
+                  </div>
+                  <button class="btn--outline">Lorem ipsum </button>
+                </div>
+                <div class="tabs__panel-price">
+                  <div class="tabs__panel-price--text">
+                    <p> <small>De R$ 4.567,98</small> </p>
+                    <p> <b>por R$ 1.567,98</b> </p>
+                  </div>
+                  <button class="btn--outline">Lorem ipsum </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="special-price">
+        <div class="special-price__container container">
+          <div class="special-price__content">
+            <h2 class="special-price__title">Lorem ipsum dolor sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna <span>aliqua.</span></p>
+          </div>
+          <div class="special-price__action">
+            <p class="special-price__price"><small>De R$ 4.567,98</small></p>
+            <p class="special-price__price"><b>por R$ 1.567,98</b></p>
+            <button class="btn btn--primary">Lorem ipsum</button>
+          </div>
+        </div>
+      </section>
+
+      <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+
+      <section id="courses" class="courses">
+      <div class="courses__container container">
+        <div class="courses__cards">
+          <div class="courses__card">
+          <div class="courses__card-decor">
+            <svg class="courses__flower" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25 5C25 5 30 15 25 25C20 15 25 5 25 5Z" fill="#aeacff" />
+              <path d="M25 25C15 25 5 30 5 25C5 20 15 20 25 25Z" fill="#aeacff" />
+              <path d="M25 25C25 35 20 45 25 45C30 45 25 35 25 25Z" fill="#aeacff" />
+              <path d="M25 25C35 25 45 30 45 25C45 20 35 20 25 25Z" fill="#aeacff" />
+              <circle cx="25" cy="25" r="5" fill="#fd619d" />
+            </svg>
+            <svg class="courses__heart" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15 25L12 22C6 16 2 12 2 8C2 5 4 3 7 3C9 3 11 4 12 6C13 4 15 3 17 3C20 3 22 5 22 8C22 12 18 16 15 22L15 25Z"
+                fill="#fd619d" />
+            </svg>
+            <svg class="courses__scribble" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 20Q15 5 25 20T45 20T55 10" stroke="#090708" stroke-width="2" fill="none" />
+              <path d="M10 35Q20 20 30 35" stroke="#090708" stroke-width="2" fill="none" />
+            </svg>
+          </div>
+          <h3 class="courses__card-title">Планиметрия</h3>
+          <p class="courses__card-price">999 ₽</p>
+          <button class="btn btn--primary">Купить</button>
+        </div>
+        <div class="courses__card">
+          <div class="courses__card-decor">
+            <svg class="courses__sphere" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="25" stroke="#090708" stroke-width="2" />
+              <ellipse cx="40" cy="40" rx="25" ry="10" stroke="#090708" stroke-width="2" />
+              <ellipse cx="40" cy="40" rx="10" ry="25" stroke="#090708" stroke-width="2" />
+              <circle cx="40" cy="40" r="5" fill="#f8fd43" />
+              <path d="M55 15L65 25" stroke="#090708" stroke-width="2" />
+              <circle cx="65" cy="25" r="3" fill="#aeacff" />
+            </svg>
+          </div>
+          <h3 class="courses__card-title">Стереометрия</h3>
+          <p class="courses__card-price">999 ₽</p>
+          <button class="btn btn--primary">Купить</button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
   </main>
 
-  
 
-  <footer role="contentinfo">
 
+  <footer role="contentinfo" aria-hidden="true" class="container">
   </footer>
 
   <script src="./js/script.js" defer></script>
