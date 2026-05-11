@@ -19,7 +19,7 @@
 		<title>SK Builders - Luxury Real Estate | Imóveis Premium</title>
 	</head>
 	<body>
-		<a href="#introduction" class="skip-link">Skip to main content</a>
+		<!-- <a href="#introduction" class="skip-link">Skip to main content</a> -->
 
 		<header class="header" role="banner">
 			<div class="header__container container">
@@ -36,15 +36,10 @@
 					</picture>
 				</div>
 
-				<button
-					class="header__burger"
-					aria-label="Open navigation menu"
-					aria-expanded="false"
-					aria-controls="mobile-menu"
-				>
-					<span class="burger__box">
-						<span class="burger__inner"></span>
-					</span>
+				<button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+					<span class="menu-toggle__bar"></span>
+					<span class="menu-toggle__bar"></span>
+					<span class="menu-toggle__bar"></span>
 				</button>
 
 				<nav class="header__nav" role="navigation" aria-label="Main navigation">
@@ -577,6 +572,22 @@
 				</ul>
 			</nav>
 		</footer>
+
+		<div class="menu-overlay" id="menu-overlay"></div>
+		<nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+			<button class="mobile-menu__close" aria-label="Fechar menu">
+				<span></span>
+				<span></span>
+			</button>
+			<ul class="mobile-menu__list">
+				<li><a href="#introduction">Home</a></li>
+				<li><a href="#project">Propriedades</a></li>
+				<li><a href="#quality">Comprar</a></li>
+				<li><a href="#about">Vender</a></li>
+				<li><a href="#project">Alugar</a></li>
+			</ul>
+			<button class="mobile-menu__cta">Get Started</button>
+		</nav>
 
 		<script src="./js/script.js"></script>
 	</body>
