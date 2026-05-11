@@ -4,160 +4,35 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-		
-		
+		<link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="./css/style.css" />
-		<title>Grandes Vencedores do Oscar — Cinco Clássicos Essenciais</title>
+		<title id="page-title">Carregando...</title>
 	</head>
-	<body class="container">
-		<header role="banner">
-			<h1>Cinco Clássicos Essenciais</h1>
-			<div>
-				<p>
-					Este conjunto de cinco resumos reúne filmes que conquistaram o Oscar
-					de Melhor Filme e continuam sendo referências fundamentais no cinema.
-				</p>
+	<body>
+		<header class="header" role="banner">
+			<h1 class="header__title" id="page-heading"></h1>
+			<div class="header__description">
+				<p id="page-description"></p>
 			</div>
 		</header>
-		<main role="main" id="viewport" class="wrapper">
-			<div
-				class="slide"
-				data-tomatometer="5"
-				data-obs=" Mistura inteligente de gêneros e um final chocante que expõe as divisões de classe."
-			>
-				<div class="vignette"></div>
-				<div class="slide__text">
-					<h3><b>Parasite (2019):</b></h3>
-					<p>
-						Uma família de baixa renda, os Kim, vive em um subsolo apertado e
-						luta para sobreviver. Quando o filho Ki-woo é contratado para dar
-						aulas particulares à filha de uma família riquíssima (os Park),
-						começa uma infiltração gradual: os membros dos Kim passam a ocupar
-						diferentes funções na mansão dos Park por meio de artifícios. A
-						partir daí, o enredo se transforma de sátira social a thriller
-						inquietante, expondo desigualdade, ambição e classe social.
-					</p>
-					<p>
-						Foi o primeiro filme falado em língua não-inglês a vencer o Oscar de
-						Melhor Filme. Explora temas de riqueza, privilégio, e a relação
-						simbiótica/perversa entre classes. A vencedora também por Melhor
-						Diretor e Roteiro.
-					</p>
-				</div>
 
-				<img
-					src="./assets/images/Parasite.jpg"
-					alt="Uma praia rochosa com ondas fortes e construções antigas ao fundo."
-					data-index="0"
-				/>
-			</div>
-			<div
-				class="slide"
-				data-tomatometer="5"
-				data-obs=" Direção sensível, fotografia poética e trilha emocional que transformam a jornada pessoal em uma experiência universal."
-			>
-				<div class="vignette"></div>
-				<div class="slide__text">
-					<h3><b>Moonlight (2016):</b></h3>
-					<p>
-						A história de Chiron, um jovem negro crescendo em Miami, é contada
-						em três fases — infância, adolescência e vida adulta. Ele enfrenta
-						pobreza, preconceito e o conflito de identidade sexual.
-					</p>
-					<p>
-						Primeiro filme com elenco majoritariamente negro e temática LGBTQ+ a
-						vencer o Oscar de Melhor Filme.
-					</p>
+		<main class="main" role="main">
+			<div class="slider">
+				<div class="slider__container" id="slides-container"></div>
+				<div class="slider__vignette" aria-hidden="true"></div>
+				<div class="slider__hint">Use o scroll / swipe para navegar (infinito)</div>
+				<div class="slider__resume">
+					<div class="slider__resume-icon">
+						<img id="resume-image" src="" alt="" />
+						<p id="resume-stars"></p>
+					</div>
+					<div class="slider__resume-content">
+						<span id="resume-obs"></span>
+					</div>
 				</div>
-				<img
-					src="./assets/images/moonlight.jpg"
-					alt="Um litoral pedregoso com cabanas de pedra e um navio soltando fumaça ao longe."
-					data-index="1"
-				/>
-			</div>
-
-			<div
-				class="slide"
-				data-tomatometer="5"
-				data-obs=" Impactante, histórico e emocionalmente devastador — um dos filmes mais respeitados de todos os tempos."
-			>
-				<div class="vignette"></div>
-				<div class="slide__text">
-					<h3><b>Schindler’s List (1993)</b></h3>
-					<p>
-						O empresário alemão Oskar Schindler salva mais de mil judeus durante
-						o Holocausto, usando sua fábrica como refúgio.
-					</p>
-					<p>
-						Obra-prima de Steven Spielberg, filmada em preto e branco com
-						momentos simbólicos de cor. Um testemunho poderoso da humanidade em
-						meio ao horror.
-					</p>
-				</div>
-				<img
-					src="./assets/images/SchindlersList.jpg"
-					alt="Um litoral pedregoso com cabanas de pedra e um navio soltando fumaça ao longe."
-					data-index="2"
-				/>
-			</div>
-
-			<div
-				class="slide"
-				data-tomatometer="5"
-				data-obs="Equilíbrio perfeito entre romance e heroísmo — um retrato eterno de sacrifício e honra."
-			>
-				<div class="vignette"></div>
-				<div class="slide__text">
-					<h3><b>Casablanca (1942)</b></h3>
-					<p>
-						Em meio à Segunda Guerra, Rick reencontra seu antigo amor Ilsa em
-						Casablanca e precisa escolher entre o amor pessoal e o dever moral.
-					</p>
-					<p>
-						Clássico absoluto de Hollywood, com diálogos marcantes e trilha
-						inesquecível (“As Time Goes By”).
-					</p>
-				</div>
-				<img
-					src="./assets/images/casablanca.jpg"
-					alt="Um litoral pedregoso com cabanas de pedra e um navio soltando fumaça ao longe."
-					data-index="3"
-				/>
-			</div>
-
-			<div
-				class="slide"
-				data-tomatometer="5"
-				data-obs="Um marco na história do cinema americano e da interpretação dramática."
-			>
-				<div class="vignette"></div>
-				<div class="slide__text">
-					<h3><b>On the Waterfront (1954)</b></h3>
-					<p>
-						Terry Malloy, um trabalhador portuário, decide enfrentar o sindicato
-						criminoso que domina o cais de Nova York.
-					</p>
-					<p>
-						Brando redefine a atuação com realismo e intensidade. O filme
-						retrata coragem moral e denúncia social.
-					</p>
-				</div>
-				<img
-					src="./assets/images/OnTheWaterfront.jpg"
-					alt="Um litoral pedregoso com cabanas de pedra e um navio soltando fumaça ao longe."
-					data-index="4"
-				/>
 			</div>
 		</main>
 
-		<div class="vignette" aria-hidden="true"></div>
-		<div class="hint">Use o scroll / swipe para navegar (infinito)</div>
-		<div class="resume">
-			<div>
-				<p></p>
-			</div>
-			<span></span>
-		</div>
 		<span class="sr-only" id="status" role="status" aria-live="polite" aria-atomic="true"></span>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>

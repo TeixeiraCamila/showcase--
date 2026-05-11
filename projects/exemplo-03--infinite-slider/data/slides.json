@@ -1,0 +1,66 @@
+{
+	"title": "Cinco Clássicos Essenciais",
+	"description": "Este conjunto de cinco resumos reúne filmes que conquistaram o Oscar de Melhor Filme e continuam sendo referências fundamentais no cinema.",
+	"slides": [
+		{
+			"id": 0,
+			"title": "Parasite (2019)",
+			"image": "./assets/images/classicos/Parasite.jpg",
+			"alt": "Cena de Parasite - família Kim em frente à mansão dos Park",
+			"tomatometer": 5,
+			"observation": "Mistura inteligente de gêneros e um final chocante que expõe as divisões de classe.",
+			"text": [
+				"Uma família de baixa renda, os Kim, vive em um subsolo apertado e luta para sobreviver. Quando o filho Ki-woo é contratado para dar aulas particulares à filha de uma família riquíssima (os Park), começa uma infiltração gradual: os membros dos Kim passam a ocupar diferentes funções na mansão dos Park por meio de artifícios. A partir daí, o enredo se transforma de sátira social a thriller inquietante, expondo desigualdade, ambição e classe social.",
+				"Foi o primeiro filme falado em língua não-inglês a vencer o Oscar de Melhor Filme. Explora temas de riqueza, privilégio, e a relação simbiótica/perversa entre classes. A vencedora também por Melhor Diretor e Roteiro."
+			]
+		},
+		{
+			"id": 1,
+			"title": "Moonlight (2016)",
+			"image": "./assets/images/classicos/moonlight.jpg",
+			"alt": "Cena de Moonlight - o jovem Chiron na praia",
+			"tomatometer": 5,
+			"observation": "Direção sensível, fotografia poética e trilha emocional que transformam a jornada pessoal em uma experiência universal.",
+			"text": [
+				"A história de Chiron, um jovem negro crescendo em Miami, é contada em três fases — infância, adolescência e vida adulta. Ele enfrenta pobreza, preconceito e o conflito de identidade sexual.",
+				"Primeiro filme com elenco majoritariamente negro e temática LGBTQ+ a vencer o Oscar de Melhor Filme."
+			]
+		},
+		{
+			"id": 2,
+			"title": "Schindler's List (1993)",
+			"image": "./assets/images/classicos/SchindlersList.jpg",
+			"alt": "Cena de Schindler's List - lista de nomes",
+			"tomatometer": 5,
+			"observation": "Impactante, histórico e emocionalmente devastador — um dos filmes mais respeitados de todos os tempos.",
+			"text": [
+				"O empresário alemão Oskar Schindler salva mais de mil judeus durante o Holocausto, usando sua fábrica como refúgio.",
+				"Obra-prima de Steven Spielberg, filmada em preto e branco com momentos simbólicos de cor. Um testemunho poderoso da humanidade em meio ao horror."
+			]
+		},
+		{
+			"id": 3,
+			"title": "Casablanca (1942)",
+			"image": "./assets/images/classicos/casablanca.jpg",
+			"alt": "Cena clássica de Casablanca - Rick e Ilsa no café",
+			"tomatometer": 5,
+			"observation": "Equilíbrio perfeito entre romance e heroísmo — um retrato eterno de sacrifício e honra.",
+			"text": [
+				"Em meio à Segunda Guerra, Rick reencontra seu antigo amor Ilsa em Casablanca e precisa escolher entre o amor pessoal e o dever moral.",
+				"Clássico absoluto de Hollywood, com diálogos marcantes e trilha inesquecível (“As Time Goes By”)."
+			]
+		},
+		{
+			"id": 4,
+			"title": "On the Waterfront (1954)",
+			"image": "./assets/images/classicos/OnTheWaterfront.jpg",
+			"alt": "Cena de On the Waterfront - Marlon Brando no cais",
+			"tomatometer": 5,
+			"observation": "Um marco na história do cinema americano e da interpretação dramática.",
+			"text": [
+				"Terry Malloy, um trabalhador portuário, decide enfrentar o sindicato criminoso que domina o cais de Nova York.",
+				"Brando redefine a atuação com realismo e intensidade. O filme retrata coragem moral e denúncia social."
+			]
+		}
+	]
+}

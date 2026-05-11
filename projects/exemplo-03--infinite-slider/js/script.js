@@ -1,250 +1,198 @@
-document.addEventListener('DOMContentLoaded', () => {
-	window.addEventListener('wheel', onWheel, { passive: false });
-	window.addEventListener('touchstart', onTouchStart, { passive: true });
-	window.addEventListener('touchmove', onTouchMove, { passive: true });
-	window.addEventListener('touchend', onTouchEnd, { passive: true });
-	window.addEventListener('keydown', onKey);
+document.addEventListener('DOMContentLoaded', async () => {
+	const CONFIG = {
+		COOLDOWN: 450,
+		WHEEL_THRESHOLD: 30,
+		TOUCH_THRESHOLD: 40,
+		ANIMATION_DURATION: 0.9,
+		TEXT_OFFSET: 400,
+	};
 
-	document.body.setAttribute('tabindex', '0');
+	let current = 0;
+	let isAnimating = false;
+	let lastAction = 0;
+	let touchStartY = null;
+	let slidesData = [];
 
-	const texts = Array.from(document.querySelectorAll('.slide__text'));
-	const slides = Array.from(document.querySelectorAll('.slide'));
+	// Load data
+	try {
+		const response = await fetch('./data/apes.json');
+		slidesData = await response.json();
+		renderSlides(slidesData);
+		initSlider();
+	} catch (error) {
+		console.error('Erro ao carregar dados:', error);
+	}
 
-	if (!slides.length) return;
+	function escapeHtml(str) {
+		const div = document.createElement('div');
+		div.textContent = str;
+		return div.innerHTML;
+	}
 
-	const status = document.getElementById('status');
+	function renderSlides(data) {
+		document.getElementById('page-title').textContent = data.title;
+		document.getElementById('page-heading').textContent = data.title;
+		document.getElementById('page-description').textContent = data.description;
 
-	let current = 0; // Índice do slide atual
-	const total = slides.length; // Total de slides
-	let isAnimating = false; // Flag de animação em andamento
+		const container = document.getElementById('slides-container');
+		container.innerHTML = data.slides
+			.map(
+				(slide) => `
+			<div class="slider__slide" data-tomatometer="${slide.tomatometer}" data-obs="${escapeHtml(slide.observation)}">
+				<div class="slider__text">
+					<h3>${escapeHtml(slide.title)}</h3>
+					${slide.text.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}
+				</div>
+				<img class="slider__img" src="${slide.image}" alt="${escapeHtml(slide.alt)}" data-index="${slide.id}" />
+			</div>
+		`,
+			)
+			.join('');
+	}
 
-	const COOLDOWN = 450; // Tempo mínimo entre transições (ms)
-	const WHEEL_THRESHOLD = 30; // Sensibilidade do scroll do mouse
-	const TOUCH_THRESHOLD = 40; // Sensibilidade do swipe touch
-	const ANIMATION_DURATION = 0.9; // Duração da animação principal
-	const WIDTH__MINUS = 400; // Offset para posição do texto
+	function initSlider() {
+		const slides = document.querySelectorAll('.slider__slide');
+		const texts = document.querySelectorAll('.slider__text');
+		const status = document.getElementById('status');
 
-	let lastAction = 0; // Timestamp da última ação
-	let touchStartY = null; // Posição Y inicial do touch
+		if (!slides.length) return;
 
-	// Todos os slides começam invisíveis
-	gsap.set(slides, {
-		autoAlpha: 0,
-	});
+		gsap.set(slides, { autoAlpha: 0 });
+		gsap.set(slides[0], { autoAlpha: 1 });
+		gsap.set(slides[0], { attr: { 'data-active': 'true' } });
 
-	// Primeiro slide visível
-	gsap.set(slides[0], {
-		autoAlpha: 1,
-		attr: { 'data-active': 'true' },
-	});
-
-	// Todos os textos começam invisíveis
-	gsap.set(texts, {
-		autoAlpha: 0,
-		x: -100, // Começa deslocado para esquerda
-		y: 0,
-	});
-
-	// Primeiro texto visível com animação de entrada
-	gsap.to(texts[0], {
-		autoAlpha: 0.8,
-		x: slides[0].offsetWidth - WIDTH__MINUS,
-		duration: 1,
-		ease: 'power3.out',
-	});
-
-	changeResume(slides[0]);
-
-	function goTo(index, direction = 1) {
-		const now = performance.now();
-
-		if (now - lastAction < COOLDOWN || isAnimating) return;
-
-		lastAction = now;
-
-		const prev = current;
-
-		// Cálculo do índice com loop infinito
-		current = ((index % total) + total) % total;
-
-		if (current === prev) return;
-
-		isAnimating = true;
-
-		const inSlide = slides[current]; // Slide que entra
-		const outSlide = slides[prev]; // Slide que sai
-		const inText = texts[current]; // Texto que entra
-		const outText = texts[prev]; // Texto que sai
-
-		changeResume(inSlide);
-
-		// Marca slide ativo
-		slides.forEach((s, i) =>
-			s.setAttribute('data-active', i === current ? 'true' : 'false')
-		);
-
-		// ---- ANIMAÇÃO COM GSAP TIMELINE ----
-
-		const tl = gsap.timeline({
-			onComplete: () => {
-				isAnimating = false;
-
-				// Reseta a posição Y dos slides após animação
-				gsap.set([inSlide, outSlide], { y: 0 });
-			},
+		gsap.set(texts, { autoAlpha: 0, x: -100, y: 0 });
+		gsap.to(texts[0], {
+			autoAlpha: 0.8,
+			x: slides[0].offsetWidth - CONFIG.TEXT_OFFSET,
+			duration: 1,
+			ease: 'power3.out',
 		});
 
-		// Calcula deslocamento Y baseado na direção
-		const slideDistance = 100; // Pixels de movimento vertical
+		updateResume(slides[0]);
 
-		// Posiciona slide abaixo/acima antes de entrar
-		gsap.set(inSlide, {
-			autoAlpha: 0,
-		});
+		function goTo(index) {
+			const now = performance.now();
+			if (now - lastAction < CONFIG.COOLDOWN || isAnimating) return;
+			lastAction = now;
 
-		tl.to(
-			inSlide,
-			{
-				autoAlpha: 1, // Fade in
-				duration: ANIMATION_DURATION,
-				ease: 'power2.out',
-			},
-			0
-		);
+			const prev = current;
+			current = ((index % slides.length) + slides.length) % slides.length;
+			if (current === prev) return;
 
-		// ---- ANIMAÇÃO DO SLIDE SAINDO ----
-
-		tl.to(
-			outSlide,
-			{
-				autoAlpha: 0, // Fade out
-				duration: ANIMATION_DURATION,
-				ease: 'power2.in',
-			},
-			0
-		);
-
-		// ---- ANIMAÇÃO DO TEXTO ENTRANDO ----
-
-		// Reseta posição do texto antes de animar
-		gsap.set(inText, {
-			x: -100, // Começa fora da tela à esquerda
-			y: -20, // Pequeno deslocamento vertical
-			autoAlpha: 0,
-			scale: 0.9, // Começa menor
-		});
-
-		tl.to(
-			inText,
-			{
-				x: inSlide.offsetWidth - WIDTH__MINUS, // Move para posição final
-				y: 0, // Centraliza verticalmente
-				autoAlpha: 0.8, // Fade in
-				scale: 1, // Escala normal
-				duration: ANIMATION_DURATION * 0.8,
-				ease: 'back.out(1.4)', // Easing com bounce
-			},
-			0.3
-		);
-
-		// ---- ANIMAÇÃO DO TEXTO SAINDO ----
-
-		tl.to(
-			outText,
-			{
-				x: outSlide.offsetWidth, // Move para fora à direita
-				y: 20, // Pequeno deslocamento vertical
-				autoAlpha: 0, // Fade out
-				scale: 0.9, // Diminui
-				duration: ANIMATION_DURATION * 0.6,
-				ease: 'power2.in',
-			},
-			0
-		); // Começa junto com slide
-
-		if (status) {
-			status.textContent = `Imagem ${current + 1} de ${total}`;
+			isAnimating = true;
+			animateSlides(slides[prev], slides[current], texts[prev], texts[current]);
+			updateResume(slides[current]);
+			updateStatus();
 		}
-	}
 
-	function changeResume(inSlide) {
-		const tomatometer = inSlide.getAttribute('data-tomatometer');
-		console.log(tomatometer);
-		const obs = inSlide.getAttribute('data-obs');
+		function animateSlides(outSlide, inSlide, outText, inText) {
+			const tl = gsap.timeline({
+				onComplete: () => {
+					isAnimating = false;
+					gsap.set([inSlide, outSlide], { y: 0 });
+				},
+			});
 
-		const inSlideImg = inSlide.lastElementChild.getAttribute('src');
-		const resume = document.querySelector('.resume img');
-		const resumeText = document.querySelector('.resume p');
-		const resumeAlt = document.querySelector('.resume span');
+			gsap.set(inSlide, { autoAlpha: 0 });
+			tl.to(inSlide, { autoAlpha: 1, duration: CONFIG.ANIMATION_DURATION, ease: 'power2.out' }, 0);
+			tl.to(outSlide, { autoAlpha: 0, duration: CONFIG.ANIMATION_DURATION, ease: 'power2.in' }, 0);
 
-		// Gera número aleatório de estrelas (1-5)
-		// const maxRepetitions = '5';
-		// const randomRepetitions = Math.floor(Math.random() * maxRepetitions) + 1;
+			gsap.set(inText, { x: -100, y: -20, autoAlpha: 0, scale: 0.9 });
+			tl.to(
+				inText,
+				{
+					x: inSlide.offsetWidth - CONFIG.TEXT_OFFSET,
+					y: 0,
+					autoAlpha: 0.8,
+					scale: 1,
+					duration: CONFIG.ANIMATION_DURATION * 0.8,
+					ease: 'back.out(1.4)',
+				},
+				0.3,
+			);
 
-		resume.setAttribute('src', inSlideImg);
+			tl.to(
+				outText,
+				{
+					x: outSlide.offsetWidth,
+					y: 20,
+					autoAlpha: 0,
+					scale: 0.9,
+					duration: CONFIG.ANIMATION_DURATION * 0.6,
+					ease: 'power2.in',
+				},
+				0,
+			);
 
-		const text = '✩';
-		resumeText.innerHTML = text.repeat(tomatometer);
-		resumeAlt.innerHTML = obs;
-	}
-
-	/* scroll do mouse/trackpad*/
-	function onWheel(e) {
-		const delta = e.deltaY;
-
-		if (Math.abs(delta) < WHEEL_THRESHOLD) return;
-
-		e.preventDefault();
-
-		if (delta > 0) {
-			goTo(current + 1, 1); // Scroll down = próximo
-		} else {
-			goTo(current - 1, -1); // Scroll up = anterior
+			slides.forEach((s, i) => s.setAttribute('data-active', i === current ? 'true' : 'false'));
 		}
-	}
 
-	function onTouchStart(e) {
-		const touch = e.touches && e.touches[0];
-		if (touch) {
-			touchStartY = touch.clientY;
-		}
-	}
+		function updateResume(slide) {
+			const tomatometer = slide.getAttribute('data-tomatometer');
+			const obs = slide.getAttribute('data-obs');
+			const stars = document.getElementById('resume-stars');
+			const obsEl = document.getElementById('resume-obs');
+			const imgEl = document.getElementById('resume-image');
 
-	/* movimento do touch */
-	function onTouchMove(e) {
-		if (touchStartY === null) return;
+			const slideImg = slide.querySelector('img');
 
-		const touch = e.touches && e.touches[0];
-		if (!touch) return;
-
-		const dy = touchStartY - touch.clientY;
-
-		if (Math.abs(dy) > TOUCH_THRESHOLD) {
-			if (dy > 0) {
-				goTo(current + 1, 1); // Swipe up = próximo
-			} else {
-				goTo(current - 1, -1); // Swipe down = anterior
+			if (imgEl && slideImg) {
+				imgEl.src = slideImg.src;
+				imgEl.alt = slideImg.alt;
 			}
+			if (stars) {
+				const count = Math.min(parseInt(tomatometer, 10) || 0, 5);
+				stars.textContent = '✩'.repeat(count);
+			}
+			if (obsEl) obsEl.textContent = obs;
+		}
 
+		function updateStatus() {
+			if (status) status.textContent = `Imagem ${current + 1} de ${slides.length}`;
+		}
+
+		function handleWheel(e) {
+			if (Math.abs(e.deltaY) < CONFIG.WHEEL_THRESHOLD) return;
+			e.preventDefault();
+			goTo(e.deltaY > 0 ? current + 1 : current - 1);
+		}
+
+		function handleTouchStart(e) {
+			const touch = e.touches?.[0];
+			if (touch) touchStartY = touch.clientY;
+		}
+
+		function handleTouchMove(e) {
+			if (touchStartY === null) return;
+			const touch = e.touches?.[0];
+			if (!touch) return;
+
+			const dy = touchStartY - touch.clientY;
+			if (Math.abs(dy) > CONFIG.TOUCH_THRESHOLD) {
+				goTo(dy > 0 ? current + 1 : current - 1);
+				touchStartY = null;
+			}
+		}
+
+		function handleTouchEnd() {
 			touchStartY = null;
 		}
-	}
 
-	/**
-	 * Handler para fim do touch
-	 */
-	function onTouchEnd() {
-		touchStartY = null;
-	}
-
-	/*navegação por teclado*/
-	function onKey(e) {
-		if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-			goTo(current + 1, 1);
+		function handleKey(e) {
+			const keyMap = { ArrowDown: 1, ArrowUp: -1, PageDown: 1, PageUp: -1 };
+			const direction = keyMap[e.key];
+			if (direction) {
+				e.preventDefault();
+				goTo(current + direction);
+			}
 		}
 
-		if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-			goTo(current - 1, -1);
-		}
+		window.addEventListener('wheel', handleWheel, { passive: false });
+		window.addEventListener('touchstart', handleTouchStart, { passive: true });
+		window.addEventListener('touchmove', handleTouchMove, { passive: true });
+		window.addEventListener('touchend', handleTouchEnd, { passive: true });
+		window.addEventListener('keydown', handleKey);
+		document.body.setAttribute('tabindex', '0');
 	}
 });

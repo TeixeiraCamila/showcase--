@@ -1,0 +1,66 @@
+{
+  "title": "Planeta dos Macacos — Guia Essencial",
+  "description": "Ordem recomendada para assistir a saga completa, da trilogia moderna às origens do clássico de 1968.",
+  "slides": [
+    {
+      "id": 0,
+      "title": "Planeta dos Macacos: A Origem (2011)",
+      "image": "./assets/images/apes/AOrigem.jpg",
+      "alt": "Cena de A Origem - César jovem olhando pela janela em São Francisco",
+      "tomatometer": 82,
+      "observation": "O começo de tudo — performance de Andy Serkis como César é um marco da atuação por captura de movimento.",
+      "text": [
+        "Em São Francisco, o cientista Will Rodman desenvolve um vírus projetado para curar o Alzheimer. Ao testar a droga em chimpanzés, ela aumenta drasticamente a inteligência dos animais. Um filhote chamado César herda essa inteligência aprimorada e cresce num ambiente humano — até ser forçado a viver em um abrigo de primatas, onde desperta sua consciência de líder.",
+        "Início da trilogia moderna e reboot da franquia. Dirigido por Rupert Wyatt, o filme estabelece a origem do vírus Simiano e a ascensão de César. Arrecadou mais de US$ 481 milhões mundialmente e relançou a saga com aclamação da crítica."
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Planeta dos Macacos: O Confronto (2014)",
+      "image": "./assets/images/apes/OConfronto.jpg",
+      "alt": "Cena de O Confronto - César a cavalo empunhando arma diante dos macacos",
+      "tomatometer": 91,
+      "observation": "Obra de grande profundidade emocional — eleva a franquia ao nível de drama político e bélico.",
+      "text": [
+        "Uma década depois do vírus Simiano dizimar a maior parte da humanidade, César lidera uma próspera comunidade de macacos nas florestas ao norte de São Francisco. A paz é ameaçada quando um grupo de humanos sobreviventes precisa reativar uma usina elétrica em território dos macacos. A desconfiança mútua e a traição interna empurram os dois lados para a guerra.",
+        "Dirigido por Matt Reeves, o filme aprofunda os temas de política, lealdade e as semelhanças entre humanos e macacos. Considerado por muitos críticos o melhor da trilogia moderna."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Planeta dos Macacos: A Guerra (2017)",
+      "image": "./assets/images/apes/AGuerrra.jpg",
+      "alt": "Cena de A Guerra - César acorrentado encarando o Coronel",
+      "tomatometer": 94,
+      "observation": "Conclusão épica e sombria — uma reflexão sobre vingança, sacrifício e o custo da liderança.",
+      "text": [
+        "César enfrenta seu inimigo mais brutal: o Coronel, um líder militar fanático determinado a exterminar os macacos. Após uma tragédia pessoal devastadora, César parte em uma missão solitária de vingança enquanto seu povo tenta encontrar um novo lar. Os dois destinos convergem em um confronto final que decidirá o futuro de ambas as espécies.",
+        "Dirigido novamente por Matt Reeves, o filme encerra a trilogia de César com referências a clássicos como Apocalypse Now e The Great Escape. Recebeu indicação ao Oscar de Melhores Efeitos Visuais."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Planeta dos Macacos: O Reinado (2024)",
+      "image": "./assets/images/apes/OReinado.jpg",
+      "alt": "Cena de O Reinado - Noa, jovem macaco, no topo de uma ruína humana",
+      "tomatometer": 81,
+      "observation": "Um novo começo para a franquia — apresenta uma geração pós-César num mundo radicalmente transformado.",
+      "text": [
+        "Gerações após a morte de César, os macacos tornaram-se a espécie dominante e os humanos sobreviventes vivem nas sombras, sem linguagem ou civilização. Noa, um jovem macaco de uma tribo pacífica, vê sua comunidade destruída por um tirano que usa os ensinamentos de César para justificar o domínio absoluto. Ele parte numa jornada que o fará questionar tudo o que sabe sobre o passado.",
+        "Dirigido por Wes Ball, o filme inaugura um novo capítulo da saga, situado muito além dos eventos da trilogia. Arrecadou mais de US$ 397 milhões mundialmente e abriu caminho para novos filmes."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "O Planeta dos Macacos (1968)",
+      "image": "./assets/images/apes/OClassico1968.jpg",
+      "alt": "Cena clássica de 1968 - Charlton Heston diante da Estátua da Liberdade enterrada na areia",
+      "tomatometer": 86,
+      "observation": "Um dos finais mais icônicos da história do cinema — obra fundadora da ficção científica política.",
+      "text": [
+        "O astronauta Taylor parte numa missão interestelar e, após uma viagem de séculos, pousa num planeta misterioso onde macacos inteligentes dominam e humanos são tratados como animais selvagens. Preso e incapaz de falar, Taylor luta para provar sua inteligência e descobrir a verdade sobre aquele mundo perturbador.",
+        "Dirigido por Franklin J. Schaffner e estrelado por Charlton Heston, o filme é a obra que originou toda a franquia, baseado no romance de Pierre Boulle (1963). Ganhou um Oscar honorário pela maquiagem revolucionária de John Chambers. Seu final é um dos mais chocantes e comentados da história do cinema."
+      ]
+    }
+  ]
+}
