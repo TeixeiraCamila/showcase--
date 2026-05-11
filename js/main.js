@@ -79,6 +79,7 @@ if (!isTouchDevice() && cursor && cursorTrail) {
     })
   })
 
+  // Pausa o loop quando a aba fica oculta para economizar CPU
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && animationId) {
       cancelAnimationFrame(animationId)
