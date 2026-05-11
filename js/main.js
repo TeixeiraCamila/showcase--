@@ -26,53 +26,67 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations()
 })
 
-// Custom cursor
+// Custom cursor (only for non-touch devices)
 const cursor = document.querySelector('.cursor')
 const cursorTrail = document.querySelector('.cursor__trail')
+
+const isTouchDevice = () => (
+  'ontouchstart' in window ||
+  navigator.maxTouchPoints > 0 ||
+  window.matchMedia('(pointer: coarse)').matches
+)
+
 let mouseX = 0
 let mouseY = 0
 let trailX = 0
 let trailY = 0
+let animationId = null
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX
-  mouseY = e.clientY
-  if (cursor) {
+if (!isTouchDevice() && cursor && cursorTrail) {
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX
+    mouseY = e.clientY
     cursor.style.left = (mouseX - 10) + 'px'
     cursor.style.top = (mouseY - 10) + 'px'
-  }
-})
+  })
 
-function animateTrail() {
-  trailX += (mouseX - trailX) * 0.15
-  trailY += (mouseY - trailY) * 0.15
-  if (cursorTrail) {
+  function animateTrail() {
+    trailX += (mouseX - trailX) * 0.15
+    trailY += (mouseY - trailY) * 0.15
     cursorTrail.style.left = (trailX - 6) + 'px'
     cursorTrail.style.top = (trailY - 6) + 'px'
+    animationId = requestAnimationFrame(animateTrail)
   }
-  requestAnimationFrame(animateTrail)
+  animateTrail()
+
+  document.addEventListener('mousedown', () => {
+    cursor.classList.add('cursor_clicking')
+  })
+
+  document.addEventListener('mouseup', () => {
+    cursor.classList.remove('cursor_clicking')
+  })
+
+  const interactiveElements = document.querySelectorAll('a, button, .project-card')
+  interactiveElements.forEach((el) => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('cursor_hovering')
+      cursorTrail.classList.add('cursor__trail_hovering')
+    })
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('cursor_hovering')
+      cursorTrail.classList.remove('cursor__trail_hovering')
+    })
+  })
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && animationId) {
+      cancelAnimationFrame(animationId)
+    } else if (animationId) {
+      animateTrail()
+    }
+  })
 }
-animateTrail()
-
-document.addEventListener('mousedown', () => {
-  if (cursor) cursor.classList.add('cursor_clicking')
-})
-
-document.addEventListener('mouseup', () => {
-  if (cursor) cursor.classList.remove('cursor_clicking')
-})
-
-const interactiveElements = document.querySelectorAll('a, button, .project-card')
-interactiveElements.forEach((el) => {
-  el.addEventListener('mouseenter', () => {
-    if (cursor) cursor.classList.add('cursor_hovering')
-    if (cursorTrail) cursorTrail.classList.add('cursor__trail_hovering')
-  })
-  el.addEventListener('mouseleave', () => {
-    if (cursor) cursor.classList.remove('cursor_hovering')
-    if (cursorTrail) cursorTrail.classList.remove('cursor__trail_hovering')
-  })
-})
 
 // Theme toggle
 const toggleBtn = document.querySelector('.theme-toggle')
@@ -83,6 +97,8 @@ function setTheme(theme) {
   updateBulb(theme)
 }
 
+
+// Theme icon
 function updateBulb(theme) {
   const bulb = document.getElementById('bulb')
   if (!bulb) return
