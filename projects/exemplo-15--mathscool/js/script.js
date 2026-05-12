@@ -108,14 +108,14 @@
     toggle.addEventListener("click", () => {
       toggle.classList.toggle("active");
       menu.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
+      // document.body.classList.toggle("menu-open");
     });
 
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         toggle.classList.remove("active");
         menu.classList.remove("active");
-        document.body.classList.remove("menu-open");
+        // document.body.classList.remove("menu-open");
       });
     });
   }

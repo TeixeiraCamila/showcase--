@@ -804,6 +804,10 @@ main {
     padding: var(--space-sm) !important;
   }
 
+  .hero__image {
+    width: 80px;
+  }
+
   .nav__toggle {
     display: flex;
   }
@@ -843,7 +847,7 @@ main {
   }
 
   .nav__toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 6px);
   }
 
   .nav__toggle.active span:nth-child(2) {
@@ -881,6 +885,10 @@ main {
 
   .grid-cards__item:nth-child(7) {
     grid-column: span 1;
+  }
+
+  .courses__card {
+    flex: unset;
   }
 
   .tabs__tab-list {
