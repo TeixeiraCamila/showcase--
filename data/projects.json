@@ -1,10 +1,19 @@
 {
 	"title": "SHOWCASE",
 	"subtitle": "PROJETOS WEB // JS + HTML + CSS + GSAP",
+	"defaultCategory": "landing",
+	"categories": [
+		{ "id": "all", "name": "Todos" },
+		{ "id": "landing", "name": "Landing Page" },
+		{ "id": "animation", "name": "Animação" },
+		{ "id": "tools", "name": "Ferramentas" },
+		{ "id": "quiz", "name": "Quiz" }
+	],
 	"projects": [
 		{
-			"id": "02",
+			"id": "01",
 			"title": "REAL STATE",
+			"category": "landing",
 			"href": "projects/exemplo-02--real-state/index.html",
 			"description": "SK Builders - Luxury real estate agency specializing in international property appraisal, sales, purchases and investments.",
 			"tags": ["HTML5", "CSS3", "JAVASCRIPT"]
@@ -12,6 +21,7 @@
 		{
 			"id": "03",
 			"title": "INFINITE SLIDER",
+			"category": "animation",
 			"href": "projects/exemplo-03--infinite-slider/index.html",
 			"description": "Galeria infinita de filmes vencedores do Oscar com animações GSAP, scroll e swipe.",
 			"tags": ["HTML5", "CSS3", "GSAP"]
@@ -19,6 +29,7 @@
 		{
 			"id": "04",
 			"title": "NOTELY",
+			"category": "landing",
 			"href": "projects/exemplo-04--notely/index.html",
 			"description": "E-commerce landing page for personalized notebooks with Tailwind CSS and GSAP animations.",
 			"tags": ["HTML5", "Tailwindcss", "GSAP"]
@@ -26,6 +37,7 @@
 		{
 			"id": "05",
 			"title": "CATPUCCINO",
+			"category": "landing",
 			"href": "projects/exemplo-05--catpuccino/index.html",
 			"description": "Café com aconchego para Gen Z Creators. Design retrô-moderno, light & dark mode.",
 			"tags": ["HTML5", "CSS3", "JAVASCRIPT"]
@@ -33,6 +45,7 @@
 		{
 			"id": "06",
 			"title": "GROUNDED LUXURY TRAVEL",
+			"category": "landing",
 			"href": "projects/exemplo-06--grounded/index.html",
 			"description": "Discover inner stillness through immersive breathwork practice. Group sessions, private coaching, and multi-day retreats in serene natural settings.",
 			"tags": ["HTML5", "Tailwindcss"]
@@ -40,6 +53,7 @@
 		{
 			"id": "07",
 			"title": "CARD STACKING ANIMATION",
+			"category": "animation",
 			"href": "projects/exemplo-07/index.html",
 			"description": "Landing page interativa com animação inovadora de empilhamento de cards usando GSAP.",
 			"tags": ["HTML5", "CSS3", "GSAP"]
@@ -47,6 +61,7 @@
 		{
 			"id": "08",
 			"title": "POSTER MAKER",
+			"category": "tools",
 			"href": "projects/exemplo-08--poster/index.html",
 			"description": "Create custom posters for movies and events with Canvas API and download feature.",
 			"tags": ["HTML5", "CSS3", "Canvas"]
@@ -54,6 +69,7 @@
 		{
 			"id": "09",
 			"title": "RESUME TEMPLATE",
+			"category": "tools",
 			"href": "projects/exemplo-09--resume/index.html",
 			"description": "Currículo profissional moderno com design responsivo e animações suaves.",
 			"tags": ["HTML5", "CSS3", "JAVASCRIPT"]
@@ -61,6 +77,7 @@
 		{
 			"id": "10",
 			"title": "SIGN UP BEARS",
+			"category": "tools",
 			"href": "projects/exemplo-10--signup-bears/index.html",
 			"description": "Create your account and join our platform. Sign up with Google, Facebook, or email.",
 			"tags": ["HTML5", "CSS3", "JAVASCRIPT"]
@@ -68,6 +85,7 @@
 		{
 			"id": "11",
 			"title": "JAVASCRIPT QUIZ",
+			"category": "quiz",
 			"href": "projects/exemplo-11--quiz/index.html",
 			"description": "Quiz interativo com localStorage para salvar progresso, feedback visual e barra de progresso.",
 			"tags": ["HTML5", "CSS3", "JAVASCRIPT"]
@@ -75,6 +93,7 @@
 		{
 			"id": "12",
 			"title": "LANDING PAGE TEMPLATE",
+			"category": "landing",
 			"href": "projects/exemplo-12/index.html",
 			"description": "Modern landing page template with smooth animations, responsive design and underwater theme.",
 			"tags": ["HTML5", "CSS3", "JAVASCRIPT"]

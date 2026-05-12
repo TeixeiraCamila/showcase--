@@ -1,3 +1,11 @@
+let currentCategory = 'landing'
+let allProjects = []
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCursor()
+  initTheme()
+  loadProjects()
+})
 
 function initCursor() {
   const cursor = document.querySelector('.cursor')
@@ -83,36 +91,81 @@ async function loadProjects() {
   try {
     const response = await fetch('./data/projects.json')
     const data = await response.json()
-    renderProjects(data.projects)
+    allProjects = data.projects
+    renderCategories(data.categories, data.defaultCategory)
+    filterProjects(currentCategory)
     initScrollAnimations()
   } catch (error) {
     console.error('Erro ao carregar projetos:', error)
   }
 }
 
+function renderCategories(categories, defaultCategory) {
+  const container = document.getElementById('filterBar')
+  if (!container) return
+
+  container.innerHTML = categories.map((cat) => `
+    <button
+      class="filter-badge${cat.id === defaultCategory ? ' is-active' : ''}"
+      data-category="${cat.id}"
+      aria-pressed="${cat.id === defaultCategory}"
+    >
+      ${escapeHtml(cat.name)}
+    </button>
+  `).join('')
+
+  container.querySelectorAll('.filter-badge').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category
+      setActiveCategory(category)
+      filterProjects(category)
+    })
+  })
+}
+
+function setActiveCategory(category) {
+  currentCategory = category
+  document.querySelectorAll('.filter-badge').forEach((btn) => {
+    const isActive = btn.dataset.category === category
+    btn.classList.toggle('is-active', isActive)
+    btn.setAttribute('aria-pressed', isActive)
+  })
+}
+
+function filterProjects(category) {
+  const container = document.getElementById('projectsGrid')
+  if (!container) return
+
+  const filtered = category === 'all'
+    ? allProjects
+    : allProjects.filter((p) => p.category === category)
+
+  container.style.opacity = '0'
+
+  setTimeout(() => {
+    container.innerHTML = filtered.map((project) => `
+      <a href="${escapeHtml(project.href)}" class="project-card"
+        aria-label="Projeto ${escapeHtml(project.id)}: ${escapeHtml(project.title)}">
+        <div class="project-card__preview" aria-hidden="true">${escapeHtml(project.id)}</div>
+        <div class="project-card__info">
+          <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
+          <p class="project-card__description">${escapeHtml(project.description)}</p>
+          <div class="project-card__tags" aria-label="Tecnologias usadas">
+            ${project.tags.map((tag) => `<span class="project-card__tag">${escapeHtml(tag)}</span>`).join('')}
+          </div>
+        </div>
+      </a>
+    `).join('')
+
+    container.style.opacity = '1'
+    initScrollAnimations()
+  }, 200)
+}
+
 function escapeHtml(str) {
   const div = document.createElement('div')
   div.textContent = str
   return div.innerHTML
-}
-
-function renderProjects(projects) {
-  const container = document.getElementById('projectsGrid')
-  if (!container) return
-
-  container.innerHTML = projects.map((project) => `
-    <a href="${escapeHtml(project.href)}" class="project-card"
-      aria-label="Projeto ${escapeHtml(project.id)}: ${escapeHtml(project.title)}">
-      <div class="project-card__preview" aria-hidden="true">${escapeHtml(project.id)}</div>
-      <div class="project-card__info">
-        <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
-        <p class="project-card__description">${escapeHtml(project.description)}</p>
-        <div class="project-card__tags" aria-label="Tecnologias usadas">
-          ${project.tags.map((tag) => `<span class="project-card__tag">${escapeHtml(tag)}</span>`).join('')}
-        </div>
-      </div>
-    </a>
-  `).join('')
 }
 
 function initScrollAnimations() {
@@ -137,9 +190,3 @@ function initScrollAnimations() {
     observer.observe(card)
   })
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  initCursor()
-  initTheme()
-  loadProjects()
-})

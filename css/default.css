@@ -45,6 +45,7 @@ body {
 .project-card {
   overflow: hidden;
   cursor: pointer;
+  max-width: 350px;
 }
 
 /* Project Card Tags */

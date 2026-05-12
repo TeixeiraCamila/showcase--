@@ -32,6 +32,39 @@ body {
 	font-size: 0.9rem;
 	color: var(--text-secondary);
 	letter-spacing: 2px;
+	margin-bottom: 20px;
+}
+
+/* Filter Bar */
+.filter-bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.filter-badge {
+	padding: 8px 16px;
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--text-secondary);
+	background: var(--bg-card);
+	border: 1px solid var(--border-light);
+	border-radius: 20px;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.filter-badge:hover {
+	color: var(--text-primary);
+	border-color: var(--text-secondary);
+}
+
+.filter-badge.is-active {
+	background: var(--cursor-hover);
+	color: var(--bg-primary);
+	border-color: var(--cursor-hover);
 }
 
 /* Container */
@@ -47,6 +80,7 @@ body {
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 40px;
 	padding: 20px;
+	transition: opacity 0.3s ease;
 }
 
 /* Project Card */

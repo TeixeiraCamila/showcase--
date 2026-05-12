@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <rect width="128" height="128" rx="24" fill="#1a1a1a"/>
+        <text x="64" y="90" text-anchor="middle" font-family="'Arial Black',sans-serif" font-weight="900" font-size="88" fill="#F7E44B">M</text>
+        <!-- ponto rosa decorativo -->
+        <circle cx="96" cy="28" r="8" fill="#FF3EAA"/>
+        <circle cx="108" cy="44" r="5" fill="#FF3EAA" opacity="0.6"/>
+      </svg>
