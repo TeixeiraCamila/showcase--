@@ -26,7 +26,7 @@
 </head>
 
 <body class="bg-gray-100 min-h-screen p-8">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-7xl mx-auto">
     <h1 class="text-3xl font-bold text-black mb-8 text-center app__title">Poster Maker</h1>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 app__container">
@@ -79,12 +79,16 @@
             </div>
 
             <div class="poster__info">
-              <div class="flex items-baseline gap-4 poster__header">
+              <div class="poster__header">
                 <h2 id="poster-title" class="poster__title">Title</h2>
                 <span id="poster-year" class="poster__year">Year</span>
               </div>
 
-              <p id="poster-genre" class="poster__genre">Genre</p>
+              
+              <div class="poster__section">
+                <p class="poster__section-label">Genre</p>
+                <p id="poster-genre" class="poster__section-value">Genre</p>
+              </div>
 
               <div class="poster__section">
                 <p class="poster__section-label">Cast</p>

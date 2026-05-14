@@ -37,10 +37,36 @@ inputImage.addEventListener('change', function (e) {
 
 function updatePoster() {
   posterTitle.textContent = inputTitle.value || 'Title'
-  posterYear.textContent = inputYear.value || 'Year'
-  posterNames.textContent = inputNames.value || 'Names'
-  posterGenre.textContent = inputGenre.value || 'Genre'
-  posterDirector.textContent = inputDirector.value || 'Director'
+
+  if (inputYear.value) {
+    posterYear.parentElement.style.display = ''
+    posterYear.textContent = inputYear.value
+  } else {
+    posterYear.parentElement.style.display = 'none'
+  }
+
+  if (inputGenre.value) {
+    posterGenre.style.display = ''
+    posterGenre.textContent = inputGenre.value
+  } else {
+    posterGenre.style.display = 'none'
+  }
+
+  const namesSection = posterNames.closest('.poster__section')
+  if (inputNames.value) {
+    namesSection.style.display = ''
+    posterNames.textContent = inputNames.value
+  } else {
+    namesSection.style.display = 'none'
+  }
+
+  const directorSection = posterDirector.closest('.poster__section')
+  if (inputDirector.value) {
+    directorSection.style.display = ''
+    posterDirector.textContent = inputDirector.value
+  } else {
+    directorSection.style.display = 'none'
+  }
 }
 
 inputTitle.addEventListener('input', updatePoster)
