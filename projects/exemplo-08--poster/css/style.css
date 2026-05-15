@@ -108,7 +108,7 @@ body {
 
 /* Poster  */
 #poster-preview {
-  aspect-ratio: 3/2;
+  min-width: 50%;
 }
 
 .poster {
@@ -155,6 +155,7 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 

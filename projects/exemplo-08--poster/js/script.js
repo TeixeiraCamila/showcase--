@@ -10,7 +10,7 @@ const posterTitle = document.getElementById('poster-title')
 const posterYear = document.getElementById('poster-year')
 const posterNames = document.getElementById('poster-names')
 const posterGenre = document.getElementById('poster-genre')
-const posterDirector = document.getElementById('poster-director')
+const posterDirector = document.getElementById('poster-creator')
 
 const btnPreview = document.getElementById('btn-preview')
 const btnDownload = document.getElementById('btn-download')
@@ -89,7 +89,7 @@ btnDownload.addEventListener('click', function () {
   })
     .then((canvas) => {
       const link = document.createElement('a')
-      link.download = 'poster.png'
+      link.download = `${inputTitle.value}.png`
       link.href = canvas.toDataURL('image/png')
       link.click()
     })
