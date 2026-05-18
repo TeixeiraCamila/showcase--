@@ -35,7 +35,27 @@
 
         <div class="space-y-4">
           <div class="form__group">
-            <label class="block text-sm font-medium mb-1 form__label">Image</label>
+            <label class="block text-sm font-medium mb-1 form__label">Search Movie</label>
+            <div class="flex gap-2">
+              <input type="text" id="input-search" placeholder="Enter movie title" class="form__input">
+              <button type="button" id="btn-search" class="form__button form__button--primary px-3">Search</button>
+            </div>
+          </div>
+
+          <div id="search-results" class="form__group hidden">
+            <label class="block text-sm font-medium mb-1 form__label">Results</label>
+            <select id="select-movie" class="form__input">
+              <option value="">Select a movie...</option>
+            </select>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">
+              Image
+              <span id="image-source" class="text-xs font-normal text-gray-500 ml-1"></span>
+            </label>
             <input type="file" id="input-image" accept="image/*" class="form__input">
           </div>
 
@@ -106,6 +126,7 @@
     </div>
   </div>
 
+  <script src="js/config.js"></script>
   <script src="js/script.js"></script>
 </body>
 
