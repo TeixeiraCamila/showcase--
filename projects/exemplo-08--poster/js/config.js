@@ -1,0 +1,1 @@
+const OMDB_API_KEY = 'cf488f74'
