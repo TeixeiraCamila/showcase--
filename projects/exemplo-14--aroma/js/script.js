@@ -1,3 +1,5 @@
+lucide.createIcons();
+
 const toggle = document.querySelector('.header__toggle');
 const closeBtn = document.querySelector('.header__close');
 const nav = document.querySelector('.header__nav');

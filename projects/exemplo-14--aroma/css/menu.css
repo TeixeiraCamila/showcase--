@@ -2,19 +2,23 @@
 
 .header__toggle {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  color: var(--white);
+  padding: 0.25rem;
 }
 
-.header__toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: var(--white);
-  border-radius: 2px;
+.header__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  padding: 0.25rem;
 }
 
 .header__backdrop {
@@ -50,18 +54,6 @@
 
 .header__nav.active {
   transform: translateX(0);
-}
-
-.header__close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-size: 2rem;
-  cursor: pointer;
-  line-height: 1;
 }
 
 .header__link {
