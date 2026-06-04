@@ -41,60 +41,6 @@ body {
   align-items: center;
 }
 
-.header__toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.header__toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: var(--white);
-  border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-  .header__toggle {
-    display: flex;
-  }
-
-  .header__nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 70%;
-    max-width: 250px;
-    background-color: var(--green);
-    flex-direction: column;
-    padding: 4rem 1rem 1rem;
-    gap: 1rem;
-    z-index: 100;
-  }
-
-  .header__nav.active {
-    display: flex;
-  }
-
-  .header__close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-  }
-}
-
 /* Element: header__logo */
 .header__logo {
   color: var(--white);
