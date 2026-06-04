@@ -146,7 +146,9 @@ function filterProjects(category) {
     container.innerHTML = filtered.map((project) => `
       <a href="${escapeHtml(project.href)}" class="project-card"
         aria-label="Projeto ${escapeHtml(project.id)}: ${escapeHtml(project.title)}">
-        <div class="project-card__preview" aria-hidden="true">${escapeHtml(project.id)}</div>
+        <div class="project-card__preview" aria-hidden="true">
+          <img src="${escapeHtml(project.preview)}" alt="" loading="lazy" />
+        </div>
         <div class="project-card__info">
           <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
           <p class="project-card__description">${escapeHtml(project.description)}</p>

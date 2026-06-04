@@ -153,6 +153,9 @@ body {
 	position: relative;
 	overflow: hidden;
 }
+.project-card__preview img {
+	width: 100%;
+}
 
 .project-card__preview::before {
 	content: "";
