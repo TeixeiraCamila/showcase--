@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -7,49 +7,104 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-
     <link rel="stylesheet" href="./css/style.css" />
-
-    <title>Pims</title>
+    <title>Lumi</title>
   </head>
-
   <body>
     <header>
       <div class="container">
         <nav class="nav">
-          <h1>PIMS</h1>
+          <h1 class="nav__logo">LUMI</h1>
+          <button class="nav__toggle" aria-label="Open menu">
+            <i data-lucide="menu"></i>
+          </button>
           <ul class="nav__menu">
-            <li><a href="#about" class="nav__link">About Us</a></li>
-            <li><a href="#menu" class="nav__link">Menu</a></li>
-            <li><a href="#findUs" class="nav__link">Find Us</a></li>
-            <li><a href="#blog" class="nav__link">Blog</a></li>
+            <li class="nav__item nav__item--close">
+              <button class="nav__close" aria-label="Close menu">
+                <i data-lucide="x"></i>
+              </button>
+            </li>
+            <li class="nav__item"><a href="#about" class="nav__link">About Us</a></li>
+            <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+            <li class="nav__item"><a href="#findUs" class="nav__link">Find Us</a></li>
+            <li class="nav__item"><a href="#blog" class="nav__link">Blog</a></li>
+            <li class="nav__item nav__item--contact">
+              <div class="nav__contact">
+                <i data-lucide="phone"></i>
+                <span>(49) 356-4536</span>
+              </div>
+            </li>
           </ul>
-
-          <div class="nav__contact">
-            <i data-lucide="phone"></i>
-            <span>(49) 356-4536</span>
-          </div>
+          <div class="nav__backdrop"></div>
         </nav>
       </div>
     </header>
 
     <main>
-      <div class="container hero">
-        <div class="hero__text">
-          <h2>PIMS</h2>
-          <h3>Your perfect formula in one cup</h3>
-          <button class="btn btn-primary">Check menu</button>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quae vitae nihil, nesciunt quas ratione modi quidem. Qui, ducimus at nisi, tenetur ea alias natus soluta autem earum voluptatibus dignissimos.
-          </p>
+      <div class="hero">
+        <div class="hero__card">
+          <div class="hero__container">
+            <div class="container">
+              <div class="hero__text">
+                <h2 class="hero__title">LUMI</h2>
+                <h3 class="hero__subtitle">Nature's energy in every cup</h3>
+                <button class="btn btn--primary">Check menu</button>
+                <p class="hero__description">
+                  LUMI is a tea-based drink that gives you natural energy. A fun array of flavors made only from the freshest berries and fruits.
+                </p>
+              </div>
+              <div class="hero__image">
+                <img src="./imgs/hero_image.png" alt="LUMI Product" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="hero__image">
-          <img src="./imgs/hero_image.png" alt="PIMS Product">
+      </div>
+
+      <div class="about">
+        <div class="container">
+          <div class="about__header">
+            <h3 class="about__title">About LUMI</h3>
+            <h4 class="about__subtitle">The perfect blend of tea and fruit</h4>
+            <p class="about__description">
+              Every sip of LUMI is crafted with care. We combine premium tea with real berries and fruits to create a drink that energizes naturally. Fun, fresh, and full of flavor — that's the LUMI promise.
+            </p>
+          </div>
+          <div class="about__content">
+            <ul class="about__list">
+              <li class="about__item">
+                <i data-lucide="cup-soda" color="#EFB590"></i>
+                <span><b>Tea Infused</b> - Natural caffeine for gentle energy</span>
+              </li>
+              <li class="about__item">
+                <i data-lucide="cherry" color="#EFB590"></i>
+                <span><b>Berry Rich</b> - Packed with real berry flavors</span>
+              </li>
+              <li class="about__item">
+                <i data-lucide="leaf" color="#EFB590"></i>
+                <span><b>Pure & Natural</b> - No artificial additives</span>
+              </li>
+              <li class="about__item">
+                <i data-lucide="apple" color="#EFB590"></i>
+                <span><b>Fruit Variety</b> - A fun array of fresh fruits</span>
+              </li>
+              <li class="about__item">
+                <i data-lucide="sparkles" color="#EFB590"></i>
+                <span><b>Light & Fresh</b> - Refreshing in every sip</span>
+              </li>
+              <li class="about__item">
+                <i data-lucide="droplets" color="#EFB590"></i>
+                <span><b>Smooth Blend</b> - Perfectly crafted for you</span>
+              </li>
+            </ul>
+            <div class="about__images">
+              <img src="./imgs/about-blob-1.png" alt="" />
+              <img src="./imgs/about-blob-2.png" alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </main>
-
-    <footer></footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
