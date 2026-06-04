@@ -1,0 +1,217 @@
+/* Colors */
+.is--yellow {
+  background-color: rgb(252, 238, 169);
+  position: relative;
+}
+
+.is--yellow li {
+  border-radius: 50%;
+  background-color: rgb(255, 255, 73);
+  background-image:
+    radial-gradient(rgb(249, 206, 36) 5%,
+      rgb(254, 179, 4) 25%,
+      rgb(252, 191, 7) 60%);
+  box-shadow:
+    0 0 5px 2px rgb(250, 193, 93),
+    0 0 20px 10px rgb(255, 228, 140),
+    0 0 40px 15px rgb(255, 219, 41);
+  height: 5px;
+  width: 5px;
+  top: -20px;
+  position: absolute;
+  animation: leftright 24s infinite cubic-bezier(0.39, 0, 0.63, 1),
+    updown 8s infinite 1.25s cubic-bezier(0.39, 0, 0.63, 1),
+    blinking 3s infinite;
+}
+
+li:nth-of-type(1) {
+  animation-delay: 1s;
+  animation-duration: 65s, 81s, 0.01s;
+  animation-fill-mode: backwards, backwards;
+}
+
+li:nth-of-type(2) {
+  animation-delay: 0.5s;
+  animation-duration: 80s, 75s, 0.01s;
+}
+
+li:nth-of-type(3) {
+  animation-delay: 1.5s;
+  animation-duration: 70s, 60s, 0.01s;
+  animation-fill-mode: backwards, backwards;
+}
+
+li:nth-of-type(4) {
+  animation-delay: 2.5s;
+  animation-duration: 90s, 80s, 0.01s;
+}
+
+li:nth-of-type(5) {
+  animation-delay: 0.3s;
+  animation-duration: 55s, 75s, 0.01s;
+}
+
+li:nth-of-type(6) {
+  animation-delay: 2.2s;
+  animation-duration: 79s, 63s, 0.01s;
+  animation-fill-mode: backwards, backwards;
+}
+
+li:nth-of-type(7) {
+  animation-delay: 0.9s;
+  animation-duration: 70s, 80s, 0.01s;
+}
+
+li:nth-of-type(8) {
+  animation-delay: 1.6s;
+  animation-duration: 50s, 40s, 0.01s;
+  animation-fill-mode: backwards, backwards;
+}
+
+li:nth-of-type(9) {
+  animation-delay: 1.8s;
+  animation-duration: 77s, 88s, 0.01s;
+}
+
+li:nth-of-type(10) {
+  animation-delay: 3s;
+  animation-duration: 87s, 73s, 0.01s;
+  animation-fill-mode: backwards, backwards;
+}
+
+
+
+/* animations */
+
+/* It will create the left right movement */
+@keyframes leftright {
+
+  0%,
+  100% {
+    left: 80%;
+  }
+
+  16.666% {
+    left: 95%;
+  }
+
+  33.333% {
+    left: 10%;
+  }
+
+  50% {
+    left: 60%;
+  }
+
+  66.666% {
+    left: 70%;
+  }
+
+  83.333% {
+    left: 5%;
+  }
+}
+
+/* It will create the up down movement */
+@keyframes updown {
+
+  0%,
+  100% {
+    top: 10px;
+  }
+
+  25% {
+    top: 90%;
+  }
+
+  50% {
+    top: 50%;
+  }
+
+  75% {
+    top: 95%;
+  }
+}
+
+/* It will create the blinking effect */
+@keyframes blinking {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px 2px rgb(250, 193, 93),
+      0 0 10px 5px rgb(255, 242, 63),
+      0 0 30px 10px rgb(255, 219, 41);
+    height: 0;
+    width: 0;
+  }
+
+  50% {
+    box-shadow: 0 0 5px 2px rgb(250, 193, 93),
+      0 0 20px 10px rgb(255, 228, 140),
+      0 0 40px 15px rgb(255, 219, 41);
+  }
+
+  75% {
+    box-shadow: 0 0 0px 0px rgb(250, 193, 93),
+      0 0 0px 0px rgb(255, 228, 140),
+      0 0 0px 0px rgb(255, 219, 41);
+  }
+}
+
+.is--green {
+  background-color: #294e44;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.is--green::after {
+  content: '';
+  width: 50%;
+  height: 100%;
+  background-image: url(../assets/cards/ivy-1.svg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  left: 11px;
+}
+
+.is--blue {
+  background-color: #8bb1fc;
+}
+
+.is--grey {
+  background-color: #ccc;
+  margin: 0;
+  min-height: 100vh;
+  /* Define o tamanho de cada "quadrado" virtual */
+  --tamanho-quadrado: 50px;
+
+  background-image:
+    /* Gradiente vertical */
+    repeating-linear-gradient(to bottom,
+      hwb(0 100% 0%) 0,
+      /* Cor branca do início até o tamanho do quadrado */
+      #fff var(--tamanho-quadrado),
+      #ccc var(--tamanho-quadrado),
+      /* Cor preta do tamanho do quadrado até o dobro */
+      #ccc calc(2 * var(--tamanho-quadrado))),
+    /* Gradiente horizontal */
+    repeating-linear-gradient(to right,
+      #ccc 0,
+      /* Inverte as cores para o gradiente horizontal */
+      #ccc var(--tamanho-quadrado),
+      #fff var(--tamanho-quadrado),
+      #fff calc(2 * var(--tamanho-quadrado)));
+
+  /* O blend-mode 'difference' mistura os dois gradientes para criar o efeito xadrez */
+  background-blend-mode: difference;
+}
+
+.is--coral {
+  background-color: #febdaa;
+}
+
+.is--sage {
+  background-color: #b2c9ab;
+}

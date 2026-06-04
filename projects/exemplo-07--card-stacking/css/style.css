@@ -1,0 +1,96 @@
+@import './header.css';
+@import './cards.css';
+
+@font-face {
+  font-family: 'Story Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../font/StoryScript-Regular.ttf') format('truetype');
+}
+
+/* Critical CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Story Script', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+footer,
+header {
+  background-color: #1f453b;
+}
+
+header h1 {
+  font-size: clamp(68px, 14vw, 15vw);
+  line-height: clamp(68px, 14vw, 15vw);
+  display: flex;
+  flex-direction: column;
+  z-index: 100 !important;
+}
+
+
+.text-left {
+  font-family: sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.text-right,
+.text-left {
+  color: white;
+}
+
+/* Card Stacking */
+.card-item {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5vh;
+  position: sticky;
+  top: 0;
+}
+
+.card-inner {
+  width: 95%;
+  height: 80vh;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.2);
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  position: relative;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-width: 80%;
+}
+
+/* GPU Acceleration */
+header svg {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
