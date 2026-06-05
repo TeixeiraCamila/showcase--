@@ -1,151 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <link rel="icon" type="image/png" href="./assets/caffee.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <title>Aroma</title>
+  </head>
 
-
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/menu.css" />
-  <title>Aroma</title>
-</head>
-
-<body>
-  <header class="header">
-    <div class="container">
-      <h1 class="header__logo">Aroma</h1>
-      <button class="header__toggle" aria-label="Menu">
-        <i data-lucide="menu"></i>
-      </button>
-      <nav class="header__nav">
-        <button class="header__close" aria-label="Fechar menu">
-          <i data-lucide="x"></i>
-        </button>
-        <a href="#" class="header__link">Home</a>
-        <a href="#" class="header__link">Sobre</a>
-        <a href="#" class="header__link">Contato</a>
-        <a href="#" class="header__link">Produtos</a>
-        <a href="#" class="header__link">Blog</a>
-      </nav>
-      <div class="header__backdrop"></div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
+  <body>
+    <header class="header">
       <div class="container">
-        <div class="hero__detail">
-          <img class="hero__icon" width="50" height="50" src="./assets/caffee.png" alt="Café">
-          <p class="hero__text">Lorem ipsum dolor</p>
+        <h1 class="header__logo">Aroma</h1>
+        <button class="header__toggle" aria-label="Menu">
+          <i data-lucide="menu"></i>
+        </button>
+        <nav class="header__nav">
+          <button class="header__close" aria-label="Fechar menu">
+            <i data-lucide="x"></i>
+          </button>
+          <a href="#" class="header__link">Sobre</a>
+          <a href="#" class="header__link">Contato</a>
+          <a href="#" class="header__link">Produtos</a>
+          <a href="#" class="header__link">Blog</a>
+        </nav>
+        <div class="header__backdrop"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__octagon">
+          <svg
+            class="hero__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-coffee-icon lucide-coffee"
+          >
+            <path d="M10 2v2" />
+            <path d="M14 2v2" />
+            <path
+              d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"
+            />
+            <path d="M6 2v2" />
+          </svg>
+          <h2 class="hero__logo">Aroma</h2>
+        </div>
+      </section>
+      <section class="welcome">
+        <div class="container">
+          <div class="welcome--header">
+            <h2 class="welcome--title">Welcome</h2>
+            <p class="welcome--p">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+              impedit minus corporis esse adipisci quas sunt veniam laudantium
+              nihil, odit voluptatem. Quaerat ab nam commodi deleniti fugiat in
+              nulla nobis. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Officiis, repellat minus dolore sint mollitia dolorem in
+              ipsa quas ipsam non repudiandae? Nobis odio illum corporis ab
+              ipsa, suscipit delectus perspiciatis!
+            </p>
+            <div class="welcome__social">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+                />
+                <path d="m10 15 5-3-5-3z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards">
+        <div class="container">
+          <div class="cards__grid">
+            <article class="cards__item cards__item--light">
+              <div class="cards__image">
+                <img
+                  src="https://i.pinimg.com/736x/49/59/33/495933b0e52b9714af1dccd1a6371967.jpg"
+                  alt="Smoked Salmon Toast"
+                />
+              </div>
+              <h3 class="cards__title">Smoked Salmon Toast</h3>
+              <p class="cards__text">
+                Delicate smoked salmon layered over whipped cream cheese on
+                artisan sourdough, finished with fresh dill, capers, and lemon.
+                Light, savory, and perfect with an iced latte.
+              </p>
+              <button class="cards__button">
+                Iure adipisci <span>&#8594;</span>
+              </button>
+            </article>
+            <article class="cards__item cards__item--dark">
+              <div class="cards__image">
+                <img
+                  src="https://i.pinimg.com/736x/00/d2/bb/00d2bb936d99539771352a47c9498890.jpg"
+                  alt="Avocado Sunrise Toast"
+                />
+              </div>
+              <h3 class="cards__title">Avocado Sunrise Toast</h3>
+              <p class="cards__text">
+                Crunchy toasted bread topped with smashed avocado and a
+                perfectly cooked sunny-side egg, finished with chili flakes and
+                cracked pepper for a simple but satisfying breakfast.
+              </p>
+              <button class="cards__button">
+                adipisicing elit <span>&#8594;</span>
+              </button>
+            </article>
+            <article class="cards__item cards__item--green">
+              <div class="cards__image">
+                <img
+                  src="https://i.pinimg.com/736x/b5/05/b9/b505b9ee9c89c9260f8c13e965dae0cd.jpg"
+                  alt="Honey Berry French Toast"
+                />
+              </div>
+              <h3 class="cards__title">Honey Berry French Toast</h3>
+              <p class="cards__text">
+                Golden brioche french toast stacked with fresh bananas,
+                blueberries, and a drizzle of warm honey. Sweet, soft, and made
+                for slow coffee mornings.
+              </p>
+              <button class="cards__button">
+                dolor sit amet <span>&#8594;</span>
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="split">
+        <div class="split__overlay"></div>
+        <div class="split__image">
+          <img src="https://i.pinimg.com/736x/13/8d/97/138d976b3abf485ddd572bcdbff43f07.jpg" alt="Coffee" />
+        </div>
+        <div class="split__content">
+          <div class="container">
+            <h2 class="split__title">Lorem ipsum dolor</h2>
+            <p class="split__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio suscipit exercitationem, rem optio deleniti voluptatem neque vel in omnis aut recusandae officia accusamus, nam est! Expedita, tempora error. Distinctio!
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, eos quos, voluptatibus deleniti assumenda repellendus doloribus sapiente culpa nostrum, magni dolor. Sed doloribus explicabo officia saepe illum nemo, suscipit quia!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="split split--wide">
+        <div class="split__overlay"></div>
+        <div class="split__image">
+          <img src="https://i.pinimg.com/736x/d8/39/74/d839746dec63ec826a628cd06770a003.jpg" alt="Coffee" />
+        </div>
+        <div class="split__content">
+          <div class="container">
+            <h2 class="split__title">Lorem ipsum dolor</h2>
+            <p class="split__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio suscipit exercitationem, rem optio deleniti voluptatem neque vel.</p>
+          </div>
+        </div>
+        <div class="split__image">
+          <img src="https://i.pinimg.com/736x/10/2e/bf/102ebf9a1fdc34fe56d052244627b643.jpg" alt="Coffee" />
+        </div>
+      </section>
+
+      <section class="social-section">
+        <div class="container">
+          <div class="social-section__icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </div>
+          <p class="social-section__phrase">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <p class="footer__text">Lorem ipsum dolor sit amet</p>
+          <div class="footer__octagon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+          </div>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Facebook</a>
+            <a href="#" class="footer__link">Instagram</a>
+            <a href="#" class="footer__link">YouTube</a>
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
 
-
-    <section class="description">
-      <div class="container">
-        <h3 class="description__title">Welcome</h3>
-        <p class="description__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio suscipit
-          exercitationem, rem optio deleniti voluptatem neque vel in omnis aut recusandae officia accusamus, nam est!
-          Expedita, tempora error. Distinctio!</p>
-        <p class="description__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero quibusdam, harum at
-          quam suscipit reprehenderit autem unde repudiandae ullam temporibus tempora, porro quasi cum animi nam quidem
-          modi ea! Neque!</p>
-
-        <ul class="social">
-          <li class="social__item">
-            <a href="#" class="social__link">
-              <img class="social__icon" width="30" height="30" src="./assets/facebook.png" alt="Facebook">
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link">
-              <img class="social__icon" width="30" height="30" src="./assets/instagran.png" alt="Instagram">
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link">
-              <img class="social__icon" width="30" height="30" src="./assets/youtube.png" alt="YouTube">
-            </a>
-          </li>
-        </ul>
-
-        <ul class="products">
-          <li class="products__item">
-            <div class="products__image">
-              <img src="https://i.pinimg.com/736x/74/9e/da/749eda54e40fe985932cc71249907cca.jpg" alt="Product">
-            </div>
-            <h4 class="products__title">Healthy Breakfast</h4>
-            <p class="products__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores impedit
-              qui aliquam minus optio nostrum libero tempora nam, doloremque, illo a quidem placeat. Iure adipisci alias
-              hic, reprehenderit non deleniti.</p>
-            <button class="products__button"> Iure adipisci alias <span>&#8594;</span></button>
-          </li>
-          <li class="products__item">
-            <div class="products__image">
-              <img src="https://i.pinimg.com/736x/d8/39/74/d839746dec63ec826a628cd06770a003.jpg" alt="Product">
-            </div>
-            <h4 class="products__title">Amazing Lunch</h4>
-            <p class="products__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores impedit
-              qui aliquam minus optio nostrum libero tempora nam, doloremque, illo a quidem placeat. Iure adipisci alias
-              hic, reprehenderit non deleniti.</p>
-            <button class="products__button">adipisicing elit. Maiores impedit <span>&#8594;</span></button>
-          </li>
-          <li class="products__item">
-            <div class="products__image">
-              <img src="https://i.pinimg.com/736x/10/2e/bf/102ebf9a1fdc34fe56d052244627b643.jpg" alt="Product">
-            </div>
-            <h4 class="products__title">Delicious Dinner</h4>
-            <p class="products__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores impedit
-              qui aliquam minus optio nostrum libero tempora nam, doloremque, illo a quidem placeat. Iure adipisci alias
-              hic, reprehenderit non deleniti.</p>
-            <button class="products__button">dolor sit, amet consectetur <span>&#8594;</span></button>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="split-section">
-      <div class="split-section__image">
-        <img src="https://i.pinimg.com/1200x/b1/bf/fb/b1bffb99e478b1d2500a4791da85e495.jpg" alt="Coffee">
-      </div>
-      <div class="split-section__content">
-        <h3>Lorem ipsum dolor</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-    </section>
-
-    <section class="split-section split-section--reverse">
-      <div class="split-section__image">
-        <img src="https://i.pinimg.com/736x/d8/39/74/d839746dec63ec826a628cd06770a003.jpg" alt="Coffee">
-      </div>
-      <div class="split-section__content split-section__content--light">
-        <h3>Lorem ipsum dolor</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="split-section__image">
-        <img src="https://i.pinimg.com/736x/10/2e/bf/102ebf9a1fdc34fe56d052244627b643.jpg" alt="Coffee">
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__content">
-      <div class="hero__detail hero__detail--inverted">
-        <img class="footer__icon" width="50" height="50" src="./assets/caffee.png" alt="Café">
-        <p class="footer__text">Lorem ipsum dolor</p>
-      </div>
-    </div>
-  </footer>
-
-
-
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="./js/script.js" defer></script>
-</body>
-
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./js/script.js" defer></script>
+  </body>
 </html>
