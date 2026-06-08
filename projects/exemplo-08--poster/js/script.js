@@ -1,3 +1,6 @@
+
+
+// Form inputs
 const inputImage = document.getElementById('input-image')
 const inputTitle = document.getElementById('input-title')
 const inputYear = document.getElementById('input-year')
@@ -6,11 +9,13 @@ const inputGenre = document.getElementById('input-genre')
 const inputDirector = document.getElementById('input-director')
 const imageSource = document.getElementById('image-source')
 
+// Search
 const inputSearch = document.getElementById('input-search')
 const btnSearch = document.getElementById('btn-search')
 const searchResults = document.getElementById('search-results')
 const selectMovie = document.getElementById('select-movie')
 
+// Poster preview elements
 const posterImage = document.getElementById('poster-image')
 const posterTitle = document.getElementById('poster-title')
 const posterYear = document.getElementById('poster-year')
@@ -18,10 +23,15 @@ const posterNames = document.getElementById('poster-names')
 const posterGenre = document.getElementById('poster-genre')
 const posterDirector = document.getElementById('poster-creator')
 
+// Buttons
 const btnPreview = document.getElementById('btn-preview')
 const btnDownload = document.getElementById('btn-download')
 
+// --- State ------------------------------------------------------------------
+
 let currentImage = null
+
+// --- Image upload handler ---------------------------------------------------
 
 inputImage.addEventListener('change', function (e) {
   const file = e.target.files[0]
@@ -41,6 +51,8 @@ inputImage.addEventListener('change', function (e) {
     reader.readAsDataURL(file)
   }
 })
+
+// --- Update poster preview from form values ---------------------------------
 
 function updatePoster() {
   posterTitle.textContent = inputTitle.value || 'Title'
@@ -76,16 +88,20 @@ function updatePoster() {
   }
 }
 
+// Live preview as user types
 inputTitle.addEventListener('input', updatePoster)
 inputYear.addEventListener('input', updatePoster)
 inputNames.addEventListener('input', updatePoster)
 inputGenre.addEventListener('input', updatePoster)
 inputDirector.addEventListener('input', updatePoster)
 
+// Preview button (also triggers update + visual feedback)
 btnPreview.addEventListener('click', function () {
   updatePoster()
   alert('Preview updated!')
 })
+
+// --- Movie search via OMDB API ----------------------------------------------
 
 let searchTimeout = null
 let allResults = []
@@ -105,7 +121,6 @@ function searchMovies() {
           `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(query)}&type=${type}`
         )
         const data = await response.json()
-        console.log("🚀 ~ searchMovies ~ data:", data)
         if (data.Response === 'True' && data.Search) {
           allResults = allResults.concat(data.Search)
         }
@@ -140,6 +155,8 @@ inputSearch.addEventListener('keypress', function (e) {
   }
 })
 
+// --- Fetch full movie details when a result is selected ---------------------
+
 selectMovie.addEventListener('change', function () {
   const imdbId = this.value
   if (imdbId) {
@@ -159,13 +176,13 @@ async function fetchMovieDetails(imdbId) {
       inputTitle.value = data.Title && data.Title !== 'N/A' ? data.Title : ''
       inputYear.value = data.Year && data.Year !== 'N/A' ? data.Year.split('–')[0] : ''
       inputGenre.value = data.Genre && data.Genre !== 'N/A' ? data.Genre : ''
-      
+
       let directorValue = data.Director && data.Director !== 'N/A' ? data.Director : ''
       if (!directorValue && data.Writer && data.Writer !== 'N/A') {
         directorValue = data.Writer
       }
       inputDirector.value = directorValue
-      
+
       inputNames.value = data.Actors && data.Actors !== 'N/A' ? data.Actors : ''
 
       if (data.Poster && data.Poster !== 'N/A') {
@@ -173,7 +190,6 @@ async function fetchMovieDetails(imdbId) {
       }
 
       updatePoster()
-      // alert(`"${data.Title}" loaded!`)
     }
   } catch (error) {
     console.error('Error fetching movie:', error)
@@ -181,11 +197,14 @@ async function fetchMovieDetails(imdbId) {
   }
 }
 
+// --- Load image from URL (OMDB) into poster --------------------------------
+
 function loadPosterImage(url) {
   imageSource.textContent = '(API)'
   const img = new Image()
   img.crossOrigin = 'anonymous'
   img.onload = function () {
+    // Convert to data URL to avoid CORS issues during html2canvas capture
     const canvas = document.createElement('canvas')
     canvas.width = img.width
     canvas.height = img.height
@@ -206,6 +225,8 @@ function loadPosterImage(url) {
   }
   img.src = url
 }
+
+// --- Download poster as PNG -------------------------------------------------
 
 btnDownload.addEventListener('click', function () {
   const posterElement = document.getElementById('poster-preview')

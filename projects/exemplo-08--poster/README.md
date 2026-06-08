@@ -1,79 +1,31 @@
-# Poster Maker - Documentação
+# Poster Maker
 
-## Visão Geral
+Aplicação desktop para criar posters customizados (800×400) com imagem e informações de filmes/eventos.
 
-Projeto simples para criar posters verticais com imagem e informações personalizadas.
+## Funcionalidades
+
+- Upload de imagem local ou busca via OMDB API
+- Preview em tempo real dos dados do poster
+- Download como PNG (1600×800, scale 2x)
 
 ## Como Usar
 
-1. Abra o arquivo `index.html` no navegador
-2. Preencha os campos:
-   - **Imagem**: Selecione uma imagem (jpg, png, etc)
-   - **Título**: Título principal do poster
-   - **Ano**: Ano de lançamento
-   - **Nomes**: Nomes separados por vírgula
-   - **Gênero**: Gênero do filme/evento
-   - **Dirigido por**: Nome do diretor
-3. Clique em **Preview** para atualizar
-4. Clique em **Download** para salvar o poster como imagem PNG
+1. Abra `index.html` no navegador (apenas desktop ≥1024px)
+2. Preencha os campos ou busque um filme pela OMDB API
+3. Clique em **Preview** para atualizar o poster
+4. Clique em **Download** para salvar como PNG
 
-## html2canvas
+## Estrutura
 
-Biblioteca JavaScript que captura elementos DOM e converte em imagem.
-
-### CDN
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 ```
-
-### Uso Básico
-
-```javascript
-html2canvas(elemento).then(canvas => {
-    // canvas é o elemento <canvas> gerado
-    const imagem = canvas.toDataURL('image/png');
-});
-```
-
-### Download da Imagem
-
-```javascript
-html2canvas(elemento).then(canvas => {
-    const link = document.createElement('a');
-    link.download = 'poster.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-});
-```
-
-### Opções Comuns
-
-| Opção | Descrição | Padrão |
-|-------|-----------|--------|
-| `backgroundColor` | Cor de fundo | #ffffff |
-| `scale` | Escala da imagem (1-3) | 1 |
-| `width` | Largura específica | automático |
-| `height` | Altura específica | automático |
-| `useCORS` | Permite imagens cross-origin | false |
-
-### Exemplo com Opções
-
-```javascript
-html2canvas(elemento, {
-    backgroundColor: '#000000',
-    scale: 2,
-    useCORS: true
-}).then(canvas => {
-    const link = document.createElement('a');
-    link.download = 'poster.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-});
+css/style.css    — estilos do layout, formulário e poster
+js/config.js     — chave da API OMDB
+js/script.js     — lógica de preview, busca e download
 ```
 
 ## Tecnologias
 
-- HTML5
-- Tailwind CSS (CDN)
+- HTML5 + Tailwind CSS (CDN)
 - JavaScript Vanilla
-- html2canvas (CDN)
+- html2canvas (CDN) — captura do poster para PNG
+- OMDB API — busca de filmes
