@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="PetCare - Premium pet care services. Wellness checkups, grooming, boarding, training and nutrition for your furry family members."
+    />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23173f43'%3E%3Cpath d='M10 5.172C10 3.782 8.423 2.679 6.5 3.028C4.577 3.376 3 5.287 3 6.623C3 8.054 4.368 8.901 5.5 9.5'/%3E%3Cpath d='M14 5.172C14 3.782 15.577 2.679 17.5 3.028C19.423 3.376 21 5.287 21 6.623C21 8.054 19.632 8.901 18.5 9.5'/%3E%3Cpath d='M12 22c-3.314 0-6-2-6-5.5C6 12 12 8 12 8s6 4 6 8.5c0 3.5-2.686 5.5-6 5.5z'/%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#173f43",
+              "primary-light": "#245c61",
+              secondary: "#f3a18c",
+              accent: "#f2c66d",
+              mint: "#d9efeb",
+              background: "#faf8f5",
+              surface: "#ffffff",
+            },
+            fontFamily: {
+              heading: ["Fraunces", "serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              "4xl": "24px",
+              "5xl": "32px",
+              full: "999px",
+            },
+            boxShadow: {
+              card: "0 12px 32px rgba(23, 63, 67, 0.08)",
+              hover: "0 20px 40px rgba(23, 63, 67, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>PetCare - Premium Pet Care</title>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <div class="header__container">
+        <a href="#hero" class="header__logo">
+          <i
+            data-lucide="paw-print"
+            class="icon-logo-paw"
+          ></i>
+          <span>PetCare</span>
+        </a>
+
+        <nav class="header__nav" id="headerNav">
+          <button class="header__close" id="menuClose" aria-label="Close menu">
+            <i data-lucide="x" class="icon-24"></i>
+          </button>
+          <ul class="header__menu">
+            <li><a href="#hero" class="header__link">Home</a></li>
+            <li><a href="#services" class="header__link">Services</a></li>
+            <li><a href="#adoption" class="header__link">Adoption</a></li>
+            <li>
+              <a href="#testimonials" class="header__link">Testimonials</a>
+            </li>
+            <li><a href="#blog" class="header__link">Blog</a></li>
+            <li><a href="#contact" class="header__link">Contact</a></li>
+          </ul>
+          <a href="#newsletter" class="header__cta">Book a Visit</a>
+          <div class="header__social-mobile">
+            <a href="#" aria-label="Instagram"
+              ><i data-lucide="camera" class="icon-18"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i data-lucide="thumbs-up" class="icon-18"></i
+            ></a>
+            <a href="#" aria-label="TikTok"
+              ><i data-lucide="music" class="icon-18"></i
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><i data-lucide="play" class="icon-18"></i
+            ></a>
+          </div>
+        </nav>
+
+        <button class="header__toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="header__backdrop" id="menuBackdrop"></div>
+    </header>
+
+    <main>
+      <!-- ===== 01 HERO ===== -->
+      <section class="hero" id="home">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+        <div class="hero__deco hero__deco--paw-1">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M14.7 7.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M4.1 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M10.5 18.9a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M17.3 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M7.5 20.5c2.5-1.5 6.5-1.5 9 0" />
+          </svg>
+        </div>
+        <div class="hero__deco hero__deco--heart-1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 14c1.5-1.5 2.5-4 2.5-6.5A5.5 5.5 0 0 0 16 2c-1.8 0-3.4.8-4.5 2.1A5.5 5.5 0 0 0 2 6.5C2 10 4 12.5 6 14.5L12 21l7-7z"
+            />
+          </svg>
+        </div>
+        <div class="hero__container">
+          <div class="hero__content">
+            <span class="hero__badge">Welcome to PetCare</span>
+            <h1 class="hero__title">
+              Premium Pet Care for<br />
+              Your Furry Family
+            </h1>
+            <p class="hero__subtitle">
+              We provide loving, professional care for your pets with wellness
+              checkups, grooming, boarding, and training services.
+            </p>
+            <div class="hero__actions">
+              <a href="#newsletter" class="hero__btn hero__btn--primary">
+                Book a Visit
+                <i
+                  data-lucide="arrow-right"
+                  class="icon-arrow-cta"
+                ></i>
+              </a>
+              <a href="#services" class="hero__btn hero__btn--secondary">
+                Our Services
+              </a>
+            </div>
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <span class="hero__stat-number" data-target="10">0</span>
+                <span class="hero__stat-suffix">K+</span>
+                <span class="hero__stat-label">Happy Pets</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-number" data-target="500">0</span>
+                <span class="hero__stat-suffix">+</span>
+                <span class="hero__stat-label">Adoptions</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-number" data-target="98">0</span>
+                <span class="hero__stat-suffix">%</span>
+                <span class="hero__stat-label">Satisfaction</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__media">
+            <div class="hero__image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&h=700&fit=crop&crop=faces"
+                alt="Happy dog with caring owner"
+                class="hero__image"
+                width="600"
+                height="700"
+              />
+            </div>
+            <div class="hero__shape hero__shape--1"></div>
+            <div class="hero__shape hero__shape--2"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 02 SERVICES ===== -->
+      <section class="services" id="services">
+        <div class="services__deco services__deco--paw">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M14.7 7.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M4.1 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M10.5 18.9a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M17.3 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+            <path d="M7.5 20.5c2.5-1.5 6.5-1.5 9 0" />
+          </svg>
+        </div>
+        <div class="services__deco services__deco--heart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 14c1.5-1.5 2.5-4 2.5-6.5A5.5 5.5 0 0 0 16 2c-1.8 0-3.4.8-4.5 2.1A5.5 5.5 0 0 0 2 6.5C2 10 4 12.5 6 14.5L12 21l7-7z"
+            />
+          </svg>
+        </div>
+        <div class="services__container">
+          <div class="services__header">
+            <span class="services__tag">What We Offer</span>
+            <h2 class="services__title">Our Premium Services</h2>
+            <p class="services__subtitle">
+              Comprehensive pet care tailored to your furry friend's needs
+            </p>
+          </div>
+          <div class="services__grid">
+            <article class="services__card">
+              <div class="services__card-icon">
+                <i
+                  data-lucide="stethoscope"
+                  class="icon-28"
+                ></i>
+              </div>
+              <h3 class="services__card-title">Wellness Checkups</h3>
+              <p class="services__card-text">
+                Regular health exams, vaccinations, and preventive care to keep
+                your pet healthy and happy.
+              </p>
+            </article>
+            <article class="services__card">
+              <div class="services__card-icon">
+                <i data-lucide="scissors" class="icon-28"></i>
+              </div>
+              <h3 class="services__card-title">Grooming & Spa</h3>
+              <p class="services__card-text">
+                Professional grooming, baths, nail trimming, and spa treatments
+                for a fresh and clean pet.
+              </p>
+            </article>
+            <article class="services__card">
+              <div class="services__card-icon">
+                <i data-lucide="home" class="icon-28"></i>
+              </div>
+              <h3 class="services__card-title">Boarding & Daycare</h3>
+              <p class="services__card-text">
+                Safe and comfortable boarding with playtime, walks, and
+                round-the-clock supervision.
+              </p>
+            </article>
+            <article class="services__card">
+              <div class="services__card-icon">
+                <i
+                  data-lucide="graduation-cap"
+                  class="icon-28"
+                ></i>
+              </div>
+              <h3 class="services__card-title">Training Programs</h3>
+              <p class="services__card-text">
+                Obedience training, behavior modification, and socialization
+                programs led by certified trainers.
+              </p>
+            </article>
+            <article class="services__card">
+              <div class="services__card-icon">
+                <i data-lucide="bone" class="icon-28"></i>
+              </div>
+              <h3 class="services__card-title">Nutrition Guidance</h3>
+              <p class="services__card-text">
+                Customized diet plans and nutritional counseling to support your
+                pet's health and vitality.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 03 WHY CHOOSE US ===== -->
+      <section class="why" id="why">
+        <div class="why__container">
+          <div class="why__grid">
+            <div class="why__image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600&h=700&fit=crop&crop=faces"
+                alt="Veterinary care specialist with pet"
+                width="600"
+                height="700"
+                loading="lazy"
+                class="why__image"
+              />
+              <div class="why__image-blob"></div>
+            </div>
+            <div class="why__content">
+              <div class="why__header">
+                <span class="why__tag">Why Choose Us</span>
+                <h2 class="why__title">Trusted by Pet Parents Everywhere</h2>
+              </div>
+              <ul class="why__list">
+                <li class="why__item">
+                  <div class="why__item-icon">
+                    <i
+                      data-lucide="shield-check"
+                      class="icon-22"
+                    ></i>
+                  </div>
+                  <div class="why__item-text">
+                    <strong>Certified Specialists</strong>
+                    <span
+                      >Licensed veterinarians and certified pet care
+                      professionals</span
+                    >
+                  </div>
+                </li>
+                <li class="why__item">
+                  <div class="why__item-icon">
+                    <i
+                      data-lucide="heart"
+                      class="icon-22"
+                    ></i>
+                  </div>
+                  <div class="why__item-text">
+                    <strong>Personalized Care</strong>
+                    <span
+                      >Tailored plans adapting to your pet's unique needs</span
+                    >
+                  </div>
+                </li>
+                <li class="why__item">
+                  <div class="why__item-icon">
+                    <i
+                      data-lucide="clock"
+                      class="icon-22"
+                    ></i>
+                  </div>
+                  <div class="why__item-text">
+                    <strong>Emergency Support</strong>
+                    <span>24/7 rapid response when your pet needs it most</span>
+                  </div>
+                </li>
+                <li class="why__item">
+                  <div class="why__item-icon">
+                    <i
+                      data-lucide="calendar"
+                      class="icon-22"
+                    ></i>
+                  </div>
+                  <div class="why__item-text">
+                    <strong>Daily Updates</strong>
+                    <span
+                      >Photos, videos, and reports so you never miss a
+                      moment</span
+                    >
+                  </div>
+                </li>
+                <li class="why__item">
+                  <div class="why__item-icon">
+                    <i
+                      data-lucide="building-2"
+                      class="icon-22"
+                    ></i>
+                  </div>
+                  <div class="why__item-text">
+                    <strong>Safe Facilities</strong>
+                    <span
+                      >Climate-controlled, sanitized premium pet
+                      environments</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 04 ADOPTION ===== -->
+      <section class="adoption" id="adoption">
+        <div class="adoption__blob"></div>
+        <div class="adoption__wrapper">
+          <div class="adoption__container">
+            <div class="adoption__header">
+              <span class="adoption__tag">Adoption</span>
+              <h2 class="adoption__title">Find Your New Best Friend</h2>
+              <p class="adoption__subtitle">
+                These lovely pets are looking for their forever homes
+              </p>
+            </div>
+            <div class="adoption__grid">
+              <article class="adoption__card">
+                <div class="adoption__card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&h=300&fit=crop&crop=faces"
+                    alt="Luna the Golden Retriever"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="adoption__card-body">
+                  <h3 class="adoption__card-name">Luna</h3>
+                  <span class="adoption__card-age">2 years old</span>
+                  <span class="adoption__card-breed">Golden Retriever</span>
+                  <button class="adoption__card-btn">Adopt Me</button>
+                </div>
+              </article>
+              <article class="adoption__card">
+                <div class="adoption__card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&h=300&fit=crop&crop=faces"
+                    alt="Max the Beagle"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="adoption__card-body">
+                  <h3 class="adoption__card-name">Max</h3>
+                  <span class="adoption__card-age">1.5 years old</span>
+                  <span class="adoption__card-breed">Beagle</span>
+                  <button class="adoption__card-btn">Adopt Me</button>
+                </div>
+              </article>
+              <article class="adoption__card">
+                <div class="adoption__card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop&crop=faces"
+                    alt="Oliver the Cat"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="adoption__card-body">
+                  <h3 class="adoption__card-name">Oliver</h3>
+                  <span class="adoption__card-age">3 years old</span>
+                  <span class="adoption__card-breed">Maine Coon</span>
+                  <button class="adoption__card-btn">Adopt Me</button>
+                </div>
+              </article>
+              <article class="adoption__card">
+                <div class="adoption__card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=400&h=300&fit=crop&crop=faces"
+                    alt="Bella the Corgi"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="adoption__card-body">
+                  <h3 class="adoption__card-name">Bella</h3>
+                  <span class="adoption__card-age">8 months old</span>
+                  <span class="adoption__card-breed">Corgi</span>
+                  <button class="adoption__card-btn">Adopt Me</button>
+                </div>
+              </article>
+            </div>
+            <div class="adoption__cta">
+              <p>
+                <i
+                  data-lucide="heart"
+                  class="icon-heart-middle"
+                ></i>
+                Ready to meet your new family member?
+              </p>
+              <a href="#newsletter" class="adoption__cta-btn"
+                >Start Adoption Process</a
+              >
+            </div>
+          </div>
+          <div class="adoption__blob-c"></div>
+        </div>
+      </section>
+
+      <!-- ===== 05 TESTIMONIALS ===== -->
+      <section class="testimonials" id="testimonials">
+        <div class="testimonials__container">
+          <div class="testimonials__header">
+            <span class="testimonials__tag">Testimonials</span>
+            <h2 class="testimonials__title">What Pet Parents Say</h2>
+          </div>
+          <div class="testimonials__wrapper">
+            <div class="testimonials__track" id="testimonialsTrack">
+              <article class="testimonials__card">
+                <div class="testimonials__quote">
+                  <i data-lucide="quote" class="icon-quote"></i>
+                </div>
+                <div class="testimonials__stars">
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                </div>
+                <p class="testimonials__text">
+                  "The care they provide is outstanding. My dog Luna absolutely
+                  loves her stays at PetCare!"
+                </p>
+                <div class="testimonials__author">
+                  <div class="testimonials__avatar">S</div>
+                  <div class="testimonials__info">
+                    <span class="testimonials__name">Sarah M.</span>
+                    <span class="testimonials__role"
+                      >Golden Retriever Owner</span
+                    >
+                  </div>
+                </div>
+              </article>
+              <article class="testimonials__card">
+                <div class="testimonials__quote">
+                  <i data-lucide="quote" class="icon-quote"></i>
+                </div>
+                <div class="testimonials__stars">
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                </div>
+                <p class="testimonials__text">
+                  "The training program transformed my rescue dog. Professional,
+                  patient, and incredibly effective."
+                </p>
+                <div class="testimonials__author">
+                  <div class="testimonials__avatar">J</div>
+                  <div class="testimonials__info">
+                    <span class="testimonials__name">James K.</span>
+                    <span class="testimonials__role">Rescue Dog Parent</span>
+                  </div>
+                </div>
+              </article>
+              <article class="testimonials__card">
+                <div class="testimonials__quote">
+                  <i data-lucide="quote" class="icon-quote"></i>
+                </div>
+                <div class="testimonials__stars">
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                </div>
+                <p class="testimonials__text">
+                  "I adopted my cat Oliver from PetCare and the process was
+                  smooth and heartwarming."
+                </p>
+                <div class="testimonials__author">
+                  <div class="testimonials__avatar">E</div>
+                  <div class="testimonials__info">
+                    <span class="testimonials__name">Emma L.</span>
+                    <span class="testimonials__role">Cat Adopter</span>
+                  </div>
+                </div>
+              </article>
+              <article class="testimonials__card">
+                <div class="testimonials__quote">
+                  <i data-lucide="quote" class="icon-quote"></i>
+                </div>
+                <div class="testimonials__stars">
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                </div>
+                <p class="testimonials__text">
+                  "Daily updates with photos put my mind at ease. I know my pets
+                  are in great hands."
+                </p>
+                <div class="testimonials__author">
+                  <div class="testimonials__avatar">M</div>
+                  <div class="testimonials__info">
+                    <span class="testimonials__name">Michael R.</span>
+                    <span class="testimonials__role"
+                      >Frequent Boarding Client</span
+                    >
+                  </div>
+                </div>
+              </article>
+              <article class="testimonials__card">
+                <div class="testimonials__quote">
+                  <i data-lucide="quote" class="icon-quote"></i>
+                </div>
+                <div class="testimonials__stars">
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                </div>
+                <p class="testimonials__text">
+                  "The grooming team is amazing! My Bella always comes back
+                  looking and smelling wonderful."
+                </p>
+                <div class="testimonials__author">
+                  <div class="testimonials__avatar">A</div>
+                  <div class="testimonials__info">
+                    <span class="testimonials__name">Amanda T.</span>
+                    <span class="testimonials__role">Corgi Owner</span>
+                  </div>
+                </div>
+              </article>
+              <article class="testimonials__card">
+                <div class="testimonials__quote">
+                  <i data-lucide="quote" class="icon-quote"></i>
+                </div>
+                <div class="testimonials__stars">
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="icon-star"
+                  ></i>
+                </div>
+                <p class="testimonials__text">
+                  "Certified specialists who truly care. I trust PetCare with my
+                  pets' health completely."
+                </p>
+                <div class="testimonials__author">
+                  <div class="testimonials__avatar">D</div>
+                  <div class="testimonials__info">
+                    <span class="testimonials__name">David W.</span>
+                    <span class="testimonials__role">Multi-Pet Household</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="testimonials__controls">
+            <button
+              class="testimonials__arrow testimonials__arrow--prev"
+              id="testPrev"
+              aria-label="Previous"
+            >
+              <i
+                data-lucide="chevron-left"
+                class="icon-24"
+              ></i>
+            </button>
+            <div class="testimonials__dots" id="testDots"></div>
+            <button
+              class="testimonials__arrow testimonials__arrow--next"
+              id="testNext"
+              aria-label="Next"
+            >
+              <i
+                data-lucide="chevron-right"
+                class="icon-24"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 06 TRUST BADGES ===== -->
+      <section class="trust">
+        <div class="trust__container">
+          <div class="trust__grid">
+            <div class="trust__item">
+              <div class="trust__icon">
+                <i data-lucide="heart" class="icon-28"></i>
+              </div>
+              <h3 class="trust__title">Loving Environment</h3>
+              <p class="trust__text">
+                Comfortable and caring space for your pet
+              </p>
+            </div>
+            <div class="trust__item">
+              <div class="trust__icon">
+                <i data-lucide="users" class="icon-28"></i>
+              </div>
+              <h3 class="trust__title">Experienced Team</h3>
+              <p class="trust__text">
+                Years of professional pet care expertise
+              </p>
+            </div>
+            <div class="trust__item">
+              <div class="trust__icon">
+                <i data-lucide="shield" class="icon-28"></i>
+              </div>
+              <h3 class="trust__title">Safe Facilities</h3>
+              <p class="trust__text">Secure and sanitized premium spaces</p>
+            </div>
+            <div class="trust__item">
+              <div class="trust__icon">
+                <i
+                  data-lucide="calendar-check"
+                  class="icon-28"
+                ></i>
+              </div>
+              <h3 class="trust__title">Open 7 Days</h3>
+              <p class="trust__text">Always here when you need us</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 07 BLOG ===== -->
+        <section class="blog" id="blog">
+          <div class="blog__container">
+            <div class="blog__header">
+              <span class="blog__tag">Our Blog</span>
+              <h2 class="blog__title">Pet Care Tips & Stories</h2>
+            </div>
+            <div class="blog__grid">
+              <article class="blog__card">
+                <div class="blog__card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&h=375&fit=crop"
+                    alt="Happy dog playing"
+                    width="500"
+                    height="375"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blog__card-body">
+                  <span class="blog__card-category">Health</span>
+                  <span class="blog__card-date">June 5, 2026</span>
+                  <h3 class="blog__card-title">
+                    10 Signs Your Pet Needs a Wellness Checkup
+                  </h3>
+                  <p class="blog__card-text">
+                    Learn the warning signs and keep your furry friend healthy
+                    with regular wellness exams.
+                  </p>
+                  <a href="https://islandlifeanimalhospital.vet/when-to-see-the-vet-10-signs-its-time-for-a-checkup/" class="blog__card-link"
+                    >Read More
+                    <i
+                      data-lucide="arrow-right"
+                      class="icon-14"
+                    ></i
+                  ></a>
+                </div>
+              </article>
+              <article class="blog__card">
+                <div class="blog__card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500&h=375&fit=crop"
+                    alt="Cat sleeping peacefully"
+                    width="500"
+                    height="375"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blog__card-body">
+                  <span class="blog__card-category">Nutrition</span>
+                  <span class="blog__card-date">May 28, 2026</span>
+                  <h3 class="blog__card-title">
+                    The Ultimate Guide to Pet Nutrition
+                  </h3>
+                  <p class="blog__card-text">
+                    Discover the best diet plan for your pet's age, breed, and
+                    health condition.
+                  </p>
+                  <a href="https://lwgvet.com/pet-nutrition-guide-for-owners/" class="blog__card-link"
+                    >Read More
+                    <i
+                      data-lucide="arrow-right"
+                      class="icon-14"
+                    ></i
+                  ></a>
+                </div>
+              </article>
+              <article class="blog__card">
+                <div class="blog__card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-DT2umW-9FQw?w=500&h=375&fit=crop"
+                    alt="Golden retrievers during training session"
+                    width="500"
+                    height="375"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blog__card-body">
+                  <span class="blog__card-category">Training</span>
+                  <span class="blog__card-date">May 20, 2026</span>
+                  <h3 class="blog__card-title">
+                    Essential Obedience Tips for New Pet Parents
+                  </h3>
+                  <p class="blog__card-text">
+                    Build a strong bond with your pet through positive
+                    reinforcement training.
+                  </p>
+                  <a href="https://www.bluebuffalo.com/articles/dog/essential-training-tips-for-new-pup-parents/" class="blog__card-link"
+                    >Read More
+                    <i
+                      data-lucide="arrow-right"
+                      class="icon-14"
+                    ></i
+                  ></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 08 NEWSLETTER ===== -->
+        <section class="newsletter" id="newsletter">
+          <div class="newsletter__deco newsletter__deco--paw">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M14.7 7.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+              <path d="M4.1 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+              <path d="M10.5 18.9a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+              <path d="M17.3 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+              <path d="M7.5 20.5c2.5-1.5 6.5-1.5 9 0" />
+            </svg>
+          </div>
+          <div class="newsletter__deco newsletter__deco--heart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 14c1.5-1.5 2.5-4 2.5-6.5A5.5 5.5 0 0 0 16 2c-1.8 0-3.4.8-4.5 2.1A5.5 5.5 0 0 0 2 6.5C2 10 4 12.5 6 14.5L12 21l7-7z"
+              />
+            </svg>
+          </div>
+          <div class="newsletter__wrapper">
+            <div class="newsletter__container">
+              <div class="newsletter__content">
+                <i
+                  data-lucide="mail"
+                  class="icon-mail"
+                ></i>
+                <h2 class="newsletter__title">Stay Connected with PetCare</h2>
+                <p class="newsletter__text">
+                  Subscribe to our newsletter for pet care tips, adoption
+                  alerts, and exclusive offers.
+                </p>
+                <form class="newsletter__form" id="newsletterForm">
+                  <input
+                    type="email"
+                    class="newsletter__input"
+                    placeholder="Enter your email"
+                    required
+                  />
+                  <button type="submit" class="newsletter__btn">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+              <div class="newsletter__shape">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                  <path
+                    d="M100 10C145 10 190 55 190 100C190 145 145 190 100 190C55 190 10 145 10 100C10 55 55 10 100 10Z"
+                    fill="currentColor"
+                    opacity="0.1"
+                  />
+                  <path
+                    d="M100 30C135 30 170 65 170 100C170 135 135 170 100 170C65 170 30 135 30 100C30 65 65 30 100 30Z"
+                    fill="currentColor"
+                    opacity="0.15"
+                  />
+                  <path
+                    d="M100 55C125 55 145 75 145 100C145 125 125 145 100 145C75 145 55 125 55 100C55 75 75 55 100 55Z"
+                    fill="currentColor"
+                    opacity="0.2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <!-- ===== 09 FOOTER ===== -->
+    <footer class="footer" id="contact">
+      <div class="footer__deco">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path d="M14.7 7.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+          <path d="M4.1 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+          <path d="M10.5 18.9a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+          <path d="M17.3 13.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2z" />
+          <path d="M7.5 20.5c2.5-1.5 6.5-1.5 9 0" />
+        </svg>
+      </div>
+      <div class="footer__container">
+        <div class="footer__grid">
+          <div class="footer__column">
+            <div class="footer__logo">
+              <i
+                data-lucide="paw-print"
+                class="icon-logo-paw-sm"
+              ></i>
+              <span>PetCare</span>
+            </div>
+            <p class="footer__description">
+              Premium pet care services with love and expertise. Your pet's
+              happiness is our mission.
+            </p>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title">Company</h4>
+            <ul class="footer__links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title">Services</h4>
+            <ul class="footer__links">
+              <li><a href="#services">Grooming</a></li>
+              <li><a href="#services">Boarding</a></li>
+              <li><a href="#services">Training</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title">Resources</h4>
+            <ul class="footer__links">
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#adoption">Adoption</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title">Social</h4>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="Instagram">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Facebook">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="TikTok">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="YouTube">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+                  />
+                  <path d="m10 15 5-3-5-3z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 PetCare. All rights reserved.</p>
+          <a href="../../index.html" class="footer__back">← Back to Showcase</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>
