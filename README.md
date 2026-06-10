@@ -64,6 +64,27 @@ git push origin main
 
 Ative GitHub Pages em Settings → Pages → main branch.
 
+## Padrões de Commit
+
+Este repositório utiliza [Conventional Commits](https://www.conventionalcommits.org/):
+
+| Tipo | Descrição |
+|------|-----------|
+| `feat` | Nova funcionalidade |
+| `fix` | Correção de bug |
+| `refactor` | Refatoração de código |
+| `redesign` | Redesign visual |
+| `style` | Formatação, estilos CSS |
+| `docs` | Documentação |
+| `chore` | Tarefas diversas, manutenção |
+
+Exemplos:
+```
+feat(poster): add export to PNG
+fix(quiz): correct score calculation
+docs: add commit patterns section
+```
+
 ## Autora
 
 [Camila Cristina Teixeira](https://github.com/TeixeiraCamila)
