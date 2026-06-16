@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>NovaFlow — Intelligence-Driven Logistics & Risk Management</title>
+</head>
+
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo" aria-label="NovaFlow Home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect width="36" height="36" rx="8" fill="#4f8cff" />
+          <path d="M10 18L16 12L22 18L16 24L10 18Z" fill="#060b14" />
+          <path d="M14 18L18 14L22 18L18 22L14 18Z" fill="#27d3c3" />
+        </svg>
+        <span>NovaFlow</span>
+      </a>
+      <nav class="header__nav" id="headerNav" aria-label="Main navigation">
+        <a href="#solutions">Solutions</a>
+        <a href="#technology">Technology</a>
+        <a href="#industries">Industries</a>
+        <a href="#resources">Resources</a>
+        <a href="#company">Company</a>
+      </nav>
+      <div class="header__actions">
+        <a href="#contact" class="btn btn--primary">Request a Demo</a>
+        <button class="header__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE MENU ==================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav">
+      <a href="#solutions">Solutions</a>
+      <a href="#technology">Technology</a>
+      <a href="#industries">Industries</a>
+      <a href="#resources">Resources</a>
+      <a href="#company">Company</a>
+      <a href="#contact" class="btn btn--primary">Request a Demo</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__inner">
+        <div class="hero__content" data-aos="fade-up" data-aos-duration="1200">
+          <span class="hero__badge">LogTech Intelligence Platform</span>
+          <h1 class="hero__title">Logistics Designed For The Speed Of Modern Business</h1>
+          <p class="hero__desc">From local distribution to international freight, NovaFlow combines AI-powered risk prevention, real-time cargo monitoring, and enterprise-grade logistics solutions.</p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary btn--lg">Request a Demo</a>
+            <a href="#solutions" class="btn btn--outline btn--lg">Explore Solutions</a>
+          </div>
+        </div>
+        <div class="hero__visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+          <div class="hero__dashboard">
+            <div class="dashboard-grid">
+              <div class="dashboard-card card-map">
+                <div class="card-label">Live Fleet</div>
+                <div class="card-pulse"></div>
+              </div>
+              <div class="dashboard-card card-kpi">
+                <div class="card-label">Risk Index</div>
+                <div class="card-value">2.3%</div>
+              </div>
+              <div class="dashboard-card card-route">
+                <div class="card-label">Active Routes</div>
+                <div class="card-value">1,247</div>
+              </div>
+              <div class="dashboard-card card-alert">
+                <div class="card-label">Alerts</div>
+                <div class="card-value card-value--warn">12</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <svg width="16" height="24" viewBox="0 0 16 24"><path d="M8 0v16M2 10l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </section>
+
+    <!-- ==================== TRUSTED BY ==================== -->
+    <section class="trusted" id="solutions">
+      <div class="trusted__bg"></div>
+      <div class="container">
+        <p class="trusted__label" data-aos="fade-up">Trusted by leading logistics operators worldwide</p>
+        <div class="swiper trusted__swiper" data-aos="fade-up" data-aos-delay="150">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide trusted__logo"><span>TransGlobal</span></div>
+            <div class="swiper-slide trusted__logo"><span>FreightCore</span></div>
+            <div class="swiper-slide trusted__logo"><span>LogiMax</span></div>
+            <div class="swiper-slide trusted__logo"><span>ShipSphere</span></div>
+            <div class="swiper-slide trusted__logo"><span>CargoVault</span></div>
+            <div class="swiper-slide trusted__logo"><span>RoutePulse</span></div>
+            <div class="swiper-slide trusted__logo"><span>TransGlobal</span></div>
+            <div class="swiper-slide trusted__logo"><span>FreightCore</span></div>
+            <div class="swiper-slide trusted__logo"><span>LogiMax</span></div>
+            <div class="swiper-slide trusted__logo"><span>ShipSphere</span></div>
+            <div class="swiper-slide trusted__logo"><span>CargoVault</span></div>
+            <div class="swiper-slide trusted__logo"><span>RoutePulse</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PLATFORM OVERVIEW ==================== -->
+    <section class="platform" id="platform">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">One Platform. Complete Logistics Visibility.</h2>
+          <p class="section-desc">Unify your supply chain with real-time intelligence, risk monitoring, and predictive insights across every mode of transport.</p>
+        </div>
+        <div class="platform__grid">
+          <div class="platform__feature" data-aos="fade-up" data-aos-delay="0">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Live Tracking</h3>
+            <p>Real-time GPS and IoT sensor visibility for every shipment across your network.</p>
+          </div>
+          <div class="platform__feature" data-aos="fade-up" data-aos-delay="80">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg></div>
+            <h3>Fleet Analytics</h3>
+            <p>Comprehensive performance dashboards with driver behavior, fuel efficiency, and utilization metrics.</p>
+          </div>
+          <div class="platform__feature" data-aos="fade-up" data-aos-delay="160">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <h3>Route Optimization</h3>
+            <p>AI-driven routing that reduces fuel costs, improves ETAs, and adapts to real-time conditions.</p>
+          </div>
+          <div class="platform__feature" data-aos="fade-up" data-aos-delay="240">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><circle cx="12" cy="16" r=".5" fill="currentColor"/></svg></div>
+            <h3>Risk Monitoring</h3>
+            <p>AI-powered risk detection for cargo theft, route hazards, weather disruptions, and regulatory compliance.</p>
+          </div>
+          <div class="platform__feature" data-aos="fade-up" data-aos-delay="320">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg></div>
+            <h3>Predictive Insights</h3>
+            <p>Machine learning models forecast delays, demand spikes, and maintenance needs before they impact operations.</p>
+          </div>
+          <div class="platform__feature" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
+            <h3>Automated Reporting</h3>
+            <p>Generate compliance docs, performance reports, and client dashboards with a single click.</p>
+          </div>
+        </div>
+        <div class="platform__dashboard-img" data-aos="fade-up" data-aos-delay="200">
+          <div class="dashboard-preview">
+            <div class="preview-bar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-row"><div class="preview-label">Live Shipments</div><div class="preview-val">2,843</div></div>
+              <div class="preview-row"><div class="preview-label">On-Time Rate</div><div class="preview-val preview-val--success">98.7%</div></div>
+              <div class="preview-row"><div class="preview-label">Risk Alerts</div><div class="preview-val preview-val--warn">14</div></div>
+              <div class="preview-row"><div class="preview-label">Active Routes</div><div class="preview-val">1,247</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Comprehensive Logistics Services</h2>
+          <p class="section-desc">End-to-end solutions powered by technology, covering every mile of your supply chain.</p>
+        </div>
+        <div class="services__grid">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="service-card__img" style="background-image: linear-gradient(135deg, #0f1729 0%, #1a2a4a 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M5 17h14M5 17a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2"/><path d="M5 21h14"/></svg>
+            </div>
+            <div class="service-card__body">
+              <h3>Road Freight</h3>
+              <p>Modern electric fleet with smart loading, real-time tracking, and AI-optimized routes across North America and Europe.</p>
+            </div>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card__img" style="background-image: linear-gradient(135deg, #0f1729 0%, #1a2a4a 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M22 16h-3M2 16h3M12 2v4M12 12v4M3 8h18M3 16a2 2 0 01-2-2v-4a2 2 0 012-2h18a2 2 0 012 2v4a2 2 0 01-2 2"/></svg>
+            </div>
+            <div class="service-card__body">
+              <h3>Air Freight</h3>
+              <p>Premium cargo solutions with expedited processing, cold-chain capabilities, and real-time altitude and condition monitoring.</p>
+            </div>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card__img" style="background-image: linear-gradient(135deg, #0f1729 0%, #1a2a4a 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M2 12h20M2 12a2 2 0 01-2-2V6a2 2 0 012-2h20a2 2 0 012 2v4a2 2 0 01-2 2"/><path d="M5 12v8h14v-8"/></svg>
+            </div>
+            <div class="service-card__body">
+              <h3>Ocean Freight</h3>
+              <p>Full-container and LCL shipments with port-to-port visibility, customs integration, and autonomous vessel monitoring.</p>
+            </div>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card__img" style="background-image: linear-gradient(135deg, #0f1729 0%, #1a2a4a 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M3 21h18M3 21V3M3 21l6-6 4 4 8-8"/></svg>
+            </div>
+            <div class="service-card__body">
+              <h3>Warehousing</h3>
+              <p>Automated fulfillment centers with AGV robots, smart inventory management, and AI-powered demand forecasting.</p>
+            </div>
+          </article>
+          <article class="service-card service-card--wide" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card__img" style="background-image: linear-gradient(135deg, #0f1729 0%, #1a2a4a 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="service-card__body">
+              <h3>Supply Chain Management</h3>
+              <p>Strategic planning and end-to-end visibility with analytics dashboards, risk intelligence, and multi-modal orchestration.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INDUSTRIES ==================== -->
+    <section class="industries" id="industries">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Industries We Serve</h2>
+          <p class="section-desc">Specialized logistics solutions tailored to the unique demands of your sector.</p>
+        </div>
+        <div class="industries__grid">
+          <div class="industry-card" data-aos="zoom-in" data-aos-delay="0">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <h3>Retail &amp; E-Commerce</h3>
+            <p>Last-mile optimization, returns management, and same-day delivery networks.</p>
+          </div>
+          <div class="industry-card" data-aos="zoom-in" data-aos-delay="80">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Manufacturing</h3>
+            <p>Just-in-time delivery, raw material sourcing, and lean inventory management.</p>
+          </div>
+          <div class="industry-card" data-aos="zoom-in" data-aos-delay="160">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M22 12h-4l-3 9H9l-3-9H2"/><path d="M12 2v10"/></svg>
+            </div>
+            <h3>Healthcare</h3>
+            <p>Temperature-controlled transport, cold-chain monitoring, and FDA-compliant distribution.</p>
+          </div>
+          <div class="industry-card" data-aos="zoom-in" data-aos-delay="240">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Automotive</h3>
+            <p>Vehicle logistics, parts distribution, and supply chain synchronization.</p>
+          </div>
+          <div class="industry-card" data-aos="zoom-in" data-aos-delay="320">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 2v20M2 12h20"/></svg>
+            </div>
+            <h3>Food &amp; Beverage</h3>
+            <p>Cold-chain integrity, freshness tracking, and farm-to-table visibility.</p>
+          </div>
+          <div class="industry-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 2a10 10 0 015 18.65M12 2a10 10 0 00-5 18.65"/><path d="M2 12h20"/><path d="M12 2c2.5 4 2.5 8 0 12"/></svg>
+            </div>
+            <h3>Technology</h3>
+            <p>High-value equipment shipping, data center logistics, and global deployment coordination.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WHY NOVAFLOW ==================== -->
+    <section class="why" id="why">
+      <div class="container">
+        <div class="why__inner">
+          <div class="why__content" data-aos="fade-right">
+            <span class="section-badge">Why NovaFlow</span>
+            <h2 class="section-title section-title--left">Technology Meets Logistics Expertise</h2>
+            <ul class="why__list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#27d3c3" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Real-Time Tracking
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#27d3c3" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                AI Route Optimization
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#27d3c3" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Predictive Analytics
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#27d3c3" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Global Coverage
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#27d3c3" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Dedicated Support
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#27d3c3" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Transparent Operations
+              </li>
+            </ul>
+          </div>
+          <div class="why__visual" data-aos="fade-left">
+            <div class="why__control-room">
+              <div class="control-grid">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+              <div class="control-overlay">
+                <div class="control-stat"><span>24/7</span> Operations</div>
+                <div class="control-stat"><span>AI</span> Monitoring</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TECHNOLOGY ==================== -->
+    <section class="tech" id="technology">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Powered By Advanced Logistics Technology</h2>
+          <p class="section-desc">Our platform combines artificial intelligence, real-time data streams, and predictive models to transform how logistics operates.</p>
+        </div>
+        <div class="tech__grid">
+          <div class="tech__card" data-aos="fade-up" data-aos-delay="0">
+            <div class="tech__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 2a10 10 0 015 18.65M12 2a10 10 0 00-5 18.65"/><path d="M2 12h20"/><path d="M12 2c2.5 4 2.5 8 0 12"/></svg>
+            </div>
+            <h3>AI Route Planning</h3>
+            <p>Deep reinforcement learning models that optimize routes across cost, time, and risk dimensions simultaneously.</p>
+          </div>
+          <div class="tech__card" data-aos="fade-up" data-aos-delay="100">
+            <div class="tech__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg>
+            </div>
+            <h3>Predictive Analytics</h3>
+            <p>Machine learning models trained on billions of data points to forecast disruptions, demand shifts, and maintenance windows.</p>
+          </div>
+          <div class="tech__card" data-aos="fade-up" data-aos-delay="200">
+            <div class="tech__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Fleet Intelligence</h3>
+            <p>IoT sensor fusion and telematics data processed in real-time to monitor vehicle health, driver behavior, and cargo conditions.</p>
+          </div>
+          <div class="tech__card" data-aos="fade-up" data-aos-delay="300">
+            <div class="tech__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Live Visibility</h3>
+            <p>End-to-end shipment tracking with GPS, geofencing, and multi-modal status updates every 30 seconds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== OPERATIONS SHOWCASE ==================== -->
+    <section class="operations" id="operations">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Operations Command Center</h2>
+          <p class="section-desc">Real-time intelligence across your entire logistics operation, from fleet to final delivery.</p>
+        </div>
+        <div class="operations__grid">
+          <div class="op-card" data-aos="flip-up" data-aos-delay="0">
+            <div class="op-card__visual">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Fleet Intelligence</h3>
+            <p>Interactive fleet dashboard with vehicle tracking, driver scoring, and predictive maintenance alerts.</p>
+          </div>
+          <div class="op-card" data-aos="flip-up" data-aos-delay="100">
+            <div class="op-card__visual">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Route Optimization</h3>
+            <p>Dynamic routing engine with live traffic, weather integration, and ETA calculations.</p>
+          </div>
+          <div class="op-card" data-aos="flip-up" data-aos-delay="200">
+            <div class="op-card__visual">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <h3>Cargo Visibility</h3>
+            <p>End-to-end container tracking with QR scanning, condition sensors, and automated proof of delivery.</p>
+          </div>
+          <div class="op-card" data-aos="flip-up" data-aos-delay="300">
+            <div class="op-card__visual">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><circle cx="12" cy="16" r=".5" fill="currentColor"/></svg>
+            </div>
+            <h3>Risk Management</h3>
+            <p>AI-powered risk analytics with heat maps, threat detection, and automated incident response protocols.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPANY NUMBERS ==================== -->
+    <section class="numbers" id="company">
+      <div class="numbers__bg"></div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">NovaFlow By The Numbers</h2>
+        </div>
+        <div class="numbers__grid" data-aos="fade-up" data-aos-delay="150">
+          <div class="number-card">
+            <span class="number-card__value" data-count="500">0</span>
+            <span class="number-card__suffix">K+</span>
+            <p class="number-card__label">Annual Deliveries</p>
+          </div>
+          <div class="number-card">
+            <span class="number-card__value" data-count="120">0</span>
+            <span class="number-card__suffix">+</span>
+            <p class="number-card__label">Countries Served</p>
+          </div>
+          <div class="number-card">
+            <span class="number-card__value" data-count="99.8">0</span>
+            <span class="number-card__suffix">%</span>
+            <p class="number-card__label">On-Time Performance</p>
+          </div>
+          <div class="number-card">
+            <span class="number-card__value" data-count="24">0</span>
+            <span class="number-card__suffix">/7</span>
+            <p class="number-card__label">Operations Center</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROCESS TIMELINE ==================== -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-desc">From quote to delivery, our streamlined process ensures speed, transparency, and reliability at every step.</p>
+        </div>
+        <div class="process__timeline" data-aos="fade-up">
+          <div class="process__step" data-aos="fade-right" data-aos-delay="0">
+            <div class="process__step-num">01</div>
+            <div class="process__step-content">
+              <h3>Request a Quote</h3>
+              <p>Submit your shipment details and receive an AI-optimized quote in minutes.</p>
+            </div>
+          </div>
+          <div class="process__step" data-aos="fade-right" data-aos-delay="100">
+            <div class="process__step-num">02</div>
+            <div class="process__step-content">
+              <h3>Planning</h3>
+              <p>Our platform designs the optimal route considering cost, speed, and risk factors.</p>
+            </div>
+          </div>
+          <div class="process__step" data-aos="fade-right" data-aos-delay="200">
+            <div class="process__step-num">03</div>
+            <div class="process__step-content">
+              <h3>Optimization</h3>
+              <p>AI algorithms fine-tune the plan based on real-time conditions and constraints.</p>
+            </div>
+          </div>
+          <div class="process__step" data-aos="fade-right" data-aos-delay="300">
+            <div class="process__step-num">04</div>
+            <div class="process__step-content">
+              <h3>Transportation</h3>
+              <p>Your cargo moves through our multi-modal network with continuous monitoring.</p>
+            </div>
+          </div>
+          <div class="process__step" data-aos="fade-right" data-aos-delay="400">
+            <div class="process__step-num">05</div>
+            <div class="process__step-content">
+              <h3>Tracking</h3>
+              <p>Live visibility with GPS, IoT sensors, and AI-powered risk alerts every step of the way.</p>
+            </div>
+          </div>
+          <div class="process__step" data-aos="fade-right" data-aos-delay="500">
+            <div class="process__step-num">06</div>
+            <div class="process__step-content">
+              <h3>Delivery</h3>
+              <p>Automated proof of delivery, digital documentation, and performance analytics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CASE STUDY ==================== -->
+    <section class="casestudy" id="resources">
+      <div class="container">
+        <div class="casestudy__inner">
+          <div class="casestudy__content" data-aos="fade-right">
+            <span class="section-badge">Case Study</span>
+            <h2 class="section-title section-title--left">Reducing Delivery Times By 37%</h2>
+            <p class="casestudy__desc">How a leading automotive manufacturer transformed their supply chain with NovaFlow's AI-powered route optimization and real-time risk monitoring, cutting delivery times by over a third while reducing logistics costs by 22%.</p>
+            <div class="casestudy__stats">
+              <div class="casestudy__stat">
+                <span class="casestudy__stat-val">37%</span>
+                <span class="casestudy__stat-label">Faster Delivery</span>
+              </div>
+              <div class="casestudy__stat">
+                <span class="casestudy__stat-val">22%</span>
+                <span class="casestudy__stat-label">Cost Reduction</span>
+              </div>
+              <div class="casestudy__stat">
+                <span class="casestudy__stat-val">99.5%</span>
+                <span class="casestudy__stat-label">On-Time Rate</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn--outline">Read Full Case Study</a>
+          </div>
+          <div class="casestudy__visual" data-aos="fade-left">
+            <div class="casestudy__chart">
+              <div class="chart-bar" style="height: 100%"><span>Before</span></div>
+              <div class="chart-bar chart-bar--accent" style="height: 63%"><span>After</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Trusted By Industry Leaders</h2>
+          <p class="section-desc">Hear from logistics and supply chain professionals who rely on NovaFlow every day.</p>
+        </div>
+        <div class="swiper testimonials__swiper" data-aos="fade-up" data-aos-delay="150">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide testimonial-card">
+              <div class="testimonial-card__stars">
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote>"NovaFlow transformed our logistics operations. The AI-powered risk monitoring alone saved us over $2M in prevented cargo losses last year."</blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar" style="background:#4f8cff;">SK</div>
+                <div>
+                  <strong>Sarah Kim</strong>
+                  <span>VP of Supply Chain, TransGlobal Logistics</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide testimonial-card">
+              <div class="testimonial-card__stars">
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote>"The real-time visibility and predictive analytics have been game-changing for our cross-border freight operations. We've reduced detention costs by 45%."</blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar" style="background:#27d3c3;">MR</div>
+                <div>
+                  <strong>Marcus Rivera</strong>
+                  <span>Director of Logistics, FreightCore</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide testimonial-card">
+              <div class="testimonial-card__stars">
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#27d3c3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote>"Implementing NovaFlow was the best operational decision we made this year. Their risk management platform gives us confidence we never had before."</blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar" style="background:#42d392;">JL</div>
+                <div>
+                  <strong>Jennifer Liu</strong>
+                  <span>COO, LogiMax International</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GLOBAL NETWORK ==================== -->
+    <section class="global" id="global">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Connected Across Continents</h2>
+          <p class="section-desc">A truly global network covering 120+ countries with multi-modal freight capabilities and local expertise in every region.</p>
+        </div>
+        <div class="global__visual" data-aos="fade-up" data-aos-delay="150">
+          <div class="globe-container" id="globeContainer">
+            <div class="globe" id="globe">
+              <div class="globe__ring globe__ring--h"></div>
+              <div class="globe__ring globe__ring--v"></div>
+              <div class="globe__ring globe__ring--d1"></div>
+              <div class="globe__ring globe__ring--d2"></div>
+              <div class="globe__dot" style="top:30%;left:50%;animation-delay:0s;"></div>
+              <div class="globe__dot" style="top:45%;left:30%;animation-delay:.5s;"></div>
+              <div class="globe__dot" style="top:55%;left:65%;animation-delay:1s;"></div>
+              <div class="globe__dot" style="top:35%;left:70%;animation-delay:1.5s;"></div>
+              <div class="globe__dot" style="top:60%;left:40%;animation-delay:2s;"></div>
+              <div class="globe__dot" style="top:25%;left:20%;animation-delay:2.5s;"></div>
+              <div class="globe__line" style="top:30%;left:50%;width:25%;transform:rotate(-20deg);animation-delay:0s;"></div>
+              <div class="globe__line" style="top:45%;left:30%;width:35%;transform:rotate(15deg);animation-delay:1s;"></div>
+              <div class="globe__line" style="top:55%;left:40%;width:30%;transform:rotate(-10deg);animation-delay:2s;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact" id="contact">
+      <div class="contact__bg"></div>
+      <div class="container">
+        <div class="contact__inner">
+          <div class="contact__info" data-aos="fade-right">
+            <span class="section-badge">Get In Touch</span>
+            <h2 class="section-title section-title--left">Ready To Transform Your Logistics?</h2>
+            <p class="contact__desc">Our team of logistics engineers and supply chain experts will work with you to design the perfect solution for your operation.</p>
+            <div class="contact__details">
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>120 Logistics Ave, San Francisco, CA 94105</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span>+1 (888) 555-NOVA</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                <span>hello@novaflow.io</span>
+              </div>
+            </div>
+          </div>
+          <form class="contact__form" data-aos="fade-left" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Your full name" />
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="road">Road Freight</option>
+                <option value="air">Air Freight</option>
+                <option value="ocean">Ocean Freight</option>
+                <option value="warehousing">Warehousing</option>
+                <option value="scm">Supply Chain Management</option>
+                <option value="risk">Risk Management</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your logistics needs..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg btn--full">Request a Quote</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="cta-final">
+      <div class="cta-final__bg"></div>
+      <div class="container">
+        <div class="cta-final__inner" data-aos="fade-up">
+          <h2 class="cta-final__title">Your Supply Chain Deserves Better Visibility</h2>
+          <p class="cta-final__desc">Transform logistics complexity into operational clarity with NovaFlow's intelligent transportation platform.</p>
+          <a href="#contact" class="btn btn--primary btn--lg">Schedule a Consultation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__bg"></div>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo" aria-label="NovaFlow Home">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+              <rect width="36" height="36" rx="8" fill="#4f8cff" />
+              <path d="M10 18L16 12L22 18L16 24L10 18Z" fill="#060b14" />
+              <path d="M14 18L18 14L22 18L18 22L14 18Z" fill="#27d3c3" />
+            </svg>
+            <span>NovaFlow</span>
+          </a>
+          <p>Intelligence-driven logistics and risk management for the modern supply chain.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Partners</a>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <a href="#">Road Freight</a>
+          <a href="#">Air Freight</a>
+          <a href="#">Ocean Freight</a>
+          <a href="#">Warehousing</a>
+          <a href="#">Risk Management</a>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <a href="#">Blog</a>
+          <a href="#">Case Studies</a>
+          <a href="#">Documentation</a>
+          <a href="#">API</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@novaflow.io">hello@novaflow.io</a>
+          <a href="tel:+1888555NOVA">+1 (888) 555-NOVA</a>
+          <address>120 Logistics Ave<br />San Francisco, CA 94105</address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 NovaFlow. All rights reserved.</p>
+        <a href="../../index.html" class="back-button">&larr; Back to Showcase</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/script.js" defer></script>
+</body>
+
+</html>
