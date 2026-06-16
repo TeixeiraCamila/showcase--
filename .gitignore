@@ -56,3 +56,6 @@ coverage/
 *.tmp
 *.temp
 .cache/
+
+
+projects/exemplo-08--poster/js/config.js

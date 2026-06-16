@@ -269,3 +269,36 @@ body {
     max-width: 400px;
   }
 }
+
+
+
+.form__button--copy {
+  background: #0f9d58;
+  color: white;
+  border: none;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  flex: 0 0 auto;
+}
+
+.form__button--copy:hover {
+  background: #0b7a44;
+}
+
+.url-display {
+  margin-top: 1rem;
+}
+
+.url-display__row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.url-display.hidden {
+  display: none;
+}
+
+#cloudinary-url {
+  flex: 1;
+  min-width: 0;
+}

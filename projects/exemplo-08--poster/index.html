@@ -1,157 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create custom posters for movies and events for free"
+    />
+    <meta
+      name="keywords"
+      content="poster maker, create poster, graphic design, movies"
+    />
+    <meta name="author" content="Poster Maker" />
+    <meta name="robots" content="index, follow" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Create custom posters for movies and events for free">
-  <meta name="keywords" content="poster maker, create poster, graphic design, movies">
-  <meta name="author" content="Poster Maker">
-  <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Poster Maker" />
+    <meta
+      property="og:description"
+      content="Create custom posters for movies and events for free"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="og-image.png" />
 
-  <meta property="og:title" content="Poster Maker">
-  <meta property="og:description" content="Create custom posters for movies and events for free">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="og-image.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Poster Maker" />
+    <meta
+      name="twitter:description"
+      content="Create custom posters for movies and events for free"
+    />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Poster Maker">
-  <meta name="twitter:description" content="Create custom posters for movies and events for free">
+    <title>Poster Maker</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23D9D9D9' width='100' height='70' rx='4'/><text y='55' x='50' font-size='40' text-anchor='middle' fill='black'>P</text></svg>"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- html2canvas — converts DOM elements to images for download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
 
-  <title>Poster Maker</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23D9D9D9' width='100' height='70' rx='4'/><text y='55' x='50' font-size='40' text-anchor='middle' fill='black'>P</text></svg>" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Tailwind CSS for utility classes -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- html2canvas — converts DOM elements to images for download -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-</head>
+  <body class="bg-gray-100 min-h-screen p-8">
+    <!-- Application title -->
+    <h1 class="text-3xl font-bold text-black mb-8 text-center app__title">
+      Poster Maker
+    </h1>
 
-<body class="bg-gray-100 min-h-screen p-8">
-  <!-- Application title -->
-  <h1 class="text-3xl font-bold text-black mb-8 text-center app__title">Poster Maker</h1>
+    <!-- Main layout: form + poster preview side by side -->
+    <div class="poster__container">
+      <!-- Form — user inputs for poster data -->
+      <div class="bg-white p-6 rounded-lg shadow-md form">
+        <h2 class="text-xl font-semibold mb-4 form__title">Poster Data</h2>
 
-  <!-- Main layout: form + poster preview side by side -->
-  <div class="poster__container">
-    <!-- Form — user inputs for poster data -->
-    <div class="bg-white p-6 rounded-lg shadow-md form">
-      <h2 class="text-xl font-semibold mb-4 form__title">Poster Data</h2>
+        <div class="space-y-4">
+          <!-- Movie search via OMDB API -->
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label"
+              >Search Movie</label
+            >
+            <div class="flex gap-2">
+              <input
+                type="text"
+                id="input-search"
+                placeholder="Enter movie title"
+                class="form__input"
+              />
+              <button
+                type="button"
+                id="btn-search"
+                class="form__button form__button--primary px-3"
+              >
+                Search
+              </button>
+            </div>
+          </div>
 
-      <div class="space-y-4">
-        <!-- Movie search via OMDB API -->
-        <div class="form__group">
-          <label class="block text-sm font-medium mb-1 form__label">Search Movie</label>
-          <div class="flex gap-2">
-            <input type="text" id="input-search" placeholder="Enter movie title" class="form__input">
-            <button type="button" id="btn-search" class="form__button form__button--primary px-3">Search</button>
+          <div id="search-results" class="form__group hidden">
+            <label class="block text-sm font-medium mb-1 form__label"
+              >Results</label
+            >
+            <select id="select-movie" class="form__input">
+              <option value="">Select a movie...</option>
+            </select>
+          </div>
+
+          <hr class="my-4" />
+
+          <!-- Image upload -->
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label">
+              Image
+              <span
+                id="image-source"
+                class="text-xs font-normal text-gray-500 ml-1"
+              ></span>
+            </label>
+            <input
+              type="file"
+              id="input-image"
+              accept="image/*"
+              class="form__input"
+            />
+          </div>
+
+          <!-- Title -->
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="input-title"
+              placeholder="Movie/Event Title"
+              class="form__input"
+            />
+          </div>
+
+          <!-- Year -->
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label"
+              >Year</label
+            >
+            <input
+              type="text"
+              id="input-year"
+              placeholder="2024"
+              class="form__input"
+            />
+          </div>
+
+          <!-- Names (cast) -->
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label"
+              >Names (comma separated)</label
+            >
+            <input
+              type="text"
+              id="input-names"
+              placeholder="Name 1, Name 2, Name 3"
+              class="form__input"
+            />
+          </div>
+
+          <!-- Genre -->
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label"
+              >Genre</label
+            >
+            <input
+              type="text"
+              id="input-genre"
+              placeholder="Action, Drama, Comedy"
+              class="form__input"
+            />
+          </div>
+
+          <!-- Created by (director/author) -->
+          <div class="form__group">
+            <label class="block text-sm font-medium mb-1 form__label"
+              >Created by</label
+            >
+            <input
+              type="text"
+              id="input-director"
+              placeholder="Director name"
+              class="form__input"
+            />
           </div>
         </div>
 
-        <div id="search-results" class="form__group hidden">
-          <label class="block text-sm font-medium mb-1 form__label">Results</label>
-          <select id="select-movie" class="form__input">
-            <option value="">Select a movie...</option>
-          </select>
+        <!-- Action buttons -->
+        <div class="flex gap-4 mt-6 form__buttons">
+          <button id="btn-preview" class="form__button form__button--primary">
+            Preview
+          </button>
+          <button
+            id="btn-download"
+            class="form__button form__button--secondary"
+          >
+            Download
+          </button>
+          <button id="btn-upload" class="form__button form__button--primary">
+            Upload
+          </button>
         </div>
-
-        <hr class="my-4">
-
-        <!-- Image upload -->
-        <div class="form__group">
-          <label class="block text-sm font-medium mb-1 form__label">
-            Image
-            <span id="image-source" class="text-xs font-normal text-gray-500 ml-1"></span>
-          </label>
-          <input type="file" id="input-image" accept="image/*" class="form__input">
-        </div>
-
-        <!-- Title -->
-        <div class="form__group">
-          <label class="block text-sm font-medium mb-1 form__label">Title</label>
-          <input type="text" id="input-title" placeholder="Movie/Event Title" class="form__input">
-        </div>
-
-        <!-- Year -->
-        <div class="form__group">
-          <label class="block text-sm font-medium mb-1 form__label">Year</label>
-          <input type="text" id="input-year" placeholder="2024" class="form__input">
-        </div>
-
-        <!-- Names (cast) -->
-        <div class="form__group">
-          <label class="block text-sm font-medium mb-1 form__label">Names (comma separated)</label>
-          <input type="text" id="input-names" placeholder="Name 1, Name 2, Name 3" class="form__input">
-        </div>
-
-        <!-- Genre -->
-        <div class="form__group">
-          <label class="block text-sm font-medium mb-1 form__label">Genre</label>
-          <input type="text" id="input-genre" placeholder="Action, Drama, Comedy" class="form__input">
-        </div>
-
-        <!-- Created by (director/author) -->
-        <div class="form__group">
-          <label class="block text-sm font-medium mb-1 form__label">Created by</label>
-          <input type="text" id="input-director" placeholder="Director name" class="form__input">
+        <div class="url-display hidden">
+          <label class="block text-sm font-medium mb-1 form__label"> URL</label>
+          <div class="url-display__row">
+            <input
+              type="text"
+              id="cloudinary-url"
+              class="form__input"
+              readonly
+            />
+            <button id="btn-copy" class="form__button form__button--copy">
+              Copy
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Action buttons -->
-      <div class="flex gap-4 mt-6 form__buttons">
-        <button id="btn-preview" class="form__button form__button--primary">Preview</button>
-        <button id="btn-download" class="form__button form__button--secondary">Download</button>
+      <!-- Poster preview — rendered in real time as the user fills the form -->
+      <div class="flex justify-center items-start">
+        <div id="poster-container" class="poster">
+          <div id="poster-preview" class="poster__preview">
+            <!-- Poster image area -->
+            <div id="poster-image" class="poster__image">
+              <img src="" alt="Poster" />
+            </div>
+
+            <!-- Poster text info -->
+            <div class="poster__info">
+              <div class="poster__header">
+                <h2 id="poster-title" class="poster__title">Title</h2>
+                <span id="poster-year" class="poster__year">Year</span>
+              </div>
+
+              <div class="poster__section">
+                <p class="poster__section-label">Genre</p>
+                <p id="poster-genre" class="poster__section-value">Genre</p>
+              </div>
+
+              <div class="poster__section">
+                <p class="poster__section-label">Cast</p>
+                <p id="poster-names" class="poster__section-value">Names</p>
+              </div>
+
+              <div class="poster__section">
+                <p class="poster__section-label">created by</p>
+                <p id="poster-creator" class="poster__section-value">creator</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Poster preview — rendered in real time as the user fills the form -->
-    <div class="flex justify-center items-start">
-      <div id="poster-container" class="poster">
-        <div id="poster-preview" class="poster__preview">
-          <!-- Poster image area -->
-          <div id="poster-image" class="poster__image">
-            <img src="" alt="Poster">
-          </div>
-
-          <!-- Poster text info -->
-          <div class="poster__info">
-            <div class="poster__header">
-              <h2 id="poster-title" class="poster__title">Title</h2>
-              <span id="poster-year" class="poster__year">Year</span>
-            </div>
-
-            <div class="poster__section">
-              <p class="poster__section-label">Genre</p>
-              <p id="poster-genre" class="poster__section-value">Genre</p>
-            </div>
-
-            <div class="poster__section">
-              <p class="poster__section-label">Cast</p>
-              <p id="poster-names" class="poster__section-value">Names</p>
-            </div>
-
-            <div class="poster__section">
-              <p class="poster__section-label">created by</p>
-              <p id="poster-creator" class="poster__section-value">creator</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Desktop-only message shown on mobile devices -->
+    <div class="desktop-only">
+      <div class="desktop-only__icon">🖥️</div>
+      <h2 class="desktop-only__title">Desktop Only</h2>
+      <p class="desktop-only__text">
+        This application is designed for desktop screens only. Please open it on
+        a device with a larger display.
+      </p>
     </div>
-  </div>
 
-  <!-- Desktop-only message shown on mobile devices -->
-  <div class="desktop-only">
-    <div class="desktop-only__icon">🖥️</div>
-    <h2 class="desktop-only__title">Desktop Only</h2>
-    <p class="desktop-only__text">
-      This application is designed for desktop screens only.
-      Please open it on a device with a larger display.
-    </p>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/config.js"></script>
-  <script src="js/script.js"></script>
-</body>
-
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
