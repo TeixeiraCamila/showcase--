@@ -272,6 +272,10 @@ body {
 
 
 
+/* ============================================
+   Cloudinary — URL display e botão Copy
+   ============================================ */
+
 .form__button--copy {
   background: #0f9d58;
   color: white;

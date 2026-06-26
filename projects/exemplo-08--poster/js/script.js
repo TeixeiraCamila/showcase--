@@ -1,4 +1,8 @@
-// Form inputs
+// ---------------------------------------------------------------
+// gerencia formulário, busca de filmes, preview e download
+
+// ---------------------------------------------------------------
+// entrada de dados do poster
 const inputImage = document.getElementById("input-image");
 const inputTitle = document.getElementById("input-title");
 const inputYear = document.getElementById("input-year");
@@ -7,13 +11,15 @@ const inputGenre = document.getElementById("input-genre");
 const inputDirector = document.getElementById("input-director");
 const imageSource = document.getElementById("image-source");
 
-// Search
+// ---------------------------------------------------------------
+// busca de filmes via OMDB
 const inputSearch = document.getElementById("input-search");
 const btnSearch = document.getElementById("btn-search");
 const searchResults = document.getElementById("search-results");
 const selectMovie = document.getElementById("select-movie");
 
-// Poster preview elements
+// ---------------------------------------------------------------
+// preview do poster (parte visual)
 const posterImage = document.getElementById("poster-image");
 const posterTitle = document.getElementById("poster-title");
 const posterYear = document.getElementById("poster-year");
@@ -21,22 +27,15 @@ const posterNames = document.getElementById("poster-names");
 const posterGenre = document.getElementById("poster-genre");
 const posterDirector = document.getElementById("poster-creator");
 
-// Buttons
+// ---------------------------------------------------------------
 const btnPreview = document.getElementById("btn-preview");
 const btnDownload = document.getElementById("btn-download");
 
-// Cloudinary
-const btnUpload = document.getElementById("btn-upload");
-const btnCopy = document.getElementById("btn-copy");
-const cloudinaryUrl = document.getElementById("cloudinary-url");
-const urlDisplay = document.querySelector(".url-display");
-
-// --- State ------------------------------------------------------------------
-
+// guarda a imagem atual (local ou da OMDB)
 let currentImage = null;
 
-// --- Image upload handler ---------------------------------------------------
-
+// ---------------------------------------------------------------
+// upload de imagem local
 inputImage.addEventListener("change", function (e) {
   const file = e.target.files[0];
   if (file) {
@@ -56,8 +55,9 @@ inputImage.addEventListener("change", function (e) {
   }
 });
 
-// --- Update poster preview from form values ---------------------------------
-
+// ---------------------------------------------------------------
+// Atualiza todos os campos do preview com os valores do formulário
+// esconde seções vazias para não poluir a visualização
 function updatePoster() {
   posterTitle.textContent = inputTitle.value || "Title";
 
@@ -92,27 +92,41 @@ function updatePoster() {
   }
 }
 
-// Live preview as user types
+// ---------------------------------------------------------------
+// atualiza o preview em tempo real 
 inputTitle.addEventListener("input", updatePoster);
 inputYear.addEventListener("input", updatePoster);
 inputNames.addEventListener("input", updatePoster);
 inputGenre.addEventListener("input", updatePoster);
 inputDirector.addEventListener("input", updatePoster);
 
-// Preview button (also triggers update + visual feedback)
+// ---------------------------------------------------------------
+// força atualização manual do poster
 btnPreview.addEventListener("click", function () {
   updatePoster();
   alert("Preview updated!");
 });
 
-// --- Movie search via OMDB API ----------------------------------------------
+// ---------------------------------------------------------------
+// busca de filmes na OMDB
 
+// controla o delay da busca para evitar requisições desnecessárias
 let searchTimeout = null;
+
 let allResults = [];
+
+// ---------------------------------------------------------------
+// busca filmes, séries e episódios na API da OMDB
+// debounce de 300ms para não sobrecarregar a API
 
 function searchMovies() {
   const query = inputSearch.value.trim();
   if (!query) return;
+
+  // Esconde resultados anteriores e URL do Cloudinary
+  searchResults.classList.add("hidden");
+  selectMovie.innerHTML = '<option value="">Select...</option>';
+  urlDisplay.classList.add("hidden");
 
   clearTimeout(searchTimeout);
   searchTimeout = setTimeout(async () => {
@@ -120,6 +134,7 @@ function searchMovies() {
     allResults = [];
 
     try {
+      // Faz uma busca para cada tipo (filme, série, episódio)
       for (const type of types) {
         const response = await fetch(
           `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(query)}&type=${type}`,
@@ -130,6 +145,7 @@ function searchMovies() {
         }
       }
 
+      // Se encontrou resultados, preenche o select com eles
       if (allResults.length > 0) {
         allResults.sort((a, b) => a.Title.localeCompare(b.Title));
         selectMovie.innerHTML = '<option value="">Select...</option>';
@@ -157,6 +173,8 @@ function searchMovies() {
   }, 300);
 }
 
+// ---------------------------------------------------------------
+// busca: clique no botão ou tecla Enter
 btnSearch.addEventListener("click", searchMovies);
 inputSearch.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
@@ -164,7 +182,8 @@ inputSearch.addEventListener("keypress", function (e) {
   }
 });
 
-// --- Fetch full movie details when a result is selected ---------------------
+// ---------------------------------------------------------------
+// quando o usuário seleciona um filme/série, busca os detalhes
 
 selectMovie.addEventListener("change", function () {
   const imdbId = this.value;
@@ -173,13 +192,14 @@ selectMovie.addEventListener("change", function () {
   }
 });
 
+// ---------------------------------------------------------------
+// busca os detalhes completos pelo ID do IMDb e todos os campos do formulário com os dados retornados
 async function fetchMovieDetails(imdbId) {
   try {
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${imdbId}&plot=full`,
     );
     const data = await response.json();
-    console.log("🚀 ~ fetchMovieDetails ~ data:", data);
 
     if (data.Response === "True") {
       inputTitle.value = data.Title && data.Title !== "N/A" ? data.Title : "";
@@ -187,6 +207,7 @@ async function fetchMovieDetails(imdbId) {
         data.Year && data.Year !== "N/A" ? data.Year.split("–")[0] : "";
       inputGenre.value = data.Genre && data.Genre !== "N/A" ? data.Genre : "";
 
+      // usa o diretor, ou cai para o roteirista como fallback
       let directorValue =
         data.Director && data.Director !== "N/A" ? data.Director : "";
       if (!directorValue && data.Writer && data.Writer !== "N/A") {
@@ -197,6 +218,7 @@ async function fetchMovieDetails(imdbId) {
       inputNames.value =
         data.Actors && data.Actors !== "N/A" ? data.Actors : "";
 
+      // carrega o poster do filme se a OMDB fornecer uma URL
       if (data.Poster && data.Poster !== "N/A") {
         loadPosterImage(data.Poster);
       }
@@ -209,14 +231,15 @@ async function fetchMovieDetails(imdbId) {
   }
 }
 
-// --- Load image from URL (OMDB) into poster --------------------------------
-
+// ---------------------------------------------------------------
+// carrega uma imagem externa (da OMDB) e converte para data URL
+// evita problemas de CORS na hora de gerar o canvas
 function loadPosterImage(url) {
   imageSource.textContent = "(API)";
   const img = new Image();
   img.crossOrigin = "anonymous";
   img.onload = function () {
-    // Convert to data URL to avoid CORS issues during html2canvas capture
+    // desenha a imagem num canvas e extrai como data URL
     const canvas = document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
@@ -238,8 +261,9 @@ function loadPosterImage(url) {
   img.src = url;
 }
 
-// --- Download poster as PNG -------------------------------------------------
-
+// ---------------------------------------------------------------
+// download do poster — gera uma imagem PNG em alta resolução
+// html2canvas para capturar o preview em escala 2x
 btnDownload.addEventListener("click", function () {
   const posterElement = document.getElementById("poster-preview");
 
@@ -259,61 +283,4 @@ btnDownload.addEventListener("click", function () {
       console.error("Error generating poster:", err);
       alert("Error generating poster. Please try again.");
     });
-});
-
-// --- Upload to Cloudinary ------------------------------------------------
-
-btnUpload.addEventListener("click", async function () {
-  btnUpload.disabled = true;
-  btnUpload.textContent = "Uploading...";
-
-  try {
-    const canvas = await html2canvas(
-      document.getElementById("poster-preview"),
-      {
-        backgroundColor: "#D9D9D9",
-        scale: 2,
-        useCORS: true,
-        allowTaint: true,
-      },
-    );
-
-    const blob = await new Promise((resolve) =>
-      canvas.toBlob(resolve, "image/png"),
-    );
-    const formData = new FormData();
-    formData.append("file", blob);
-    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-    const res = await fetch(
-      `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
-      {
-        method: "POST",
-        body: formData,
-      },
-    );
-    const data = await res.json();
-
-    if (data.secure_url) {
-      cloudinaryUrl.value = data.secure_url;
-      urlDisplay.classList.remove("hidden");
-    } else {
-      alert("Upload failed: " + (data.error?.message || "Unknown error"));
-    }
-  } catch (err) {
-    console.error("Upload error:", err);
-    alert("Upload failed. Check console for details.");
-  } finally {
-    btnUpload.disabled = false;
-    btnUpload.textContent = "Upload to Cloudinary";
-  }
-});
-
-// --- Copy URL ------------------------------------------------------------
-
-btnCopy.addEventListener("click", function () {
-  navigator.clipboard.writeText(cloudinaryUrl.value);
-  btnCopy.textContent = "Copied!";
-  setTimeout(() => {
-    btnCopy.textContent = "Copy";
-  }, 2000);
 });
