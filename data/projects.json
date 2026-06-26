@@ -109,15 +109,7 @@
       "description": "Modern landing page template with smooth animations, responsive design and underwater theme.",
       "tags": ["HTML5", "CSS3", "JAVASCRIPT"]
     },
-    {
-      "id": "13",
-      "title": "AROMA",
-      "category": "landing",
-      "href": "projects/exemplo-14--aroma/index.html",
-      "preview": "",
-      "description": "Café e aconchego com design limpo, seções de produtos, redes sociais e layout responsivo.",
-      "tags": ["HTML5", "CSS3", "JAVASCRIPT"]
-    },
+
     {
       "id": "14",
       "title": "MATHSCOOL",
@@ -126,15 +118,6 @@
       "preview": "",
       "description": "Online math school landing page with live classes, pricing plans, courses and GSAP animations.",
       "tags": ["HTML5", "CSS3", "GSAP"]
-    },
-    {
-      "id": "15",
-      "title": "PIMS",
-      "category": "landing",
-      "href": "projects/exemplo-16--pims/index.html",
-      "preview": "",
-      "description": "Product landing page for PIMS beverage with hero section, Lucide icons and clean design.",
-      "tags": ["HTML5", "CSS3", "JAVASCRIPT", "Lucide"]
     }
   ]
 }
