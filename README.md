@@ -18,9 +18,11 @@ Galeria de projetos web desenvolvidos com HTML5, CSS3 e JavaScript vanilla. Land
 | 06 | Grounded | Agência de viagens | Tailwind |
 | 07 | Card Stacking | Animação de cartas | HTML5, CSS3 |
 | 08 | Poster Maker | Gerador de pôsteres | HTML5, Canvas |
-| 09 | Resume Template | Currículo profissional | HTML5, CSS3 |
+| 09 | Resume Template | Currículo profissional | HTML5, CSS3, JS |
 | 10 | Sign Up Bears | Página de cadastro | HTML5, CSS3 |
 | 11 | JavaScript Quiz | Quiz interativo | HTML5, CSS3, JS |
+| 12 | Landing Page | Template moderno subaquático | HTML5, CSS3, JS |
+| 14 | MathsCool | Escola de matemática online | HTML5, CSS3, GSAP |
 
 ## Tecnologias
 
@@ -89,4 +91,4 @@ docs: add commit patterns section
 
 [Camila Cristina Teixeira](https://github.com/TeixeiraCamila)
 
-![Visitors](https:// visitor-badge-ci0h7g6ox2-ct.a. shiftcdn.dev/TeixeiraCamila/showcase?label=Visitors&style=flat)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=TeixeiraCamila.showcase)

@@ -69,7 +69,7 @@
       "title": "POSTER MAKER",
       "category": "tools",
       "href": "projects/exemplo-08--poster/index.html",
-      "preview": "",
+      "preview": "projects/exemplo-08--poster/preview.png",
       "description": "Create custom posters for movies and events with Canvas API and download feature.",
       "tags": ["HTML5", "CSS3", "Canvas"]
     },
@@ -78,7 +78,7 @@
       "title": "RESUME TEMPLATE",
       "category": "tools",
       "href": "projects/exemplo-09--resume/index.html",
-      "preview": "",
+      "preview": "projects/exemplo-09--resume/preview.png",
       "description": "Currículo profissional moderno com design responsivo e animações suaves.",
       "tags": ["HTML5", "CSS3", "JAVASCRIPT"]
     },
@@ -115,7 +115,7 @@
       "title": "MATHSCOOL",
       "category": "landing",
       "href": "projects/exemplo-15--mathscool/index.html",
-      "preview": "",
+      "preview": "projects/exemplo-15--mathscool/preview.png",
       "description": "Online math school landing page with live classes, pricing plans, courses and GSAP animations.",
       "tags": ["HTML5", "CSS3", "GSAP"]
     }

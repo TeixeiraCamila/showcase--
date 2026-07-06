@@ -46,3 +46,4 @@ No build step needed — just serve the root.
 - Cursor: custom `.cursor` / `.cursor__trail` elements (disabled on touch devices)
 - Scroll-triggered card reveal via IntersectionObserver in `js/main.js`
 - Comments: CSS single-line, JS max 2 lines per section
+- **Commit only when explicitly asked** — never commit without permission
