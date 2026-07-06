@@ -11,27 +11,41 @@
   --color-text: #000000;
   --color-text-secondary: #4b5563;
   --color-border: #d1d5db;
-  --poster-width: 800px;
+  --poster-width: min(800px, 100%);
   --image-width: 45%;
   --info-padding: 1.5rem;
   --title-font-size: 3rem;
   --section-gap: 0.75rem;
   --font-size-base: 1.5rem;
   --font-size-sm: 1.375rem;
+  --color-gray-100: #f3f4f6;
+  --color-gray-500: #6b7280;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
+  --rounded-lg: 0.5rem;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: "Inter", sans-serif;
+  background: var(--color-gray-100);
+  min-height: 100vh;
+  padding: 2rem;
+  margin: 0;
 }
 
 /* ============================================
    App
    ============================================ */
 .app__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -40,6 +54,14 @@ body {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .poster__container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ============================================
@@ -130,6 +152,7 @@ body {
   flex-direction: row;
   width: 100%;
   height: 100%;
+  min-width: 800px;
 }
 
 .poster__image {
@@ -181,6 +204,7 @@ body {
 .poster__section {
   display: flex;
   flex-direction: column;
+  margin-top: .75rem;
 }
 
 .poster__section-label {
@@ -224,50 +248,11 @@ body {
 }
 
 /* ============================================
-   Desktop-only message (mobile)
+   Search type selector
    ============================================ */
-.desktop-only {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 2rem;
-  }
-
-  .app__title,
-  .poster__container {
-    display: none;
-  }
-
-  .desktop-only {
-    display: block;
-    text-align: center;
-    font-family: "Inter", sans-serif;
-  }
-
-  .desktop-only__icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .desktop-only__title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 0.5rem;
-  }
-
-  .desktop-only__text {
-    font-size: 1rem;
-    color: #6b7280;
-    max-width: 400px;
-  }
+.search-type {
+  width: auto;
+  flex-shrink: 0;
 }
 
 
@@ -305,4 +290,111 @@ body {
 #cloudinary-url {
   flex: 1;
   min-width: 0;
+}
+
+/* ============================================
+   Utility classes (replaces Tailwind)
+   ============================================ */
+.flex {
+  display: flex;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.text-gray-500 {
+  color: var(--color-gray-500);
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.space-y-4>*+* {
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.poster__footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.5rem;
+}
+
+.poster__footer a {
+  color: var(--color-text);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ============================================
+   Responsive —— mobile
+   ============================================ */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .app__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+
+  .poster__preview {
+    flex-direction: column;
+  }
+
+  .poster__image {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .poster__title {
+    font-size: 2rem;
+  }
 }

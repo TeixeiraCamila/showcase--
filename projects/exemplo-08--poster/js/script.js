@@ -14,6 +14,7 @@ const imageSource = document.getElementById("image-source");
 // ---------------------------------------------------------------
 // busca de filmes via OMDB
 const inputSearch = document.getElementById("input-search");
+const searchType = document.getElementById("search-type");
 const btnSearch = document.getElementById("btn-search");
 const searchResults = document.getElementById("search-results");
 const selectMovie = document.getElementById("select-movie");
@@ -104,7 +105,6 @@ inputDirector.addEventListener("input", updatePoster);
 // força atualização manual do poster
 btnPreview.addEventListener("click", function () {
   updatePoster();
-  alert("Preview updated!");
 });
 
 // ---------------------------------------------------------------
@@ -123,18 +123,17 @@ function searchMovies() {
   const query = inputSearch.value.trim();
   if (!query) return;
 
-  // Esconde resultados anteriores e URL do Cloudinary
   searchResults.classList.add("hidden");
   selectMovie.innerHTML = '<option value="">Select...</option>';
   urlDisplay.classList.add("hidden");
 
   clearTimeout(searchTimeout);
   searchTimeout = setTimeout(async () => {
-    const types = ["movie", "series", "episode"];
+    const selectedType = searchType.value;
+    const types = selectedType === "all" ? ["movie", "series", "episode"] : [selectedType];
     allResults = [];
 
     try {
-      // Faz uma busca para cada tipo (filme, série, episódio)
       for (const type of types) {
         const response = await fetch(
           `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(query)}&type=${type}`,
@@ -145,7 +144,6 @@ function searchMovies() {
         }
       }
 
-      // Se encontrou resultados, preenche o select com eles
       if (allResults.length > 0) {
         allResults.sort((a, b) => a.Title.localeCompare(b.Title));
         selectMovie.innerHTML = '<option value="">Select...</option>';
@@ -266,6 +264,9 @@ function loadPosterImage(url) {
 // html2canvas para capturar o preview em escala 2x
 btnDownload.addEventListener("click", function () {
   const posterElement = document.getElementById("poster-preview");
+  const originalText = btnDownload.textContent;
+  btnDownload.disabled = true;
+  btnDownload.textContent = "Generating...";
 
   html2canvas(posterElement, {
     backgroundColor: "#D9D9D9",
@@ -282,5 +283,9 @@ btnDownload.addEventListener("click", function () {
     .catch((err) => {
       console.error("Error generating poster:", err);
       alert("Error generating poster. Please try again.");
+    })
+    .finally(() => {
+      btnDownload.disabled = false;
+      btnDownload.textContent = originalText;
     });
 });

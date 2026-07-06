@@ -61,7 +61,7 @@ btnUpload.addEventListener("click", async function () {
   } finally {
     // volta o texto original
     btnUpload.disabled = false;
-    btnUpload.textContent = "Upload to Cloudinary";
+    btnUpload.textContent = "Upload";
   }
 });
 
