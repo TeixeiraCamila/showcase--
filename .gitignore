@@ -61,5 +61,6 @@ coverage/
 projects/exemplo-08--poster/js/config.js
 
 .agents
+.opencode
 .teste.md
 skills-lock.json
