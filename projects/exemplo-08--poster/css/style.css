@@ -1,11 +1,7 @@
-/* ============================================
-   Poster Maker — Styles
-   ============================================ */
+/* Poster Maker — Styles */
 
-/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap");
 
-/* CSS Variables */
 :root {
   --color-bg: #d9d9d9;
   --color-text: #000000;
@@ -38,9 +34,7 @@ body {
   margin: 0;
 }
 
-/* ============================================
-   App
-   ============================================ */
+/* App layout */
 .app__title {
   font-size: 1.875rem;
   font-weight: 700;
@@ -60,13 +54,10 @@ body {
 @media (max-width: 1024px) {
   .poster__container {
     flex-direction: column;
-    align-items: center;
   }
 }
 
-/* ============================================
-   Form
-   ============================================ */
+/* Form */
 .form {
   background: white;
   padding: 1.5rem;
@@ -135,9 +126,7 @@ body {
   color: white;
 }
 
-/* ============================================
-   Poster
-   ============================================ */
+/* Poster preview */
 .poster {
   width: var(--poster-width);
   background: var(--color-bg);
@@ -221,9 +210,7 @@ body {
   font-weight: 600;
 }
 
-/* ============================================
-   Search Results
-   ============================================ */
+/* Search results */
 #search-results {
   max-height: 200px;
   overflow-y: auto;
@@ -247,20 +234,13 @@ body {
   margin: 1.5rem 0;
 }
 
-/* ============================================
-   Search type selector
-   ============================================ */
+/* Search type selector */
 .search-type {
   width: auto;
   flex-shrink: 0;
 }
 
-
-
-/* ============================================
-   Cloudinary — URL display e botão Copy
-   ============================================ */
-
+/* Cloudinary */
 .form__button--copy {
   background: #0f9d58;
   color: white;
@@ -292,9 +272,7 @@ body {
   min-width: 0;
 }
 
-/* ============================================
-   Utility classes (replaces Tailwind)
-   ============================================ */
+/* Utility classes */
 .flex {
   display: flex;
 }
@@ -353,9 +331,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* ============================================
-   Footer
-   ============================================ */
+/* Footer */
 .poster__footer {
   text-align: center;
   margin-top: 3rem;
@@ -368,9 +344,7 @@ body {
   font-weight: 600;
 }
 
-/* ============================================
-   Responsive —— mobile
-   ============================================ */
+/* Responsive */
 @media (max-width: 768px) {
   body {
     padding: 1rem;

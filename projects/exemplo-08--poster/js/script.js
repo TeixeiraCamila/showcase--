@@ -1,8 +1,4 @@
-// ---------------------------------------------------------------
-// gerencia formulário, busca de filmes, preview e download
-
-// ---------------------------------------------------------------
-// entrada de dados do poster
+// poster form inputs
 const inputImage = document.getElementById("input-image");
 const inputTitle = document.getElementById("input-title");
 const inputYear = document.getElementById("input-year");
@@ -11,16 +7,14 @@ const inputGenre = document.getElementById("input-genre");
 const inputDirector = document.getElementById("input-director");
 const imageSource = document.getElementById("image-source");
 
-// ---------------------------------------------------------------
-// busca de filmes via OMDB
+// OMDB search
 const inputSearch = document.getElementById("input-search");
 const searchType = document.getElementById("search-type");
 const btnSearch = document.getElementById("btn-search");
 const searchResults = document.getElementById("search-results");
 const selectMovie = document.getElementById("select-movie");
 
-// ---------------------------------------------------------------
-// preview do poster (parte visual)
+// poster preview elements
 const posterImage = document.getElementById("poster-image");
 const posterTitle = document.getElementById("poster-title");
 const posterYear = document.getElementById("poster-year");
@@ -28,15 +22,12 @@ const posterNames = document.getElementById("poster-names");
 const posterGenre = document.getElementById("poster-genre");
 const posterDirector = document.getElementById("poster-creator");
 
-// ---------------------------------------------------------------
 const btnPreview = document.getElementById("btn-preview");
 const btnDownload = document.getElementById("btn-download");
 
-// guarda a imagem atual (local ou da OMDB)
 let currentImage = null;
 
-// ---------------------------------------------------------------
-// upload de imagem local
+// local image upload
 inputImage.addEventListener("change", function (e) {
   const file = e.target.files[0];
   if (file) {
@@ -56,9 +47,7 @@ inputImage.addEventListener("change", function (e) {
   }
 });
 
-// ---------------------------------------------------------------
-// Atualiza todos os campos do preview com os valores do formulário
-// esconde seções vazias para não poluir a visualização
+// sync form fields to poster preview, hide empty sections
 function updatePoster() {
   posterTitle.textContent = inputTitle.value || "Title";
 
@@ -93,31 +82,21 @@ function updatePoster() {
   }
 }
 
-// ---------------------------------------------------------------
-// atualiza o preview em tempo real 
+// real-time preview update on input
 inputTitle.addEventListener("input", updatePoster);
 inputYear.addEventListener("input", updatePoster);
 inputNames.addEventListener("input", updatePoster);
 inputGenre.addEventListener("input", updatePoster);
 inputDirector.addEventListener("input", updatePoster);
 
-// ---------------------------------------------------------------
-// força atualização manual do poster
+// manual preview refresh
 btnPreview.addEventListener("click", function () {
   updatePoster();
 });
 
-// ---------------------------------------------------------------
-// busca de filmes na OMDB
-
-// controla o delay da busca para evitar requisições desnecessárias
+// OMDB search with debounce and type filter
 let searchTimeout = null;
-
 let allResults = [];
-
-// ---------------------------------------------------------------
-// busca filmes, séries e episódios na API da OMDB
-// debounce de 300ms para não sobrecarregar a API
 
 function searchMovies() {
   const query = inputSearch.value.trim();
@@ -171,8 +150,6 @@ function searchMovies() {
   }, 300);
 }
 
-// ---------------------------------------------------------------
-// busca: clique no botão ou tecla Enter
 btnSearch.addEventListener("click", searchMovies);
 inputSearch.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
@@ -180,9 +157,7 @@ inputSearch.addEventListener("keypress", function (e) {
   }
 });
 
-// ---------------------------------------------------------------
-// quando o usuário seleciona um filme/série, busca os detalhes
-
+// fetch movie details when user selects a result
 selectMovie.addEventListener("change", function () {
   const imdbId = this.value;
   if (imdbId) {
@@ -190,8 +165,6 @@ selectMovie.addEventListener("change", function () {
   }
 });
 
-// ---------------------------------------------------------------
-// busca os detalhes completos pelo ID do IMDb e todos os campos do formulário com os dados retornados
 async function fetchMovieDetails(imdbId) {
   try {
     const response = await fetch(
@@ -205,7 +178,6 @@ async function fetchMovieDetails(imdbId) {
         data.Year && data.Year !== "N/A" ? data.Year.split("–")[0] : "";
       inputGenre.value = data.Genre && data.Genre !== "N/A" ? data.Genre : "";
 
-      // usa o diretor, ou cai para o roteirista como fallback
       let directorValue =
         data.Director && data.Director !== "N/A" ? data.Director : "";
       if (!directorValue && data.Writer && data.Writer !== "N/A") {
@@ -216,7 +188,6 @@ async function fetchMovieDetails(imdbId) {
       inputNames.value =
         data.Actors && data.Actors !== "N/A" ? data.Actors : "";
 
-      // carrega o poster do filme se a OMDB fornecer uma URL
       if (data.Poster && data.Poster !== "N/A") {
         loadPosterImage(data.Poster);
       }
@@ -229,15 +200,12 @@ async function fetchMovieDetails(imdbId) {
   }
 }
 
-// ---------------------------------------------------------------
-// carrega uma imagem externa (da OMDB) e converte para data URL
-// evita problemas de CORS na hora de gerar o canvas
+// load external image via canvas to avoid CORS issues
 function loadPosterImage(url) {
   imageSource.textContent = "(API)";
   const img = new Image();
   img.crossOrigin = "anonymous";
   img.onload = function () {
-    // desenha a imagem num canvas e extrai como data URL
     const canvas = document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
@@ -259,9 +227,7 @@ function loadPosterImage(url) {
   img.src = url;
 }
 
-// ---------------------------------------------------------------
-// download do poster — gera uma imagem PNG em alta resolução
-// html2canvas para capturar o preview em escala 2x
+// download poster as 2x PNG via html2canvas
 btnDownload.addEventListener("click", function () {
   const posterElement = document.getElementById("poster-preview");
   const originalText = btnDownload.textContent;
