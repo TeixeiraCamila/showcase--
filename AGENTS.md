@@ -24,7 +24,7 @@ docs/exemplo-design-system.md  ← landing page blueprint template
 
 ## Local dev
 ```bash
-python -m http.server 8000   # or: npx http-server
+npx http-server -p 8000
 # Open http://localhost:8000
 ```
 No build step needed — just serve the root.

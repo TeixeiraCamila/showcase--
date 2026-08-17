@@ -1,0 +1,130 @@
+{
+  "blue": {
+    "value": "#0000EE",
+    "name": "Blue"
+  },
+  "maroon": {
+    "value": "#050505",
+    "name": "Maroon"
+  },
+  "midnight-blue": {
+    "value": "#112F72",
+    "name": "Midnight Blue"
+  },
+  "midnight-blue-1": {
+    "value": "#121212",
+    "name": "Midnight Blue"
+  },
+  "midnight-blue-2": {
+    "value": "#271C40",
+    "name": "Midnight Blue"
+  },
+  "dark-slate-blue": {
+    "value": "#2E3382",
+    "name": "Dark Slate Blue"
+  },
+  "royal-blue": {
+    "value": "#497DEF",
+    "name": "Royal Blue"
+  },
+  "dim-gray": {
+    "value": "#666666",
+    "name": "Dim Gray"
+  },
+  "dim-gray-1": {
+    "value": "#675151",
+    "name": "Dim Gray"
+  },
+  "slate-blue": {
+    "value": "#6B50CF",
+    "name": "Slate Blue"
+  },
+  "cornflower-blue": {
+    "value": "#6E8BF3",
+    "name": "Cornflower Blue"
+  },
+  "cornflower-blue-1": {
+    "value": "#728BF3",
+    "name": "Cornflower Blue"
+  },
+  "medium-slate-blue": {
+    "value": "#7373FF",
+    "name": "Medium Slate Blue"
+  },
+  "cornflower-blue-2": {
+    "value": "#778BF2",
+    "name": "Cornflower Blue"
+  },
+  "light-sky-blue": {
+    "value": "#94C4FF",
+    "name": "Light Sky Blue"
+  },
+  "brown": {
+    "value": "#963253",
+    "name": "Brown"
+  },
+  "light-sky-blue-1": {
+    "value": "#99D1FF",
+    "name": "Light Sky Blue"
+  },
+  "dark-gray": {
+    "value": "#9BA1A5",
+    "name": "Dark Gray"
+  },
+  "orchid": {
+    "value": "#C476DA",
+    "name": "Orchid"
+  },
+  "thistle": {
+    "value": "#D3C2FF",
+    "name": "Thistle"
+  },
+  "peru": {
+    "value": "#D47B5B",
+    "name": "Peru"
+  },
+  "lavender": {
+    "value": "#E0D3F9",
+    "name": "Lavender"
+  },
+  "violet": {
+    "value": "#E891E3",
+    "name": "Violet"
+  },
+  "lavender-1": {
+    "value": "#EAECF0",
+    "name": "Lavender"
+  },
+  "lavender-2": {
+    "value": "#F1D3FD",
+    "name": "Lavender"
+  },
+  "white-smoke": {
+    "value": "#F3F2F1",
+    "name": "White Smoke"
+  },
+  "white-smoke-1": {
+    "value": "#F8F6F2",
+    "name": "White Smoke"
+  },
+  "seashell": {
+    "value": "#FAF7F0",
+    "name": "Seashell"
+  },
+  "pink": {
+    "value": "#FEC2DF",
+    "name": "Pink"
+  },
+  "hot-pink": {
+    "value": "#FF81B2",
+    "name": "Hot Pink"
+  },
+  "khaki": {
+    "value": "#FFE957",
+    "name": "Khaki"
+  },
+  "snow": {
+    "value": "#FFFCFC",
+    "name": "Snow"
+  }
+}

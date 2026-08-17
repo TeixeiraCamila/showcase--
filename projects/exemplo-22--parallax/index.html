@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>Layers in Motion — Parallax ScrollSmoother</title>
+  <link rel="shortcut icon" href="./imgs/favicon.svg" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <!-- ScrollSmoother requires ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <a class="header__brand nav-link" href="../../index.html" aria-label="Voltar ao Showcase">
+      <span class="header__dot" aria-hidden="true"></span>
+      Showcase
+    </a>
+    <p class="header__hint">GSAP · ScrollSmoother</p>
+  </header>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <main>
+        <section class="hero" aria-label="Hero com parallax em camadas">
+          <div class="parallax">
+            <img class="parallax__img parallax__img--front" data-layer="front" src="./imgs/img_01.png" alt="Cena em parallax — primeiro plano" />
+            <img class="parallax__img parallax__img--two" data-layer="two" src="./imgs/img_02.png" alt="Cena em parallax — segundo plano" />
+            <img class="parallax__img parallax__img--three" data-layer="three" src="./imgs/img_03.png" alt="Cena em parallax — terceiro plano" />
+            <img class="parallax__img parallax__img--back" data-layer="back" src="./imgs/img_04.png" alt="Cena em parallax — plano de fundo" />
+          </div>
+
+          <div class="hero__content container">
+            <p class="hero__kicker eyebrow">Projeto 022 — camadas</p>
+
+            <h1 class="hero__title">
+              <span class="hero__line">Layers</span>
+              <span class="hero__line hero__line--alt">in&nbsp;Motion</span>
+            </h1>
+
+            <p class="hero__lede">
+              Profundidade, ritmo e espaço criados a partir de quatro imagens
+              sobrepostas, animadas pelo ScrollSmoother.
+            </p>
+
+            <div class="hero__scroll" aria-hidden="true">
+              <span class="hero__scroll-label">Scroll</span>
+              <span class="hero__scroll-line"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="outro">
+          <p class="outro__kicker eyebrow" data-reveal>Resultado</p>
+          <h2 class="outro__title" data-reveal>Quatro camadas, uma só história</h2>
+          <p class="outro__text" data-reveal>
+            Cada imagem viaja numa velocidade própria. A frente lidera o movimento,
+            o fundo flutua — e é essa diferença que cria a ilusão de profundidade.
+          </p>
+          <ul class="outro__stats" data-reveal>
+            <li class="outro__stat">
+              <strong>04</strong>
+              <span class="eyebrow">camadas</span>
+            </li>
+            <li class="outro__stat">
+              <strong>3D</strong>
+              <span class="eyebrow">profundidade</span>
+            </li>
+            <li class="outro__stat">
+              <strong>1.6×</strong>
+              <span class="eyebrow">frente / fundo</span>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer" role="contentinfo">
+        <a href="../../index.html" class="footer__back nav-link">← Voltar ao Showcase</a>
+        <p class="footer__note">© 2024 Exemplo 22 — Layers in Motion</p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+  
+</body>
+
+</html>
