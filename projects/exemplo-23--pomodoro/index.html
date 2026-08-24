@@ -13,10 +13,10 @@
 <body>
 
   <section class="loader">
-    <div class="loader-wrap" role="img" aria-label="Carregando">
+    <div class="loader__wrap" role="img" aria-label="Carregando">
 
       <!-- CAMADA 1: contorno fixo (sempre visível) -->
-      <svg class="outline-layer" viewBox="0 0 310.56 310.56" xmlns="http://www.w3.org/2000/svg">
+      <svg class="loader__outline" viewBox="0 0 310.56 310.56" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M236.65,109.927c-6.128,2.271-13.803,4.43-22.844,5.635c1.528,8.948,1.216,22.677-9.728,35.708
       c-1.379,1.642-3.394,2.618-5.539,2.68c-0.072,0.002-0.147,0.004-0.221,0.004c-2.064,0-4.042-0.85-5.464-2.356
@@ -86,7 +86,7 @@
       </svg>
 
       <!-- CAMADA 2: cores aparecendo/desaparecendo por cima, em loop -->
-      <svg class="color-layer" viewBox="0 0 310.56 310.56" xmlns="http://www.w3.org/2000/svg">
+      <svg class="loader__color" viewBox="0 0 310.56 310.56" xmlns="http://www.w3.org/2000/svg">
         <g>
           <g>
             <path style="fill:#CE593F;" d="M236.65,109.927c-6.128,2.271-13.803,4.43-22.844,5.635c1.528,8.948,1.216,22.677-9.728,35.708
@@ -192,7 +192,7 @@
 
 
 
-    <section>
+    <section class="app__panel">
       <div class="task-form" aria-labelledby="taskFormTitle">
         <h2 class="task-form__title" id="taskFormTitle">Task List</h2>
         <input type="text" id="taskInput" class="task-form__input" placeholder="Add a new task"

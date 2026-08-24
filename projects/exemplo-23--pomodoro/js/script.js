@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const COUNT_KEY = 'pomodoro:count';
   const MAX_INCOMPLETE = 5;
   const TICK_MS = 200;
+  const LOADER_MS = 2500;
 
   const DURATION = 15000;               // 15s em ms (teste)
   // const DURATION = 25 * 60 * 1000;   // 25min em ms
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const app = document.querySelector('.app');
+  const loader = document.querySelector('.loader');
   const startButton = document.querySelector('#start');
   const pauseButton = document.querySelector('#pause');
   const resetButton = document.querySelector('#reset');
@@ -35,12 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let remaining = DURATION;             // ms restantes
   let running = false;
-  let endTime = null;                   // timestamp alvo (tick sem drift)
   let intervalId = null;
   let mode = 'work';                    // 'work' | 'break'
 
   let breakRemaining = 0;
-  let breakEndTime = null;
   let breakRunning = false;
   let breakIntervalId = null;
 
@@ -79,12 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Actions
+  // Actions (toda mutação persiste e re-renderiza)
   function deleteTask(id) {
     tasks = tasks.filter((task) => task.id !== id);
     if (selectedTaskId === id) selectedTaskId = null;
     if (activeTaskId === id) activeTaskId = null;
     saveTasks();
+    renderList();
   }
 
   function toggleTask(id) {
@@ -113,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!value) return;
 
     if (countIncomplete() >= MAX_INCOMPLETE) {
-      taskFormHint.textContent = `Limite: ${MAX_INCOMPLETE} tarefas imcompletas.`;
+      taskFormHint.textContent = `Limite: ${MAX_INCOMPLETE} tarefas incompletas.`;
       taskInput.value = '';
       return;
     }
@@ -171,13 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (event.target.closest('.tasks__check')) {
       toggleTask(id);
-      renderList();
       return;
     }
 
     if (event.target.closest('.tasks__delete')) {
       deleteTask(id);
-      renderList();
       return;
     }
 
@@ -190,12 +189,41 @@ document.addEventListener('DOMContentLoaded', () => {
     timer.classList.remove('timer--hidden');
   }
 
+  // Fake loader: fade out após alguns segundos e remove do DOM
+  function hideLoader() {
+    if (!loader) return;
+    loader.classList.add('loader--hidden');
+    loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+  }
+
+  let lastShown = null;
+
   function updateDisplay(ms) {
     const totalSeconds = Math.ceil(ms / 1000);
+    if (totalSeconds === lastShown) return;   // só toca o DOM se mudou
+
+    lastShown = totalSeconds;
     const mins = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
     minutes.textContent = String(mins).padStart(2, '0');
     seconds.textContent = String(secs).padStart(2, '0');
+  }
+
+  // Countdown genérico (endTime fixo = sem drift em aba oculta)
+  function countdown(ms, onTick, onDone) {
+    const endTime = Date.now() + ms;
+    const id = setInterval(() => {
+      const left = endTime - Date.now();
+
+      if (left <= 0) {
+        clearInterval(id);
+        onDone();
+        return;
+      }
+
+      onTick(left);
+    }, TICK_MS);
+    return id;
   }
 
   // Work timer
@@ -206,33 +234,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!activeTaskId && selectedTaskId) activeTaskId = selectedTaskId;
 
     running = true;
-    endTime = Date.now() + remaining;
+    intervalId = countdown(remaining, (left) => {
+      remaining = left;
+      updateDisplay(left);
+    }, () => {
+      running = false;
+      remaining = DURATION;
 
-    intervalId = setInterval(() => {
-      const timeLeft = endTime - Date.now();
+      completeTask(activeTaskId);        // conclui sem desmarcar
+      activeTaskId = null;
 
-      if (timeLeft <= 0) {
-        clearInterval(intervalId);
-        running = false;
-        remaining = DURATION;
+      pomodoroCount += 1;
+      saveCount();
 
-        toggleTask(activeTaskId);
-        activeTaskId = null;
-
-        pomodoroCount += 1;
-        saveCount();
-
-        if (pomodoroCount % 5 === 0) {
-          startBreak();
-        } else {
-          updateDisplay(remaining);
-        }
-        return;
+      if (pomodoroCount % 5 === 0) {
+        startBreak();
+      } else {
+        updateDisplay(remaining);
       }
-
-      remaining = timeLeft;
-      updateDisplay(remaining);
-    }, TICK_MS);
+    });
   }
 
   function pauseTimer() {
@@ -266,27 +286,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function startBreakTimer() {
     if (breakRunning) return;            // evita clique duplo
     breakRunning = true;
-    breakEndTime = Date.now() + breakRemaining;
-
-    breakIntervalId = setInterval(() => {
-      const timeLeft = breakEndTime - Date.now();
-
-      if (timeLeft <= 0) {
-        clearInterval(breakIntervalId);
-        breakRunning = false;
-        endBreak();
-        return;
-      }
-
-      breakRemaining = timeLeft;
-      updateDisplay(breakRemaining);
-    }, TICK_MS);
+    breakIntervalId = countdown(breakRemaining, (left) => {
+      breakRemaining = left;
+      updateDisplay(left);
+    }, () => {
+      breakRunning = false;
+      endBreak();
+    });
   }
 
   function endBreak() {
     mode = 'work';
     breakRemaining = 0;
-    breakEndTime = null;
     breakIntervalId = null;
 
     timer.classList.remove('timer--break');
@@ -319,5 +330,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderList();
   updateDisplay(remaining);
+
+  // Fake loader
+  setTimeout(hideLoader, LOADER_MS);
 
 })

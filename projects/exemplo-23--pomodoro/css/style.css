@@ -51,7 +51,7 @@ body {
   position: relative;
 }
 
-.app section {
+.app__panel {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -134,7 +134,7 @@ body {
 }
 
 .timer:not(.timer--hidden) {
-  animation: timer-in 0.35s ease;
+  animation: timer-in 0.50s ease;
 }
 
 .timer--hidden {
@@ -382,16 +382,22 @@ input:focus-visible {
   align-items: center;
   justify-content: center;
   background: #0f0f0f;
-  z-index: 1;
+  z-index: 10;
+  transition: opacity .6s ease, visibility .6s;
 }
 
-.loader-wrap {
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader__wrap {
   position: relative;
   width: 180px;
   height: 180px;
 }
 
-.loader-wrap svg {
+.loader__wrap svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -399,7 +405,7 @@ input:focus-visible {
   height: 100%;
 }
 
-.outline-layer path {
+.loader__outline path {
   fill: none;
   stroke: rgba(255, 255, 255, 0.55);
   stroke-width: 2.5;
@@ -407,7 +413,7 @@ input:focus-visible {
 
 }
 
-.color-layer {
+.loader__color {
   clip-path: inset(100% 0% 0% 0%);
   animation: fillUp 2.8s cubic-bezier(.65, 0, .53, 1) infinite;
 }
@@ -417,16 +423,12 @@ input:focus-visible {
     clip-path: inset(100% 0% 0% 0%);
   }
 
-  50% {
-    clip-path: inset(0% 0% 0% 0%);
-  }
-
+  50%,
   90% {
     clip-path: inset(0% 0% 0% 0%);
-
   }
 
-  1000% {
+  100% {
     clip-path: inset(100% 0% 0% 0%);
   }
 }
