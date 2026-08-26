@@ -1,6 +1,6 @@
 # Modelo — Boilerplate
 
-Template base para novos projetos do showcase. Estrutura mínima com HTML5, CSS e JavaScript.
+Template base para novos projetos do showcase. Estrutura padrão com css/, js/ e assets/.
 
 ## Stack
 
@@ -11,7 +11,10 @@ Template base para novos projetos do showcase. Estrutura mínima com HTML5, CSS 
 ## Estrutura
 
 ```
-css/style.css   — estilos do projeto
-js/script.js    — lógica do projeto
-index.html      — entry point
+css/style.css
+js/script.js
+assets/
+index.html
 ```
+
+[Voltar ao Showcase](../../index.html)

@@ -618,7 +618,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('../imgs/hero-bg.jpg') center/cover no-repeat;
+  background: url('../assets/hero-bg.jpg') center/cover no-repeat;
   opacity: 0.4;
   z-index: -2;
 }

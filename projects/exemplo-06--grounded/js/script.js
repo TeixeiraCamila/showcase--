@@ -340,7 +340,7 @@
           });
         }, CONFIG.MESSAGE_DISPLAY_TIME);
 
-        console.log("Form submitted:", data);
+
       });
     },
   };

@@ -92,6 +92,7 @@ body {
   color: var(--color-text-muted);
 }
 
+.tasks__button,
 .task-form__button {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -104,18 +105,17 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.15s ease;
 }
-
+.tasks__button:hover,
 .task-form__button:hover {
   background-color: var(--color-primary);
   filter: brightness(1.08);
 }
-
+.tasks__button:active,
 .task-form__button:active {
   transform: scale(0.97);
 }
 
 .task-form__hint {
-  min-height: 1em;
   font-size: 0.85rem;
   color: var(--color-primary);
   text-align: center;
@@ -253,6 +253,7 @@ body {
   height: 1.25rem;
   border: none;
   background-image: url(../assets/trash.svg);
+  background-color: transparent;
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
@@ -261,6 +262,10 @@ body {
 
 .tasks__delete:hover {
   transform: scale(1.12);
+}
+
+.tasks__item--done {
+  cursor: default;
 }
 
 .tasks__item--done .tasks__check {
@@ -281,6 +286,11 @@ body {
 
 .tasks__item--selected {
   border-color: var(--color-text);
+}
+
+.tasks__actions {
+  display: flex;
+  gap: .5rem;
 }
 
 /* ===== Footer ===== */

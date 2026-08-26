@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const BREAK = 30000;                   // 30s em ms (teste)
   // const BREAK = 30 * 60 * 1000;       // 30min em ms
 
+  const EXPIRY_MS = 24 * 60 * 60 * 1000 // 24hrs
+
 
   const app = document.querySelector('.app');
   const loader = document.querySelector('.loader');
@@ -19,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const pauseButton = document.querySelector('#pause');
   const resetButton = document.querySelector('#reset');
   const addTaskButton = document.querySelector('#addTask');
+  const completeAllButton = document.querySelector('#completeAll');
+  const deletellButton = document.querySelector('#deleteAll');
+
+
   const taskInput = document.querySelector('#taskInput');
   const listContainer = document.querySelector('#taskList');
   const tasksSection = document.querySelector('.tasks');
@@ -48,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadTasks() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
+      const parset = raw ? JSON.parse(raw) : [];
+      return parset.filter((t) => t.createdAt && Date.now() - t.createdAt < EXPIRY_MS)
     } catch {
       return [];
     }
@@ -105,6 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
     renderList();
   }
 
+
+  function completeAllTasks() {
+    tasks.forEach(t => {
+      t.status = true
+      saveTasks()
+      renderList()
+    });
+  }
+
+  function deleteAllTasks() {
+    tasks = []
+    selectedTaskId = null
+    activeTaskId = null
+    saveTasks()
+    renderList()
+  }
   function countIncomplete() {
     return tasks.filter((task) => !task.status).length;
   }
@@ -135,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render
   function renderList() {
     listContainer.innerHTML = '';
+    if (tasks.length === 0) {
+      taskFormHint.textContent = 'Não há tarefas cadastradas!';
+      timer.classList.add('timer--hidden');
+    }
 
     for (const task of tasks) {
       const li = document.createElement('li');
@@ -180,6 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const task = tasks.find((t) => t.id === id)
+    if (!task || task.status) return // ignorar click na task concluida
     selectedTaskId = id;
     showTimer();
     renderList();
@@ -187,6 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showTimer() {
     timer.classList.remove('timer--hidden');
+    const motionOk = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    timer.scrollIntoView({ behavior: motionOk ? 'smooth' : 'auto', block: 'nearest' });
   }
 
   // Fake loader: fade out após alguns segundos e remove do DOM
@@ -327,6 +358,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   pauseButton.addEventListener('click', pauseTimer);
   resetButton.addEventListener('click', resetTimer);
+
+  completeAllButton.addEventListener('click', completeAllTasks)
+  deletellButton.addEventListener('click', deleteAllTasks)
 
   renderList();
   updateDisplay(remaining);

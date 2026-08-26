@@ -1,15 +1,20 @@
-# Flower Animation — Galeria Interativa
+# Flower Animation
 
-Galeria floral interativa com efeitos visuais em CSS e JavaScript. Animações suaves ao passar o mouse.
+Animação floral interativa com efeitos visuais em CSS e JavaScript. Galeria de flores com animações suaves ao passar o mouse.
 
 ## Stack
 
-- HTML5
-- CSS3
+- HTML5 semântico
+- CSS3 custom properties + keyframes
 - JavaScript puro
 
-## Destaques
+## Estrutura
 
-- Efeitos hover com transições CSS
-- Galeria responsiva
-- Design temático floral
+```
+css/style.css
+js/script.js
+assets/
+index.html
+```
+
+[Voltar ao Showcase](../../index.html)

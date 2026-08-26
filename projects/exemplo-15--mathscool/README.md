@@ -1,19 +1,20 @@
-# Mathscool — Online Math School
+# Mathscool
 
-Landing page para escola de matemática online com aulas ao vivo, planos de preços, cursos e animações GSAP.
+Online math school landing page with live classes, pricing plans, courses and GSAP animations.
 
 ## Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- GSAP (ScrollTrigger)
-- Clash Display (Google Fonts)
+- HTML5 semântico
+- CSS3 custom properties + Clash Display font
+- GSAP (ScrollTrigger, ScrollToPlugin, SplitText)
 
-## Seções
+## Estrutura
 
-1. **Hero** — CTA principal com headline
-2. **Courses** — Grade de cursos disponíveis
-3. **Pricing** — Planos de assinatura
-4. **Testimonials** — Depoimentos de alunos
-5. **Footer** — Contato e links
+```
+css/style.css
+js/script.js
+assets/
+index.html
+```
+
+[Voltar ao Showcase](../../index.html)

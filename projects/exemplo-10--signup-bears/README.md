@@ -1,15 +1,20 @@
 # Sign Up Bears
 
-Página de cadastro com tema lúdico de ursos. Suporte a sign up com Google, Facebook ou email.
+Create your account and join our platform. Sign up with Google, Facebook, or email.
 
 ## Stack
 
-- HTML5
-- CSS3
+- HTML5 semântico
+- CSS3 custom properties
 - JavaScript puro
 
-## Funcionalidades
+## Estrutura
 
-- Formulário de cadastro com validação
-- Botões de login social (Google, Facebook)
-- Design responsivo e temático
+```
+css/style.css
+js/script.js
+assets/
+index.html
+```
+
+[Voltar ao Showcase](../../index.html)

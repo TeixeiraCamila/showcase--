@@ -1,16 +1,20 @@
-# Lumi — Tea-Based Drink Brand
+# Lumi
 
-Landing page para LUMI, bebida à base de chá com energia natural. Sabores variados feitos com frutas frescas.
+Landing page para produto de iluminação inteligente com design minimalista e ícones Lucide.
 
 ## Stack
 
-- HTML5
-- CSS3
-- JavaScript puro
+- HTML5 semântico
+- CSS3 custom properties
+- JavaScript puro (Lucide icons)
 
-## Seções
+## Estrutura
 
-1. **Hero** — "Nature's energy in every cup"
-2. **About** — A combinação perfeita de chá e frutas
-3. **Flavors** — Grid de sabores disponíveis
-4. **Footer** — Links e redes sociais
+```
+css/style.css
+js/script.js
+assets/
+index.html
+```
+
+[Voltar ao Showcase](../../index.html)

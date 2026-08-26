@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Interactive 3D scene featuring the classic Pokemon starters — Bulbasaur, Charmander, and Squirtle." />
+  <meta name="author" content="Camila Cristina Teixeira" />
+  <meta name="robots" content="index, follow" />
+
+  <title>Pokemon 3D Starters</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400&family=Oxanium:wght@600;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="shortcut icon" href="./assets/pokebola.ico" type="image/x-icon">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <div class="loading-screen" aria-live="polite">
+    <div class="loading-screen__pokeball" aria-hidden="true"></div>
+    <p class="loading-screen__text">Loading models...</p>
+  </div>
+
+  <main class="page">
+    <header class="header" role="banner">
+      <h1 class="header__title">Pokemon Starters</h1>
+      <p class="header__subtitle">Bulbasaur &middot; Charmander &middot; Squirtle</p>
+    </header>
+
+    <div class="imagem__3D" aria-label="3D model of the Pokemon starters"></div>
+
+  <div class="controls-hint" aria-hidden="true">Drag to rotate · Scroll to zoom</div>
+
+
+    <div class="info-panel" role="complementary" aria-label="Pokemon information">
+      <article class="pokemon-card pokemon-card--bulbasaur">
+        <div class="pokemon-card__header">
+          <span class="pokemon-card__number">#001</span>
+          <h2 class="pokemon-card__name">Bulbasaur</h2>
+        </div>
+        <span class="pokemon-card__type">Grass / Poison</span>
+        <p class="pokemon-card__desc">A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokemon. It prefers warm and humid climates.</p>
+        <ul class="pokemon-card__stats">
+          <li><span class="stat-label">Height</span> <span class="stat-value">0.7 m</span></li>
+          <li><span class="stat-label">Weight</span> <span class="stat-value">6.9 kg</span></li>
+          <li><span class="stat-label">Category</span> <span class="stat-value">Seed</span></li>
+        </ul>
+      </article>
+
+      <article class="pokemon-card pokemon-card--charmander">
+        <div class="pokemon-card__header">
+          <span class="pokemon-card__number">#004</span>
+          <h2 class="pokemon-card__name">Charmander</h2>
+        </div>
+        <span class="pokemon-card__type">Fire</span>
+        <p class="pokemon-card__desc">The flame on its tail shows the strength of its life force. If it is weak, the flame also burns weakly. It likes hot places.</p>
+        <ul class="pokemon-card__stats">
+          <li><span class="stat-label">Height</span> <span class="stat-value">0.6 m</span></li>
+          <li><span class="stat-label">Weight</span> <span class="stat-value">8.5 kg</span></li>
+          <li><span class="stat-label">Category</span> <span class="stat-value">Lizard</span></li>
+        </ul>
+      </article>
+
+      <article class="pokemon-card pokemon-card--squirtle">
+        <div class="pokemon-card__header">
+          <span class="pokemon-card__number">#007</span>
+          <h2 class="pokemon-card__name">Squirtle</h2>
+        </div>
+        <span class="pokemon-card__type">Water</span>
+        <p class="pokemon-card__desc">When it retracts its long neck into its shell, it squirts out water with vigorous force. It is the smallest of the three starters.</p>
+        <ul class="pokemon-card__stats">
+          <li><span class="stat-label">Height</span> <span class="stat-value">0.5 m</span></li>
+          <li><span class="stat-label">Weight</span> <span class="stat-value">9.0 kg</span></li>
+          <li><span class="stat-label">Category</span> <span class="stat-value">Tiny Turtle</span></li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <a href="../../index.html" class="footer__back">← Back to Showcase</a>
+    <p class="footer__note">© 2026 Pokemon 3D Starters</p>
+
+  </footer>
+
+  <script src="./js/script.js" type="module"></script>
+</body>
+</html>

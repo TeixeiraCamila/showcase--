@@ -556,17 +556,17 @@ main {
   top: 0.25rem;
   width: 1rem;
   height: 1rem;
-  background-image: url("../imgs/check.svg");
+  background-image: url("../assets/check.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .tabs__panel[data-tab="right"] .tabs__panel-details li::before {
-  background-image: url("../imgs/check-right.svg");
+  background-image: url("../assets/check-right.svg");
 }
 
 .tabs__panel[data-tab="left"] .tabs__panel-details li::before {
-  background-image: url("../imgs/check-left.svg");
+  background-image: url("../assets/check-left.svg");
 }
 
 .tabs__panel-prices {
@@ -612,7 +612,7 @@ main {
   flex: 7;
   padding: var(--space-lg);
   background-color: var(--primary-light);
-  background-image: url("../imgs/scattered_background.svg");
+  background-image: url("../assets/scattered_background.svg");
   background-size: cover;
   background-position: center;
   color: var(--primary-dark);
@@ -631,7 +631,7 @@ main {
   gap: var(--space-xs);
   padding: var(--space-lg);
   background-color: var(--primary-light);
-  background-image: url("../imgs/scattered_background.svg");
+  background-image: url("../assets/scattered_background.svg");
   background-size: cover;
   background-position: center;
   color: var(--primary-dark);

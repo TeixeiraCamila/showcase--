@@ -1,18 +1,20 @@
-# Aroma — Coffee Shop
+# Aroma
 
-Landing page para cafeteria artesanal. Cardápio visual com destaque para pratos como Smoked Salmon Toast, Avocado Sunrise e Honey Berry French Toast.
+Landing page elegante para marca de fragrâncias com design sofisticado e animações suaves.
 
 ## Stack
 
-- HTML5
-- CSS3
+- HTML5 semântico
+- CSS3 custom properties
 - JavaScript puro
-- Lucide Icons
 
-## Seções
+## Estrutura
 
-1. **Hero** — Logo + ícone decorativo
-2. **Welcome** — Mensagem de boas-vindas
-3. **Menu** — Cards de pratos com descrição
-4. **Split Sections** — Conteúdo em layout dividido
-5. **Social** — Redes sociais e contato
+```
+css/style.css
+js/script.js
+assets/
+index.html
+```
+
+[Voltar ao Showcase](../../index.html)

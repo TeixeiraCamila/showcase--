@@ -1,37 +1,20 @@
-# Infinite Slider - Oscar Winners
+# Infinite Slider
 
-Galeria de filmes vencedores do Oscar com scroll infinito.
+Galeria infinita de filmes vencedores do Oscar com animações GSAP, scroll e swipe.
 
-## Tecnologias
+## Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- GSAP (animações)
+- HTML5 semântico
+- CSS3 custom properties
+- GSAP (ScrollTrigger, Draggable)
 
-## Navegação
+## Estrutura
 
-- Scroll do mouse/trackpad
-- Swipe touch
-- Teclas ↑↓ e PageUp/PageDown
-
-## Dados
-
-Os filmes são controlados pelo arquivo `data/slides.json`. Para adicionar/remover filmes, edite este arquivo.
-
-```json
-{
-  "title": "Título da página",
-  "description": "Descrição",
-  "slides": [
-    {
-      "title": "Nome do Filme",
-      "image": "./assets/images/filme.jpg",
-      "alt": "Descrição da imagem",
-      "tomatometer": 5,
-      "observation": "Observação",
-      "text": ["Parágrafo 1", "Parágrafo 2"]
-    }
-  ]
-}
 ```
+css/style.css
+js/script.js
+assets/
+index.html
+```
+
+[Voltar ao Showcase](../../index.html)

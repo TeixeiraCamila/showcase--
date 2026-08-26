@@ -1,12 +1,13 @@
-# Landing Page
+# SVG Animation
 
-Modern landing page template with smooth animations, responsive design and underwater theme.
+Animação SVG interativa com CSS e JavaScript. Movimentos fluidos e efeitos visuais.
 
 ## Stack
 
 - HTML5 semântico
-- CSS3 custom properties
+- CSS3 custom properties + keyframes
 - JavaScript puro
+- SVG
 
 ## Estrutura
 

@@ -1,17 +1,19 @@
-# Blue Tone Retreats — Breathwork Practice
+# Grounded Luxury Travel
 
-Landing page para retiros de respiração consciente. Group sessions, private coaching e multi-day retreats em ambientes naturais.
+Discover inner stillness through immersive breathwork practice. Group sessions, private coaching, and multi-day retreats in serene natural settings.
 
 ## Stack
 
-- HTML5 + Tailwind CSS v4 (CDN)
-- JavaScript puro
-- Lucide Icons
+- HTML5 semântico
+- Tailwind CSS
 
-## Seções
+## Estrutura
 
-1. **Hero** — Headline + vídeo/background imersivo
-2. **About** — Filosofia da prática de breathwork
-3. **Programs** — Modalidades: group, private, retreats
-4. **Testimonials** — Depoimentos de participantes
-5. **Footer** — Contato + redes sociais
+```
+css/style.css
+js/script.js
+assets/
+index.html
+```
+
+[Voltar ao Showcase](../../index.html)
