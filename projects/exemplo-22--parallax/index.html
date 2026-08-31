@@ -5,8 +5,23 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Interactive parallax scroll demo with four layered images animated by GSAP ScrollSmoother, creating depth and motion on scroll." />
 
   <title>Layers in Motion — Parallax ScrollSmoother</title>
+
+  <link rel="canonical" href="https://showcase-theta-opal.vercel.app/projects/exemplo-22--parallax/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://showcase-theta-opal.vercel.app/projects/exemplo-22--parallax/" />
+  <meta property="og:title" content="Layers in Motion — Parallax ScrollSmoother" />
+  <meta property="og:description" content="Interactive parallax scroll demo with four layered images animated by GSAP ScrollSmoother, creating depth and motion on scroll." />
+  <meta property="og:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-22--parallax/assets/img_01.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Showcase" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Layers in Motion — Parallax ScrollSmoother" />
+  <meta name="twitter:description" content="Interactive parallax scroll demo with four layered images animated by GSAP ScrollSmoother, creating depth and motion on scroll." />
+  <meta name="twitter:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-22--parallax/assets/img_01.png" />
   <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,10 +51,10 @@
       <main>
         <section class="hero" aria-label="Hero com parallax em camadas">
           <div class="parallax">
-            <img class="parallax__img parallax__img--front" data-layer="front" src="./assets/img_01.png" alt="Cena em parallax — primeiro plano" />
-            <img class="parallax__img parallax__img--two" data-layer="two" src="./assets/img_02.png" alt="Cena em parallax — segundo plano" />
-            <img class="parallax__img parallax__img--three" data-layer="three" src="./assets/img_03.png" alt="Cena em parallax — terceiro plano" />
-            <img class="parallax__img parallax__img--back" data-layer="back" src="./assets/img_04.png" alt="Cena em parallax — plano de fundo" />
+            <img class="parallax__img parallax__img--front" data-layer="front" src="./assets/img_01.png" alt="Cena em parallax — primeiro plano" fetchpriority="high" decoding="async" />
+            <img class="parallax__img parallax__img--two" data-layer="two" src="./assets/img_02.png" alt="Cena em parallax — segundo plano" loading="lazy" decoding="async" />
+            <img class="parallax__img parallax__img--three" data-layer="three" src="./assets/img_03.png" alt="Cena em parallax — terceiro plano" loading="lazy" decoding="async" />
+            <img class="parallax__img parallax__img--back" data-layer="back" src="./assets/img_04.png" alt="Cena em parallax — plano de fundo" loading="lazy" decoding="async" />
           </div>
 
           <div class="hero__content container">
