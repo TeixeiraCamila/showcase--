@@ -1,7 +1,5 @@
 /* Poster Maker — Styles */
 
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap");
-
 :root {
   --color-bg: #d9d9d9;
   --color-text: #000000;
@@ -361,6 +359,7 @@ body {
 
   .poster__preview {
     flex-direction: column;
+    min-width: 0;
   }
 
   .poster__image {
