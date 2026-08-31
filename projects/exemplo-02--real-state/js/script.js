@@ -71,70 +71,37 @@ document
   )
   .forEach((el) => scrollObserver.observe(el));
 
-// SLIDER
-const slider = document.querySelector(".project__slider");
-const track = slider.querySelector(".project__slider-track");
-const slides = slider.querySelectorAll(".project__slider-item");
-const prevBtn = slider.querySelector(".project__slider-arrow--prev");
-const nextBtn = slider.querySelector(".project__slider-arrow--next");
+// PRELOADER
+const loader = document.getElementById("loader");
 
-let index = 0;
-let autoplay;
-
-function updateSlider() {
-  track.style.transform = `translateX(-${index * 100}%)`;
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("project__slider-item--active", i === index);
-  });
+function hideLoader() {
+  loader.classList.add("is-hidden");
 }
 
-function nextSlide() {
-  index = (index + 1) % slides.length;
-  updateSlider();
-}
-
-function prevSlide() {
-  index = (index - 1 + slides.length) % slides.length;
-  updateSlider();
-}
-
-function startAutoplay() {
-  autoplay = setInterval(nextSlide, 8000);
-}
-
-function stopAutoplay() {
-  clearInterval(autoplay);
-}
-
-nextBtn.addEventListener("click", () => {
-  nextSlide();
-  stopAutoplay();
-  startAutoplay();
+window.addEventListener("load", () => {
+  hideLoader();
 });
 
-prevBtn.addEventListener("click", () => {
-  prevSlide();
-  stopAutoplay();
-  startAutoplay();
+setTimeout(hideLoader, 4000);
+
+// SLIDER (Swiper)
+const swiper = new Swiper(".project__swiper", {
+  loop: true,
+  speed: 700,
+  effect: "slide",
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".project__slider-arrow--next",
+    prevEl: ".project__slider-arrow--prev",
+  },
+  keyboard: {
+    enabled: true,
+  },
+  grabCursor: true,
 });
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft") {
-    prevSlide();
-    stopAutoplay();
-    startAutoplay();
-  } else if (e.key === "ArrowRight") {
-    nextSlide();
-    stopAutoplay();
-    startAutoplay();
-  }
-});
-
-slider.addEventListener("mouseenter", stopAutoplay);
-slider.addEventListener("mouseleave", startAutoplay);
-
-updateSlider();
-startAutoplay();
 
 // MOBILE MENU
 const menuToggle = document.querySelector('.menu-toggle');

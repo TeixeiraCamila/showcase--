@@ -7,18 +7,76 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 		/>
-		<meta name="description" content="SK Builders - Luxury real estate agency specializing in international property appraisal, sales, purchases and investments." />
+		<meta name="description" content="SK Builders - Agência de imóveis de luxo. Avaliação, venda, compra e investimento em propriedades internacionais premium." />
+		<meta name="author" content="SK Builders" />
+		<meta name="keywords" content="imóveis de luxo, real estate, luxo, propriedade, investimento imobiliário, avaliação de imóveis" />
 		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#1d4734" />
+		<link rel="canonical" href="https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/" />
 
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/" />
+		<meta property="og:title" content="SK Builders - Luxury Real Estate | Imóveis Premium" />
+		<meta property="og:description" content="Avaliação, venda, compra e investimento em propriedades internacionais premium." />
+		<meta property="og:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/assets/images/introduction__image.webp" />
+		<meta property="og:image:width" content="800" />
+		<meta property="og:image:height" content="600" />
+		<meta property="og:image:alt" content="Modern luxury home exterior with elegant architecture" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:site_name" content="SK Builders" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="SK Builders - Luxury Real Estate" />
+		<meta name="twitter:description" content="Avaliação, venda, compra e investimento em propriedades internacionais premium." />
+		<meta name="twitter:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/assets/images/introduction__image.webp" />
+
+		<!-- Schema.org JSON-LD -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "RealEstateAgent",
+			"name": "SK Builders",
+			"description": "Agência de imóveis de luxo. Avaliação, venda, compra e investimento em propriedades internacionais premium.",
+			"url": "https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/",
+			"image": "https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/assets/images/logo.webp",
+			"priceRange": "$$",
+			"areaServed": "Internacional",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Brasil"
+			},
+			"sameAs": [
+				"https://facebook.com/skbuilders",
+				"https://twitter.com/skbuilders",
+				"https://instagram.com/skbuilders",
+				"https://linkedin.com/company/skbuilders"
+			]
+		}
+		</script>
+
+		<!-- Performance: preconnect + preload -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+		<link rel="preload" as="image" href="./assets/images/introduction__image.webp" fetchpriority="high" />
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" />
 		<link rel="stylesheet" href="./css/style.css" />
 		<link
-			rel="shortcut icon"
+			rel="icon"
 			href="./assets/images/favicon.ico"
 			type="image/x-icon"
 		/>
 		<title>SK Builders - Luxury Real Estate | Imóveis Premium</title>
 	</head>
 	<body>
+		<div class="loader" id="loader" aria-hidden="true"></div>
+
 		<!-- <a href="#introduction" class="skip-link">Skip to main content</a> -->
 
 		<header class="header" role="banner">
@@ -112,6 +170,8 @@
 								width="800"
 								height="600"
 								loading="eager"
+								decoding="async"
+								fetchpriority="high"
 							/>
 						</picture>
 						<a
@@ -232,6 +292,7 @@
 							width="1200"
 							height="675"
 							loading="lazy"
+							decoding="async"
 						/>
 					</picture>
 				</div>
@@ -269,123 +330,86 @@
 							Together, we can conquer challenges, utilize our strengths, and
 							achieve remarkable success in this ambitious home project.
 						</p>
-					</div>
-					<div
-						class="project__slider scroll-fade-up"
-						role="region"
-						aria-label="Project gallery"
-						aria-live="polite"
-					>
-						<div class="project__slider-track">
-							<img
-								src="./assets/images/slider-01.webp"
-								alt="Modern luxury home project showcase 1"
-								class="project__slider-item"
-								width="1200"
-								height="800"
-								loading="lazy"
-							/>
-							<img
-								src="./assets/images/slider-02.webp"
-								alt="Modern luxury home project showcase 2"
-								class="project__slider-item"
-								width="1200"
-								height="800"
-								loading="lazy"
-							/>
-							<img
-								src="./assets/images/slider-03.webp"
-								alt="Modern luxury home project showcase 3"
-								class="project__slider-item"
-								width="1200"
-								height="800"
-								loading="lazy"
-							/>
-
-							<img
-								src="./assets/images/slider-04.webp"
-								alt="Modern luxury home project showcase 4"
-								class="project__slider-item"
-								width="1200"
-								height="800"
-								loading="lazy"
-							/>
-							<img
-								src="./assets/images/slider-05.webp"
-								alt="Modern luxury home project showcase 5"
-								class="project__slider-item"
-								width="1200"
-								height="800"
-								loading="lazy"
-							/>
 						</div>
+						<div
+							class="project__slider scroll-fade-up"
+							role="region"
+							aria-label="Project gallery"
+							aria-live="polite"
+						>
+							<div class="swiper project__swiper">
+								<div class="swiper-wrapper project__slider-track">
+									<div class="swiper-slide">
+										<img
+											src="./assets/images/slider-01.webp"
+											alt="Modern luxury home project showcase 1"
+											class="project__slider-item"
+											width="1200"
+											height="800"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<div class="swiper-slide">
+										<img
+											src="./assets/images/slider-02.webp"
+											alt="Modern luxury home project showcase 2"
+											class="project__slider-item"
+											width="1200"
+											height="800"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<div class="swiper-slide">
+										<img
+											src="./assets/images/slider-03.webp"
+											alt="Modern luxury home project showcase 3"
+											class="project__slider-item"
+											width="1200"
+											height="800"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<div class="swiper-slide">
+										<img
+											src="./assets/images/slider-04.webp"
+											alt="Modern luxury home project showcase 4"
+											class="project__slider-item"
+											width="1200"
+											height="800"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<div class="swiper-slide">
+										<img
+											src="./assets/images/slider-05.webp"
+											alt="Modern luxury home project showcase 5"
+											class="project__slider-item"
+											width="1200"
+											height="800"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+								</div>
+							</div>
 
-						<div class="project__slider-arrow">
-							<button
-								class="project__slider-arrow--prev"
-								aria-label="Previous project image"
-							>
-								<svg
-									width="75"
-									height="74"
-									viewBox="0 0 75 74"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									aria-hidden="true"
-								>
-									<rect
-										x="73.5555"
-										y="73.1109"
-										width="72.2222"
-										height="72.2222"
-										rx="36.1111"
-										transform="rotate(-180 73.5555 73.1109)"
-										stroke="white"
-										stroke-opacity="0.5"
-										stroke-width="1.11111"
-									/>
-									<path
-										fill-rule="evenodd"
-										clip-rule="evenodd"
-										d="M37.1514 43.7069C36.7609 44.0974 36.1278 44.0974 35.7372 43.7069L29.7372 37.7069C29.3467 37.3163 29.3467 36.6832 29.7372 36.2926L35.7372 30.2926C36.1278 29.9021 36.7609 29.9021 37.1514 30.2926C37.542 30.6832 37.542 31.3163 37.1514 31.7069L32.8586 35.9998L44.4443 35.9998C44.9966 35.9998 45.4443 36.4475 45.4443 36.9998C45.4443 37.552 44.9966 37.9998 44.4443 37.9998L32.8586 37.9998L37.1514 42.2926C37.542 42.6832 37.542 43.3163 37.1514 43.7069Z"
-										fill="white"
-									/>
-								</svg>
-							</button>
-							<button
-								class="project__slider-arrow--next"
-								aria-label="Next project image"
-							>
-								<svg
-									width="75"
-									height="74"
-									viewBox="0 0 75 74"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									aria-hidden="true"
-								>
-									<rect
-										x="1.44392"
-										y="0.888252"
-										width="72.2233"
-										height="72.2233"
-										rx="36.1117"
-										stroke="white"
-										stroke-opacity="0.5"
-										stroke-width="1.11"
-									/>
-									<path
-										fill-rule="evenodd"
-										clip-rule="evenodd"
-										d="M37.8486 30.2929C38.2391 29.9024 38.8722 29.9024 39.2628 30.2929L45.2628 36.2929C45.6533 36.6834 45.6533 37.3166 45.2628 37.7071L39.2628 43.7071C38.8722 44.0976 38.2391 44.0976 37.8486 43.7071C37.458 43.3166 37.458 42.6834 37.8486 42.2929L42.1414 38L30.5557 38C30.0034 38 29.5557 37.5523 29.5557 37C29.5557 36.4477 30.0034 36 30.5557 36H42.1414L37.8486 31.7071C37.458 31.3166 37.458 30.6834 37.8486 30.2929Z"
-										fill="white"
-									/>
-								</svg>
-							</button>
+							<div class="project__slider-nav">
+								<div
+									class="swiper-button-prev project__slider-arrow--prev"
+									aria-label="Previous project image"
+								></div>
+								<div
+									class="swiper-button-next project__slider-arrow--next"
+									aria-label="Next project image"
+								></div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
 			<section
 				id="quality"
@@ -442,6 +466,7 @@
 									width="600"
 									height="800"
 									loading="lazy"
+									decoding="async"
 								/>
 							</picture>
 						</div>
@@ -465,6 +490,7 @@
 							width="800"
 							height="400"
 							loading="lazy"
+							decoding="async"
 							aria-hidden="true"
 						/>
 					</picture>
@@ -589,6 +615,7 @@
 			<button class="mobile-menu__cta">Get Started</button>
 		</nav>
 
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="./js/script.js"></script>
 	</body>
 </html>
