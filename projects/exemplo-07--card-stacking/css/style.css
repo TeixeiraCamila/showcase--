@@ -28,9 +28,13 @@ body {
   padding: 0;
 }
 
-footer,
+footer {
+  background-color: #1f453b;
+}
+
 header {
   background-color: #1f453b;
+  overflow: hidden;
 }
 
 header h1 {
