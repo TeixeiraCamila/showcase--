@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 :root {
   --gradient-primary: linear-gradient(
     90deg,
@@ -188,7 +186,7 @@ img {
 }
 
 .hero__container {
-  background-image: url("../imgs/hero-bg.svg");
+  background-image: url("../assets/hero_blob.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -208,7 +206,7 @@ img {
   position: relative;
   padding: var(--spacing-unit);
   text-align: center;
-  background-image: url(../imgs/hero-text-bg.svg);
+  background-image: url(../assets/hero-text-bg.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
@@ -232,7 +230,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(../imgs/hero-imagem-bg.svg);
+  background-image: url(../assets/hero-imagem-bg.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;

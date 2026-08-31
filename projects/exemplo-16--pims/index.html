@@ -3,12 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Lumi | Nature's Energy in Every Cup</title>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      name="description"
+      content="LUMI é uma bebida à base de chá que dá energia natural. Uma variedade divertida de sabores feita com as frutas e bagas mais frescas."
     />
+
+    <link rel="canonical" href="https://showcase-theta-opal.vercel.app/projects/exemplo-16--pims/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://showcase-theta-opal.vercel.app/projects/exemplo-16--pims/" />
+    <meta property="og:title" content="Lumi | Nature's Energy in Every Cup" />
+    <meta
+      property="og:description"
+      content="LUMI é uma bebida à base de chá que dá energia natural. Feita com as frutas e bagas mais frescas."
+    />
+    <meta
+      property="og:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-16--pims/assets/hero_image.png"
+    />
+    <meta property="og:image:alt" content="LUMI - bebida à base de chá com frutas e bagas" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Lumi" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://showcase-theta-opal.vercel.app/projects/exemplo-16--pims/" />
+    <meta name="twitter:title" content="Lumi | Nature's Energy in Every Cup" />
+    <meta
+      name="twitter:description"
+      content="LUMI é uma bebida à base de chá que dá energia natural. Feita com as frutas e bagas mais frescas."
+    />
+    <meta
+      name="twitter:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-16--pims/assets/hero_image.png"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lumi",
+        "url": "https://showcase-theta-opal.vercel.app/projects/exemplo-16--pims/"
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="image"
+      fetchpriority="high"
+      href="./assets/hero_image.png"
+    />
+
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Lumi</title>
   </head>
   <body>
     <header>
@@ -54,7 +107,12 @@
                 </p>
               </div>
               <div class="hero__image">
-                <img src="./assets/hero_image.png" alt="LUMI Product" />
+                <img
+                  src="./assets/hero_image.png"
+                  alt="LUMI Product"
+                  fetchpriority="high"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
@@ -98,8 +156,8 @@
               </li>
             </ul>
             <div class="about__images">
-              <img src="./assets/about-blob-1.png" alt="" />
-              <img src="./assets/about-blob-2.png" alt="" />
+              <img src="./assets/about-blob-1.png" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/about-blob-2.png" alt="" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
