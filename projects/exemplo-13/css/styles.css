@@ -166,6 +166,19 @@ body {
   .nav-mobile {
     display: block;
   }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    padding: 100px 0;
+  }
 }
 
 /* ================================
