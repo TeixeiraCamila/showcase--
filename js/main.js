@@ -145,6 +145,7 @@ function filterProjects(category) {
   setTimeout(() => {
     container.innerHTML = filtered.map((project) => `
       <a href="${escapeHtml(project.href)}" class="project-card"
+        ${project.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
         aria-label="Projeto ${escapeHtml(project.id)}: ${escapeHtml(project.title)}">
         <div class="project-card__preview" aria-hidden="true">
           <img src="${escapeHtml(project.preview)}" alt="" loading="lazy" />

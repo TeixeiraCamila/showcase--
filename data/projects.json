@@ -193,6 +193,21 @@
         "Three.js",
         "WebGL"
       ]
+    },
+    {
+      "id": "26",
+      "title": "BOOK JOURNAL",
+      "category": "tools",
+      "href": "https://book-journal-chi.vercel.app/login",
+      "preview": "https://book-journal-chi.vercel.app/assets/bg-login.webp",
+      "description": "Aplicação SPA para gerenciamento de biblioteca pessoal. Cadastro de livros, controle de leitura, avaliação por estrelas e organização por status e gêneros.",
+      "tags": [
+        "Vue.js 3",
+        "Pinia",
+        "GSAP",
+        "Vite"
+      ],
+      "external": true
     }
   ]
 }
