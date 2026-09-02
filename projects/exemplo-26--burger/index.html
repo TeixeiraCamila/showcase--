@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <link rel="shortcut icon" href="./assets/ico.svg" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="Crunchy Meat — hambúrguer artesanal. Carnes crocantes todos os dias para afastar a dor. Peça agora."
+    />
+    <link
+      rel="canonical"
+      href="https://showcase-theta-opal.vercel.app/projects/exemplo-26--burger/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-26--burger/"
+    />
+    <meta property="og:title" content="Crunchy Meat — Burgers" />
+    <meta
+      property="og:description"
+      content="Crunchy Meat — hambúrguer artesanal. Carnes crocantes todos os dias para afastar a dor."
+    />
+    <meta
+      property="og:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-26--burger/preview.png"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Showcase" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Crunchy Meat — Burgers" />
+    <meta
+      name="twitter:description"
+      content="Crunchy Meat — hambúrguer artesanal. Carnes crocantes todos os dias para afastar a dor."
+    />
+    <meta
+      name="twitter:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-26--burger/preview.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Crunchy Meat — Burgers</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="#" class="header__logo" aria-label="Crunchy Meat">
+          <img src="./assets/logo__primary.svg" alt="Crunchy Meat" />
+        </a>
+
+        <nav class="header__nav" aria-label="Navegação principal">
+          <ul class="header__menu">
+            <li class="header__menu-item"><a href="#home">Home</a></li>
+            <li class="header__menu-item"><a href="#home">About</a></li>
+            <li class="header__menu-item"><a href="#home">Slides</a></li>
+            <li class="header__menu-item"><a href="#home">Speciais</a></li>
+          </ul>
+        </nav>
+
+        <button class="header__cta">Order now</button>
+
+        <button
+          class="header__hamburger"
+          id="hamburger"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          <span class="header__hamburger-bar"></span>
+          <span class="header__hamburger-bar"></span>
+          <span class="header__hamburger-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu__overlay" id="menuOverlay" aria-hidden="true"></div>
+    <nav class="menu" id="menu" aria-label="Menu lateral">
+      <button class="menu__close" aria-label="Fechar menu">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#home">Home</a></li>
+        <li class="menu__item"><a href="#home">About</a></li>
+        <li class="menu__item"><a href="#home">Slides</a></li>
+        <li class="menu__item"><a href="#home">Speciais</a></li>
+      </ul>
+      <a href="#home" class="menu__cta">Order now</a>
+    </nav>
+
+    <main id="home">
+      <div class="burger container">
+        <div class="burger__overlay" aria-hidden="true"></div>
+
+        <div class="burger__info">
+          <h2 class="burger__info-title">
+            <b>Crunchy Meat</b> All Day makes the Pain <b>Go Away</b>
+          </h2>
+          <span class="burger__info-text"
+            >Lorem ipsum dolor sit met consecteur amendelia aspratti septumdevo
+            lipton seth dalimac.</span
+          >
+          <p class="burger__info-price">$20.40</p>
+          <button class="burger__info_cta">Order now</button>
+        </div>
+        <div class="burger__images">
+          <div class="burger__images__stack">
+            <img
+              class="burger__images-item burger__images-item--1"
+              src="./assets/burger__1.png"
+              alt=""
+            />
+            <span class="burger__dot burger__dot--1" aria-hidden="true"></span>
+            <div class="burger__card burger__card--1">
+              <h3 class="burger__card-title">Top</h3>
+              <p class="burger__card-text">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <img
+              class="burger__images-item burger__images-item--2"
+              src="./assets/burger__2.png"
+              alt=""
+            />
+            <span class="burger__dot burger__dot--2" aria-hidden="true"></span>
+            <div class="burger__card burger__card--2">
+              <h3 class="burger__card-title">Cheese</h3>
+              <p class="burger__card-text">Consectetur adipiscing elit.</p>
+            </div>
+            <img
+              class="burger__images-item burger__images-item--3"
+              src="./assets/burger__3.png"
+              alt=""
+            />
+            <span class="burger__dot burger__dot--3" aria-hidden="true"></span>
+            <div class="burger__card burger__card--3">
+              <h3 class="burger__card-title">Meat</h3>
+              <p class="burger__card-text">Sed do eiusmod tempor.</p>
+            </div>
+            <img
+              class="burger__images-item burger__images-item--4"
+              src="./assets/burger__4.png"
+              alt=""
+            />
+            <span class="burger__dot burger__dot--4" aria-hidden="true"></span>
+            <div class="burger__card burger__card--4">
+              <h3 class="burger__card-title">Base</h3>
+              <p class="burger__card-text">Incididunt ut labore et.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <a href="../../index.html" class="back-button">← Voltar ao Showcase</a>
+      <p>&copy; 2026. Todos os direitos reservados.</p>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>
