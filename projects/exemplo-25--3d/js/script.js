@@ -213,9 +213,9 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
     const elapsed = clock.getElapsedTime();
 
     // Rotates model continuously on Y axis (horizontal spin)
-    // if (model) {
-    //   model.rotation.y = elapsed * 0.2;
-    // }
+    if (model) {
+      model.rotation.y = elapsed * 0.2;
+    }
 
     // Applies damping to camera movement
     controls.update();
@@ -240,4 +240,14 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
   /* ── Boot ────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', init);
+
+  /* ── Spotlight do título — gradiente segue o mouse ── */
+  const title = document.querySelector('.header__title');
+  if (title) {
+    title.addEventListener('mousemove', function (e) {
+      const rect = title.getBoundingClientRect();
+      title.style.setProperty('--mx', e.clientX - rect.left + 'px');
+      title.style.setProperty('--my', e.clientY - rect.top + 'px');
+    });
+  }
 })();
