@@ -781,6 +781,18 @@ main {
   color: var(--primary-light);
 }
 
+.footer__notice {
+  max-width: 640px;
+  margin: 1.25rem auto 0;
+  padding: 12px 18px;
+  border: 1px solid var(--primary-light);
+  border-radius: 10px;
+  font-size: var(--font-small);
+  line-height: 1.5;
+  color: var(--primary-light);
+  text-align: center;
+}
+
 @keyframes fadeIn {
   from {
     transform: scale(0.95);
