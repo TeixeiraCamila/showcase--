@@ -597,6 +597,13 @@
 					</li>
 				</ul>
 			</nav>
+
+			<a href="../../index.html" class="back-button">← Voltar ao Showcase</a>
+
+			<p class="footer__notice">
+				Aviso: esta página é apenas um template de demonstração (mockup),
+				não é funcional e não está associada a nenhum serviço real.
+			</p>
 		</footer>
 
 		<div class="menu-overlay" id="menu-overlay"></div>
@@ -614,6 +621,28 @@
 			</ul>
 			<button class="mobile-menu__cta">Get Started</button>
 		</nav>
+
+		<dialog
+			class="notice-dialog"
+			aria-label="Aviso"
+			aria-describedby="notice-dialog-text"
+			data-notice-dialog
+		>
+			<div class="notice-dialog__content">
+				<button
+					class="notice-dialog__close"
+					type="button"
+					aria-label="Fechar aviso"
+					data-notice-close
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+				</button>
+				<p id="notice-dialog-text" class="notice-dialog__text">
+					Aviso: esta página é apenas um template de demonstração (mockup),
+					não é funcional e não está associada a nenhum serviço real.
+				</p>
+			</div>
+		</dialog>
 
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="./js/script.js"></script>

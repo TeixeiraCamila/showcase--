@@ -141,3 +141,41 @@ document.addEventListener('keydown', (e) => {
 		closeMenu();
 	}
 });
+
+// NOTICE CARD
+const noticeToggle = document.querySelector('[data-notice-toggle]');
+const noticeCard = document.querySelector('[data-notice-card]');
+
+function openNotice() {
+	if (!noticeCard) return;
+	noticeCard.classList.add('is-open');
+}
+
+function closeNotice() {
+	if (!noticeCard) return;
+	noticeCard.classList.remove('is-open');
+}
+
+noticeToggle?.addEventListener('click', (event) => {
+	event.stopPropagation();
+	if (noticeCard?.classList.contains('is-open')) {
+		closeNotice();
+	} else {
+		openNotice();
+	}
+});
+
+noticeCard?.querySelector('[data-notice-close]')?.addEventListener('click', (event) => {
+	event.stopPropagation();
+	closeNotice();
+});
+
+document.addEventListener('click', (event) => {
+	if (noticeCard && !noticeCard.contains(event.target)) {
+		closeNotice();
+	}
+});
+
+document.addEventListener('keydown', (event) => {
+	if (event.key === 'Escape') closeNotice();
+});
