@@ -1829,6 +1829,19 @@ a {
   color: var(--color-secondary);
 }
 
+.footer__notice {
+  max-width: 720px;
+  margin: 40px auto 0;
+  padding: 14px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
 @media (max-width: 1023px) {
   .footer__grid {
     grid-template-columns: 1fr 1.1fr;
