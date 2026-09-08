@@ -388,6 +388,16 @@ body {
   text-decoration: underline;
 }
 
+.footer__notice {
+  max-width: 560px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 @media (max-width: 768px) {
   .split {
     flex-direction: column;
