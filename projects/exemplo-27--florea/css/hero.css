@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 88px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+.hero__background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 242, 238, 0.4) 0%,
+    #f3f2ee2e 82%
+  );
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__tagline {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 32px;
+}
+
+.hero__title {
+  font-size: clamp(42px, 6vw, 96px);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  margin-bottom: 36px;
+}
+
+.hero__title .line {
+  display: block;
+}
+
+.hero__description {
+  max-width: 460px;
+  font-size: 18px;
+  color: var(--text-secondary-color);
+  margin-bottom: 44px;
+}
+
+.hero__media {
+  position: relative;
+}
+
+.hero__image-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.25);
+}
+
+.hero__image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__badge {
+  position: absolute;
+  bottom: 28px;
+  left: -40px;
+  background: var(--cream-color);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
+}
+
+.hero__badge-value {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.hero__badge-label {
+  font-size: 13px;
+  color: var(--text-secondary-color);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1023px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero__media {
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .hero__badge {
+    left: 12px;
+  }
+}

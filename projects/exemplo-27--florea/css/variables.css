@@ -1,0 +1,32 @@
+:root {
+  --font-heading: "DM Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --background-color: #F3F2EE;
+  --surface-color: #E9E8E4;
+  --text-primary-color: #252525;
+  --text-secondary-color: #656565;
+  --border-color: #C9C8C3;
+
+  --rose-color: #D99A9A;
+  --peach-color: #E9AD8F;
+  --cream-color: #F4E4D2;
+  --soft-green-color: #9AA88D;
+  --leaf-color: #66755E;
+  --sky-color: #A9C5CF;
+  --yellow-color: #D8B65D;
+
+  --accent-color: #B76E6E;
+
+  --container-max: 1320px;
+  --container-pad: 24px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+}
+
+/* Smooth live region / selection */
+::selection {
+  background: var(--rose-color);
+  color: var(--text-primary-color);
+}

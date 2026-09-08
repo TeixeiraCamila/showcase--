@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <meta name="description" content="Florea — sentimentos em forma de flores. Catálogo floral com buquês artesanais, presentes, arranjos para casamentos e assinatura de flores." />
+  <link rel="canonical" href="https://showcase-theta-opal.vercel.app/projects/exemplo-27--florea/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://showcase-theta-opal.vercel.app/projects/exemplo-27--florea/" />
+  <meta property="og:title" content="Florea — Sentimentos em forma de flores" />
+  <meta property="og:description" content="Catálogo floral com buquês artesanais, presentes e arranjos para cada momento." />
+  <meta property="og:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-27--florea/assets/images/hero/hero-01.webp" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Florea" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Florea — Sentimentos em forma de flores" />
+  <meta name="twitter:description" content="Catálogo floral com buquês artesanais, presentes e arranjos para cada momento." />
+  <meta name="twitter:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-27--florea/assets/images/hero/hero-01.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+  <link rel="preload" as="image" href="./assets/images/hero/hero-01.webp" fetchpriority="high" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <title>Florea — Sentimentos em forma de flores</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" aria-label="Florea, início">FLOR<span>EA</span></a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav__link" href="#catalog">Catálogo</a>
+        <a class="nav__link" href="#services">Sobre</a>
+        <a class="nav__link" href="#gallery">Instagram</a>
+        <a class="nav__link" href="#newsletter">WhatsApp</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="header__whatsapp-wrap">
+          <button class="header__action header__whatsapp" aria-label="Falar no WhatsApp">
+            <i data-lucide="message-circle" class="header__icon" aria-hidden="true"></i>
+          </button>
+          <div class="whatsapp-card" data-whatsapp-card role="dialog" aria-live="polite">
+            <button class="whatsapp-card__close" data-whatsapp-close aria-label="Fechar aviso">
+              <i data-lucide="x" class="header__icon" aria-hidden="true"></i>
+            </button>
+            <p class="whatsapp-card__text">
+              Aviso: esta página é apenas um template de demonstração (mockup),
+              não é funcional e não está associada a nenhum serviço real.
+            </p>
+          </div>
+        </div>
+        <a href="#catalog" class="header__action header__cart" aria-label="Carrinho de compras">
+          <i data-lucide="shopping-bag" class="header__icon" aria-hidden="true"></i>
+          <span class="header__cart-count" data-cart-count>0</span>
+        </a>
+        <button class="header__menu-btn" data-menu-open aria-label="Abrir menu">
+          <i data-lucide="menu" class="header__icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__header">
+      <a href="#hero" class="logo" aria-label="Florea, início">FLOR<span>EA</span></a>
+      <button class="mobile-menu__close" data-menu-close aria-label="Fechar menu">
+        <i data-lucide="x" class="header__icon" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-menu__nav" aria-label="Menu mobile">
+      <a class="mobile-menu__link" href="#catalog" data-menu-link>Catálogo</a>
+      <a class="mobile-menu__link" href="#services" data-menu-link>Sobre</a>
+      <!-- <a class="mobile-menu__link" href="#gallery" data-menu-link>Instagram</a> -->
+      <!-- <a class="mobile-menu__link" href="#newsletter" data-menu-link>WhatsApp</a> -->
+    </nav>
+
+    <div class="mobile-menu__footer">
+      <span>Instagram</span>
+      <span>WhatsApp</span>
+    </div>
+  </div>
+
+  <div class="mobile-menu__backdrop" data-menu-backdrop aria-hidden="true"></div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__background" aria-hidden="true">
+        <img src="./assets/images/hero/hero-bg.webp" alt="" />
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__tagline">Sentimentos em forma de flores</p>
+          <h1 class="hero__title">
+            <span class="line">Flores para</span>
+            <span class="line">cada momento</span>
+          </h1>
+          <p class="hero__description">
+            Buquês criados para transformar sentimentos em memórias.
+          </p>
+          <a href="#catalog" class="btn btn--solid hero__cta">
+            Explorar catálogo
+            <i data-lucide="arrow-right" class="header__icon" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="hero__media">
+          <div class="hero__image-frame">
+            <img
+              src="./assets/images/hero/hero-01.webp"
+              alt="Flores em tons pastel em um dia de céu azul"
+              decoding="async"
+              width="900"
+              height="1200"
+            />
+          </div>
+          <div class="hero__badge">
+            <div class="hero__badge-value">+1.500</div>
+            <div class="hero__badge-label">buquês entregues</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section categories" id="categories">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Categorias</span>
+          <h2 class="section__title">Encontre o arranjo perfeito</h2>
+        </div>
+
+        <div class="categories__grid" data-reveal-group>
+          <a class="category-card" href="#catalog" data-reveal-item>
+            <img class="category-card__image" src="./assets/images/categories/cat-buques.webp" alt="Buquês artesanais" loading="lazy" width="800" height="1000" />
+            <span class="category-card__arrow" aria-hidden="true"><i data-lucide="arrow-right" class="header__icon"></i></span>
+            <div class="category-card__content">
+              <h3 class="category-card__name">Buquês</h3>
+              <p class="category-card__count">Flores da estação</p>
+            </div>
+          </a>
+
+          <a class="category-card" href="#catalog" data-reveal-item>
+            <img class="category-card__image" src="./assets/images/categories/cat-presentes.webp" alt="Presentes florais" loading="lazy" width="800" height="1000" />
+            <span class="category-card__arrow" aria-hidden="true"><i data-lucide="arrow-right" class="header__icon"></i></span>
+            <div class="category-card__content">
+              <h3 class="category-card__name">Presentes</h3>
+              <p class="category-card__count">Para surpreender</p>
+            </div>
+          </a>
+
+          <a class="category-card" href="#catalog" data-reveal-item>
+            <img class="category-card__image" src="./assets/images/categories/cat-casamentos.webp" alt="Arranjos para casamentos" loading="lazy" width="800" height="1000" />
+            <span class="category-card__arrow" aria-hidden="true"><i data-lucide="arrow-right" class="header__icon"></i></span>
+            <div class="category-card__content">
+              <h3 class="category-card__name">Casamentos</h3>
+              <p class="category-card__count">Arranjos especiais</p>
+            </div>
+          </a>
+
+          <a class="category-card" href="#catalog" data-reveal-item>
+            <img class="category-card__image" src="./assets/images/categories/cat-secas.webp" alt="Flores secas" loading="lazy" width="800" height="1000" />
+            <span class="category-card__arrow" aria-hidden="true"><i data-lucide="arrow-right" class="header__icon"></i></span>
+            <div class="category-card__content">
+              <h3 class="category-card__name">Flores secas</h3>
+              <p class="category-card__count">Beleza duradoura</p>
+            </div>
+          </a>
+
+          <a class="category-card" href="#catalog" data-reveal-item>
+            <img class="category-card__image" src="./assets/images/categories/cat-plantas.webp" alt="Plantas para casa" loading="lazy" width="800" height="1000" />
+            <span class="category-card__arrow" aria-hidden="true"><i data-lucide="arrow-right" class="header__icon"></i></span>
+            <div class="category-card__content">
+              <h3 class="category-card__name">Plantas</h3>
+              <p class="category-card__count">Verde para o lar</p>
+            </div>
+          </a>
+
+          <a class="category-card" href="#catalog" data-reveal-item>
+            <img class="category-card__image" src="./assets/images/categories/cat-assinaturas.webp" alt="Assinatura de flores" loading="lazy" width="800" height="1000" />
+            <span class="category-card__arrow" aria-hidden="true"><i data-lucide="arrow-right" class="header__icon"></i></span>
+            <div class="category-card__content">
+              <h3 class="category-card__name">Assinaturas</h3>
+              <p class="category-card__count">Flores todo mês</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="section catalog" id="catalog">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Catálogo</span>
+          <h2 class="section__title">Nossas criações</h2>
+        </div>
+
+        <div class="catalog__filters" data-reveal></div>
+
+        <div class="catalog__swiper">
+          <div class="catalog__grid swiper-wrapper"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial banner -->
+    <section class="editorial-banner" id="editorial">
+      <img class="editorial-banner__image" src="./assets/images/editorial.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="editorial-banner__overlay" aria-hidden="true"></div>
+
+      <div class="editorial-banner__inner">
+        <h2 class="editorial-banner__title">
+          <span class="line"><span>As flores dizem</span></span>
+          <span class="line"><span>o que às vezes</span></span>
+          <span class="line"><span>não conseguimos</span></span>
+        </h2>
+        <a href="#services" class="btn btn--light editorial-banner__cta">
+          Conheça nossa história
+          <i data-lucide="arrow-right" class="header__icon" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Serviços</span>
+          <h2 class="section__title">Um presente ainda mais especial</h2>
+        </div>
+
+        <div class="services__list" data-reveal>
+          <div class="service-row">
+            <h3 class="service-row__name">Cartão personalizado</h3>
+            <p class="service-row__description">Mensagem personalizada para acompanhar o buquê.</p>
+            <p class="service-row__price">R$ 15</p>
+          </div>
+          <div class="service-row">
+            <h3 class="service-row__name">Presente especial</h3>
+            <p class="service-row__description">Adicionar chocolates ou doces.</p>
+            <p class="service-row__price">R$ 25</p>
+          </div>
+          <div class="service-row">
+            <h3 class="service-row__name">Aromatização</h3>
+            <p class="service-row__description">Aroma floral aplicado ao presente.</p>
+            <p class="service-row__price">R$ 15</p>
+          </div>
+          <div class="service-row">
+            <h3 class="service-row__name">Entrega surpresa</h3>
+            <p class="service-row__description">A pessoa recebe o presente sem saber quem enviou.</p>
+            <p class="service-row__price">R$ 20</p>
+          </div>
+          <div class="service-row">
+            <h3 class="service-row__name">Assinatura floral</h3>
+            <p class="service-row__description">Flores entregues semanalmente ou mensalmente.</p>
+            <p class="service-row__price service-row__price--on-request">Sob consulta</p>
+          </div>
+          <div class="service-row">
+            <h3 class="service-row__name">Entrega expressa</h3>
+            <p class="service-row__description">Entrega no mesmo dia.</p>
+            <p class="service-row__price service-row__price--on-request">Sob consulta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Galeria</span>
+          <h2 class="section__title">Nossa arte em detalhes</h2>
+        </div>
+
+        <div class="gallery__grid" data-reveal-group>
+          <a class="gallery__item gallery__item--1" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_01.webp" alt="Pessoa segurando um buquê floral" loading="lazy" width="800" height="1000" />
+          </a>
+          <a class="gallery__item gallery__item--2" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_02.webp" alt="Close de flores delicadas" loading="lazy" width="600" height="800" />
+          </a>
+          <a class="gallery__item gallery__item--3" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_03.webp" alt="Mãos segurando flores" loading="lazy" width="600" height="800" />
+          </a>
+          <a class="gallery__item gallery__item--4" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_04.webp" alt="Montagem de arranjo floral" loading="lazy" width="600" height="800" />
+          </a>
+          <a class="gallery__item gallery__item--5" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_05.webp" alt="Detalhe de flores do buquê" loading="lazy" width="800" height="600" />
+          </a>
+          <a class="gallery__item gallery__item--6" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_06.webp" alt="Flores coloridas em arranjo" loading="lazy" width="800" height="600" />
+          </a>
+          <a class="gallery__item gallery__item--7" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_07.webp" alt="Pessoa segurando um buquê artesanal" loading="lazy" width="600" height="800" />
+          </a>
+          <a class="gallery__item gallery__item--8" href="#" aria-label="Ver foto ampliada">
+            <img src="./assets/images/gallery/gallery_08.webp" alt="Mãos segurando flores em um arranjo" loading="lazy" width="600" height="800" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Depoimentos</span>
+          <h2 class="section__title">Quem recebeu, lembra</h2>
+        </div>
+
+        <div class="testimonials__slider" data-reveal>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide testimonials__slide">
+              <p class="testimonials__quote">"Foi o presente mais bonito que já recebi."</p>
+              <p class="testimonials__author">Mariana S.</p>
+              <p class="testimonials__city">São Paulo, SP</p>
+            </div>
+            <div class="swiper-slide testimonials__slide">
+              <p class="testimonials__quote">"As flores chegaram fresquinhas e o cartão emocionou."</p>
+              <p class="testimonials__author">Rafael A.</p>
+              <p class="testimonials__city">Campinas, SP</p>
+            </div>
+            <div class="swiper-slide testimonials__slide">
+              <p class="testimonials__quote">"A assinatura floral é o meu momento favorito do mês."</p>
+              <p class="testimonials__author">Juliana M.</p>
+              <p class="testimonials__city">Rio de Janeiro, RJ</p>
+            </div>
+          </div>
+          <div class="testimonials__pagination swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter" id="newsletter">
+      <div class="container">
+        <div class="newsletter__inner" data-reveal>
+          <span class="section__kicker">Newsletter</span>
+          <h2 class="newsletter__title">
+            <span class="line">Flores para</span>
+            <span class="line">a sua caixa de entrada</span>
+          </h2>
+          <p class="newsletter__text">Novidades, coleções e histórias.</p>
+
+          <form class="newsletter__form" data-newsletter-form>
+            <input class="newsletter__input" type="email" name="email" placeholder="seu@email.com" aria-label="Seu e-mail" required />
+            <button class="btn btn--solid" type="submit">Assinar</button>
+          </form>
+          <p class="newsletter__feedback" data-newsletter-feedback aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#hero" class="logo" aria-label="Florea">FLOR<span>EA</span></a>
+          <p class="footer__tagline">Sentimentos em forma de flores.</p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Navegação</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#hero">Início</a></li>
+            <li><a class="footer__link" href="#catalog">Catálogo</a></li>
+            <li><a class="footer__link" href="#services">Sobre</a></li>
+            <li><a class="footer__link" href="#services">Serviços</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Redes</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#">Instagram</a></li>
+            <li><a class="footer__link" href="#">WhatsApp</a></li>
+            <li><a class="footer__link" href="#">Pinterest</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Siga a Florea</h3>
+          <div class="footer__socials">
+            <a class="footer__social" href="#" aria-label="Instagram" title="Instagram">
+              <img src="./assets/sociais/instagran.svg" alt="" width="24" height="24" aria-hidden="true" />
+            </a>
+            <a class="footer__social" href="#" aria-label="Facebook" title="Facebook">
+              <img src="./assets/sociais/facebook.svg" alt="" width="24" height="24" aria-hidden="true" />
+            </a>
+            <a class="footer__social" href="#" aria-label="YouTube" title="YouTube">
+              <img src="./assets/sociais/youtube.svg" alt="" width="24" height="24" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Florea. Todos os direitos reservados.</p>
+        <ul class="footer__legal">
+          <li><a class="footer__link" href="#">Política de privacidade</a></li>
+          <li><a class="footer__link" href="#">Termos</a></li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-button">← Voltar ao Showcase</a>
+
+      <p class="footer__notice">
+        Aviso: esta página é apenas um template de demonstração (mockup),
+        não é funcional e não está associada a nenhum serviço real.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- App -->
+  <script src="./js/data.js"></script>
+  <script src="./js/catalog.js"></script>
+  <script src="./js/filters.js"></script>
+  <script src="./js/favorites.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

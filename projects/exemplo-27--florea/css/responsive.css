@@ -1,0 +1,26 @@
+/* Tablet */
+@media (max-width: 1023px) {
+  .nav {
+    display: none;
+  }
+
+  .header__menu-btn {
+    display: inline-flex;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section {
+    padding-block: 64px;
+  }
+
+  .header__cart,
+  .header__whatsapp {
+    display: none;
+  }
+
+  .container {
+    padding-inline: 20px;
+  }
+}
