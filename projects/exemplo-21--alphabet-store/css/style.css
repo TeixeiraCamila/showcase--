@@ -373,6 +373,18 @@ footer .content {
   align-items: center;
   justify-content: center;
 }
+
+footer .content .footer__notice {
+  max-width: 640px;
+  margin-top: 1rem;
+  padding: 12px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  text-align: center;
+}
 @media (min-width: 768px) {
   body.menu-open {
     overflow: auto;
