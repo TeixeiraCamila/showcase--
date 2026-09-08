@@ -1,104 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "2499063120584899");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=2499063120584899&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Showcase de projetos web em JavaScript: landing pages, animações CSS, GSAP, Canvas, mini apps e exercícios frontend."
+    />
+    <meta name="robots" content="index, follow" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Showcase de projetos web em JavaScript: landing pages, animações CSS, GSAP, Canvas, mini apps e exercícios frontend." />
-  <meta name="robots" content="index, follow" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/TeixeiraCamila/showcase/main/assets/previews/exemplo-01.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <meta property="og:image" content="https://raw.githubusercontent.com/TeixeiraCamila/showcase/main/assets/previews/exemplo-01.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./favicon.svg" />
 
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="apple-touch-icon" href="./favicon.svg" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (!savedTheme) {
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          document.documentElement.setAttribute(
+            "data-theme",
+            prefersDark ? "dark" : "light",
+          );
+        } else {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      })();
+    </script>
+    <title>Showcase - Projetos Web em JavaScript | HTML5 • CSS3 • GSAP</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+  </head>
 
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem("theme");
-      if (!savedTheme) {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
-      } else {
-        document.documentElement.setAttribute("data-theme", savedTheme);
-      }
-    })();
-  </script>
-  <title>Showcase - Projetos Web em JavaScript | HTML5 • CSS3 • GSAP</title>
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="./css/default.css" />
-</head>
+  <body>
+    <div class="cursor"></div>
+    <div class="cursor__trail"></div>
 
-<body>
-  <div class="cursor"></div>
-  <div class="cursor__trail"></div>
+    <header class="header" role="banner">
+      <div class="container">
+        <h1 class="header__title">SHOWCASE</h1>
+        <p class="header__subtitle">PROJETOS WEB // JS + HTML + CSS + GSAP</p>
 
-  <header class="header" role="banner">
-    <div class="container">
-      <h1 class="header__title">SHOWCASE</h1>
-      <p class="header__subtitle">PROJETOS WEB // JS + HTML + CSS + GSAP</p>
+        <nav
+          class="filter-bar"
+          id="filterBar"
+          aria-label="Filtrar por categoria"
+        ></nav>
 
-      <nav class="filter-bar" id="filterBar" aria-label="Filtrar por categoria"></nav>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Alternar tema claro/escuro"
+        >
+          <svg
+            width="250"
+            height="250"
+            viewBox="0 0 200 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_20_36)">
+              <path
+                d="M100 0C101.333 40 100.667 80 98 120C100 140 100.667 160 100 180"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M85 180C95 176.667 105 176.667 115 180V205C105 208.333 95 208.333 85 205V180Z"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M88 187C96 185.667 104 185.667 112 187Z"
+                fill="currentColor"
+              />
+              <path
+                d="M88 187C96 185.667 104 185.667 112 187"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M88 195C96 193.667 104 193.667 112 195Z"
+                fill="currentColor"
+              />
+              <path
+                d="M88 195C96 193.667 104 193.667 112 195"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                id="bulb"
+                d="M99.9999 200C64.9999 205 54.9999 255 94.9999 300C145 265 135 210 99.9999 200Z"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M82 250C88.6667 266.667 94.6667 266.667 100 250C105.333 266.667 111.333 266.667 118 250"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M100 190C101.333 183.333 101.333 176.667 100 170"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M100 330C98.6667 336.667 98.6667 343.333 100 350"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M45 260C38.3333 258.667 31.6667 258.667 25 260"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M155 260C161.667 261.333 168.333 261.333 175 260"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M65 310C58.3333 316.667 51.6667 321.667 45 325"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M135 310C141.667 316.667 148.333 321.667 155 325"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </header>
 
-      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">
-        <svg width="250" height="250" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_20_36)">
-            <path d="M100 0C101.333 40 100.667 80 98 120C100 140 100.667 160 100 180" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M85 180C95 176.667 105 176.667 115 180V205C105 208.333 95 208.333 85 205V180Z" fill="currentColor"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M88 187C96 185.667 104 185.667 112 187Z" fill="currentColor" />
-            <path d="M88 187C96 185.667 104 185.667 112 187" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-            <path d="M88 195C96 193.667 104 193.667 112 195Z" fill="currentColor" />
-            <path d="M88 195C96 193.667 104 193.667 112 195" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-            <path id="bulb" d="M99.9999 200C64.9999 205 54.9999 255 94.9999 300C145 265 135 210 99.9999 200Z" fill="currentColor"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M82 250C88.6667 266.667 94.6667 266.667 100 250C105.333 266.667 111.333 266.667 118 250"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M100 190C101.333 183.333 101.333 176.667 100 170" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M100 330C98.6667 336.667 98.6667 343.333 100 350" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M45 260C38.3333 258.667 31.6667 258.667 25 260" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M155 260C161.667 261.333 168.333 261.333 175 260" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M65 310C58.3333 316.667 51.6667 321.667 45 325" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M135 310C141.667 316.667 148.333 321.667 155 325" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" />
-          </g>
-        </svg>
-      </button>
-    </div>
-  </header>
+    <main class="main" role="main" aria-label="Lista de projetos">
+      <div class="container">
+        <section
+          class="projects-grid"
+          id="projectsGrid"
+          aria-label="Projetos"
+        ></section>
+      </div>
+    </main>
 
-  <main class="main" role="main" aria-label="Lista de projetos">
-    <div class="container">
-      <section class="projects-grid" id="projectsGrid" aria-label="Projetos"></section>
-    </div>
-  </main>
+    <footer class="footer" role="contentinfo">
+      <p class="footer__text">
+        DESENVOLVIDO POR
+        <a
+          href="https://github.com/TeixeiraCamila"
+          target="_blank"
+          rel="noopener"
+          >Camila Cristina Teixeira</a
+        >
+      </p>
+      <div class="footer__links">
+        <a
+          href="https://github.com/TeixeiraCamila"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__link"
+          aria-label="GitHub"
+          >GITHUB</a
+        >
+        <span class="footer__separator" aria-hidden="true">|</span>
+        <a
+          href="https://www.linkedin.com/in/teixeira-camila-cristina/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__link"
+          aria-label="LinkedIn"
+          >LINKEDIN</a
+        >
+      </div>
+    </footer>
 
-  <footer class="footer" role="contentinfo">
-    <p class="footer__text">DESENVOLVIDO POR <a href="https://github.com/TeixeiraCamila" target="_blank"
-        rel="noopener">Camila Cristina Teixeira</a></p>
-    <div class="footer__links">
-      <a href="https://github.com/TeixeiraCamila" target="_blank" rel="noopener noreferrer" class="footer__link"
-        aria-label="GitHub">GITHUB</a>
-      <span class="footer__separator" aria-hidden="true">|</span>
-      <a href="https://www.linkedin.com/in/teixeira-camila-cristina/" target="_blank" rel="noopener noreferrer"
-        class="footer__link" aria-label="LinkedIn">LINKEDIN</a>
-    </div>
-  </footer>
-
-  <script src="./js/main.js" defer></script>
-</body>
-
+    <script src="./js/main.js" defer></script>
+  </body>
 </html>

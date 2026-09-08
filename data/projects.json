@@ -1,11 +1,11 @@
 {
   "title": "SHOWCASE",
-  "subtitle": "PROJETOS WEB // JS + HTML + CSS + GSAP",
+  "subtitle": "WEB PROJECTS // JS + HTML + CSS + GSAP",
   "defaultCategory": "landing",
   "categories": [
     {
       "id": "all",
-      "name": "Todos"
+      "name": "All"
     },
     {
       "id": "landing",
@@ -13,11 +13,11 @@
     },
     {
       "id": "animation",
-      "name": "Animação"
+      "name": "Animation"
     },
     {
       "id": "tools",
-      "name": "Ferramentas"
+      "name": "Tools"
     },
     {
       "id": "quiz",
@@ -44,7 +44,7 @@
       "category": "animation",
       "href": "projects/exemplo-03--infinite-slider/index.html",
       "preview": "projects/exemplo-03--infinite-slider/preview.png",
-      "description": "Galeria infinita de filmes vencedores do Oscar com animações GSAP, scroll e swipe.",
+      "description": "Infinite gallery of Oscar-winning movies with GSAP animations, scroll and swipe.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -70,7 +70,7 @@
       "category": "landing",
       "href": "projects/exemplo-05--catpuccino/index.html",
       "preview": "projects/exemplo-05--catpuccino/preview.png",
-      "description": "Café com aconchego para Gen Z Creators. Design retrô-moderno, light & dark mode.",
+      "description": "Cozy coffee for Gen Z Creators. Retro-modern design with light & dark mode.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -95,7 +95,7 @@
       "category": "animation",
       "href": "projects/exemplo-07--card-stacking/index.html",
       "preview": "projects/exemplo-07--card-stacking/preview.png",
-      "description": "Landing page interativa com animação inovadora de empilhamento de cards usando GSAP.",
+      "description": "Interactive landing page with an innovative card stacking animation built with GSAP.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -134,7 +134,7 @@
       "category": "quiz",
       "href": "projects/exemplo-11--quiz/index.html",
       "preview": "projects/exemplo-11--quiz/preview.png",
-      "description": "Quiz interativo com localStorage para salvar progresso, feedback visual e barra de progresso.",
+      "description": "Interactive quiz with localStorage to save progress, visual feedback and a progress bar.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -173,7 +173,7 @@
       "category": "tools",
       "href": "projects/exemplo-23--pomodoro/index.html",
       "preview": "projects/exemplo-23--pomodoro/preview.png",
-      "description": "Timer Pomodoro com gerenciamento de tarefas, localStorage e contagem de ciclos.",
+      "description": "Pomodoro timer with task management, localStorage and cycle counting.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -186,7 +186,7 @@
       "category": "animation",
       "href": "projects/exemplo-25--3d/index.html",
       "preview": "projects/exemplo-25--3d/preview.png",
-      "description": "Cena 3D interativa com os 3 pokemons iniciais classicos — Bulbasaur, Charmander e Squirtle — iluminacao studio Three.js.",
+      "description": "Interactive 3D scene with the 3 classic starter pokemons — Bulbasaur, Charmander and Squirtle — studio lighting with Three.js.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -200,7 +200,7 @@
       "category": "tools",
       "href": "https://book-journal-chi.vercel.app/login",
       "preview": "https://book-journal-chi.vercel.app/assets/bg-login.webp",
-      "description": "Aplicação SPA para gerenciamento de biblioteca pessoal. Cadastro de livros, controle de leitura, avaliação por estrelas e organização por status e gêneros.",
+      "description": "SPA application for managing a personal library. Book registration, reading progress, star ratings and organization by status and genres.",
       "tags": [
         "Vue.js 3",
         "Pinia",
@@ -208,6 +208,33 @@
         "Vite"
       ],
       "external": true
+    },
+    {
+      "id": "27",
+      "title": "CRUNCHY MEAT",
+      "category": "landing",
+      "href": "projects/exemplo-26--burger/index.html",
+      "preview": "projects/exemplo-26--burger/preview.png",
+      "description": "Artisan burger landing page with a creative interaction: the burger takes apart its layers when you click on the CTA, revealing each ingredient.",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "GSAP"
+      ]
+    },
+    {
+      "id": "28",
+      "title": "FLOREA",
+      "category": "landing",
+      "href": "projects/exemplo-27--florea/index.html",
+      "preview": "projects/exemplo-27--florea/preview.png",
+      "description": "Floral catalog with an editorial and minimalist aesthetic: bouquets, gifts, wedding arrangements and flower subscription, with dynamic filters and GSAP animations.",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "GSAP",
+        "Swiper"
+      ]
     }
   ]
 }
