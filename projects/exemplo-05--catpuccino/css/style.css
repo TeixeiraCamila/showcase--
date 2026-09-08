@@ -2069,6 +2069,19 @@ body {
   font-size: 0.9rem;
 }
 
+.footer__notice {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
