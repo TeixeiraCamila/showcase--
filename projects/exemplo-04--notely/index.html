@@ -66,11 +66,28 @@
 							>
 						</li>
 					</ul>
-					<button
-						class="bg-navy text-cream px-6 py-2.5 rounded-full font-medium hover:bg-opacity-90 transition-all hover:scale-105 cursor-pointer"
-					>
-						Shop Now
-					</button>
+					<div class="relative">
+						<button
+							class="bg-navy text-cream px-6 py-2.5 rounded-full font-medium hover:bg-opacity-90 transition-all hover:scale-105 cursor-pointer"
+							data-notice-toggle
+						>
+							Shop Now
+						</button>
+						<div class="notice-card" data-notice-card role="dialog" aria-live="polite">
+							<button
+								class="notice-card__close"
+								type="button"
+								aria-label="Fechar aviso"
+								data-notice-close
+							>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+							</button>
+							<p class="notice-card__text" id="notice-card-text">
+								Aviso: esta página é apenas um template de demonstração (mockup),
+								não é funcional e não está associada a nenhum serviço real.
+							</p>
+						</div>
+					</div>
 				</div>
 			</nav>
 
@@ -330,14 +347,18 @@
 
 			<footer class="bg-navy py-8">
 				<div class="container mx-auto px-6 text-center">
-					<p class="text-cream opacity-75">
-						<a href="../../index.html" class="hover:text-magenta transition-soft">← Voltar ao Showcase</a>
-					</p>
 					<p class="text-cream opacity-75 mt-2">
 						© 2025 notely. Made with
 
 						<i data-lucide="heart" class="w-4 h-4 inline text-magenta"></i> for
 						creative minds
+					</p>
+
+					<a href="../../index.html" class="back-button">← Voltar ao Showcase</a>
+
+					<p class="footer__notice">
+						Aviso: esta página é apenas um template de demonstração (mockup),
+						não é funcional e não está associada a nenhum serviço real.
 					</p>
 				</div>
 			</footer>
