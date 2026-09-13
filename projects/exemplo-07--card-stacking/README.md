@@ -1,6 +1,6 @@
-# Card Stacking Animation
+# Entre Linhas — Citações de Livros
 
-Landing page interativa com animação inovadora de empilhamento de cards usando GSAP.
+Landing page interativa com citações de livros empilhadas em cards, usando animações GSAP (card stacking, draggable e scroll).
 
 ## Stack
 

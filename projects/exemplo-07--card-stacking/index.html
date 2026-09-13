@@ -33,7 +33,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta
 			name="description"
-			content="Landing page interativa com animação inovadora de empilhamento de cards usando GSAP. Showcase de animações web modernas."
+			content="Entre Linhas: citações de livros que se empilham em uma experiência imersiva de leitura. Animações com GSAP, scroll e draggable."
 		/>
 		<meta
 			name="keywords"
@@ -59,7 +59,7 @@
 		/>
 		<meta
 			property="og:title"
-			content="Card Stacking Animation - Landing Page Interativa"
+			content="Entre Linhas — Citações de Livros"
 		/>
 		<meta
 			property="og:description"
@@ -76,7 +76,7 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta
 			name="twitter:title"
-			content="Card Stacking Animation - Landing Page Interativa"
+			content="Entre Linhas — Citações de Livros"
 		/>
 		<meta
 			name="twitter:description"
@@ -92,7 +92,7 @@
 			{
 				"@context": "https://schema.org",
 				"@type": "CreativeWork",
-				"name": "Card Stacking Animation",
+				"name": "Entre Linhas — Citações de Livros",
 				"description": "Landing page com animação inovadora de empilhamento de cards usando GSAP",
 				"creator": {
 					"@type": "Person",
@@ -101,13 +101,19 @@
 			}
 		</script>
 
+		<!-- Favicon -->
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231f453b'/><rect x='18' y='24' width='34' height='24' rx='6' fill='%23febdaa'/><rect x='12' y='16' width='36' height='26' rx='6' fill='%23b2c9ab'/><rect x='20' y='24' width='20' height='3' rx='1.5' fill='%231f453b' opacity='0.5'/><rect x='20' y='31' width='13' height='3' rx='1.5' fill='%231f453b' opacity='0.5'/></svg>"
+		/>
+
 		<!-- Performance Hints -->
 		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./css/style.css" />
 
-		<title>Card Stacking Animation</title>
+		<title>Entre Linhas — Citações de Livros</title>
 	</head>
 
 	<body>
@@ -144,9 +150,6 @@
 				<div>
 					<img height="160" width="160" src="./assets/header/b-7.svg" alt="" />
 				</div>
-				<div>
-					<img height="160" width="160" src="./assets/header/b-8.svg" alt="" />
-				</div>
 			</div>
 			<svg
 				class="absolute"
@@ -167,12 +170,13 @@
 				</g>
 			</svg>
 			<h1 class="">
-				<span class="text-left">Landing </span>
-				<span class="text-right"> Page </span>
+				<span class="text-left">Entre</span>
+				<span class="text-right">Linhas</span>
 			</h1>
 		</header>
 
 		<main id="main-content" class="relative" role="main">
+			<section id="quote-stack" aria-label="Citações de livros">
 			<div class="card-item">
 				<div class="card-inner is--yellow">
 					<ul>
@@ -187,40 +191,111 @@
 						<li></li>
 						<li></li>
 					</ul>
+					<blockquote class="card-quote">
+						<p>Não há nada como um sonho para criar o futuro.</p>
+						<cite>Victor Hugo — Os Miseráveis</cite>
+					</blockquote>
 				</div>
 			</div>
 			<div class="card-item">
 				<div class="card-inner is--green">
 					<div class="card-content">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-						asperiores dolores facere officiis. Explicabo ea ipsum
-						exercitationem nulla a delectus atque aspernatur, pariatur suscipit
-						esse in veniam nostrum nobis libero.
+						<blockquote class="card-quote">
+							<p>Fui para a floresta porque desejava viver deliberadamente.</p>
+							<cite>Henry David Thoreau — Walden</cite>
+						</blockquote>
 					</div>
 				</div>
 			</div>
 			<div class="card-item">
 				<div class="card-inner is--blue">
 					<div class="card-content">
-						03 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-						asperiores dolores facere officiis. Explicabo ea ipsum
-						exercitationem nulla a delectus atque aspernatur, pariatur suscipit
-						esse in veniam nostrum nobis libero.
+						<blockquote class="card-quote">
+							<p>Não é nas estrelas que reside o nosso destino, mas em nós
+								mesmos.</p>
+							<cite>William Shakespeare — Júlio César</cite>
+						</blockquote>
 					</div>
 				</div>
 			</div>
 			<div class="card-item">
-				<div class="card-inner is--grey">04</div>
+				<div class="card-inner is--grey">
+					<blockquote class="card-quote">
+						<p>Dois caminhos divergiam num bosque amarelo, e eu escolhi o
+							menos percorrido.</p>
+						<cite>Robert Frost — The Road Not Taken</cite>
+					</blockquote>
+				</div>
 			</div>
 			<div class="card-item">
-				<div class="card-inner is--coral">05</div>
+				<div class="card-inner is--coral">
+					<blockquote class="card-quote">
+						<p>O amor tudo vence; cedamos também nós ao amor.</p>
+						<cite>Virgílio — Éclogas</cite>
+					</blockquote>
+				</div>
 			</div>
 			<div class="card-item">
-				<div class="card-inner is--sage">06</div>
+				<div class="card-inner is--sage">
+					<blockquote class="card-quote">
+						<p>Nem todos os que vagueiam estão perdidos.</p>
+						<cite>J. R. R. Tolkien — O Senhor dos Anéis</cite>
+					</blockquote>
+				</div>
 			</div>
+			<div class="card-item">
+				<div class="card-inner is--blue">
+					<div class="card-content">
+						<blockquote class="card-quote">
+							<p>Somos feitos da mesma matéria dos sonhos.</p>
+							<cite>William Shakespeare — A Tempestade</cite>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--sage">
+					<blockquote class="card-quote">
+						<p>É preciso ter o caos dentro de si para dar à luz uma
+							estrela dançante.</p>
+						<cite>Friedrich Nietzsche — Assim Falou Zaratustra</cite>
+					</blockquote>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--grey">
+					<blockquote class="card-quote">
+						<p>A jornada de mil milhas começa com um único passo.</p>
+						<cite>Lao Tsé — Tao Te Ching</cite>
+					</blockquote>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--coral">
+					<blockquote class="card-quote">
+						<p>Tu te tornas eternamente responsável por aquilo que
+							cativas.</p>
+						<cite>Antoine de Saint-Exupéry — O Pequeno Príncipe</cite>
+					</blockquote>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="card-inner is--green">
+					<div class="card-content">
+						<blockquote class="card-quote">
+							<p>Sei que nada sei.</p>
+							<cite>Platão — Apologia de Sócrates</cite>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+			</section>
 		</main>
 
-		<footer class="relative h-screen flex items-center justify-center">
+		<footer
+			class="relative h-screen flex items-center justify-center overflow-hidden"
+			role="contentinfo"
+		>
 			<svg
 				class="absolute"
 				id="visual"
@@ -239,14 +314,25 @@
 					></path>
 				</g>
 			</svg>
-			<h2 class="text-white relative z-10 text-6xl font-bold">
-				Pronto para começar?
-			</h2>
-			<a href="../../index.html" class="text-white/60 hover:text-white relative z-10 mt-8 text-lg underline">← Voltar ao Showcase</a>
-		<p id="notice-dialog-text" class="notice-dialog__text">
-			Aviso: esta página é apenas um template de demonstração (mockup),
-			não é funcional e não está associada a nenhum serviço real.
-		</p>
+
+			<div class="relative z-10 text-center px-6 footer-content">
+				<p class="footer-kicker">O fim de mais uma página</p>
+				<p class="footer-title">Continue lendo.</p>
+				<p class="footer-desc">
+					Cada card guarda uma frase que já mudou uma vida. Volte sempre —
+					há sempre uma nova história por abrir.
+				</p>
+
+				<nav class="footer-links" aria-label="Links do rodapé">
+					<a href="#main-content">Início</a>
+					<a href="#quote-stack">As Citações</a>
+					<a href="../../index.html">← Voltar ao Showcase</a>
+				</nav>
+
+				<p class="footer-credit">
+					© 2025 — Landing page demonstrativa · Camila Cristina Teixeira
+				</p>
+			</div>
 		</footer>
 
 		<script src="https://cdn.tailwindcss.com"></script>
