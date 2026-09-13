@@ -1,0 +1,252 @@
+/* Orbit — monochromatic gallery */
+
+/* Design tokens */
+:root {
+  --bg: #060606;
+  --surface: #0e0e0e;
+  --line: #242424;
+  --text: #f4f4f4;
+  --muted: #8a8a8a;
+}
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Page shell */
+body {
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+/* Loader block */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+/* Loader elements */
+.loader__percent {
+  font-size: clamp(4.5rem, 18vw, 13rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.loader__label {
+  position: absolute;
+  bottom: auto;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.loader__track {
+  position: absolute;
+  top: calc(50% + clamp(3rem, 10vw, 8rem));
+  left: 50%;
+  width: min(60vw, 420px);
+  height: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
+}
+
+.loader__fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--text);
+}
+
+/* Stage block */
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Stage elements */
+.stage__topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  pointer-events: none;
+}
+
+.stage__wordmark {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: var(--text);
+}
+
+.stage__dot {
+  color: var(--muted);
+}
+
+.stage__back {
+  pointer-events: auto;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.stage__back:hover,
+.stage__back:focus-visible {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.stage__hint {
+  position: absolute;
+  bottom: 7rem;
+  left: 50%;
+  z-index: 10;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transform: translateX(-50%);
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.stage__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.45));
+}
+
+/* Gallery block */
+.gallery {
+  position: absolute;
+  inset: 0;
+}
+
+/* Gallery elements */
+.gallery__item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.gallery__img {
+  display: block;
+  max-height: min(190px, 26dvh);
+  max-width: min(var(--img-max-w, 200px), 60vw);
+  width: auto;
+  height: auto;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.gallery__img:hover{
+  filter: grayscale(0) contrast(1.05);
+}
+/* Title bar block */
+.title-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 3vw, 2rem);
+  min-height: 88px;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  opacity: 0;
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* Title bar elements */
+.title-bar__index {
+  min-width: 3.5ch;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+}
+
+.title-bar__title {
+  font-size: clamp(1.4rem, 4.5vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  overflow: hidden;
+  color: var(--text);
+}
+
+.title-bar__cue {
+  margin-left: auto;
+  font-size: 0.6rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .title-bar__cue {
+    display: none;
+  }
+
+  .stage__hint {
+    bottom: 7.5rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
