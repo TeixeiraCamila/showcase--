@@ -1,4 +1,4 @@
-let currentCategory = 'landing'
+let currentCategory = 'all'
 let allProjects = []
 
 document.addEventListener('DOMContentLoaded', () => {

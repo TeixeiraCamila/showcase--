@@ -91,15 +91,16 @@
     },
     {
       "id": "07",
-      "title": "CARD STACKING ANIMATION",
+      "title": "ENTRE LINHAS",
       "category": "animation",
       "href": "projects/exemplo-07--card-stacking/index.html",
       "preview": "projects/exemplo-07--card-stacking/preview.png",
-      "description": "Interactive landing page with an innovative card stacking animation built with GSAP.",
+      "description": "Citações de livros empilhadas em uma landing page imersiva com animações GSAP.",
       "tags": [
         "HTML5",
         "CSS3",
-        "GSAP"
+        "GSAP",
+        "Landing Page"
       ]
     },
     {
@@ -234,6 +235,19 @@
         "CSS3",
         "GSAP",
         "Swiper"
+      ]
+    },
+    {
+      "id": "29",
+      "title": "ORBIT",
+      "category": "animation",
+      "href": "projects/exemplo-28--orbit-gallery/index.html",
+      "preview": "projects/exemplo-28--orbit-gallery/preview.png",
+      "description": "Monochromatic gallery: images orbit the screen for 5 seconds then stop at random positions; hovering reveals the title in a bottom bar.",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "GSAP"
       ]
     }
   ]
