@@ -6,12 +6,9 @@
     theme: {
       extend: {
         colors: {
-          "cool-river": "#669788",
-          sky: "#A9CFDF",
           twilight: "#26466D",
           moss: "#BAA45C",
           "amber-sunset": "#E0A866",
-          fawn: "#CFB8A0",
           moonlight: "#E7EBD7",
         },
         fontFamily: {
@@ -24,14 +21,14 @@
 
   const CONFIG = {
     SCROLL_THRESHOLD: 50,
-    ANIMATION_DURATION: { fast: 0.3, normal: 0.5, slow: 1 },
+    ANIMATION_DURATION: { fast: 0.3, normal: 0.5, slow: 1, slide: 1.2 },
     STAGGER_DELAY: 0.1,
-    MESSAGE_DISPLAY_TIME: 5000,
     MENU_LINK_ANIMATION_DELAY: 0.2,
     GSAP_EASE: {
-      default: "power3.out",
+      default: "power2.out",
       elastic: "elastic.out(1, 0.5)",
       sine: "sine.inOut",
+      scroll: "power3.inOut",
     },
   };
 
@@ -42,21 +39,18 @@
     mobileMenuOverlay: "#mobile-menu-overlay",
     mobileMenuLinks: ".mobile-menu-link",
     contactForm: "#contact-form",
-    formMessage: "#form-message",
+    noticeDialog: "#notice-dialog",
     heroSection: "#hero",
     heroIcon: "#hero-icon",
     heroTitle: "#hero-title",
     heroSubtitle: "#hero-subtitle",
     heroTagline: "#hero-tagline",
     heroCta: "#hero-cta",
-    gsapSlideElements: ".gsap-slide",
+    gsapSlideElements: ".gsap-slide:not(.benefit-card)",
+    benefitsGrid: "#benefits-grid",
     benefitCards: ".benefit-card",
     hoverLiftElements: ".hover-lift",
     anchorLinks: 'a[href^="#"]',
-  };
-
-  const state = {
-    isMenuOpen: false,
   };
 
   function querySelector(selector) {
@@ -114,7 +108,6 @@
       const open = () => {
         overlay.classList.add("active");
         document.body.style.overflow = "hidden";
-        state.isMenuOpen = true;
         btn.setAttribute("aria-expanded", "true");
 
         gsap.fromTo(
@@ -134,7 +127,6 @@
       const close = () => {
         overlay.classList.remove("active");
         document.body.style.overflow = "";
-        state.isMenuOpen = false;
         btn.setAttribute("aria-expanded", "false");
       };
 
@@ -148,11 +140,6 @@
   const HeroAnimations = {
     init() {
       const icon = querySelector(selectors.heroIcon);
-      const title = querySelector(selectors.heroTitle);
-      const subtitle = querySelector(selectors.heroSubtitle);
-      const tagline = querySelector(selectors.heroTagline);
-      const cta = querySelector(selectors.heroCta);
-
       if (!icon || !gsap) return;
 
       gsap.fromTo(
@@ -178,108 +165,78 @@
         ease: CONFIG.GSAP_EASE.sine,
       });
 
-      if (title) {
-        gsap.fromTo(
-          title,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            delay: 0.3,
-            ease: CONFIG.GSAP_EASE.default,
-          },
-        );
-      }
+      const staggeredElements = [
+        { selector: selectors.heroTitle, delay: 0.3 },
+        { selector: selectors.heroSubtitle, delay: 0.5 },
+        { selector: selectors.heroTagline, delay: 0.7 },
+        { selector: selectors.heroCta, delay: 0.9 },
+      ];
 
-      if (subtitle) {
-        gsap.fromTo(
-          subtitle,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            delay: 0.5,
-            ease: CONFIG.GSAP_EASE.default,
-          },
-        );
-      }
+      staggeredElements.forEach(({ selector, delay }) => {
+        const element = querySelector(selector);
+        if (!element) return;
 
-      if (tagline) {
         gsap.fromTo(
-          tagline,
+          element,
           { opacity: 0, y: 30 },
           {
             opacity: 1,
             y: 0,
             duration: 1,
-            delay: 0.7,
+            delay,
             ease: CONFIG.GSAP_EASE.default,
           },
         );
-      }
-
-      if (cta) {
-        gsap.fromTo(
-          cta,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            delay: 0.9,
-            ease: CONFIG.GSAP_EASE.default,
-          },
-        );
-      }
+      });
     },
   };
 
   const ScrollAnimations = {
     init() {
-      const slideElements = querySelectorAll(selectors.gsapSlideElements);
-      const benefitCards = querySelectorAll(selectors.benefitCards);
-
       if (!gsap || !ScrollTrigger) return;
+
+      const slideElements = querySelectorAll(selectors.gsapSlideElements);
+      const benefitsGrid = querySelector(selectors.benefitsGrid);
+      const benefitCards = querySelectorAll(selectors.benefitCards);
 
       slideElements.forEach((element) => {
         gsap.fromTo(
           element,
-          { opacity: 0, y: 60 },
+          { opacity: 0, y: 50, filter: "blur(6px)" },
           {
             opacity: 1,
             y: 0,
-            duration: CONFIG.ANIMATION_DURATION.slow,
+            filter: "blur(0px)",
+            duration: CONFIG.ANIMATION_DURATION.slide,
             ease: CONFIG.GSAP_EASE.default,
             scrollTrigger: {
               trigger: element,
-              start: "top 80%",
-              end: "top 50%",
-              toggleActions: "play none none none",
+              start: "top 85%",
+              once: true,
             },
           },
         );
       });
 
-      benefitCards.forEach((card, index) => {
+      if (benefitsGrid && benefitCards.length) {
         gsap.fromTo(
-          card,
-          { opacity: 0, x: -50 },
+          benefitCards,
+          { opacity: 0, y: 50, filter: "blur(6px)" },
           {
             opacity: 1,
-            x: 0,
-            duration: 0.8,
-            delay: index * CONFIG.STAGGER_DELAY,
+            y: 0,
+            filter: "blur(0px)",
+            duration: CONFIG.ANIMATION_DURATION.slide,
+            stagger: CONFIG.STAGGER_DELAY,
             ease: CONFIG.GSAP_EASE.default,
             scrollTrigger: {
-              trigger: card,
+              trigger: benefitsGrid,
               start: "top 85%",
-              toggleActions: "play none none none",
+              once: true,
             },
           },
         );
-      });
+      }
     },
   };
 
@@ -292,7 +249,7 @@
           gsap.to(card, {
             y: -10,
             duration: CONFIG.ANIMATION_DURATION.fast,
-            ease: "power2.out",
+            ease: CONFIG.GSAP_EASE.default,
           });
         });
 
@@ -300,7 +257,7 @@
           gsap.to(card, {
             y: 0,
             duration: CONFIG.ANIMATION_DURATION.fast,
-            ease: "power2.out",
+            ease: CONFIG.GSAP_EASE.default,
           });
         });
       });
@@ -310,37 +267,60 @@
   const ContactForm = {
     init() {
       const form = querySelector(selectors.contactForm);
-      const message = querySelector(selectors.formMessage);
 
-      if (!form || !message) return;
+      if (!form) return;
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        message.textContent = "Thank you! We'll be in touch within 24 hours.";
-        message.classList.remove("hidden", "text-red-400");
-        message.classList.add("text-green-400");
-
-        gsap.fromTo(
-          message,
-          { opacity: 0, y: -10 },
-          { opacity: 1, y: 0, duration: CONFIG.ANIMATION_DURATION.normal },
-        );
-
         form.reset();
+        NoticeDialog.open();
+      });
+    },
+  };
 
-        setTimeout(() => {
-          gsap.to(message, {
-            opacity: 0,
+  const NoticeDialog = {
+    open() {
+      const dialog = querySelector(selectors.noticeDialog);
+      if (!dialog) return;
+
+      dialog.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+
+      if (gsap) {
+        gsap.fromTo(
+          dialog,
+          { opacity: 0, scale: 0.96 },
+          {
+            opacity: 1,
+            scale: 1,
             duration: CONFIG.ANIMATION_DURATION.normal,
-            onComplete: () => message.classList.add("hidden"),
-          });
-        }, CONFIG.MESSAGE_DISPLAY_TIME);
+            ease: CONFIG.GSAP_EASE.default,
+          },
+        );
+      }
 
+      const confirmBtn = dialog.querySelector("[data-notice-close]");
+      if (confirmBtn) confirmBtn.focus();
+    },
 
+    close() {
+      const dialog = querySelector(selectors.noticeDialog);
+      if (!dialog || dialog.classList.contains("hidden")) return;
+
+      dialog.classList.add("hidden");
+      document.body.style.overflow = "";
+    },
+
+    init() {
+      const dialog = querySelector(selectors.noticeDialog);
+      if (!dialog) return;
+
+      dialog
+        .querySelectorAll("[data-notice-close], [data-notice-backdrop]")
+        .forEach((el) => el.addEventListener("click", NoticeDialog.close));
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") NoticeDialog.close();
       });
     },
   };
@@ -357,7 +337,7 @@
             gsap.to(window, {
               duration: 1,
               scrollTo: { y: target, offsetY: 80 },
-              ease: "power3.inOut",
+              ease: CONFIG.GSAP_EASE.scroll,
             });
           }
         });
@@ -374,6 +354,7 @@
     safeCall(ScrollAnimations.init);
     safeCall(HoverEffects.init);
     safeCall(ContactForm.init);
+    safeCall(NoticeDialog.init);
     safeCall(SmoothScroll.init);
 
     setTimeout(() => safeCall(initLucide), 100);

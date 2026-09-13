@@ -33,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="preload"
-      href="https://images.unsplash.com/photo-1502325966718-85a90488dc29?crop=entropy&cs=srgb&fm=jpg&q=85"
+      href="https://images.unsplash.com/photo-1502325966718-85a90488dc29?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9ufGVufDB8fHxibHVlfDE3NjU5ODE2NjJ8MA&ixlib=rb-4.1.0&q=85"
       as="image"
       fetchpriority="high"
     />
@@ -104,7 +104,7 @@
     <!-- Favicon -->
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2326466D'/><g fill='none' stroke='%23E0A866' stroke-width='4' stroke-linecap='round' transform='translate(4 4) scale(2.33)'><path d='M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'/><path d='M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'/><path d='M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'/></g></svg>"
     />
 
     <!-- Google Fonts -->
@@ -138,11 +138,8 @@
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <!-- Logo with Waves Icon -->
-          <a href="#hero" class="flex items-center space-x-3 group">
-            <i
-              data-lucide="waves"
-              class="w-10 h-10 text-moonlight group-hover:text-amber-sunset transition-colors"
-            ></i>
+          <a href="#hero" class="flex items-center space-x-3">
+            <i data-lucide="waves" class="w-10 h-10 text-moonlight"></i>
             <span class="text-2xl font-serif font-semibold text-moonlight"
               >Blue Tone Retreats</span
             >
@@ -258,7 +255,7 @@
         background-image: url(&quot;https://images.unsplash.com/photo-1502325966718-85a90488dc29?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9ufGVufDB8fHxibHVlfDE3NjU5ODE2NjJ8MA&ixlib=rb-4.1.0&q=85&quot;);
       "
     >
-      <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div id="hero-content" class="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <!-- Breathing Icon -->
         <div class="mb-8" id="hero-icon">
           <i data-lucide="wind" class="w-20 h-20 mx-auto text-moonlight"></i>
@@ -273,7 +270,7 @@
         </h1>
 
         <p
-          class="gsap-fade text-xl md:text-2xl text-sky mb-8 font-light leading-relaxed"
+          class="gsap-fade text-xl md:text-2xl text-moonlight/90 mb-8 font-light leading-relaxed"
           id="hero-subtitle"
         >
           Immersive breathwork practice in harmony with nature
@@ -309,7 +306,7 @@
       <div class="container mx-auto max-w-7xl">
         <div class="grid md:grid-cols-2 gap-16 items-center">
           <!-- Image Grid -->
-          <div class="gsap-slide order-2 md:order-1">
+          <div id="about-images" class="gsap-slide order-2 md:order-1">
             <div class="grid grid-cols-2 gap-4">
               <!-- Large image spanning 2 rows -->
               <div
@@ -368,10 +365,10 @@
           </div>
 
           <!-- Content -->
-          <div class="gsap-slide order-1 md:order-2 space-y-6">
+          <div id="about-content" class="gsap-slide order-1 md:order-2 space-y-6">
             <div class="inline-block">
               <span
-                class="text-cool-river text-sm uppercase tracking-widest font-semibold"
+                class="text-twilight/70 text-sm uppercase tracking-widest font-semibold"
                 >Our Philosophy</span
               >
               <div class="h-1 w-16 bg-amber-sunset mt-2"></div>
@@ -420,12 +417,12 @@
     <!-- Services Section -->
     <section
       id="services"
-      class="py-24 px-6 bg-gradient-to-b from-moonlight to-fawn"
+      class="py-24 px-6 bg-gradient-to-b from-moonlight to-[#f4f5e9]"
     >
       <div class="container mx-auto max-w-7xl">
-        <div class="text-center mb-16 reveal">
+        <div id="services-heading" class="text-center mb-16 reveal">
           <span
-            class="text-cool-river text-sm uppercase tracking-widest font-semibold"
+            class="text-twilight/70 text-sm uppercase tracking-widest font-semibold"
             >Our Offerings</span
           >
           <h2 class="font-serif text-4xl md:text-5xl text-twilight mt-4 mb-6">
@@ -434,15 +431,16 @@
           <div class="w-24 h-1 bg-amber-sunset mx-auto"></div>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Group Sessions -->
           <div
+            id="service-group"
             class="reveal bg-white rounded-2xl p-8 shadow-lg hover-lift"
             data-delay="0"
           >
             <div class="mb-6">
               <div
-                class="w-16 h-16 bg-sky/20 rounded-full flex items-center justify-center mb-4"
+                class="w-16 h-16 bg-amber-sunset/20 rounded-full flex items-center justify-center mb-4"
               >
                 <svg
                   class="w-8 h-8 text-twilight"
@@ -524,6 +522,7 @@
 
           <!-- Private Sessions -->
           <div
+            id="service-private"
             class="reveal bg-white rounded-2xl p-8 shadow-lg hover-lift"
             data-delay="100"
           >
@@ -611,6 +610,7 @@
 
           <!-- Multi-day Retreats -->
           <div
+            id="service-retreat"
             class="reveal bg-white rounded-2xl p-8 shadow-lg hover-lift border-2 border-amber-sunset"
             data-delay="200"
           >
@@ -698,12 +698,13 @@
 
           <!-- Online Programs -->
           <div
+            id="service-online"
             class="reveal bg-white rounded-2xl p-8 shadow-lg hover-lift"
             data-delay="300"
           >
             <div class="mb-6">
               <div
-                class="w-16 h-16 bg-cool-river/20 rounded-full flex items-center justify-center mb-4"
+                class="w-16 h-16 bg-moss/20 rounded-full flex items-center justify-center mb-4"
               >
                 <svg
                   class="w-8 h-8 text-twilight"
@@ -789,8 +790,8 @@
     <!-- Benefits Section -->
     <section id="benefits" class="py-24 px-6 bg-twilight">
       <div class="container mx-auto max-w-7xl">
-        <div class="text-center mb-16 gsap-slide">
-          <span class="text-sky text-sm uppercase tracking-widest font-semibold"
+        <div id="benefits-heading" class="text-center mb-16 gsap-slide">
+          <span class="text-moonlight text-sm uppercase tracking-widest font-semibold"
             >The Benefits</span
           >
           <h2 class="font-serif text-4xl md:text-5xl text-moonlight mt-4 mb-6">
@@ -799,23 +800,24 @@
           <div class="w-24 h-1 bg-amber-sunset mx-auto"></div>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="benefits-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Benefit 1 -->
           <div
-            class="benefit-card gsap-slide group relative bg-gradient-to-br from-sky/10 to-transparent border-l-4 border-sky p-8 rounded-r-2xl hover:bg-sky/5 transition-all duration-300"
+            class="benefit-card gsap-slide group relative bg-gradient-to-br from-moss/10 to-transparent border-l-4 border-moss p-8 rounded-r-2xl hover:bg-moss/5 transition-all duration-300"
+            id="benefit-stress"
             data-testid="benefit-card-stress"
           >
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <i data-lucide="smile" class="w-10 h-10 text-sky"></i>
+                <i data-lucide="smile" class="w-10 h-10 text-moss"></i>
               </div>
               <div>
                 <h3
-                  class="font-serif text-2xl text-moonlight mb-2 group-hover:text-sky transition-colors"
+                  class="font-serif text-2xl text-moonlight mb-2 group-hover:text-moss transition-colors"
                 >
                   Reduce Stress & Anxiety
                 </h3>
-                <p class="text-sky/80 leading-relaxed">
+                <p class="text-moonlight/80 leading-relaxed">
                   Activate your parasympathetic nervous system, naturally
                   lowering cortisol and promoting deep relaxation.
                 </p>
@@ -826,6 +828,7 @@
           <!-- Benefit 2 -->
           <div
             class="benefit-card gsap-slide group relative bg-gradient-to-br from-amber-sunset/10 to-transparent border-l-4 border-amber-sunset p-8 rounded-r-2xl hover:bg-amber-sunset/5 transition-all duration-300"
+            id="benefit-clarity"
             data-testid="benefit-card-clarity"
           >
             <div class="flex items-start space-x-4">
@@ -838,7 +841,7 @@
                 >
                   Enhance Mental Clarity
                 </h3>
-                <p class="text-sky/80 leading-relaxed">
+                <p class="text-moonlight/80 leading-relaxed">
                   Increase oxygen flow to the brain, improving focus,
                   creativity, and cognitive performance.
                 </p>
@@ -849,6 +852,7 @@
           <!-- Benefit 3 -->
           <div
             class="benefit-card gsap-slide group relative bg-gradient-to-br from-moss/10 to-transparent border-l-4 border-moss p-8 rounded-r-2xl hover:bg-moss/5 transition-all duration-300"
+            id="benefit-emotional"
             data-testid="benefit-card-emotional"
           >
             <div class="flex items-start space-x-4">
@@ -861,7 +865,7 @@
                 >
                   Emotional Release
                 </h3>
-                <p class="text-sky/80 leading-relaxed">
+                <p class="text-moonlight/80 leading-relaxed">
                   Safely process and release stored emotions, trauma, and
                   energetic blockages held in the body.
                 </p>
@@ -871,20 +875,21 @@
 
           <!-- Benefit 4 -->
           <div
-            class="benefit-card gsap-slide group relative bg-gradient-to-br from-cool-river/10 to-transparent border-l-4 border-cool-river p-8 rounded-r-2xl hover:bg-cool-river/5 transition-all duration-300"
+            class="benefit-card gsap-slide group relative bg-gradient-to-br from-amber-sunset/10 to-transparent border-l-4 border-amber-sunset p-8 rounded-r-2xl hover:bg-amber-sunset/5 transition-all duration-300"
+            id="benefit-energy"
             data-testid="benefit-card-energy"
           >
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <i data-lucide="zap" class="w-10 h-10 text-cool-river"></i>
+                <i data-lucide="zap" class="w-10 h-10 text-amber-sunset"></i>
               </div>
               <div>
                 <h3
-                  class="font-serif text-2xl text-moonlight mb-2 group-hover:text-cool-river transition-colors"
+                  class="font-serif text-2xl text-moonlight mb-2 group-hover:text-amber-sunset transition-colors"
                 >
                   Boost Energy Levels
                 </h3>
-                <p class="text-sky/80 leading-relaxed">
+                <p class="text-moonlight/80 leading-relaxed">
                   Optimize cellular oxygenation and increase vitality, leaving
                   you feeling energized and alive.
                 </p>
@@ -894,20 +899,21 @@
 
           <!-- Benefit 5 -->
           <div
-            class="benefit-card gsap-slide group relative bg-gradient-to-br from-fawn/10 to-transparent border-l-4 border-fawn p-8 rounded-r-2xl hover:bg-fawn/5 transition-all duration-300"
+            class="benefit-card gsap-slide group relative bg-gradient-to-br from-moss/10 to-transparent border-l-4 border-moss p-8 rounded-r-2xl hover:bg-moss/5 transition-all duration-300"
+            id="benefit-sleep"
             data-testid="benefit-card-sleep"
           >
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <i data-lucide="moon" class="w-10 h-10 text-fawn"></i>
+                <i data-lucide="moon" class="w-10 h-10 text-moss"></i>
               </div>
               <div>
                 <h3
-                  class="font-serif text-2xl text-moonlight mb-2 group-hover:text-fawn transition-colors"
+                  class="font-serif text-2xl text-moonlight mb-2 group-hover:text-moss transition-colors"
                 >
                   Improve Sleep Quality
                 </h3>
-                <p class="text-sky/80 leading-relaxed">
+                <p class="text-moonlight/80 leading-relaxed">
                   Regulate your circadian rhythm and nervous system for deeper,
                   more restorative sleep.
                 </p>
@@ -918,6 +924,7 @@
           <!-- Benefit 6 -->
           <div
             class="benefit-card gsap-slide group relative bg-gradient-to-br from-amber-sunset/10 to-transparent border-l-4 border-amber-sunset p-8 rounded-r-2xl hover:bg-amber-sunset/5 transition-all duration-300"
+            id="benefit-immunity"
             data-testid="benefit-card-immunity"
           >
             <div class="flex items-start space-x-4">
@@ -930,7 +937,7 @@
                 >
                   Strengthen Immunity
                 </h3>
-                <p class="text-sky/80 leading-relaxed">
+                <p class="text-moonlight/80 leading-relaxed">
                   Support your immune system through improved circulation and
                   lymphatic drainage.
                 </p>
@@ -940,8 +947,8 @@
         </div>
 
         <!-- CTA in Benefits -->
-        <div class="text-center mt-16 gsap-slide">
-          <p class="text-sky text-lg mb-6">
+        <div id="benefits-cta" class="text-center mt-16 gsap-slide">
+          <p class="text-moonlight/80 text-lg mb-6">
             Ready to experience these benefits for yourself?
           </p>
           <a
@@ -958,12 +965,12 @@
     <!-- Testimonials Section -->
     <section
       id="testimonials"
-      class="py-24 px-6 bg-gradient-to-b from-fawn to-moonlight"
+      class="py-24 px-6 bg-gradient-to-b from-[#f4f5e9] to-moonlight"
     >
       <div class="container mx-auto max-w-7xl">
-        <div class="text-center mb-16 reveal">
+        <div id="testimonials-heading" class="text-center mb-16 reveal">
           <span
-            class="text-cool-river text-sm uppercase tracking-widest font-semibold"
+            class="text-twilight/70 text-sm uppercase tracking-widest font-semibold"
             >Testimonials</span
           >
           <h2 class="font-serif text-4xl md:text-5xl text-twilight mt-4 mb-6">
@@ -972,9 +979,9 @@
           <div class="w-24 h-1 bg-amber-sunset mx-auto"></div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div id="testimonials-grid" class="grid md:grid-cols-3 gap-8">
           <!-- Testimonial 1 -->
-          <div class="reveal bg-white rounded-xl p-8 shadow-lg hover-lift">
+          <div id="testimonial-sarah" class="reveal bg-white rounded-xl p-8 shadow-lg hover-lift">
             <div class="flex items-center mb-4">
               <div class="flex text-amber-sunset">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -1012,7 +1019,7 @@
             </p>
             <div class="flex items-center">
               <div
-                class="w-12 h-12 bg-sky rounded-full flex items-center justify-center text-twilight font-semibold text-lg"
+                class="w-12 h-12 bg-moss rounded-full flex items-center justify-center text-twilight font-semibold text-lg"
               >
                 SC
               </div>
@@ -1027,6 +1034,7 @@
 
           <!-- Testimonial 2 -->
           <div
+            id="testimonial-michael"
             class="reveal bg-white rounded-xl p-8 shadow-lg hover-lift"
             data-delay="100"
           >
@@ -1079,6 +1087,7 @@
 
           <!-- Testimonial 3 -->
           <div
+            id="testimonial-emma"
             class="reveal bg-white rounded-xl p-8 shadow-lg hover-lift"
             data-delay="200"
           >
@@ -1135,7 +1144,7 @@
     <!-- Contact Section -->
     <section
       id="contact"
-      class="py-24 px-6 bg-gradient-to-br from-twilight via-twilight to-cool-river relative overflow-hidden"
+      class="py-24 px-6 bg-gradient-to-br from-twilight via-twilight to-moss relative overflow-hidden"
     >
       <!-- Background pattern -->
       <div class="absolute inset-0 opacity-5">
@@ -1183,15 +1192,15 @@
       </div>
 
       <div class="container mx-auto max-w-4xl relative z-10">
-        <div class="text-center mb-12 reveal">
-          <span class="text-sky text-sm uppercase tracking-widest font-semibold"
+        <div id="contact-heading" class="text-center mb-12 reveal">
+          <span class="text-moonlight text-sm uppercase tracking-widest font-semibold"
             >Get Started</span
           >
           <h2 class="font-serif text-4xl md:text-5xl text-moonlight mt-4 mb-6">
             Begin Your Breathwork Journey
           </h2>
           <div class="w-24 h-1 bg-amber-sunset mx-auto mb-6"></div>
-          <p class="text-sky/90 text-lg max-w-2xl mx-auto">
+          <p class="text-moonlight/85 text-lg max-w-2xl mx-auto">
             Take the first step toward transformation. Fill out the form below
             and we'll be in touch within 24 hours to discuss the perfect program
             for you.
@@ -1199,6 +1208,7 @@
         </div>
 
         <div
+          id="contact-form-card"
           class="reveal bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-2xl border border-white/20"
         >
           <form id="contact-form" class="space-y-6">
@@ -1213,7 +1223,7 @@
                   name="name"
                   required
                   data-testid="contact-form-name"
-                  class="w-full px-4 py-3 bg-white/90 border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50"
+                  class="w-full px-4 py-3 bg-moonlight border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50"
                   placeholder="Your name"
                 />
               </div>
@@ -1227,7 +1237,7 @@
                   name="email"
                   required
                   data-testid="contact-form-email"
-                  class="w-full px-4 py-3 bg-white/90 border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50"
+                  class="w-full px-4 py-3 bg-moonlight border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50"
                   placeholder="your@email.com"
                 />
               </div>
@@ -1243,7 +1253,7 @@
                   id="phone"
                   name="phone"
                   data-testid="contact-form-phone"
-                  class="w-full px-4 py-3 bg-white/90 border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50"
+                  class="w-full px-4 py-3 bg-moonlight border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50"
                   placeholder="(555) 123-4567"
                 />
               </div>
@@ -1258,7 +1268,7 @@
                   name="service"
                   required
                   data-testid="contact-form-service"
-                  class="w-full px-4 py-3 bg-white/90 border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight"
+                  class="w-full px-4 py-3 bg-moonlight border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight"
                 >
                   <option value="">Select a service</option>
                   <option value="group">Group Sessions</option>
@@ -1279,7 +1289,7 @@
                 name="message"
                 rows="5"
                 data-testid="contact-form-message"
-                class="w-full px-4 py-3 bg-white/90 border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50 resize-none"
+                class="w-full px-4 py-3 bg-moonlight border border-twilight/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-sunset text-twilight placeholder-twilight/50 resize-none"
                 placeholder="Tell us about your experience with breathwork or what you hope to achieve..."
               ></textarea>
             </div>
@@ -1292,7 +1302,7 @@
                 data-testid="contact-form-newsletter"
                 class="mt-1 mr-3 w-4 h-4 accent-amber-sunset"
               />
-              <label for="newsletter" class="text-sky/90 text-sm">
+              <label for="newsletter" class="text-moonlight/85 text-sm">
                 I'd like to receive updates about workshops, retreats, and
                 breathwork tips
               </label>
@@ -1305,24 +1315,19 @@
             >
               Send Inquiry
             </button>
-
-            <p
-              id="form-message"
-              class="text-center text-sky text-sm hidden"
-            ></p>
           </form>
         </div>
 
         <!-- Contact Info -->
-        <div class="grid md:grid-cols-3 gap-8 mt-16 gsap-slide">
+        <div id="contact-info" class="grid md:grid-cols-3 gap-8 mt-16 gsap-slide">
           <div class="text-center">
             <div
-              class="w-14 h-14 bg-sky/20 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 bg-moss/20 rounded-full flex items-center justify-center mx-auto mb-4"
             >
-              <i data-lucide="mail" class="w-7 h-7 text-sky"></i>
+              <i data-lucide="mail" class="w-7 h-7 text-moss"></i>
             </div>
             <h4 class="text-moonlight font-semibold mb-2">Email Us</h4>
-            <p class="text-sky/80">hello@bluetoneretreats.com</p>
+            <p class="text-moonlight/80">hello@bluetoneretreats.com</p>
           </div>
 
           <div class="text-center">
@@ -1332,7 +1337,7 @@
               <i data-lucide="phone" class="w-7 h-7 text-amber-sunset"></i>
             </div>
             <h4 class="text-moonlight font-semibold mb-2">Call Us</h4>
-            <p class="text-sky/80">+1 (555) 123-4567</p>
+            <p class="text-moonlight/80">+1 (555) 123-4567</p>
           </div>
 
           <div class="text-center">
@@ -1342,25 +1347,25 @@
               <i data-lucide="map-pin" class="w-7 h-7 text-moss"></i>
             </div>
             <h4 class="text-moonlight font-semibold mb-2">Visit Us</h4>
-            <p class="text-sky/80">Sedona, Arizona</p>
+            <p class="text-moonlight/80">Sedona, Arizona</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-twilight py-12 px-6 border-t border-sky/20">
+    <footer class="bg-twilight py-12 px-6 border-t border-moonlight/20">
       <div class="container mx-auto max-w-7xl">
-        <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div id="footer-grid" class="grid md:grid-cols-4 gap-8 mb-8">
           <!-- Brand -->
           <div class="md:col-span-2">
             <div class="flex items-center space-x-3 mb-4">
-              <i data-lucide="waves" class="w-8 h-8 text-sky"></i>
+              <i data-lucide="waves" class="w-8 h-8 text-amber-sunset"></i>
               <span class="text-xl font-serif font-semibold text-moonlight"
                 >Blue Tone Retreats</span
               >
             </div>
-            <p class="text-sky/80 mb-4 max-w-md">
+            <p class="text-moonlight/80 mb-4 max-w-md">
               Immersive breathwork practice in harmony with nature. Discover
               your breath, discover yourself.
             </p>
@@ -1376,35 +1381,35 @@
               <li>
                 <a
                   href="#about"
-                  class="text-sky/80 hover:text-amber-sunset transition-colors"
+                  class="text-moonlight/80 hover:text-amber-sunset transition-colors"
                   >About</a
                 >
               </li>
               <li>
                 <a
                   href="#services"
-                  class="text-sky/80 hover:text-amber-sunset transition-colors"
+                  class="text-moonlight/80 hover:text-amber-sunset transition-colors"
                   >Services</a
                 >
               </li>
               <li>
                 <a
                   href="#benefits"
-                  class="text-sky/80 hover:text-amber-sunset transition-colors"
+                  class="text-moonlight/80 hover:text-amber-sunset transition-colors"
                   >Benefits</a
                 >
               </li>
               <li>
                 <a
                   href="#testimonials"
-                  class="text-sky/80 hover:text-amber-sunset transition-colors"
+                  class="text-moonlight/80 hover:text-amber-sunset transition-colors"
                   >Testimonials</a
                 >
               </li>
               <li>
                 <a
                   href="#contact"
-                  class="text-sky/80 hover:text-amber-sunset transition-colors"
+                  class="text-moonlight/80 hover:text-amber-sunset transition-colors"
                   >Contact</a
                 >
               </li>
@@ -1417,7 +1422,7 @@
             <div class="flex space-x-4">
               <a
                 href="#"
-                class="w-10 h-10 bg-sky/20 rounded-full flex items-center justify-center text-sky hover:bg-amber-sunset hover:text-twilight transition-all"
+                class="w-10 h-10 bg-moonlight/20 rounded-full flex items-center justify-center text-moonlight hover:bg-amber-sunset hover:text-twilight transition-all"
                 aria-label="Instagram"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -1428,7 +1433,7 @@
               </a>
               <a
                 href="#"
-                class="w-10 h-10 bg-sky/20 rounded-full flex items-center justify-center text-sky hover:bg-amber-sunset hover:text-twilight transition-all"
+                class="w-10 h-10 bg-moonlight/20 rounded-full flex items-center justify-center text-moonlight hover:bg-amber-sunset hover:text-twilight transition-all"
                 aria-label="Facebook"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -1439,7 +1444,7 @@
               </a>
               <a
                 href="#"
-                class="w-10 h-10 bg-sky/20 rounded-full flex items-center justify-center text-sky hover:bg-amber-sunset hover:text-twilight transition-all"
+                class="w-10 h-10 bg-moonlight/20 rounded-full flex items-center justify-center text-moonlight hover:bg-amber-sunset hover:text-twilight transition-all"
                 aria-label="YouTube"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -1454,41 +1459,86 @@
 
         <!-- Bottom Bar -->
         <div
-          class="pt-8 border-t border-sky/20 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+          id="footer-bottom"
+          class="pt-8 border-t border-moonlight/20 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
-          <p class="text-sky/60 text-sm">
+          <p class="text-moonlight/60 text-sm">
             © 2025 Blue Tone Retreats. All rights reserved.
           </p>
           <div class="flex space-x-6 text-sm">
             <a
               href="#"
-              class="text-sky/60 hover:text-amber-sunset transition-colors"
+              class="text-moonlight/60 hover:text-amber-sunset transition-colors"
               >Privacy Policy</a
             >
             <a
               href="#"
-              class="text-sky/60 hover:text-amber-sunset transition-colors"
+              class="text-moonlight/60 hover:text-amber-sunset transition-colors"
               >Terms of Service</a
             >
             <a
               href="../../index.html"
-              class="text-sky/60 hover:text-amber-sunset transition-colors"
+              class="text-moonlight/60 hover:text-amber-sunset transition-colors"
               >← Showcase</a
             >
           </div>
         </div>
         <p
-          class="text-sky/60 text-sm mt-8 max-w-2xl mx-auto text-center leading-relaxed"
+          class="text-moonlight/60 text-sm mt-8 max-w-2xl mx-auto text-center leading-relaxed"
         >
           Notice: this page is a demo template (mockup). It is not functional
           and is not associated with any real service.
         </p>
       </div>
-    <p id="notice-dialog-text" class="notice-dialog__text">
-      Aviso: esta página é apenas um template de demonstração (mockup),
-      não é funcional e não está associada a nenhum serviço real.
-    </p>
     </footer>
+
+    <!-- Mockup Notice Dialog -->
+    <div
+      id="notice-dialog"
+      class="fixed inset-0 z-[1100] hidden flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Aviso"
+    >
+      <div
+        class="absolute inset-0 bg-twilight/70 backdrop-blur-sm"
+        data-notice-backdrop
+      ></div>
+
+      <div
+        class="relative w-full max-w-md bg-moonlight rounded-2xl p-8 shadow-2xl"
+      >
+        <button
+          type="button"
+          data-notice-close
+          class="absolute top-4 right-4 text-twilight hover:text-amber-sunset transition-colors focus:outline-none"
+          aria-label="Fechar aviso"
+        >
+          <i data-lucide="x" class="w-6 h-6" aria-hidden="true"></i>
+        </button>
+
+        <div
+          class="w-12 h-12 bg-amber-sunset/20 rounded-full flex items-center justify-center mb-4"
+        >
+          <i data-lucide="info" class="w-6 h-6 text-amber-sunset" aria-hidden="true"></i>
+        </div>
+
+        <h3 class="font-serif text-2xl text-twilight mb-3">Aviso</h3>
+
+        <p class="text-twilight/80 leading-relaxed mb-8">
+          Esta página é apenas um template de demonstração (mockup), não é
+          funcional e não está associada a nenhum serviço real.
+        </p>
+
+        <button
+          type="button"
+          data-notice-close
+          class="w-full bg-twilight text-moonlight px-6 py-3 rounded-full font-semibold hover:bg-amber-sunset hover:text-twilight transition-all"
+        >
+          Entendi
+        </button>
+      </div>
+    </div>
 
     <!-- Noscript fallback -->
     <noscript>
