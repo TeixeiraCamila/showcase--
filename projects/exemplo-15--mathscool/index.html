@@ -1,33 +1,56 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2499063120584899');
-    fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "2499063120584899");
+      fbq("track", "PageView");
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2499063120584899&ev=PageView&noscript=1"
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=2499063120584899&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFTR578LMT"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DFTR578LMT"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-DFTR578LMT');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DFTR578LMT");
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -89,14 +112,14 @@
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link
       rel="stylesheet"
-        href="./assets/fonts/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css"
+      href="./assets/fonts/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css"
       media="print"
       onload="this.media = 'all'"
     />
     <noscript
       ><link
         rel="stylesheet"
-      href="./assets/fonts/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css"
+        href="./assets/fonts/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css"
     /></noscript>
     <link
       rel="preload"
@@ -476,13 +499,13 @@
     <footer role="contentinfo" class="container footer">
       <p>&copy; 2024 Mathscool. All rights reserved.</p>
       <p class="footer__notice">
-        Notice: this page is a demo template (mockup). It is not functional
-        and is not associated with any real service.
+        Notice: this page is a demo template (mockup). It is not functional and
+        is not associated with any real service.
       </p>
-    <p id="notice-dialog-text" class="notice-dialog__text">
-      Aviso: esta página é apenas um template de demonstração (mockup),
-      não é funcional e não está associada a nenhum serviço real.
-    </p>
+      <p id="notice-dialog-text" class="notice-dialog__text">
+        Aviso: esta página é apenas um template de demonstração (mockup), não é
+        funcional e não está associada a nenhum serviço real.
+      </p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
