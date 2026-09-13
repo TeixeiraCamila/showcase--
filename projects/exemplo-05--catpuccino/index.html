@@ -1,1045 +1,1537 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
+  <head>
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "2499063120584899");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=2499063120584899&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
-		<!-- Meta Pixel Code -->
-		<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window, document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '2499063120584899');
-		fbq('track', 'PageView');
-		</script>
-		<noscript><img height="1" width="1" style="display:none"
-		src="https://www.facebook.com/tr?id=2499063120584899&ev=PageView&noscript=1"
-		/></noscript>
-		<!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DFTR578LMT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFTR578LMT"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		
-		  gtag('config', 'G-DFTR578LMT');
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      gtag("config", "G-DFTR578LMT");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preconnect" href="https://unpkg.com">
-		<link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-		<link rel="icon" type="image/svg+xml" href="./assets/cats/paw.svg">
+    <link rel="icon" type="image/svg+xml" href="./assets/cats/paw.svg" />
 
-		<meta name="description" content="Catpuccino é um cat café brasileiro com café especial de origem única, gatos resgatados e adoções. Relaxe, tome um ótimo café e conecte-se com nossos gatos." />
-		<link rel="canonical" href="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/" />
-		<meta property="og:title" content="Catpuccino - Coffee, Cats & Comfort" />
-		<meta property="og:description" content="Relaxe, tome um ótimo café de origem única e conecte-se com gatos resgatados. Com 12 gatos residentes e mais de 300 adoções." />
-		<meta property="og:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/preview.png" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:site_name" content="Showcase" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Catpuccino - Coffee, Cats & Comfort" />
-		<meta name="twitter:description" content="Cat café com café especial, gatos resgatados e adoções. Reserve sua visita!" />
-		<meta name="twitter:image" content="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/preview.png" />
-		<link rel="preload" as="image" href="./assets/hero-bg.jpg" fetchpriority="high" />
+    <meta
+      name="description"
+      content="Catpuccino é um cat café brasileiro com café especial de origem única, gatos resgatados e adoções. Relaxe, tome um ótimo café e conecte-se com nossos gatos."
+    />
+    <link
+      rel="canonical"
+      href="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/"
+    />
+    <meta property="og:title" content="Catpuccino - Coffee, Cats & Comfort" />
+    <meta
+      property="og:description"
+      content="Relaxe, tome um ótimo café de origem única e conecte-se com gatos resgatados. Com 12 gatos residentes e mais de 300 adoções."
+    />
+    <meta
+      property="og:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/preview.png"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Showcase" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Catpuccino - Coffee, Cats & Comfort" />
+    <meta
+      name="twitter:description"
+      content="Cat café com café especial, gatos resgatados e adoções. Reserve sua visita!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/preview.png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/hero-bg.jpg"
+      fetchpriority="high"
+    />
 
-		<link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
-		<title>Catpuccino - Coffee, Cats & Comfort</title>
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "CafeOrCoffeeShop",
-			"name": "Catpuccino",
-			"description": "Cat café brasileiro com café especial de origem única, gatos resgatados e programa de adoção.",
-			"servesCuisine": "Coffee",
-			"telephone": "+15551232287",
-			"email": "hello@catpuccino.com",
-			"currenciesAccepted": "USD",
-			"paymentAccepted": "Cash, Credit Card"
-		}
-		</script>
-	</head>
-	<body>
-		<!-- Floating Cats (Blob Dance) - Global Background -->
-		<div class="floating-cats-container">
-			<img src="./assets/cats/cat1.svg" class="floating-cat floating-cat--1" alt="">
-			<img src="./assets/cats/cat2.svg" class="floating-cat floating-cat--2" alt="">
-			<img src="./assets/cats/cat3.svg" class="floating-cat floating-cat--3" alt="">
-			<img src="./assets/cats/cat4.svg" class="floating-cat floating-cat--4" alt="">
-			<img src="./assets/cats/cat5.svg" class="floating-cat floating-cat--5" alt="">
-			<img src="./assets/cats/cat6.svg" class="floating-cat floating-cat--6" alt="">
-			<img src="./assets/cats/cat1.svg" class="floating-cat floating-cat--7" alt="">
-			<img src="./assets/cats/cat2.svg" class="floating-cat floating-cat--8" alt="">
-			<img src="./assets/cats/cat3.svg" class="floating-cat floating-cat--9" alt="">
-			<img src="./assets/cats/cat4.svg" class="floating-cat floating-cat--10" alt="">
-			<img src="./assets/cats/cat5.svg" class="floating-cat floating-cat--11" alt="">
-			<img src="./assets/cats/cat6.svg" class="floating-cat floating-cat--12" alt="">
-		</div>
+    <title>Catpuccino - Coffee, Cats & Comfort</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CafeOrCoffeeShop",
+        "name": "Catpuccino",
+        "description": "Cat café brasileiro com café especial de origem única, gatos resgatados e programa de adoção.",
+        "servesCuisine": "Coffee",
+        "telephone": "+15551232287",
+        "email": "hello@catpuccino.com",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": "Cash, Credit Card"
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Floating Cats (Blob Dance) - Global Background -->
+    <div class="floating-cats-container">
+      <img
+        src="./assets/cats/cat1.svg"
+        class="floating-cat floating-cat--1"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat2.svg"
+        class="floating-cat floating-cat--2"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat3.svg"
+        class="floating-cat floating-cat--3"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat4.svg"
+        class="floating-cat floating-cat--4"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat5.svg"
+        class="floating-cat floating-cat--5"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat6.svg"
+        class="floating-cat floating-cat--6"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat1.svg"
+        class="floating-cat floating-cat--7"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat2.svg"
+        class="floating-cat floating-cat--8"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat3.svg"
+        class="floating-cat floating-cat--9"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat4.svg"
+        class="floating-cat floating-cat--10"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat5.svg"
+        class="floating-cat floating-cat--11"
+        alt=""
+      />
+      <img
+        src="./assets/cats/cat6.svg"
+        class="floating-cat floating-cat--12"
+        alt=""
+      />
+    </div>
 
-		<!-- Navigation -->
-		<nav class="nav">
-			<div class="nav__container">
-				<a href="#home" class="nav__logo">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<circle cx="11" cy="4" r="2"/>
-						<circle cx="18" cy="8" r="2"/>
-						<circle cx="20" cy="16" r="2"/>
-						<path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>
-					</svg>
-					<span>Catpuccino</span>
-				</a>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav__container">
+        <a href="#home" class="nav__logo">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="4" r="2" />
+            <circle cx="18" cy="8" r="2" />
+            <circle cx="20" cy="16" r="2" />
+            <path
+              d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"
+            />
+          </svg>
+          <span>Catpuccino</span>
+        </a>
 
-				<!-- Menu Desktop -->
-				<ul class="nav__menu">
-					<li><a href="#home" class="nav__link">Home</a></li>
-					<li><a href="#menu" class="nav__link">Menu</a></li>
-					<li><a href="#cats" class="nav__link">Cats</a></li>
-					<li><a href="#visit" class="nav__link">Visit</a></li>
-				</ul>
+        <!-- Menu Desktop -->
+        <ul class="nav__menu">
+          <li><a href="#home" class="nav__link">Home</a></li>
+          <li><a href="#menu" class="nav__link">Menu</a></li>
+          <li><a href="#cats" class="nav__link">Cats</a></li>
+          <li><a href="#visit" class="nav__link">Visit</a></li>
+        </ul>
 
-				<!-- Mobile Toggle -->
-				<button class="nav__toggle" aria-label="Open menu">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</nav>
+        <!-- Mobile Toggle -->
+        <button class="nav__toggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
 
-		<!-- Mobile Menu (outside nav) -->
-		<div class="nav__mobile-wrap">
-			<div class="nav__mobile-backdrop"></div>
-			<div class="nav__mobile">
-				<div class="nav__mobile-header">
-					<a href="#home" class="nav__logo">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-							<circle cx="11" cy="4" r="2"/>
-							<circle cx="18" cy="8" r="2"/>
-							<circle cx="20" cy="16" r="2"/>
-							<path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>
-						</svg>
-						<span>Catpuccino</span>
-					</a>
-					<button class="nav__mobile-close" aria-label="Close menu">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-							<path d="M18 6L6 18M6 6l12 12"/>
-						</svg>
-					</button>
-				</div>
-				<ul class="nav__mobile-list">
-					<li><a href="#home" class="nav__mobile-link">Home</a></li>
-					<li><a href="#about" class="nav__mobile-link">About</a></li>
-					<li><a href="#how-it-works" class="nav__mobile-link">How It Works</a></li>
-					<li><a href="#menu" class="nav__mobile-link">Menu</a></li>
-					<li><a href="#cats" class="nav__mobile-link">Cats</a></li>
-					<li><a href="#adoption" class="nav__mobile-link">Adoption</a></li>
-					<li><a href="#experiences" class="nav__mobile-link">Experiences</a></li>
-					<li><a href="#testimonials" class="nav__mobile-link">Testimonials</a></li>
-					<li><a href="#visit" class="nav__mobile-link">Visit</a></li>
-					<li><a href="#contact" class="nav__mobile-link">Contact</a></li>
-				</ul>
-				<div class="nav__mobile-footer">
-					<a href="#visit" class="nav__mobile-cta">Book Your Visit</a>
-				</div>
-			</div>
-		</div>
+    <!-- Mobile Menu (outside nav) -->
+    <div class="nav__mobile-wrap">
+      <div class="nav__mobile-backdrop"></div>
+      <div class="nav__mobile">
+        <div class="nav__mobile-header">
+          <a href="#home" class="nav__logo">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="4" r="2" />
+              <circle cx="18" cy="8" r="2" />
+              <circle cx="20" cy="16" r="2" />
+              <path
+                d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"
+              />
+            </svg>
+            <span>Catpuccino</span>
+          </a>
+          <button class="nav__mobile-close" aria-label="Close menu">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <ul class="nav__mobile-list">
+          <li><a href="#home" class="nav__mobile-link">Home</a></li>
+          <li><a href="#about" class="nav__mobile-link">About</a></li>
+          <li>
+            <a href="#how-it-works" class="nav__mobile-link">How It Works</a>
+          </li>
+          <li><a href="#menu" class="nav__mobile-link">Menu</a></li>
+          <li><a href="#cats" class="nav__mobile-link">Cats</a></li>
+          <li><a href="#adoption" class="nav__mobile-link">Adoption</a></li>
+          <li>
+            <a href="#experiences" class="nav__mobile-link">Experiences</a>
+          </li>
+          <li>
+            <a href="#testimonials" class="nav__mobile-link">Testimonials</a>
+          </li>
+          <li><a href="#visit" class="nav__mobile-link">Visit</a></li>
+          <li><a href="#contact" class="nav__mobile-link">Contact</a></li>
+        </ul>
+        <div class="nav__mobile-footer">
+          <a href="#visit" class="nav__mobile-cta">Book Your Visit</a>
+        </div>
+      </div>
+    </div>
 
-		<!-- 1. HERO -->
-		<section class="hero" id="home">
-			<div class="hero__bg"></div>
-			<div class="hero__content">
-				<span class="hero__badge">Welcome to</span>
-				<h1 class="hero__title">
-					<span class="hero__title-accent">Coffee, Cats & Comfort</span>
-				</h1>
-				<p class="hero__subtitle">
-					Relax, sip great coffee, and connect with rescued cats
-				</p>
-				<div class="hero__cta">
-					<a href="#visit" class="hero__btn hero__btn--primary">Book Your Spot</a>
-					<a href="#how-it-works" class="hero__btn hero__btn--secondary">Reserve Your Visit</a>
-				</div>
-			</div>
-			<div class="hero__scroll">
-				<span>Scroll to explore</span>
-				<i data-lucide="chevrons-down"></i>
-			</div>
-		</section>
+    <!-- 1. HERO -->
+    <section class="hero" id="home">
+      <div class="hero__bg"></div>
+      <div class="hero__content">
+        <span class="hero__badge">Welcome to</span>
+        <h1 class="hero__title">
+          <span class="hero__title-accent">Coffee, Cats & Comfort</span>
+        </h1>
+        <p class="hero__subtitle">
+          Relax, sip great coffee, and connect with rescued cats
+        </p>
+        <div class="hero__cta">
+          <a href="#visit" class="hero__btn hero__btn--primary"
+            >Book Your Spot</a
+          >
+          <a href="#how-it-works" class="hero__btn hero__btn--secondary"
+            >Reserve Your Visit</a
+          >
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <span>Scroll to explore</span>
+        <i data-lucide="chevrons-down"></i>
+      </div>
+    </section>
 
-		<!-- 2. WHAT IS A CAT CAFE -->
-		<section class="about" id="about">
-			<div class="about__container">
-				<div class="about__content">
-					<span class="about__tag">What is a Cat Café?</span>
-					<h2 class="about__title">A Unique Experience</h2>
-					<p class="about__text">
-						A cat café is a space where you can enjoy delicious coffee while spending time with adorable rescue cats. It's the perfect blend of specialty coffee culture and feline companionship.
-					</p>
-					<p class="about__text">
-						Founded in 2014, Catpuccino was one of the first cat cafés in Brazil. Our cats come from partner NGOs and streets, rescued from abandonment and urban situations. Every cat receives veterinary care, vaccination, and microchipping until they find their forever home.
-					</p>
-					<div class="about__features">
-						<div class="about__feature">
-							<i data-lucide="coffee"></i>
-							<span>Specialty Single-Origin Coffee</span>
-						</div>
-						<div class="about__feature">
-							<i data-lucide="cat"></i>
-							<span>12 Resident Cats</span>
-						</div>
-						<div class="about__feature">
-							<i data-lucide="heart-handshake"></i>
-							<span>300+ Adoptions</span>
-						</div>
-					</div>
-				</div>
-				<div class="about__image">
-					<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=500&fit=crop" alt="Cozy cat café interior" loading="lazy" width="600" height="500">
-				</div>
-			</div>
-		</section>
+    <!-- 2. WHAT IS A CAT CAFE -->
+    <section class="about" id="about">
+      <div class="about__container">
+        <div class="about__content">
+          <span class="about__tag">What is a Cat Café?</span>
+          <h2 class="about__title">A Unique Experience</h2>
+          <p class="about__text">
+            A cat café is a space where you can enjoy delicious coffee while
+            spending time with adorable rescue cats. It's the perfect blend of
+            specialty coffee culture and feline companionship.
+          </p>
+          <p class="about__text">
+            Founded in 2014, Catpuccino was one of the first cat cafés in
+            Brazil. Our cats come from partner NGOs and streets, rescued from
+            abandonment and urban situations. Every cat receives veterinary
+            care, vaccination, and microchipping until they find their forever
+            home.
+          </p>
+          <div class="about__features">
+            <div class="about__feature">
+              <i data-lucide="coffee"></i>
+              <span>Specialty Single-Origin Coffee</span>
+            </div>
+            <div class="about__feature">
+              <i data-lucide="cat"></i>
+              <span>12 Resident Cats</span>
+            </div>
+            <div class="about__feature">
+              <i data-lucide="heart-handshake"></i>
+              <span>300+ Adoptions</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__image">
+          <img
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=500&fit=crop"
+            alt="Cozy cat café interior"
+            loading="lazy"
+            width="600"
+            height="500"
+          />
+        </div>
+      </div>
+    </section>
 
-		<!-- 3. HOW IT WORKS -->
-		<section class="how-it-works" id="how-it-works">
-			<div class="how-it-works__container">
-				<div class="how-it-works__header">
-					<span class="how-it-works__tag">How It Works</span>
-					<h2 class="how-it-works__title">Three Simple Steps</h2>
-				</div>
-				<div class="how-it-works__steps">
-					<div class="how-it-works__step">
-						<div class="how-it-works__step-icon">
-							<i data-lucide="coffee"></i>
-						</div>
-						<span class="how-it-works__step-number">01</span>
-						<h3 class="how-it-works__step-title">Enjoy the Café</h3>
-						<p class="how-it-works__step-text">Start with our premium coffee and treats in our cozy café area.</p>
-					</div>
-					<div class="how-it-works__step">
-						<div class="how-it-works__step-icon">
-							<i data-lucide="calendar-days"></i>
-						</div>
-						<span class="how-it-works__step-number">02</span>
-						<h3 class="how-it-works__step-title">Book the Cat Lounge</h3>
-						<p class="how-it-works__step-text">Reserve your spot in our separate cat lounge area.</p>
-					</div>
-					<div class="how-it-works__step">
-						<div class="how-it-works__step-icon">
-							<i data-lucide="heart-handshake"></i>
-						</div>
-						<span class="how-it-works__step-number">03</span>
-						<h3 class="how-it-works__step-title">Relax & Interact</h3>
-						<p class="how-it-works__step-text">Spend time with our cats and maybe find your new best friend!</p>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- 3. HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="how-it-works__container">
+        <div class="how-it-works__header">
+          <span class="how-it-works__tag">How It Works</span>
+          <h2 class="how-it-works__title">Three Simple Steps</h2>
+        </div>
+        <div class="how-it-works__steps">
+          <div class="how-it-works__step">
+            <div class="how-it-works__step-icon">
+              <i data-lucide="coffee"></i>
+            </div>
+            <span class="how-it-works__step-number">01</span>
+            <h3 class="how-it-works__step-title">Enjoy the Café</h3>
+            <p class="how-it-works__step-text">
+              Start with our premium coffee and treats in our cozy café area.
+            </p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__step-icon">
+              <i data-lucide="calendar-days"></i>
+            </div>
+            <span class="how-it-works__step-number">02</span>
+            <h3 class="how-it-works__step-title">Book the Cat Lounge</h3>
+            <p class="how-it-works__step-text">
+              Reserve your spot in our separate cat lounge area.
+            </p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__step-icon">
+              <i data-lucide="heart-handshake"></i>
+            </div>
+            <span class="how-it-works__step-number">03</span>
+            <h3 class="how-it-works__step-title">Relax & Interact</h3>
+            <p class="how-it-works__step-text">
+              Spend time with our cats and maybe find your new best friend!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- 4. THE EXPERIENCE -->
-		<section class="experience" id="experience">
-			<div class="experience__container">
-				<div class="experience__header">
-					<span class="experience__tag">The Experience</span>
-					<h2 class="experience__title">Safe & Relaxing Environment</h2>
-				</div>
-				<div class="experience__content">
-					<div class="experience__highlight">
-						<h3 class="experience__highlight-title">
-							<i data-lucide="shield-check"></i>
-							Our Cat Lounge
-						</h3>
-						<p class="experience__highlight-text">
-							Our cat lounge is completely <strong>separate from the café area</strong>, ensuring a calm and safe environment for both cats and visitors. The separation reduces stress for the cats, prevents food-related incidents, and maintains a hygienic space. We follow strict hygiene protocols and limit guest numbers to protect our feline residents' wellbeing.
-						</p>
-						<div class="experience__highlight-stats">
-							<div class="experience__highlight-stat">
-								<span class="experience__highlight-stat-number">15</span>
-								<span class="experience__highlight-stat-label">Max Guests</span>
-							</div>
-							<div class="experience__highlight-stat">
-								<span class="experience__highlight-stat-number">30</span>
-								<span class="experience__highlight-stat-label">Minutes/Session</span>
-							</div>
-							<div class="experience__highlight-stat">
-								<span class="experience__highlight-stat-number">$12-25</span>
-								<span class="experience__highlight-stat-label">Varies by Package</span>
-							</div>
-						</div>
-					</div>
-					<div class="experience__rules">
-						<h4 class="experience__rules-title">House Rules</h4>
-						<ul class="experience__rules-list">
-							<li><i data-lucide="x"></i> No flash photography</li>
-							<li><i data-lucide="x"></i> No picking up cats</li>
-							<li><i data-lucide="x"></i> Keep voices gentle</li>
-							<li><i data-lucide="x"></i> No outside food</li>
-							<li><i data-lucide="x"></i> Children under 12 must be supervised</li>
-							<li><i data-lucide="x"></i> Hands must be sanitized before entry</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- 4. THE EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="experience__container">
+        <div class="experience__header">
+          <span class="experience__tag">The Experience</span>
+          <h2 class="experience__title">Safe & Relaxing Environment</h2>
+        </div>
+        <div class="experience__content">
+          <div class="experience__highlight">
+            <h3 class="experience__highlight-title">
+              <i data-lucide="shield-check"></i>
+              Our Cat Lounge
+            </h3>
+            <p class="experience__highlight-text">
+              Our cat lounge is completely
+              <strong>separate from the café area</strong>, ensuring a calm and
+              safe environment for both cats and visitors. The separation
+              reduces stress for the cats, prevents food-related incidents, and
+              maintains a hygienic space. We follow strict hygiene protocols and
+              limit guest numbers to protect our feline residents' wellbeing.
+            </p>
+            <div class="experience__highlight-stats">
+              <div class="experience__highlight-stat">
+                <span class="experience__highlight-stat-number">15</span>
+                <span class="experience__highlight-stat-label">Max Guests</span>
+              </div>
+              <div class="experience__highlight-stat">
+                <span class="experience__highlight-stat-number">30</span>
+                <span class="experience__highlight-stat-label"
+                  >Minutes/Session</span
+                >
+              </div>
+              <div class="experience__highlight-stat">
+                <span class="experience__highlight-stat-number">$12-25</span>
+                <span class="experience__highlight-stat-label"
+                  >Varies by Package</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="experience__rules">
+            <h4 class="experience__rules-title">House Rules</h4>
+            <ul class="experience__rules-list">
+              <li><i data-lucide="x"></i> No flash photography</li>
+              <li><i data-lucide="x"></i> No picking up cats</li>
+              <li><i data-lucide="x"></i> Keep voices gentle</li>
+              <li><i data-lucide="x"></i> No outside food</li>
+              <li>
+                <i data-lucide="x"></i> Children under 12 must be supervised
+              </li>
+              <li>
+                <i data-lucide="x"></i> Hands must be sanitized before entry
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- 5. MENU -->
-		<section class="menu" id="menu">
-			<div class="menu__container">
-				<div class="menu__header">
-					<span class="menu__tag">Our Menu</span>
-					<h2 class="menu__title">Coffee & Treats</h2>
-					<p class="menu__subtitle">Single-origin specialty coffee from Brazilian farms • Handcrafted beverages • Fresh baked desserts</p>
-				</div>
+    <!-- 5. MENU -->
+    <section class="menu" id="menu">
+      <div class="menu__container">
+        <div class="menu__header">
+          <span class="menu__tag">Our Menu</span>
+          <h2 class="menu__title">Coffee & Treats</h2>
+          <p class="menu__subtitle">
+            Single-origin specialty coffee from Brazilian farms • Handcrafted
+            beverages • Fresh baked desserts
+          </p>
+        </div>
 
-				<div class="menu__tabs" role="tablist">
-					<button class="menu__tab menu__tab--active" data-tab="drinks" role="tab" aria-selected="true" aria-controls="drinks">
-						<i data-lucide="cup-soda"></i>
-						Drinks
-					</button>
-					<button class="menu__tab" data-tab="desserts" role="tab" aria-selected="false" aria-controls="desserts">
-						<i data-lucide="cake"></i>
-						Desserts
-					</button>
-				</div>
+        <div class="menu__tabs" role="tablist">
+          <button
+            class="menu__tab menu__tab--active"
+            data-tab="drinks"
+            role="tab"
+            aria-selected="true"
+            aria-controls="drinks"
+          >
+            <i data-lucide="cup-soda"></i>
+            Drinks
+          </button>
+          <button
+            class="menu__tab"
+            data-tab="desserts"
+            role="tab"
+            aria-selected="false"
+            aria-controls="desserts"
+          >
+            <i data-lucide="cake"></i>
+            Desserts
+          </button>
+        </div>
 
-				<div class="menu__content">
-					<!-- Drinks -->
-					<div class="menu__panel menu__panel--active" id="drinks" role="tabpanel" aria-labelledby="drinks-tab">
-						<div class="menu__grid">
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=300&h=200&fit=crop" class="menu__item-image" alt="Catpuccino" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Catpuccino Classic</h4>
-									<span class="menu__item-price">$6.50</span>
-									<p class="menu__item-desc">Single-origin Arabica espresso • velvety microfoam • locally sourced milk</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=300&h=200&fit=crop" class="menu__item-image" alt="Espresso" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Whisker's Espresso</h4>
-									<span class="menu__item-price">$4.00</span>
-									<p class="menu__item-desc">Double shot • Brazilian Santos blend • rich crema</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=300&h=200&fit=crop" class="menu__item-image" alt="Latte" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Purr-fect Latte</h4>
-									<span class="menu__item-price">$5.50</span>
-									<p class="menu__item-desc">Espresso • steamed milk • light foam art</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=300&h=200&fit=crop" class="menu__item-image" alt="Cappuccino" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Meow-cappuccino</h4>
-									<span class="menu__item-price">$5.50</span>
-									<p class="menu__item-desc">Equal parts espresso • steamed milk • thick foam</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=300&h=200&fit=crop" class="menu__item-image" alt="Mocha" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Tail-wag Mocha</h4>
-									<span class="menu__item-price">$7.00</span>
-									<p class="menu__item-desc">Espresso • Belgian chocolate • vanilla foam</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&h=200&fit=crop" class="menu__item-image" alt="Cold Brew" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Purr-ro Cold Brew</h4>
-									<span class="menu__item-price">$5.50</span>
-									<p class="menu__item-desc">Steeped 18hrs • smooth • served over ice</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1529892485617-16f69e773929?w=300&h=200&fit=crop" class="menu__item-image" alt="Frappé" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Frosty Paws Frappé</h4>
-									<span class="menu__item-price">$7.50</span>
-									<p class="menu__item-desc">Blended ice coffee • cream • espresso base</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=300&h=200&fit=crop" class="menu__item-image" alt="Hot Chocolate" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Kitten Hot Chocolate</h4>
-									<span class="menu__item-price">$6.00</span>
-									<p class="menu__item-desc">Belgian cocoa • steamed milk • marshmallows</p>
-								</div>
-							</div>
-						</div>
-					</div>
+        <div class="menu__content">
+          <!-- Drinks -->
+          <div
+            class="menu__panel menu__panel--active"
+            id="drinks"
+            role="tabpanel"
+            aria-labelledby="drinks-tab"
+          >
+            <div class="menu__grid">
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Catpuccino"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Catpuccino Classic</h4>
+                  <span class="menu__item-price">$6.50</span>
+                  <p class="menu__item-desc">
+                    Single-origin Arabica espresso • velvety microfoam • locally
+                    sourced milk
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Espresso"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Whisker's Espresso</h4>
+                  <span class="menu__item-price">$4.00</span>
+                  <p class="menu__item-desc">
+                    Double shot • Brazilian Santos blend • rich crema
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Latte"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Purr-fect Latte</h4>
+                  <span class="menu__item-price">$5.50</span>
+                  <p class="menu__item-desc">
+                    Espresso • steamed milk • light foam art
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Cappuccino"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Meow-cappuccino</h4>
+                  <span class="menu__item-price">$5.50</span>
+                  <p class="menu__item-desc">
+                    Equal parts espresso • steamed milk • thick foam
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Mocha"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Tail-wag Mocha</h4>
+                  <span class="menu__item-price">$7.00</span>
+                  <p class="menu__item-desc">
+                    Espresso • Belgian chocolate • vanilla foam
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Cold Brew"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Purr-ro Cold Brew</h4>
+                  <span class="menu__item-price">$5.50</span>
+                  <p class="menu__item-desc">
+                    Steeped 18hrs • smooth • served over ice
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1529892485617-16f69e773929?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Frappé"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Frosty Paws Frappé</h4>
+                  <span class="menu__item-price">$7.50</span>
+                  <p class="menu__item-desc">
+                    Blended ice coffee • cream • espresso base
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Hot Chocolate"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Kitten Hot Chocolate</h4>
+                  <span class="menu__item-price">$6.00</span>
+                  <p class="menu__item-desc">
+                    Belgian cocoa • steamed milk • marshmallows
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-					<!-- Desserts -->
-					<div class="menu__panel" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
-						<div class="menu__grid">
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=200&fit=crop" class="menu__item-image" alt="Cake" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Homemade Cake</h4>
-									<span class="menu__item-price">$8.50</span>
-									<p class="menu__item-desc">Fresh baked cake of the day</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=300&h=200&fit=crop" class="menu__item-image" alt="Tart" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Sweet Tart</h4>
-									<span class="menu__item-price">$7.00</span>
-									<p class="menu__item-desc">Fruit-filled pastry with cream</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=300&h=200&fit=crop" class="menu__item-image" alt="Petit Gateau" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Petit Gateau</h4>
-									<span class="menu__item-price">$9.00</span>
-									<p class="menu__item-desc">Warm chocolate cake with ice cream</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=300&h=200&fit=crop" class="menu__item-image" alt="Nutella Bread" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Nutella Bread</h4>
-									<span class="menu__item-price">$6.50</span>
-									<p class="menu__item-desc">Grilled bread with Nutella spread</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=300&h=200&fit=crop" class="menu__item-image" alt="Cookies" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Paw-shaped Cookies</h4>
-									<span class="menu__item-price">$5.00</span>
-									<p class="menu__item-desc">Buttery cookies in cat shapes</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=300&h=200&fit=crop" class="menu__item-image" alt="Brigadeiro" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Kitten Brigadeiros</h4>
-									<span class="menu__item-price">$5.50</span>
-									<p class="menu__item-desc">Brazilian chocolate truffle balls</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=300&h=200&fit=crop" class="menu__item-image" alt="Tiramisu" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Tail Tiramisu</h4>
-									<span class="menu__item-price">$9.00</span>
-									<p class="menu__item-desc">Classic Italian coffee dessert</p>
-								</div>
-							</div>
-							<div class="menu__item">
-								<img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=300&h=200&fit=crop" class="menu__item-image" alt="Pudim" loading="lazy" width="300" height="200">
-								<div class="menu__item-content">
-									<h4 class="menu__item-name">Miau Pudim</h4>
-									<span class="menu__item-price">$6.00</span>
-									<p class="menu__item-desc">Brazilian caramel pudding</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+          <!-- Desserts -->
+          <div
+            class="menu__panel"
+            id="desserts"
+            role="tabpanel"
+            aria-labelledby="desserts-tab"
+          >
+            <div class="menu__grid">
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Cake"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Homemade Cake</h4>
+                  <span class="menu__item-price">$8.50</span>
+                  <p class="menu__item-desc">Fresh baked cake of the day</p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Tart"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Sweet Tart</h4>
+                  <span class="menu__item-price">$7.00</span>
+                  <p class="menu__item-desc">Fruit-filled pastry with cream</p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Petit Gateau"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Petit Gateau</h4>
+                  <span class="menu__item-price">$9.00</span>
+                  <p class="menu__item-desc">
+                    Warm chocolate cake with ice cream
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Nutella Bread"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Nutella Bread</h4>
+                  <span class="menu__item-price">$6.50</span>
+                  <p class="menu__item-desc">
+                    Grilled bread with Nutella spread
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Cookies"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Paw-shaped Cookies</h4>
+                  <span class="menu__item-price">$5.00</span>
+                  <p class="menu__item-desc">Buttery cookies in cat shapes</p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Brigadeiro"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Kitten Brigadeiros</h4>
+                  <span class="menu__item-price">$5.50</span>
+                  <p class="menu__item-desc">
+                    Brazilian chocolate truffle balls
+                  </p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Tiramisu"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Tail Tiramisu</h4>
+                  <span class="menu__item-price">$9.00</span>
+                  <p class="menu__item-desc">Classic Italian coffee dessert</p>
+                </div>
+              </div>
+              <div class="menu__item">
+                <img
+                  src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=300&h=200&fit=crop"
+                  class="menu__item-image"
+                  alt="Pudim"
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div class="menu__item-content">
+                  <h4 class="menu__item-name">Miau Pudim</h4>
+                  <span class="menu__item-price">$6.00</span>
+                  <p class="menu__item-desc">Brazilian caramel pudding</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- 6. OUR CATS -->
-		<section class="cats" id="cats">
-			<div class="cats__container">
-				<div class="cats__header">
-					<span class="cats__tag">Meet the Family</span>
-					<h2 class="cats__title">Our Resident Cats</h2>
-					<p class="cats__subtitle">12 furry friends waiting to meet you</p>
-				</div>
+    <!-- 6. OUR CATS -->
+    <section class="cats" id="cats">
+      <div class="cats__container">
+        <div class="cats__header">
+          <span class="cats__tag">Meet the Family</span>
+          <h2 class="cats__title">Our Resident Cats</h2>
+          <p class="cats__subtitle">12 furry friends waiting to meet you</p>
+        </div>
 
-				<div class="cats__grid">
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=250&fit=crop" alt="Luna the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Luna</h4>
-							<p class="cats__card-breed">British Shorthair</p>
-							<p class="cats__card-personality">🧡 Queen of the café</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300&h=250&fit=crop" alt="Milo the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Milo</h4>
-							<p class="cats__card-breed">Orange Tabby</p>
-							<p class="cats__card-personality">💛 Professional napper</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?w=300&h=250&fit=crop" alt="Bella the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Bella</h4>
-							<p class="cats__card-breed">Siamese Mix</p>
-							<p class="cats__card-personality">💚 Social butterfly</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13?w=300&h=250&fit=crop" alt="Oliver the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Oliver</h4>
-							<p class="cats__card-breed">Maine Coon</p>
-							<p class="cats__card-personality">💙 Gentle giant</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=300&h=250&fit=crop" alt="Cleo the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Cleo</h4>
-							<p class="cats__card-breed">Persian</p>
-							<p class="cats__card-personality">🧡 Fluffy princess</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?w=300&h=250&fit=crop" alt="Leo the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Leo</h4>
-							<p class="cats__card-breed">Bengal Mix</p>
-							<p class="cats__card-personality">💛 Adventure seeker</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=300&h=250&fit=crop" alt="Nala the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Nala</h4>
-							<p class="cats__card-breed">Black Beauty</p>
-							<p class="cats__card-personality">💚 Mystery cuddler</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=300&h=250&fit=crop" alt="Simba the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Simba</h4>
-							<p class="cats__card-breed">Orange Tabby</p>
-							<p class="cats__card-personality">💙 Playful prince</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1518882605630-8eb936a8c813?w=300&h=250&fit=crop" alt="Willow the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Willow</h4>
-							<p class="cats__card-breed">Grey Tabby</p>
-							<p class="cats__card-personality">🧡 Tree climber</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1519052537078-e6302a4968ef?w=300&h=250&fit=crop" alt="Charlie the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Charlie</h4>
-							<p class="cats__card-breed">Tuxedo</p>
-							<p class="cats__card-personality">💛 Tuxedo gentleman</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1529778873920-4da4926a7071?w=300&h=250&fit=crop" alt="Lola the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Lola</h4>
-							<p class="cats__card-breed">Calico</p>
-							<p class="cats__card-personality">💚 Spotted diva</p>
-						</div>
-					</div>
-					<div class="cats__card">
-						<div class="cats__card-image">
-							<img src="https://images.unsplash.com/photo-1511275539165-cc46b4039213?w=300&h=250&fit=crop" alt="Max the cat" loading="lazy" width="300" height="250">
-						</div>
-						<div class="cats__card-info">
-							<h4 class="cats__card-name">Max</h4>
-							<p class="cats__card-breed">Russian Blue</p>
-							<p class="cats__card-personality">💙 Quiet observer</p>
-						</div>
-					</div>
-				</div>
+        <div class="cats__grid">
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=250&fit=crop"
+                alt="Luna the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Luna</h4>
+              <p class="cats__card-breed">British Shorthair</p>
+              <p class="cats__card-personality">🧡 Queen of the café</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300&h=250&fit=crop"
+                alt="Milo the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Milo</h4>
+              <p class="cats__card-breed">Orange Tabby</p>
+              <p class="cats__card-personality">💛 Professional napper</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1513245543132-31f507417b26?w=300&h=250&fit=crop"
+                alt="Bella the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Bella</h4>
+              <p class="cats__card-breed">Siamese Mix</p>
+              <p class="cats__card-personality">💚 Social butterfly</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13?w=300&h=250&fit=crop"
+                alt="Oliver the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Oliver</h4>
+              <p class="cats__card-breed">Maine Coon</p>
+              <p class="cats__card-personality">💙 Gentle giant</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=300&h=250&fit=crop"
+                alt="Cleo the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Cleo</h4>
+              <p class="cats__card-breed">Persian</p>
+              <p class="cats__card-personality">🧡 Fluffy princess</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?w=300&h=250&fit=crop"
+                alt="Leo the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Leo</h4>
+              <p class="cats__card-breed">Bengal Mix</p>
+              <p class="cats__card-personality">💛 Adventure seeker</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=300&h=250&fit=crop"
+                alt="Nala the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Nala</h4>
+              <p class="cats__card-breed">Black Beauty</p>
+              <p class="cats__card-personality">💚 Mystery cuddler</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=300&h=250&fit=crop"
+                alt="Simba the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Simba</h4>
+              <p class="cats__card-breed">Orange Tabby</p>
+              <p class="cats__card-personality">💙 Playful prince</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1518882605630-8eb936a8c813?w=300&h=250&fit=crop"
+                alt="Willow the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Willow</h4>
+              <p class="cats__card-breed">Grey Tabby</p>
+              <p class="cats__card-personality">🧡 Tree climber</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1519052537078-e6302a4968ef?w=300&h=250&fit=crop"
+                alt="Charlie the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Charlie</h4>
+              <p class="cats__card-breed">Tuxedo</p>
+              <p class="cats__card-personality">💛 Tuxedo gentleman</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1529778873920-4da4926a7071?w=300&h=250&fit=crop"
+                alt="Lola the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Lola</h4>
+              <p class="cats__card-breed">Calico</p>
+              <p class="cats__card-personality">💚 Spotted diva</p>
+            </div>
+          </div>
+          <div class="cats__card">
+            <div class="cats__card-image">
+              <img
+                src="https://images.unsplash.com/photo-1511275539165-cc46b4039213?w=300&h=250&fit=crop"
+                alt="Max the cat"
+                loading="lazy"
+                width="300"
+                height="250"
+              />
+            </div>
+            <div class="cats__card-info">
+              <h4 class="cats__card-name">Max</h4>
+              <p class="cats__card-breed">Russian Blue</p>
+              <p class="cats__card-personality">💙 Quiet observer</p>
+            </div>
+          </div>
+        </div>
 
-				<div class="cats__adoption">
-					<p class="cats__adoption-text">
-						<i data-lucide="heart"></i>
-						Falling in love? Our cats are available for adoption!
-					</p>
-					<a href="#adoption" class="cats__adoption-btn">Learn About Adoption</a>
-				</div>
-			</div>
-		</section>
+        <div class="cats__adoption">
+          <p class="cats__adoption-text">
+            <i data-lucide="heart"></i>
+            Falling in love? Our cats are available for adoption!
+          </p>
+          <a href="#adoption" class="cats__adoption-btn"
+            >Learn About Adoption</a
+          >
+        </div>
+      </div>
+    </section>
 
-		<!-- 7. ADOPTION MISSION -->
-		<section class="adoption" id="adoption">
-			<div class="adoption__container">
-				<div class="adoption__content">
-					<span class="adoption__tag">Adoption Program</span>
-					<h2 class="adoption__title">Every Cat Deserves a Forever Home</h2>
-					<p class="adoption__text">
-						All our cats are rescued from streets and partner NGOs. Each cat receives full veterinary care—vaccination, deworming, neutering, and microchipping—before becoming available for adoption. We carefully match cats with families through our thorough adoption process.
-					</p>
-					<div class="adoption__stats">
-						<div class="adoption__stat">
-							<span class="adoption__stat-number">300+</span>
-							<span class="adoption__stat-label">Cats Adopted</span>
-						</div>
-						<div class="adoption__stat">
-							<span class="adoption__stat-number">12</span>
-							<span class="adoption__stat-label">Currently Available</span>
-						</div>
-						<div class="adoption__stat">
-							<span class="adoption__stat-number">5</span>
-							<span class="adoption__stat-label">Partner NGOs</span>
-						</div>
-					</div>
-					<a href="#contact" class="adoption__btn">Start Adoption Process</a>
-				</div>
-			</div>
-		</section>
+    <!-- 7. ADOPTION MISSION -->
+    <section class="adoption" id="adoption">
+      <div class="adoption__container">
+        <div class="adoption__content">
+          <span class="adoption__tag">Adoption Program</span>
+          <h2 class="adoption__title">Every Cat Deserves a Forever Home</h2>
+          <p class="adoption__text">
+            All our cats are rescued from streets and partner NGOs. Each cat
+            receives full veterinary care—vaccination, deworming, neutering, and
+            microchipping—before becoming available for adoption. We carefully
+            match cats with families through our thorough adoption process.
+          </p>
+          <div class="adoption__stats">
+            <div class="adoption__stat">
+              <span class="adoption__stat-number">300+</span>
+              <span class="adoption__stat-label">Cats Adopted</span>
+            </div>
+            <div class="adoption__stat">
+              <span class="adoption__stat-number">12</span>
+              <span class="adoption__stat-label">Currently Available</span>
+            </div>
+            <div class="adoption__stat">
+              <span class="adoption__stat-number">5</span>
+              <span class="adoption__stat-label">Partner NGOs</span>
+            </div>
+          </div>
+          <a href="#contact" class="adoption__btn">Start Adoption Process</a>
+        </div>
+      </div>
+    </section>
 
-		<!-- 8. EXPERIENCES -->
-		<section class="experiences" id="experiences">
-			<div class="experiences__container">
-				<div class="experiences__header">
-					<span class="experiences__tag">Experiences</span>
-					<h2 class="experiences__title">Special Moments</h2>
-				</div>
+    <!-- 8. EXPERIENCES -->
+    <section class="experiences" id="experiences">
+      <div class="experiences__container">
+        <div class="experiences__header">
+          <span class="experiences__tag">Experiences</span>
+          <h2 class="experiences__title">Special Moments</h2>
+        </div>
 
-				<div class="experiences__grid">
-					<div class="experiences__card">
-						<div class="experiences__card-icon">
-							<i data-lucide="home"></i>
-						</div>
-						<h3 class="experiences__card-title">Cat Lounge Visit</h3>
-						<p class="experiences__card-text">
-							30-minute session in our dedicated cat lounge. Includes one beverage. Advanced booking recommended—slots fill quickly on weekends!
-						</p>
-						<span class="experiences__card-price">$15 per person</span>
-					</div>
+        <div class="experiences__grid">
+          <div class="experiences__card">
+            <div class="experiences__card-icon">
+              <i data-lucide="home"></i>
+            </div>
+            <h3 class="experiences__card-title">Cat Lounge Visit</h3>
+            <p class="experiences__card-text">
+              30-minute session in our dedicated cat lounge. Includes one
+              beverage. Advanced booking recommended—slots fill quickly on
+              weekends!
+            </p>
+            <span class="experiences__card-price">$15 per person</span>
+          </div>
 
-					<div class="experiences__card">
-						<div class="experiences__card-icon">
-							<i data-lucide="coffee"></i>
-						</div>
-						<h3 class="experiences__card-title">Café + Lounge Combo</h3>
-						<p class="experiences__card-text">
-							Full experience: enjoy premium coffee in our café area followed by 30 minutes in the cat lounge. Perfect for those who want the complete experience.
-						</p>
-						<span class="experiences__card-price">$22 per person</span>
-					</div>
+          <div class="experiences__card">
+            <div class="experiences__card-icon">
+              <i data-lucide="coffee"></i>
+            </div>
+            <h3 class="experiences__card-title">Café + Lounge Combo</h3>
+            <p class="experiences__card-text">
+              Full experience: enjoy premium coffee in our café area followed by
+              30 minutes in the cat lounge. Perfect for those who want the
+              complete experience.
+            </p>
+            <span class="experiences__card-price">$22 per person</span>
+          </div>
 
-					<div class="experiences__card">
-						<div class="experiences__card-icon">
-							<i data-lucide="flower-2"></i>
-						</div>
-						<h3 class="experiences__card-title">Cat Yoga (Weekends)</h3>
-						<p class="experiences__card-text">
-							45-minute beginner yoga session with our resident cats roaming freely. Instructor-led, suitable for all levels. Limited to 10 participants.
-						</p>
-						<span class="experiences__card-price">$25 per person</span>
-					</div>
-				</div>
-			</div>
-		</section>
+          <div class="experiences__card">
+            <div class="experiences__card-icon">
+              <i data-lucide="flower-2"></i>
+            </div>
+            <h3 class="experiences__card-title">Cat Yoga (Weekends)</h3>
+            <p class="experiences__card-text">
+              45-minute beginner yoga session with our resident cats roaming
+              freely. Instructor-led, suitable for all levels. Limited to 10
+              participants.
+            </p>
+            <span class="experiences__card-price">$25 per person</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- 9. TESTIMONIALS -->
-		<section class="testimonials" id="testimonials">
-			<div class="testimonials__container">
-				<div class="testimonials__header">
-					<span class="testimonials__tag">Testimonials</span>
-					<h2 class="testimonials__title">What Our Guests Say</h2>
-				</div>
+    <!-- 9. TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials__container">
+        <div class="testimonials__header">
+          <span class="testimonials__tag">Testimonials</span>
+          <h2 class="testimonials__title">What Our Guests Say</h2>
+        </div>
 
-				<div class="testimonials__wrapper">
-					<div class="swiper testimonials__slider">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Amazing atmosphere, great coffee, and the cats made my day! I didn't want to leave."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">S</div>
-										<span class="testimonials__card-name">Sarah M.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Perfect place to relax and disconnect. The cats are so well cared for and friendly."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">J</div>
-										<span class="testimonials__card-name">James K.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Loved the concept and ended up adopting a cat! The staff was super helpful."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">E</div>
-										<span class="testimonials__card-name">Emma L.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Best cat café ever! The coffee is excellent and the cats are adorable."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">M</div>
-										<span class="testimonials__card-name">Michael R.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Brought my kids and they loved it! Such a lovely experience for the whole family."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">A</div>
-										<span class="testimonials__card-name">Amanda T.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"The staff is amazing! They really care about the cats and it shows."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">D</div>
-										<span class="testimonials__card-name">David W.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Been here three times already! Never disappoints. The purr-fect spot!"
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">L</div>
-										<span class="testimonials__card-name">Lisa P.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Adopted my fur baby from here! The adoption process was smooth and wonderful."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">R</div>
-										<span class="testimonials__card-name">Rachel G.</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonials__card">
-									<div class="testimonials__card-rating">★★★★★</div>
-									<p class="testimonials__card-text">
-										"Cat yoga weekend was incredible! So relaxing and fun with the kitties."
-									</p>
-									<div class="testimonials__card-author">
-										<div class="testimonials__card-avatar">K</div>
-										<span class="testimonials__card-name">Kevin H.</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+        <div class="testimonials__wrapper">
+          <div class="swiper testimonials__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Amazing atmosphere, great coffee, and the cats made my day!
+                    I didn't want to leave."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">S</div>
+                    <span class="testimonials__card-name">Sarah M.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Perfect place to relax and disconnect. The cats are so well
+                    cared for and friendly."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">J</div>
+                    <span class="testimonials__card-name">James K.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Loved the concept and ended up adopting a cat! The staff
+                    was super helpful."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">E</div>
+                    <span class="testimonials__card-name">Emma L.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Best cat café ever! The coffee is excellent and the cats
+                    are adorable."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">M</div>
+                    <span class="testimonials__card-name">Michael R.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Brought my kids and they loved it! Such a lovely experience
+                    for the whole family."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">A</div>
+                    <span class="testimonials__card-name">Amanda T.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "The staff is amazing! They really care about the cats and
+                    it shows."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">D</div>
+                    <span class="testimonials__card-name">David W.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Been here three times already! Never disappoints. The
+                    purr-fect spot!"
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">L</div>
+                    <span class="testimonials__card-name">Lisa P.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Adopted my fur baby from here! The adoption process was
+                    smooth and wonderful."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">R</div>
+                    <span class="testimonials__card-name">Rachel G.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonials__card">
+                  <div class="testimonials__card-rating">★★★★★</div>
+                  <p class="testimonials__card-text">
+                    "Cat yoga weekend was incredible! So relaxing and fun with
+                    the kitties."
+                  </p>
+                  <div class="testimonials__card-author">
+                    <div class="testimonials__card-avatar">K</div>
+                    <span class="testimonials__card-name">Kevin H.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-					<button class="testimonials__arrow testimonials__arrow--prev" aria-label="Previous">
-						<i data-lucide="chevron-left"></i>
-					</button>
-					<button class="testimonials__arrow testimonials__arrow--next" aria-label="Next">
-						<i data-lucide="chevron-right"></i>
-					</button>
-					
-					<div class="testimonials__pagination">
-						<button class="testimonials__dot testimonials__dot--active" data-index="0" aria-label="Slide 1">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="1" aria-label="Slide 2">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="2" aria-label="Slide 3">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="3" aria-label="Slide 4">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="4" aria-label="Slide 5">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="5" aria-label="Slide 6">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="6" aria-label="Slide 7">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="7" aria-label="Slide 8">
-							<i data-lucide="paw-print"></i>
-						</button>
-						<button class="testimonials__dot" data-index="8" aria-label="Slide 9">
-							<i data-lucide="paw-print"></i>
-						</button>
-					</div>
-				</div>
-			</div>
-		</section>
+          <button
+            class="testimonials__arrow testimonials__arrow--prev"
+            aria-label="Previous"
+          >
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button
+            class="testimonials__arrow testimonials__arrow--next"
+            aria-label="Next"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
 
-		<!-- 10. VISIT -->
-		<section class="visit" id="visit">
-			<div class="visit__container">
-				<div class="visit__header">
-					<span class="visit__tag">Plan Your Visit</span>
-					<h2 class="visit__title">Find Us</h2>
-				</div>
+          <div class="testimonials__pagination">
+            <button
+              class="testimonials__dot testimonials__dot--active"
+              data-index="0"
+              aria-label="Slide 1"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="1"
+              aria-label="Slide 2"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="2"
+              aria-label="Slide 3"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="3"
+              aria-label="Slide 4"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="4"
+              aria-label="Slide 5"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="5"
+              aria-label="Slide 6"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="6"
+              aria-label="Slide 7"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="7"
+              aria-label="Slide 8"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+            <button
+              class="testimonials__dot"
+              data-index="8"
+              aria-label="Slide 9"
+            >
+              <i data-lucide="paw-print"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-				<div class="visit__content">
-					<div class="visit__info">
-						<div class="visit__hours">
-							<h3 class="visit__hours-title">
-								<i data-lucide="clock"></i>
-								Opening Hours
-							</h3>
-							<ul class="visit__hours-list">
-								<li><span>Monday - Friday</span><span>2:00 PM - 8:00 PM</span></li>
-								<li><span>Saturday - Sunday</span><span>9:00 AM - 8:00 PM</span></li>
-							</ul>
-						</div>
+    <!-- 10. VISIT -->
+    <section class="visit" id="visit">
+      <div class="visit__container">
+        <div class="visit__header">
+          <span class="visit__tag">Plan Your Visit</span>
+          <h2 class="visit__title">Find Us</h2>
+        </div>
 
-						<div class="visit__location">
-							<h3 class="visit__location-title">
-								<i data-lucide="map-pin"></i>
-								Location
-							</h3>
-							<p class="visit__location-text">
-								123 Whiskers Street<br>
-								Whisker District, Cat City, CA 90210
-							</p>
-						</div>
+        <div class="visit__content">
+          <div class="visit__info">
+            <div class="visit__hours">
+              <h3 class="visit__hours-title">
+                <i data-lucide="clock"></i>
+                Opening Hours
+              </h3>
+              <ul class="visit__hours-list">
+                <li>
+                  <span>Monday - Friday</span><span>2:00 PM - 8:00 PM</span>
+                </li>
+                <li>
+                  <span>Saturday - Sunday</span><span>9:00 AM - 8:00 PM</span>
+                </li>
+              </ul>
+            </div>
 
-						<div class="visit__entry">
-							<h3 class="visit__entry-title">
-								<i data-lucide="ticket"></i>
-								Entry Fee
-							</h3>
-							<p class="visit__entry-text">
-								$15 per person (30 minutes)<br>
-								Max 15 people per slot
-							</p>
-						</div>
-					</div>
+            <div class="visit__location">
+              <h3 class="visit__location-title">
+                <i data-lucide="map-pin"></i>
+                Location
+              </h3>
+              <p class="visit__location-text">
+                123 Whiskers Street<br />
+                Whisker District, Cat City, CA 90210
+              </p>
+            </div>
 
-					<div class="visit__map">
-						<div class="visit__map-placeholder">
-							<i data-lucide="map"></i>
-							<span>Map View</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            <div class="visit__entry">
+              <h3 class="visit__entry-title">
+                <i data-lucide="ticket"></i>
+                Entry Fee
+              </h3>
+              <p class="visit__entry-text">
+                $15 per person (30 minutes)<br />
+                Max 15 people per slot
+              </p>
+            </div>
+          </div>
 
-		<!-- 11. CONTACT -->
-		<section class="contact" id="contact">
-			<div class="contact__container">
-				<div class="contact__header">
-					<span class="contact__tag">Get in Touch</span>
-					<h2 class="contact__title">Contact Us</h2>
-				</div>
+          <div class="visit__map">
+            <div class="visit__map-placeholder">
+              <i data-lucide="map"></i>
+              <span>Map View</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-				<div class="contact__content">
-					<form class="contact__form">
-						<div class="contact__field">
-							<label for="name" class="contact__label">Name</label>
-							<input type="text" id="name" name="name" class="contact__input" required>
-						</div>
-						<div class="contact__field">
-							<label for="email" class="contact__label">Email</label>
-							<input type="email" id="email" name="email" class="contact__input" required>
-						</div>
-						<div class="contact__field">
-							<label for="subject" class="contact__label">Subject</label>
-							<select id="subject" name="subject" class="contact__select" required>
-								<option value="" disabled selected>Select a subject</option>
-								<option value="general">General Inquiry</option>
-								<option value="adoption">Adoption Questions</option>
-								<option value="booking">Booking/Reservation</option>
-								<option value="partnership">Partnership</option>
-								<option value="feedback">Feedback</option>
-								<option value="press">Press/Media</option>
-							</select>
-						</div>
-						<div class="contact__field">
-							<label for="message" class="contact__label">Message</label>
-							<textarea id="message" name="message" class="contact__textarea" rows="5" required></textarea>
-						</div>
-						<button type="submit" class="contact__submit">Send Message</button>
-					</form>
+    <!-- 11. CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact__container">
+        <div class="contact__header">
+          <span class="contact__tag">Get in Touch</span>
+          <h2 class="contact__title">Contact Us</h2>
+        </div>
 
-					<div class="contact__info">
-						<div class="contact__info-item">
-							<i data-lucide="mail"></i>
-							<span>hello@catpuccino.com</span>
-						</div>
-						<div class="contact__info-item">
-							<i data-lucide="phone"></i>
-							<span>(555) 123-CATS</span>
-						</div>
-						<div class="contact__social">
-							<a href="#" class="contact__social-link" aria-label="Instagram">
-								<img src="./assets/sociais/instagran.svg" alt="Instagram">
-							</a>
-							<a href="#" class="contact__social-link" aria-label="Facebook">
-								<img src="./assets/sociais/facebook.svg" alt="Facebook">
-							</a>
-							<a href="#" class="contact__social-link" aria-label="YouTube">
-								<img src="./assets/sociais/youtube.svg" alt="YouTube">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div class="contact__content">
+          <form class="contact__form">
+            <div class="contact__field">
+              <label for="name" class="contact__label">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="contact__input"
+                required
+              />
+            </div>
+            <div class="contact__field">
+              <label for="email" class="contact__label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="contact__input"
+                required
+              />
+            </div>
+            <div class="contact__field">
+              <label for="subject" class="contact__label">Subject</label>
+              <select
+                id="subject"
+                name="subject"
+                class="contact__select"
+                required
+              >
+                <option value="" disabled selected>Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="adoption">Adoption Questions</option>
+                <option value="booking">Booking/Reservation</option>
+                <option value="partnership">Partnership</option>
+                <option value="feedback">Feedback</option>
+                <option value="press">Press/Media</option>
+              </select>
+            </div>
+            <div class="contact__field">
+              <label for="message" class="contact__label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="contact__textarea"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="contact__submit">Send Message</button>
+          </form>
 
-		<!-- 12. FINAL CTA -->
-		<section class="final-cta">
-			<div class="final-cta__container">
-				<h2 class="final-cta__title">Take a Break. Meet Our Cats. Enjoy Great Coffee.</h2>
-				<p class="final-cta__text">Book your visit today and experience the purr-fect combination</p>
-				<a href="#visit" class="final-cta__btn">Book Your Visit Today</a>
-			</div>
-		</section>
+          <div class="contact__info">
+            <div class="contact__info-item">
+              <i data-lucide="mail"></i>
+              <span>hello@catpuccino.com</span>
+            </div>
+            <div class="contact__info-item">
+              <i data-lucide="phone"></i>
+              <span>(555) 123-CATS</span>
+            </div>
+            <div class="contact__social">
+              <a href="#" class="contact__social-link" aria-label="Instagram">
+                <img src="./assets/sociais/instagran.svg" alt="Instagram" />
+              </a>
+              <a href="#" class="contact__social-link" aria-label="Facebook">
+                <img src="./assets/sociais/facebook.svg" alt="Facebook" />
+              </a>
+              <a href="#" class="contact__social-link" aria-label="YouTube">
+                <img src="./assets/sociais/youtube.svg" alt="YouTube" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- 13. FOOTER -->
-		<footer class="footer">
-			<div class="footer__container">
-				<div class="footer__grid">
-					<!-- About Column -->
-					<div class="footer__column">
-						<h4 class="footer__column-title">
-							<i data-lucide="cat"></i> About
-						</h4>
-						<ul class="footer__links">
-							<li><a href="#about">What is a Cat Café</a></li>
-							<li><a href="#adoption">Our Mission</a></li>
-							<li><a href="#adoption">Partner NGOs</a></li>
-						</ul>
-					</div>
+    <!-- 12. FINAL CTA -->
+    <section class="final-cta">
+      <div class="final-cta__container">
+        <h2 class="final-cta__title">
+          Take a Break. Meet Our Cats. Enjoy Great Coffee.
+        </h2>
+        <p class="final-cta__text">
+          Book your visit today and experience the purr-fect combination
+        </p>
+        <a href="#visit" class="final-cta__btn">Book Your Visit Today</a>
+      </div>
+    </section>
 
-					<!-- Experience Column -->
-					<div class="footer__column">
-						<h4 class="footer__column-title">
-							<i data-lucide="cat"></i> Experience
-						</h4>
-						<ul class="footer__links">
-							<li><a href="#how-it-works">How It Works</a></li>
-							<li><a href="#experience">House Rules</a></li>
-							<li><a href="#cats">Meet the Cats</a></li>
-						</ul>
-					</div>
+    <!-- 13. FOOTER -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__grid">
+          <!-- About Column -->
+          <div class="footer__column">
+            <h4 class="footer__column-title">
+              <i data-lucide="cat"></i> About
+            </h4>
+            <ul class="footer__links">
+              <li><a href="#about">What is a Cat Café</a></li>
+              <li><a href="#adoption">Our Mission</a></li>
+              <li><a href="#adoption">Partner NGOs</a></li>
+            </ul>
+          </div>
 
-					<!-- Visit Column -->
-					<div class="footer__column">
-						<h4 class="footer__column-title">
-							<i data-lucide="map-pin"></i> Visit
-						</h4>
-						<ul class="footer__links">
-							<li><a href="#visit">Opening Hours</a></li>
-							<li><a href="#visit">Location</a></li>
-							<li><a href="#visit">Pricing</a></li>
-						</ul>
-					</div>
+          <!-- Experience Column -->
+          <div class="footer__column">
+            <h4 class="footer__column-title">
+              <i data-lucide="cat"></i> Experience
+            </h4>
+            <ul class="footer__links">
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#experience">House Rules</a></li>
+              <li><a href="#cats">Meet the Cats</a></li>
+            </ul>
+          </div>
 
-					<!-- Contact Column -->
-					<div class="footer__column">
-						<h4 class="footer__column-title">
-							<i data-lucide="mail"></i> Contact
-						</h4>
-						<ul class="footer__links">
-							<li><a href="mailto:hello@catpuccino.com">hello@catpuccino.com</a></li>
-							<li><a href="https://instagram.com" target="_blank" rel="noopener">@catpuccino</a></li>
-							<li><a href="tel:+15551232287">(555) 123-CATS</a></li>
-						</ul>
-					</div>
-				</div>
+          <!-- Visit Column -->
+          <div class="footer__column">
+            <h4 class="footer__column-title">
+              <i data-lucide="map-pin"></i> Visit
+            </h4>
+            <ul class="footer__links">
+              <li><a href="#visit">Opening Hours</a></li>
+              <li><a href="#visit">Location</a></li>
+              <li><a href="#visit">Pricing</a></li>
+            </ul>
+          </div>
 
-				<div class="footer__bottom">
-					<div class="footer__legal">
-						<a href="#">Terms</a>
-						<span class="footer__divider">|</span>
-						<a href="#">Privacy</a>
-						<span class="footer__divider">|</span>
-						<a href="../../index.html">← Voltar ao Showcase</a>
-					</div>
-					<p class="footer__copyright">© <span id="year"></span> Catpuccino. All rights reserved.</p>
-				</div>
-				<p class="footer__notice">
-					Notice: this page is a demo template (mockup). It is not functional
-					and is not associated with any real service.
-				</p>
-			</div>
-		<p id="notice-dialog-text" class="notice-dialog__text">
-			Aviso: esta página é apenas um template de demonstração (mockup),
-			não é funcional e não está associada a nenhum serviço real.
-		</p>
-		</footer>
+          <!-- Contact Column -->
+          <div class="footer__column">
+            <h4 class="footer__column-title">
+              <i data-lucide="mail"></i> Contact
+            </h4>
+            <ul class="footer__links">
+              <li>
+                <a href="mailto:hello@catpuccino.com">hello@catpuccino.com</a>
+              </li>
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener"
+                  >@catpuccino</a
+                >
+              </li>
+              <li><a href="tel:+15551232287">(555) 123-CATS</a></li>
+            </ul>
+          </div>
+        </div>
 
-		<!-- Lucide Icons (UI icons) -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<script src="./js/script.js" defer></script>
-	</body>
+        <div class="footer__bottom">
+          <div class="footer__legal">
+            <a href="#">Terms</a>
+            <span class="footer__divider">|</span>
+            <a href="#">Privacy</a>
+            <span class="footer__divider">|</span>
+            <a href="../../index.html">← Voltar ao Showcase</a>
+          </div>
+          <p class="footer__copyright">
+            © <span id="year"></span> Catpuccino. All rights reserved.
+          </p>
+        </div>
+        <p class="footer__notice">
+          Notice: this page is a demo template (mockup). It is not functional
+          and is not associated with any real service.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Lucide Icons (UI icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script.js" defer></script>
+  </body>
 </html>
