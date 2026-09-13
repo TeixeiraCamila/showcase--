@@ -27,6 +27,19 @@ const btnDownload = document.getElementById("btn-download");
 
 let currentImage = null;
 
+// toast de feedback (substitui alert())
+let toastTimeout = null;
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("toast--visible");
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove("toast--visible");
+  }, 3000);
+}
+
 // local image upload
 inputImage.addEventListener("change", function (e) {
   const file = e.target.files[0];
@@ -50,6 +63,8 @@ inputImage.addEventListener("change", function (e) {
 // sync form fields to poster preview, hide empty sections
 function updatePoster() {
   posterTitle.textContent = inputTitle.value || "Title";
+  const img = posterImage.querySelector("img");
+  if (img) img.alt = inputTitle.value ? `${inputTitle.value} poster` : "Poster";
 
   if (inputYear.value) {
     posterYear.parentElement.style.display = "";
@@ -113,15 +128,19 @@ function searchMovies() {
     allResults = [];
 
     try {
-      for (const type of types) {
+      const requests = types.map(async (type) => {
         const response = await fetch(
           `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(query)}&type=${type}`,
         );
-        const data = await response.json();
+        return response.json();
+      });
+
+      const results = await Promise.all(requests);
+      results.forEach((data) => {
         if (data.Response === "True" && data.Search) {
           allResults = allResults.concat(data.Search);
         }
-      }
+      });
 
       if (allResults.length > 0) {
         allResults.sort((a, b) => a.Title.localeCompare(b.Title));
@@ -140,12 +159,12 @@ function searchMovies() {
         });
         searchResults.classList.remove("hidden");
       } else {
-        alert("No results found");
+        showToast("No results found");
         searchResults.classList.add("hidden");
       }
     } catch (error) {
       console.error("Search error:", error);
-      alert("Error searching");
+      showToast("Error searching");
     }
   }, 300);
 }
@@ -196,7 +215,7 @@ async function fetchMovieDetails(imdbId) {
     }
   } catch (error) {
     console.error("Error fetching movie:", error);
-    alert("Error loading movie details");
+    showToast("Error loading movie details");
   }
 }
 
@@ -248,7 +267,7 @@ btnDownload.addEventListener("click", function () {
     })
     .catch((err) => {
       console.error("Error generating poster:", err);
-      alert("Error generating poster. Please try again.");
+      showToast("Error generating poster. Please try again.");
     })
     .finally(() => {
       btnDownload.disabled = false;

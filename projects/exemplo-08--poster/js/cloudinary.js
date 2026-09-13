@@ -40,11 +40,11 @@ btnUpload.addEventListener("click", async function () {
       cloudinaryUrl.value = data.secure_url;
       urlDisplay.classList.remove("hidden");
     } else {
-      alert("Upload failed: " + (data.error?.message || "Unknown error"));
+      showToast("Upload failed: " + (data.error?.message || "Unknown error"));
     }
   } catch (err) {
     console.error("Upload error:", err);
-    alert("Upload failed. Check console for details.");
+    showToast("Upload failed. Check console for details.");
   } finally {
     btnUpload.disabled = false;
     btnUpload.textContent = "Upload";
