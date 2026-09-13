@@ -35,7 +35,7 @@ No build step needed — just serve the root.
 - Toggle button in header saves preference to `localStorage`
 
 ## Deploy
-- **Vercel**: `vercel.json` sets `"outputDirectory": "."`. Build runs `vercel-build.sh` which injects env vars into `projects/exemplo-08--poster/js/config.js` (OMDB_API_KEY, CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET). `.env` is gitignored — set vars in Vercel dashboard.
+- **Vercel**: `vercel.json` sets `"outputDirectory": "."` e `"buildCommand": "bash vercel-build.sh"`. O build gera `projects/exemplo-08--poster/js/config.js` (gitignored) a partir das var de ambiente da Vercel (OMDB_API_KEY, CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET). Localmente as mesmas variáveis vêm do `.env` da raiz (`cp .env.exemple .env`, ver `vercel-build.sh`). Não há `config.example.js` — o template é `.env.exemple`.
 - **GitHub Pages**: push to `main`, enable Pages at Settings → Pages → main branch root
 
 ## Auditoria e melhoria de projetos (SEO, performance, responsividade)

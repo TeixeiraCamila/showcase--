@@ -1,5 +1,6 @@
 {
   "outputDirectory": ".",
+  "buildCommand": "bash vercel-build.sh",
   "redirects": [
     { "source": "/projects/:name", "destination": "/projects/:name/", "permanent": true }
   ],
