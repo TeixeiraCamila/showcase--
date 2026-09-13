@@ -142,7 +142,8 @@
         }
       }
     </script>
-  </head>
+    <link rel="stylesheet" href="css/cookie-banner.css">
+</head>
 
   <body>
     <header>
@@ -498,14 +499,6 @@
 
     <footer role="contentinfo" class="container footer">
       <p>&copy; 2024 Mathscool. All rights reserved.</p>
-      <p class="footer__notice">
-        Notice: this page is a demo template (mockup). It is not functional and
-        is not associated with any real service.
-      </p>
-      <p id="notice-dialog-text" class="notice-dialog__text">
-        Aviso: esta página é apenas um template de demonstração (mockup), não é
-        funcional e não está associada a nenhum serviço real.
-      </p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -513,5 +506,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="./js/script.js"></script>
-  </body>
+  <!-- Cookie consent -->
+<aside class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Notice and cookie consent" aria-describedby="cookie-banner-text">
+  <p class="cookie-banner__text" id="cookie-banner-text">
+    Notice: this page is a demo template (mockup). It is not functional and is
+    not associated with any real service. We use cookies only to remember
+    preferences such as the site theme.
+  </p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-action="accept">Accept</button>
+    <button type="button" class="cookie-banner__btn" data-cookie-action="dismiss">Dismiss</button>
+  </div>
+</aside>
+
+
+  <script src="js/cookie-banner.js"></script>
+</body>
 </html>
