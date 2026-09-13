@@ -741,19 +741,6 @@ footer {
 	max-width: 580px;
 }
 
-.footer__notice {
-	max-width: 640px;
-	margin: 40px auto 0;
-	padding: 14px 20px;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	border-radius: 10px;
-	font-size: 0.8125rem;
-	line-height: 1.5;
-	text-align: center;
-	color: var(--color_secondary);
-	opacity: 0.9;
-}
-
 .footer__social {
 	display: flex;
 	gap: 32px;
