@@ -1,14 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --color-bg: linear-gradient(135deg, #4a3d1d 0%, #6b5a2d 50%, #8b7355 100%);
+  --color-text: #faf8f0;
+  --color-text-soft: #d4c4a8;
+  --color-gold: #ffd700;
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --card-bg-strong: rgba(255, 255, 255, 0.15);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.3);
+  --shadow-card-lg: 0 25px 80px rgba(0, 0, 0, 0.4);
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #faf8f0;
-  min-height: 400vh;
-  background: linear-gradient(135deg, #4a3d1d 0%, #6b5a2d 50%, #8b7355 100%);
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 .hero {
@@ -23,7 +28,7 @@ body {
 }
 
 h1 {
-  color: #faf8f0;
+  color: var(--color-text);
   font-size: 4rem;
   margin-bottom: 20px;
   opacity: 0;
@@ -34,7 +39,7 @@ h1 {
 }
 
 .subtitle {
-  color: #d4c4a8;
+  color: var(--color-text-soft);
   font-size: 1.4rem;
   margin-bottom: 40px;
   opacity: 0;
@@ -103,7 +108,7 @@ h1 {
 }
 
 .section {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -120,15 +125,15 @@ h1 {
 }
 
 .section-content {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--card-bg);
   backdrop-filter: blur(15px);
   border-radius: 24px;
   padding: 50px;
   width: 100%;
   max-width: 650px;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-border);
 }
 
 .section-content h2 {
@@ -140,27 +145,9 @@ h1 {
 }
 
 .section-content p {
-  color: #d4c4a8;
+  color: var(--color-text-soft);
   line-height: 1.9;
   font-size: 1.15rem;
-}
-
-.section-image {
-  margin-top: 35px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.section-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.6s ease;
-}
-
-.section-image:hover img {
-  transform: scale(1.03);
 }
 
 @keyframes fadeInUp {
@@ -175,7 +162,7 @@ h1 {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  color: #d4c4a8;
+  color: var(--color-text-soft);
   font-size: 1rem;
   animation: bounce 2s infinite;
   z-index: 10;
@@ -198,12 +185,12 @@ h1 {
   }
 }
 
-/* Card 1 - Spring Arrival */
+/* Card 1 - Resumo */
 .card-1 {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--card-bg-strong);
   backdrop-filter: blur(20px);
   border-radius: 20px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card-lg);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -225,7 +212,7 @@ h1 {
   margin-bottom: 0;
 }
 
-/* Card 2 - Golden Leaves */
+/* Card 2 - Experiência */
 .card-2 {
   display: flex;
   align-items: center;
@@ -233,22 +220,8 @@ h1 {
   background: linear-gradient(135deg, rgba(255, 200, 100, 0.15) 0%, rgba(255, 150, 50, 0.1) 100%);
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card-lg);
   border: 1px solid rgba(255, 180, 80, 0.15);
-}
-
-.card-2-image {
-  flex: 0 0 45%;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-.card-2-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .card-2-text {
@@ -257,7 +230,7 @@ h1 {
 }
 
 .card-2-text h2 {
-  color: #ffd700;
+  color: var(--color-gold);
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 20px;
@@ -274,12 +247,79 @@ h1 {
   margin-bottom: 0;
 }
 
-/* Card 3 - Nature Renewal */
+/* Timeline (Experiência) */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0.35em;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.45);
+}
+
+.timeline-content h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.timeline-content .job-role {
+  color: var(--color-gold);
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.timeline-content .job-meta {
+  color: rgba(255, 220, 150, 0.55);
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.timeline-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.timeline-content li {
+  position: relative;
+  padding-left: 1rem;
+  color: rgba(255, 220, 150, 0.85);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.timeline-content li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.55);
+}
+
+/* Card 3 - Stack */
 .card-3 {
   background: linear-gradient(180deg, rgba(100, 180, 100, 0.2) 0%, rgba(200, 220, 150, 0.15) 100%);
   border-radius: 20px;
   padding: 60px 40px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card-lg);
   border: 1px solid rgba(150, 200, 120, 0.2);
 }
 
@@ -301,21 +341,14 @@ h1 {
   margin-bottom: 0;
 }
 
-.card-icon {
-  font-size: 1.5rem;
-  opacity: 0.6;
-  display: block;
-  margin: 10px 0;
-}
-
-/* Card 4 - Flower Gardens */
+/* Card 4 - Idiomas */
 .card-4 {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-card-lg);
+  border: 1px solid var(--card-border);
 }
 
 .card-4 h2 {
@@ -325,12 +358,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-.card-subtitle {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1rem;
-  margin-bottom: 30px;
-}
-
 .card-4 p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
@@ -338,57 +365,44 @@ h1 {
   margin-bottom: 8px;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.card-grid img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.4s ease;
-}
-
-.card-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* Card 5 - Quote Section */
+/* Card 5 - Formação + Contato */
 .card-5 {
   background: linear-gradient(135deg, rgba(255, 240, 220, 0.15) 0%, rgba(255, 230, 210, 0.1) 100%);
   border-radius: 20px;
   padding: 60px 80px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card-lg);
   border: 1px solid rgba(255, 220, 180, 0.15);
-  position: relative;
 }
 
 .card-5 h2 {
-  color: #ffd700;
+  color: var(--color-gold);
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 30px;
 }
 
-.card-5 blockquote {
-  color: #fff8f0;
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 1.7;
-  font-style: italic;
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  margin-bottom: 15px;
+  padding: 2rem;
 }
 
-.card-5-decoration {
-  position: absolute;
-  bottom: 20px;
-  right: 30px;
-  font-size: 3rem;
-  opacity: 0.3;
+.footer__link {
+  color: var(--color-text-soft);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: var(--color-gold);
+}
+
+.footer__notice {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 600px) {
@@ -431,9 +445,5 @@ h1 {
 
   .card-5 {
     padding: 40px 24px;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
   }
 }
