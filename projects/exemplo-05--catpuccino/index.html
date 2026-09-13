@@ -125,7 +125,8 @@
         "paymentAccepted": "Cash, Credit Card"
       }
     </script>
-  </head>
+    <link rel="stylesheet" href="css/cookie-banner.css">
+</head>
   <body>
     <!-- Floating Cats (Blob Dance) - Global Background -->
     <div class="floating-cats-container">
@@ -1518,10 +1519,6 @@
             © <span id="year"></span> Catpuccino. All rights reserved.
           </p>
         </div>
-        <p class="footer__notice">
-          Notice: this page is a demo template (mockup). It is not functional
-          and is not associated with any real service.
-        </p>
       </div>
     </footer>
 
@@ -1533,5 +1530,20 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js" defer></script>
-  </body>
+  <!-- Cookie consent -->
+<aside class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Notice and cookie consent" aria-describedby="cookie-banner-text">
+  <p class="cookie-banner__text" id="cookie-banner-text">
+    Notice: this page is a demo template (mockup). It is not functional and is
+    not associated with any real service. We use cookies only to remember
+    preferences such as the site theme.
+  </p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-action="accept">Accept</button>
+    <button type="button" class="cookie-banner__btn" data-cookie-action="dismiss">Dismiss</button>
+  </div>
+</aside>
+
+
+  <script src="js/cookie-banner.js"></script>
+</body>
 </html>
