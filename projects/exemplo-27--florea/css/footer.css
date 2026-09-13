@@ -91,17 +91,6 @@
   color: var(--peach-color);
 }
 
-.footer__notice {
-  margin-top: 40px;
-  padding: 16px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.06);
-  font-size: 13px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
-}
-
 @media (max-width: 1023px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
