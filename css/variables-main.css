@@ -3,7 +3,7 @@
 /* Default (Light Mode) */
 :root {
   /* Background Colors */
-  --bg-primary: rgba(235, 232, 232, 0.5);
+  --bg-primary: rgb(235, 232, 232);
   --bg-secondary: #ffffff;
   --bg-footer: #ffffff;
   --bg-card: #ffffff;
@@ -19,7 +19,7 @@
   
   /* Border Colors */
   --border-color: #333333;
-  --border-light: #f0f0f0;
+  --border-light: #4a4a4a;
   --border-gradient-start: transparent;
   --border-gradient-mid: #dddddd;
   --border-gradient-end: transparent;

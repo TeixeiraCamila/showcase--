@@ -89,7 +89,9 @@ function updateBulb(theme) {
 
 async function loadProjects() {
   try {
-    const response = await fetch('./data/projects.json')
+    const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname)
+    const dataFile = isLocal ? './data/projects-copy.json' : './data/projects.json'
+    const response = await fetch(dataFile)
     const data = await response.json()
     allProjects = data.projects
     renderCategories(data.categories, data.defaultCategory)
