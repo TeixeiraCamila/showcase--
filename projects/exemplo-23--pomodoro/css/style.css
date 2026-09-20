@@ -423,7 +423,7 @@ input:focus-visible {
 
 .loader__color {
   clip-path: inset(100% 0% 0% 0%);
-  animation: fillUp 2.8s cubic-bezier(.65, 0, .53, 1) infinite;
+  animation: fillUp 1s cubic-bezier(.65, 0, .53, 1) infinite;
 }
 
 @keyframes fillUp {

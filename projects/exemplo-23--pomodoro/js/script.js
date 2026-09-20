@@ -4,13 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const COUNT_KEY = 'pomodoro:count';
   const MAX_INCOMPLETE = 5;
   const TICK_MS = 200;
-  const LOADER_MS = 2500;
+  const LOADER_MS = 1000;
 
-  const DURATION = 15000;               // 15s em ms (teste)
-  // const DURATION = 25 * 60 * 1000;   // 25min em ms
-
-  const BREAK = 30000;                   // 30s em ms (teste)
-  // const BREAK = 30 * 60 * 1000;       // 30min em ms
+  const isDev = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  const DURATION = isDev ? 15 * 1000 : 25 * 60 * 1000;   // dev: 15s | prod: 25min
+  const BREAK = isDev ? 5 * 1000 : 5 * 60 * 1000;        // dev: 5s  | prod: 5min
 
   const EXPIRY_MS = 24 * 60 * 60 * 1000 // 24hrs
 
@@ -22,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetButton = document.querySelector('#reset');
   const addTaskButton = document.querySelector('#addTask');
   const completeAllButton = document.querySelector('#completeAll');
-  const deletellButton = document.querySelector('#deleteAll');
+  const deleteAllButton = document.querySelector('#deleteAll');
 
 
   const taskInput = document.querySelector('#taskInput');
@@ -54,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadTasks() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      const parset = raw ? JSON.parse(raw) : [];
-      return parset.filter((t) => t.createdAt && Date.now() - t.createdAt < EXPIRY_MS)
+      const parsed = raw ? JSON.parse(raw) : [];
+      return parsed.filter((t) => t.createdAt && Date.now() - t.createdAt < EXPIRY_MS)
     } catch {
       return [];
     }
@@ -116,9 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function completeAllTasks() {
     tasks.forEach(t => {
       t.status = true
-      saveTasks()
-      renderList()
     });
+    saveTasks()
+    renderList()
   }
 
   function deleteAllTasks() {
@@ -137,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!value) return;
 
     if (countIncomplete() >= MAX_INCOMPLETE) {
-      taskFormHint.textContent = `Limite: ${MAX_INCOMPLETE} tarefas incompletas.`;
+      taskFormHint.textContent = `Limit: ${MAX_INCOMPLETE} incomplete tasks.`;
       taskInput.value = '';
       return;
     }
@@ -159,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderList() {
     listContainer.innerHTML = '';
     if (tasks.length === 0) {
-      taskFormHint.textContent = 'Não há tarefas cadastradas!';
+      taskFormHint.textContent = 'No tasks yet!';
       timer.classList.add('timer--hidden');
     }
 
@@ -309,8 +307,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     timer.classList.add('timer--break');
     app.classList.add('app--break');
-    timerTitle.textContent = 'Hora da pausa!';
-    timerMessage.textContent = 'Faça uma pausa de 30 minutos.';
+    timerTitle.textContent = 'Break time!';
+    const breakLabel = BREAK >= 60000
+      ? `${Math.round(BREAK / 60000)}-minute`
+      : `${Math.round(BREAK / 1000)}-second`;
+    timerMessage.textContent = `Take a ${breakLabel} break!`;
     updateDisplay(breakRemaining);
   }
 
@@ -360,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
   resetButton.addEventListener('click', resetTimer);
 
   completeAllButton.addEventListener('click', completeAllTasks)
-  deletellButton.addEventListener('click', deleteAllTasks)
+  deleteAllButton.addEventListener('click', deleteAllTasks)
 
   renderList();
   updateDisplay(remaining);
