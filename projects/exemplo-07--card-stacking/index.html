@@ -1,350 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Between Lines: literary quotes stacked into an immersive card-stacking experience. GSAP scroll and drag animations."
+    />
+    <meta
+      name="keywords"
+      content="animation, cards, stacking, GSAP, landing page, interactive"
+    />
+    <meta name="author" content="Camila Cristina Teixeira" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
 
-		<!-- Meta Pixel Code -->
-		<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window, document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '2499063120584899');
-		fbq('track', 'PageView');
-		</script>
-		<noscript><img height="1" width="1" style="display:none"
-		src="https://www.facebook.com/tr?id=2499063120584899&ev=PageView&noscript=1"
-		/></noscript>
-		<!-- End Meta Pixel Code -->
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/"
+    />
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFTR578LMT"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		
-		  gtag('config', 'G-DFTR578LMT');
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="description"
-			content="Entre Linhas: citações de livros que se empilham em uma experiência imersiva de leitura. Animações com GSAP, scroll e draggable."
-		/>
-		<meta
-			name="keywords"
-			content="animação, cards, stacking, GSAP, landing page, interativo"
-		/>
-		<meta name="author" content="Camila Cristina Teixeira" />
-		<meta
-			name="robots"
-			content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-		/>
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/"
+    />
+    <meta property="og:title" content="Between Lines — Book Quotes" />
+    <meta
+      property="og:description"
+      content="Immersive landing page with a card-stacking animation built with GSAP."
+    />
+    <meta
+      property="og:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/preview.png"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Showcase" />
 
-		<!-- Canonical URL -->
-		<link
-			rel="canonical"
-			href="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/"
-		/>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Between Lines — Book Quotes" />
+    <meta
+      name="twitter:description"
+      content="Immersive landing page with a card-stacking animation built with GSAP."
+    />
+    <meta
+      name="twitter:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/preview.png"
+    />
 
-		<!-- Open Graph / Social Media -->
-		<meta property="og:type" content="website" />
-		<meta
-			property="og:url"
-			content="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/"
-		/>
-		<meta
-			property="og:title"
-			content="Entre Linhas — Citações de Livros"
-		/>
-		<meta
-			property="og:description"
-			content="Landing page com animação inovadora de empilhamento de cards usando GSAP."
-		/>
-		<meta
-			property="og:image"
-			content="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/preview.png"
-		/>
-		<meta property="og:locale" content="pt_BR" />
-		<meta property="og:site_name" content="Showcase" />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Between Lines — Book Quotes",
+        "description": "Immersive landing page with a card-stacking animation built with GSAP",
+        "creator": {
+          "@type": "Person",
+          "name": "Camila Cristina Teixeira"
+        }
+      }
+    </script>
 
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:title"
-			content="Entre Linhas — Citações de Livros"
-		/>
-		<meta
-			name="twitter:description"
-			content="Landing page com animação inovadora de empilhamento de cards."
-		/>
-		<meta
-			name="twitter:image"
-			content="https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/preview.png"
-		/>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231f453b'/><rect x='18' y='24' width='34' height='24' rx='6' fill='%23febdaa'/><rect x='12' y='16' width='36' height='26' rx='6' fill='%23b2c9ab'/><rect x='20' y='24' width='20' height='3' rx='1.5' fill='%231f453b' opacity='0.5'/><rect x='20' y='31' width='13' height='3' rx='1.5' fill='%231f453b' opacity='0.5'/></svg>"
+    />
 
-		<!-- JSON-LD Structured Data -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "CreativeWork",
-				"name": "Entre Linhas — Citações de Livros",
-				"description": "Landing page com animação inovadora de empilhamento de cards usando GSAP",
-				"creator": {
-					"@type": "Person",
-					"name": "Camila Cristina Teixeira"
-				}
-			}
-		</script>
+    <!-- Performance Hints -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      href="./assets/fonts/StoryScript-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./css/style.css" />
 
-		<!-- Favicon -->
-		<link
-			rel="icon"
-			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231f453b'/><rect x='18' y='24' width='34' height='24' rx='6' fill='%23febdaa'/><rect x='12' y='16' width='36' height='26' rx='6' fill='%23b2c9ab'/><rect x='20' y='24' width='20' height='3' rx='1.5' fill='%231f453b' opacity='0.5'/><rect x='20' y='31' width='13' height='3' rx='1.5' fill='%231f453b' opacity='0.5'/></svg>"
-		/>
+    <title>Between Lines — Book Quotes</title>
+  </head>
 
-		<!-- Performance Hints -->
-		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="stylesheet" href="./css/style.css" />
+  <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-		<title>Entre Linhas — Citações de Livros</title>
-	</head>
+    <header class="header" role="banner">
+      <div class="imgs-container">
+        <div>
+          <img
+            height="160"
+            width="160"
+            src="./assets/header/b-1.svg"
+            alt=""
+            decoding="async"
+          />
+        </div>
+        <div>
+          <img
+            height="160"
+            width="160"
+            src="./assets/header/b-2.svg"
+            alt=""
+            decoding="async"
+          />
+        </div>
+        <div>
+          <img
+            height="160"
+            width="160"
+            src="./assets/header/b-3.svg"
+            alt=""
+            decoding="async"
+          />
+        </div>
+        <div>
+          <img
+            height="160"
+            width="160"
+            src="./assets/header/b-4.svg"
+            alt=""
+            decoding="async"
+          />
+        </div>
+        <div>
+          <img
+            height="160"
+            width="160"
+            src="./assets/header/b-5.svg"
+            alt=""
+            decoding="async"
+          />
+        </div>
+        <div>
+          <img
+            height="160"
+            width="160"
+            src="./assets/header/b-6.svg"
+            alt=""
+            decoding="async"
+          />
+        </div>
+        <div>
+          <img
+            height="160"
+            width="160"
+            src="./assets/header/b-7.svg"
+            alt=""
+            decoding="async"
+          />
+        </div>
+      </div>
+      <svg
+        class="header__blob"
+        viewBox="0 0 900 600"
+        width="900"
+        height="600"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        aria-hidden="true"
+      >
+        <rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
+        <g transform="translate(426.07902585753374 271.78695326947144)">
+          <path
+            d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
+            fill="#5F7A6F"
+          ></path>
+        </g>
+      </svg>
+      <h1>
+        <span class="header__word--left">Between</span>
+        <span class="header__word--right">Lines</span>
+      </h1>
+    </header>
 
-	<body>
-		<!-- Skip to main content -->
-		<a
-			href="#main-content"
-			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
-			>Skip to main content</a
-		>
+    <main id="main-content">
+      <section id="quote-stack" aria-label="Book quotes">
+        <div class="card-item">
+          <div class="card-inner is--yellow">
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <blockquote class="card-quote">
+              <p>There is nothing like a dream to create the future.</p>
+              <cite>Victor Hugo — Les Misérables</cite>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-inner is--green">
+            <div class="card-content">
+              <blockquote class="card-quote">
+                <p>I went to the woods because I wished to live deliberately.</p>
+                <cite>Henry David Thoreau — Walden</cite>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-inner is--blue">
+            <div class="card-content">
+              <blockquote class="card-quote">
+                <p>It is not in the stars to hold our destiny, but in ourselves.</p>
+                <cite>William Shakespeare — Julius Caesar</cite>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-inner is--grey">
+            <blockquote class="card-quote">
+              <p>Two roads diverged in a yellow wood, and I took the one less traveled by.</p>
+              <cite>Robert Frost — The Road Not Taken</cite>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-inner is--coral">
+            <blockquote class="card-quote">
+              <p>Love conquers all things; let us too yield to love.</p>
+              <cite>Virgil — Eclogues</cite>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-inner is--sage">
+            <blockquote class="card-quote">
+              <p>Not all those who wander are lost.</p>
+              <cite>J. R. R. Tolkien — The Lord of the Rings</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+    </main>
 
-		<header
-			class="header relative h-screen flex items-center justify-center"
-			role="banner"
-		>
-			<div class="imgs-container">
-				<div>
-					<img height="160" width="160" src="./assets/header/b-1.svg" alt="" />
-				</div>
-				<div>
-					<img height="160" width="160" src="./assets/header/b-2.svg" alt="" />
-				</div>
-				<div>
-					<img height="160" width="160" src="./assets/header/b-3.svg" alt="" />
-				</div>
-				<div>
-					<img height="160" width="160" src="./assets/header/b-4.svg" alt="" />
-				</div>
-				<div>
-					<img height="160" width="160" src="./assets/header/b-5.svg" alt="" />
-				</div>
-				<div>
-					<img height="160" width="160" src="./assets/header/b-6.svg" alt="" />
-				</div>
-				<div>
-					<img height="160" width="160" src="./assets/header/b-7.svg" alt="" />
-				</div>
-			</div>
-			<svg
-				class="absolute"
-				id="visual"
-				viewBox="0 0 900 600"
-				width="900"
-				height="600"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				version="1.1"
-			>
-				<rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
-				<g transform="translate(426.07902585753374 271.78695326947144)">
-					<path
-						d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
-						fill="#5F7A6F"
-					></path>
-				</g>
-			</svg>
-			<h1 class="">
-				<span class="text-left">Entre</span>
-				<span class="text-right">Linhas</span>
-			</h1>
-		</header>
+    <footer class="footer" role="contentinfo">
+      <svg
+        class="footer__blob"
+        viewBox="0 0 900 600"
+        width="900"
+        height="600"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        aria-hidden="true"
+      >
+        <rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
+        <g transform="translate(426.07902585753374 271.78695326947144)">
+          <path
+            d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
+            fill="#5F7A6F"
+          ></path>
+        </g>
+      </svg>
 
-		<main id="main-content" class="relative" role="main">
-			<section id="quote-stack" aria-label="Citações de livros">
-			<div class="card-item">
-				<div class="card-inner is--yellow">
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<blockquote class="card-quote">
-						<p>Não há nada como um sonho para criar o futuro.</p>
-						<cite>Victor Hugo — Os Miseráveis</cite>
-					</blockquote>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--green">
-					<div class="card-content">
-						<blockquote class="card-quote">
-							<p>Fui para a floresta porque desejava viver deliberadamente.</p>
-							<cite>Henry David Thoreau — Walden</cite>
-						</blockquote>
-					</div>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--blue">
-					<div class="card-content">
-						<blockquote class="card-quote">
-							<p>Não é nas estrelas que reside o nosso destino, mas em nós
-								mesmos.</p>
-							<cite>William Shakespeare — Júlio César</cite>
-						</blockquote>
-					</div>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--grey">
-					<blockquote class="card-quote">
-						<p>Dois caminhos divergiam num bosque amarelo, e eu escolhi o
-							menos percorrido.</p>
-						<cite>Robert Frost — The Road Not Taken</cite>
-					</blockquote>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--coral">
-					<blockquote class="card-quote">
-						<p>O amor tudo vence; cedamos também nós ao amor.</p>
-						<cite>Virgílio — Éclogas</cite>
-					</blockquote>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--sage">
-					<blockquote class="card-quote">
-						<p>Nem todos os que vagueiam estão perdidos.</p>
-						<cite>J. R. R. Tolkien — O Senhor dos Anéis</cite>
-					</blockquote>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--blue">
-					<div class="card-content">
-						<blockquote class="card-quote">
-							<p>Somos feitos da mesma matéria dos sonhos.</p>
-							<cite>William Shakespeare — A Tempestade</cite>
-						</blockquote>
-					</div>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--sage">
-					<blockquote class="card-quote">
-						<p>É preciso ter o caos dentro de si para dar à luz uma
-							estrela dançante.</p>
-						<cite>Friedrich Nietzsche — Assim Falou Zaratustra</cite>
-					</blockquote>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--grey">
-					<blockquote class="card-quote">
-						<p>A jornada de mil milhas começa com um único passo.</p>
-						<cite>Lao Tsé — Tao Te Ching</cite>
-					</blockquote>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--coral">
-					<blockquote class="card-quote">
-						<p>Tu te tornas eternamente responsável por aquilo que
-							cativas.</p>
-						<cite>Antoine de Saint-Exupéry — O Pequeno Príncipe</cite>
-					</blockquote>
-				</div>
-			</div>
-			<div class="card-item">
-				<div class="card-inner is--green">
-					<div class="card-content">
-						<blockquote class="card-quote">
-							<p>Sei que nada sei.</p>
-							<cite>Platão — Apologia de Sócrates</cite>
-						</blockquote>
-					</div>
-				</div>
-			</div>
-			</section>
-		</main>
+      <div class="footer-content">
+        <p class="footer-kicker">The end of another page</p>
+        <p class="footer-title">Keep reading.</p>
+        <p class="footer-desc">
+          Every card holds a line that once changed a life. Come back anytime —
+          there is always a new story to open.
+        </p>
 
-		<footer
-			class="relative h-screen flex items-center justify-center overflow-hidden"
-			role="contentinfo"
-		>
-			<svg
-				class="absolute"
-				id="visual"
-				viewBox="0 0 900 600"
-				width="900"
-				height="600"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				version="1.1"
-			>
-				<rect x="0" y="0" width="900" height="600" fill="#1f453b"></rect>
-				<g transform="translate(426.07902585753374 271.78695326947144)">
-					<path
-						d="M151.1 -143.8C190.9 -111.3 215 -55.6 212.2 -2.7C209.5 50.2 180.1 100.4 140.2 150.4C100.4 200.4 50.2 250.2 3.8 246.4C-42.7 242.7 -85.3 185.3 -110.3 135.3C-135.3 85.3 -142.7 42.7 -152.6 -9.9C-162.5 -62.5 -174.9 -124.9 -149.9 -157.4C-124.9 -189.9 -62.5 -192.5 -3.4 -189C55.6 -185.6 111.3 -176.3 151.1 -143.8"
-						fill="#5F7A6F"
-					></path>
-				</g>
-			</svg>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="#main-content">Top</a>
+          <a href="#quote-stack">The Quotes</a>
+          <a href="../../index.html">← Back to Showcase</a>
+        </nav>
 
-			<div class="relative z-10 text-center px-6 footer-content">
-				<p class="footer-kicker">O fim de mais uma página</p>
-				<p class="footer-title">Continue lendo.</p>
-				<p class="footer-desc">
-					Cada card guarda uma frase que já mudou uma vida. Volte sempre —
-					há sempre uma nova história por abrir.
-				</p>
+        <p class="footer-credit">
+          © 2025 — Demo landing page · Camila Cristina Teixeira
+        </p>
+      </div>
+    </footer>
 
-				<nav class="footer-links" aria-label="Links do rodapé">
-					<a href="#main-content">Início</a>
-					<a href="#quote-stack">As Citações</a>
-					<a href="../../index.html">← Voltar ao Showcase</a>
-				</nav>
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/InertiaPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
 
-				<p class="footer-credit">
-					© 2025 — Landing page demonstrativa · Camila Cristina Teixeira
-				</p>
-			</div>
-		</footer>
-
-		<script src="https://cdn.tailwindcss.com"></script>
-
-		<!-- GSAP -->
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Draggable.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/InertiaPlugin.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
-
-		<!-- MY SCRIPT -->
-		<script src="./js/script.js"></script>
-	</body>
+    <!-- MY SCRIPT -->
+    <script src="./js/script.js"></script>
+  </body>
 </html>
