@@ -1,0 +1,678 @@
+/* ROSIE — estética "Daisy": zine/scrapbook + digital, tema claro */
+
+:root {
+  --bg: #f5f1e8;
+  --ink: #1a1a1a;
+  --cream: #f7efdd;
+  --pink: #f5a9d0;
+  --yellow: #f2c744;
+  --green: #c9e86c;
+  --lilac: #d9c4f0;
+  --blue: #b8ddf0;
+  --neon: #f0f27a;
+  --black: #0d0d0d;
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+  --shadow: 6px 6px 0 var(--ink);
+}
+
+/* fundo quadriculado suave que atravessa toda a página */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  overflow-x: hidden;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* fundo quadriculado suave, fixo: não acompanha o scroll */
+.checker {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      45deg,
+      rgba(26, 26, 26, 0.05) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(26, 26, 26, 0.05) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(26, 26, 26, 0.05) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(26, 26, 26, 0.05) 75%
+    );
+  background-position:
+    0 0,
+    14px 14px;
+  background-size: 28px 28px;
+}
+
+/* ---------- header ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.6rem 1.5rem 0;
+}
+
+.header__logo {
+  display: block;
+  width: clamp(96px, 14vw, 140px);
+  height: auto;
+}
+
+.header__badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+}
+
+/* ---------- barra de progresso ---------- */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 4px;
+  background: transparent;
+}
+
+.progress__bar {
+  width: 0;
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.1s linear;
+}
+
+/* ---------- roteiro horizontal ---------- */
+.stage {
+  width: 100%;
+}
+
+.track {
+  width: 100vw;
+  height: 100dvh;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(4.5rem, 10vh, 6rem) clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+/* blocos de conteúdo: 80% de largura x 80% de altura, centralizados */
+.panel,
+.split,
+.stack,
+.quotes {
+  width: 80%;
+  height: 90%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: var(--tint, var(--pink));
+  padding: clamp(1.75rem, 5vw, 3.25rem);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* fundos pastel por faixa */
+.track--cream .panel,
+.track--cream .split,
+.track--cream .stack,
+.track--cream .quotes {
+  background: var(--cream);
+}
+.track--blue .panel,
+.track--blue .split,
+.track--blue .stack,
+.track--blue .quotes {
+  background: var(--blue);
+}
+.track--green .panel,
+.track--green .split,
+.track--green .stack,
+.track--green .quotes {
+  background: var(--green);
+}
+.track--lilac .panel,
+.track--lilac .split,
+.track--lilac .stack,
+.track--lilac .quotes {
+  background: var(--lilac);
+}
+
+/* ---------- tipografia ---------- */
+.panel__eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.panel__title {
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+.panel__mark {
+  -webkit-text-stroke: 1.5px var(--ink);
+  color: transparent;
+}
+
+.panel__lead {
+  margin: 1.1rem 0 0;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  max-width: 52ch;
+}
+
+.panel__subtitle {
+  margin: 0;
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.panel__logo {
+  display: block;
+  width: clamp(120px, 20vw, 180px);
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.panel__footline {
+  margin: 0 0 1.4rem;
+  font-size: 1.15rem;
+}
+
+.panel__back,
+.panel__notice,
+.panel__copy {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+/* marca-texto estilo caneta grifo */
+.highlight {
+  padding: 0 0.14em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 34%,
+    var(--bg-hl, var(--yellow)) 34%
+  );
+}
+
+.highlight--pink {
+  --bg-hl: var(--pink);
+}
+.highlight--yellow {
+  --bg-hl: var(--yellow);
+}
+
+/* seleção de texto no clima "marca-texto" da Rosie */
+::selection {
+  background: var(--pink);
+  color: var(--ink);
+  -webkit-text-fill-color: var(--ink);
+}
+
+h1::selection,
+h2::selection {
+  background: var(--yellow);
+  color: var(--ink);
+  -webkit-text-fill-color: var(--ink);
+}
+
+.track--footer ::selection {
+  background: var(--neon);
+  color: var(--black);
+  -webkit-text-fill-color: var(--black);
+}
+
+/* ---------- faixa 1: collage de cards ---------- */
+.collage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 2.4rem;
+}
+
+/* sobreposição de apenas 5px entre os cards — o resto fica visível */
+.collage__item {
+  display: block;
+  flex: none;
+  /* height: clamp(120px, 12vw, 165px); */
+  width: auto;
+  max-width: 250px;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  background: #fff;
+}
+
+.collage__item + .collage__item {
+  margin-left: -5px;
+}
+
+.collage__item--1 {
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+.collage__item--2 {
+  transform: rotate(1deg);
+  z-index: 1;
+}
+.collage__item--3 {
+  transform: rotate(-1deg);
+  z-index: 2;
+}
+.collage__item--4 {
+  transform: rotate(2deg);
+  z-index: 3;
+}
+
+/* nota destacada acima da última imagem */
+.collage__note {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-115%) rotate(2deg);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--neon);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 0.35rem 0.7rem;
+}
+
+/* ---------- faixa 2/3: texto + imagem ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.split--reverse .split__media {
+  order: 1;
+}
+
+.split__text p:last-child {
+  margin-bottom: 0;
+}
+
+.floaters {
+  position: relative;
+  width: min(340px, 100%);
+  height: clamp(300px, 40vw, 400px);
+  margin: 0 auto;
+}
+
+.floaters__main {
+  position: absolute;
+  left: 50%;
+  top: 84%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: min(62%, 220px);
+  height: auto;
+}
+
+.floaters__item {
+  position: absolute;
+  z-index: 3;
+  width: min(45%, 180px);
+  height: auto;
+  animation: floaty 3.2s ease-in-out infinite alternate;
+}
+
+.floaters__item--a {
+  --rot: -8deg;
+  top: 0;
+  right: 0;
+}
+.floaters__item--b {
+  --rot: 6deg;
+  top: 6%;
+  left: 0;
+}
+
+@keyframes floaty {
+  from {
+    transform: translateY(-4px) rotate(var(--rot));
+  }
+  to {
+    transform: translateY(10px) rotate(var(--rot));
+  }
+}
+
+.split__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+/* ---------- faixa 4: exemplos empilhados ---------- */
+.stack__row {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.stack__row--mirror {
+  flex-direction: row-reverse;
+}
+
+.stack__row > * {
+  flex: 1 1 48%;
+  min-width: 0;
+}
+
+.stack__row p {
+  margin: 0;
+}
+
+.stack__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+/* ---------- faixa 5: depoimentos ---------- */
+.quotes__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+.quote-card {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--ink);
+  background: #fffdf4;
+}
+
+.quote-card:nth-child(1) {
+  transform: rotate(-1.5deg);
+}
+.quote-card:nth-child(2) {
+  transform: rotate(1.25deg);
+}
+.quote-card:nth-child(3) {
+  transform: rotate(-0.75deg);
+}
+.quote-card:nth-child(4) {
+  transform: rotate(0.5deg);
+}
+
+.quote-card__text {
+  margin: 0 0 0.75rem;
+  font-size: 0.98rem;
+}
+
+.quote-card__author {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.quotes__fit {
+  margin: 1.6rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 2px dashed var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- faixa 6: footer ---------- */
+.track--footer {
+  --tint: var(--black);
+}
+
+.track--footer .panel__eyebrow,
+.track--footer h2,
+.track--footer p,
+.track--footer a {
+  color: var(--cream);
+}
+
+.track--footer .panel__back {
+  display: inline-block;
+  margin-top: 0.75rem;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.track--footer .panel__notice,
+.track--footer .panel__copy {
+  opacity: 0.65;
+}
+
+/* ---------- dica de scroll ---------- */
+.hint {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--neon);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 0.55rem 0.95rem;
+  cursor: default;
+  animation: hint-bob 1.8s ease-in-out infinite alternate;
+}
+
+.hint__arrow {
+  display: inline-block;
+  animation: arrow-nudge 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes hint-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes arrow-nudge {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+/* ---------- entradas/faixas reaproveitáveis ---------- */
+body.is-loading {
+  opacity: 0;
+}
+
+@media (max-width: 1024px) {
+  body {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .stage {
+    height: 100dvh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+
+  .stage::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tracks {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+  }
+
+  .track {
+    flex: 0 0 100vw;
+    width: 100vw;
+    scroll-snap-align: start;
+    padding-top: 5.5rem;
+    padding-bottom: 5rem;
+    align-items: flex-start;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .split--reverse .split__media {
+    order: 0;
+  }
+
+  .stack__row,
+  .stack__row--mirror {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stack__row > * {
+    flex: none;
+  }
+
+  .collage__note {
+    right: 4%;
+  }
+
+  .hint__text::after {
+    content: " / swipe";
+  }
+}
+
+/* fallback nativo (sem GSAP / reduzido / touch): swipe horizontal no desktop */
+.stage.is-native {
+  height: 100dvh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.stage.is-native::-webkit-scrollbar {
+  display: none;
+}
+
+.stage.is-native .tracks {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+
+.stage.is-native .track {
+  flex: 0 0 100vw;
+  width: 100vw;
+  scroll-snap-align: start;
+  align-items: flex-start;
+  padding-top: 5.5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1025px) {
+  .stage {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .tracks {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .track {
+    flex: 0 0 100vw;
+    width: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    opacity: 1;
+  }
+  .floaters__item,
+  .hint,
+  .hint__arrow {
+    animation: none;
+  }
+}
