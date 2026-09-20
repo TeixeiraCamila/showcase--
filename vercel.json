@@ -1,6 +1,12 @@
 {
   "outputDirectory": ".",
-  "buildCommand": "bash vercel-build.sh",
+  "buildCommand": "echo 'site estático; sem build step'",
+  "functions": {
+    "projects/exemplo-07--card-stacking/api/quotes.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
   "redirects": [
     { "source": "/projects/:name", "destination": "/projects/:name/", "permanent": true }
   ],

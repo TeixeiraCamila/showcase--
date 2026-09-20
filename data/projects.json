@@ -104,19 +104,6 @@
       ]
     },
     {
-      "id": "08",
-      "title": "POSTER MAKER",
-      "category": "tools",
-      "href": "projects/exemplo-08--poster/index.html",
-      "preview": "projects/exemplo-08--poster/preview.png",
-      "description": "Create custom posters for movies and events with Canvas API and download feature.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "Canvas"
-      ]
-    },
-    {
       "id": "10",
       "title": "SIGN UP BEARS",
       "category": "tools",
