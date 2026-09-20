@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pixel Art Maker — desenhe pixel art no browser: escolha cor, pinte arrastando, apague com o botão direito e crie novos grids de até 160x160."
+    />
+    <script>
+      document.documentElement.setAttribute(
+        "data-theme",
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light",
+      );
+    </script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon.svg"
+      type="image/svg+xml"
+    />
+
+    <title>Pixel Art Maker</title>
+
+    <link
+      rel="canonical"
+      href="https://showcase-theta-opal.vercel.app/projects/exemplo-29--pixel-art/"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-29--pixel-art/"
+    />
+    <meta property="og:title" content="Pixel Art Maker" />
+    <meta
+      property="og:description"
+      content="Desenhe pixel art no browser: escolha cor, pinte arrastando, apague com o botão direito e crie novos grids de até 160x160."
+    />
+    <meta
+      property="og:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-29--pixel-art/preview.png"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Showcase" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pixel Art Maker" />
+    <meta
+      name="twitter:description"
+      content="Desenhe pixel art no browser: escolha cor, pinte arrastando, apague com o botão direito e crie novos grids de até 160x160."
+    />
+    <meta
+      name="twitter:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-29--pixel-art/preview.png"
+    />
+  </head>
+
+  <body class="pixel_maker">
+    <header class="pixel__header">
+      <h1 class="pixel__title">Pixel Art Maker</h1>
+      <p class="pixel__description">
+        Pinte arrastando, apague com o botão direito.
+      </p>
+    </header>
+
+    <main class="pixel__main">
+      <section class="pixel__controls" aria-label="Tools">
+        <div class="pixel__control" role="group" aria-label="Color">
+          <label class="pixel__label" for="color_picker">Color</label>
+          <input type="color" id="color_picker" class="pixel__color" value="#000000" />
+          <output id="color_value" class="pixel__output" for="color_picker">#000000</output>
+        </div>
+
+        <div class="pixel__control" role="group" aria-label="Grid size">
+          <label class="pixel__label" for="grid_size">Grid size</label>
+          <input type="range" id="grid_size" class="pixel__range" min="4" max="160" value="32" />
+          <output id="grid_size_value" class="pixel__output" for="grid_size">32 × 32</output>
+        </div>
+
+        <div class="pixel__control pixel__control--actions" role="group" aria-label="Actions">
+          <button id="btn_paint" type="button" class="pixel__btn is-active">Paint</button>
+          <button id="btn_erase" type="button" class="pixel__btn">Erase</button>
+          <button id="btn_reset" type="button" class="pixel__btn pixel__btn--danger" hidden>
+            Resetar
+          </button>
+          <button id="btn_download" type="button" class="pixel__btn" hidden>
+            Baixar PNG
+          </button>
+        </div>
+      </section>
+
+      <div class="pixel__frame">
+        <canvas id="pixel_canvas" class="pixel__canvas" role="img" aria-label="Canvas de pixel art"
+          width="480" height="480"></canvas>
+      </div>
+
+      <p id="app_status" class="pixel__status" aria-live="polite"></p>
+
+      <dialog id="discard_modal" class="pixel__modal" aria-labelledby="discard_message">
+        <p id="discard_message" class="pixel__modal__text"></p>
+        <div class="pixel__modal__actions">
+          <button id="discard_download" type="button" class="pixel__btn pixel__btn--danger">
+            Baixar e descartar
+          </button>
+          <button id="discard_discard" type="button" class="pixel__btn">Só descartar</button>
+          <button id="discard_cancel" type="button" class="pixel__btn">Cancelar</button>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <a href="../../index.html" class="footer__back">← Voltar ao Showcase</a>
+      <p class="footer__note">
+        © 2026 — Pixel Art Maker — Baixe o PNG para não perder o
+        desenho.
+      </p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+
+</html>
