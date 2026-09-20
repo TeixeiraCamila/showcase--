@@ -1,80 +1,87 @@
 # Showcase — Agent Instructions
 
 ## Stack
-- Vanilla HTML5 / CSS3 / JavaScript ES6+ — **no build tools, no npm, no frameworks**
-- GSAP (CDN) in some projects; Tailwind CSS v4 (CDN) in a few
-- All dependencies loaded via `<link>`/`<script>` or CDN — no `package.json`
+- Vanilla HTML5 / CSS3 / JavaScript ES6+ — no build tools, no frameworks, no npm installs
+- GSAP (CDN) em alguns projetos; Tailwind CSS v4 (CDN) em poucos
+- Dependências via `<link>`/`<script>`/CDN. **`package.json` é vestigial** (dep sobrando, sem scripts) — ignore.
+- **Sem Python no projeto** (nem scripts, nem dependência de runtime); `preview.png` é asset estático versionado.
 
-## Project structure
+## Estrutura
 ```
-index.html           ← app shell (gallery)
-css/main.css         ← gallery styles + imports default.css + variables-main.css
-css/variables-main.css  ← light/dark theme CSS custom properties
-js/main.js           ← gallery logic: fetches data/projects.json, renders cards + filters
-data/projects.json   ← project list (id, title, category, href, preview, tags)
-projects/exemplo-NN--name/  ← each project is a self-contained folder with its own index.html
-docs/exemplo-design-system.md  ← landing page blueprint template
+index.html, css/main.css, css/variables-main.css, js/main.js  ← galeria (root, não é projeto)
+data/projects.json   ← fonte de verdade da galeria (lista curada)
+projects/exemplo-NN--name/  ← cada projeto é standalone (index.html, css/, js/, assets/)
+docs/exemplo-design-system.md  ← blueprint template de landing page
+robots.txt, sitemap.xml, vercel.json  ← infra/SEO raiz
 ```
 
-## Adding a new project
-1. Create `projects/exemplo-NN--name/` with its own `index.html`, `css/`, `js/`
-2. Add entry to `data/projects.json` (fields: `id`, `title`, `category`, `href`, `preview`, `description`, `tags`)
-3. Add preview image at `projects/exemplo-NN--name/preview.png`
-4. Each project footer must link back: `<a href="../../index.html">← Voltar ao Showcase</a>`
+## Regra crítica do catálogo
+- A galeria só exibe o que está em `data/projects.json` — folders sem entrada não aparecem. Ids **não-sequenciais** e omissões são normais (lista curada).
+- `href` pode ser URL externa completa (ex.: id 26 aponta para app externo).
+- Manter `sitemap.xml` em sincronia: toda URL usa domínio de produção com **barra final**. Atualizar ao adicionar/remover projeto.
 
-## Local dev
+## Adicionar novo projeto
+1. Criar `projects/exemplo-NN--name/` com `index.html`, `css/`, `js/`
+2. Adicionar entrada em `data/projects.json` (`id`, `title`, `category`, `href`, `preview`, `description`, `tags`)
+3. Preview image em `projects/exemplo-NN--name/preview.png`
+4. Footer volta ao showcase: `<a href="../../index.html">← Voltar ao Showcase</a>`
+5. Adicionar URL no `sitemap.xml`
+
+## Dev local
 ```bash
-npx http-server -p 8000
-# Open http://localhost:8000
+npx http-server -p 8000   # abrir http://localhost:8000
 ```
-No build step needed — just serve the root.
+Sem build step — só servir a raiz.
 
-## Theme
-- Dark/light via `data-theme` attribute on `<html>`, set by inline script in `index.html`
-- CSS custom properties in `css/variables-main.css` drive all themed colors
-- Toggle button in header saves preference to `localStorage`
+## Tema
+- **Galeria**: `data-theme` no `<html>` via inline script + toggle no header + `localStorage` (em `index.html` raiz).
+- **Projetos**: CSS próprio com `:root[data-theme]`; alguns setam `data-theme` via `prefers-color-scheme` no próprio page (ex.: exemplo-23). Verificar por projeto.
 
 ## Deploy
-- **Vercel**: `vercel.json` sets `"outputDirectory": "."` e `"buildCommand": "bash vercel-build.sh"`. O build gera `projects/exemplo-08--poster/js/config.js` (gitignored) a partir das var de ambiente da Vercel (OMDB_API_KEY, CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET). Localmente as mesmas variáveis vêm do `.env` da raiz (`cp .env.exemple .env`, ver `vercel-build.sh`). Não há `config.example.js` — o template é `.env.exemple`.
-- **GitHub Pages**: push to `main`, enable Pages at Settings → Pages → main branch root
+- **Vercel**: `vercel.json` → `outputDirectory: "."` + `buildCommand` sem build (100% estático). Redirect `/projects/:name` → `/projects/:name/` (permanente): **canonical sempre com barra final**.
+- **GitHub Pages**: push `main`, habilitar Pages em Settings → Pages → main branch root.
+- Arquivos de infra raiz (`vercel.json`, `robots.txt`, `sitemap.xml`) → commit separado `chore(seo)`.
 
-## Auditoria e melhoria de projetos (SEO, performance, responsividade)
+## Auditoria / melhoria de projetos
+Aplicar apenas em `projects/exemplo-NN--name/` — **nunca** no core da galeria (`css/main.css`, `js/main.js`, `index.html` raiz desses carregam de um jeito diferente). Referência: `exemplo-02--real-state`. Produção: `https://showcase-theta-opal.vercel.app`; canonical de cada projeto = `<domain>/projects/<name>/`.
 
-Ao auditar/melhorar um projeto (`projects/exemplo-NN--name/`), aplicar o mesmo checklist usado no `exemplo-02--real-state`. Produção: `https://showcase-theta-opal.vercel.app`; canonical de cada projeto = `<domain>/projects/<name>/`.
+### Padrão de cookies/tracking (se presente)
+Projetos auditados seguem o padrão LGPD: Meta Pixel (`fbq`) + Google Analytics (`gtag`) no `<head>` **acompanhados** de banner de consentimento (`<aside class="cookie-banner">`, `js/cookie-banner.js`, `css/cookie-banner.css`). Ao auditar: repetir o padrão OU remover os trackers por completo (ex.: pomodoro removeu tudo) — **nunca** deixar tracker sem banner.
 
-### 1. SEO (`<head>` do `index.html`)
-- Garantir `<html lang>`, `<meta name="viewport">`, `<meta name="description">` e `<title>` adequado.
-- Adicionar `<link rel="canonical" href="https://showcase-theta-opal.vercel.app/projects/<name>/">`.
-- Open Graph (`og:type`, `og:url`, `og:title`, `og:description`, `og:image`, `og:locale`, `og:site_name`) e Twitter Card, com **URLs absolutas** do domínio de produção (usar `preview.png` do próprio projeto ou a imagem hero mais representativa).
-- Se o site representa negócio/organização, adicionar JSON-LD de schema apropriado (`RealEstateAgent`, `CafeOrCoffeeShop`, `Organization`, `WebSite`, etc.).
-- Não duplicar metas válidas já existentes; corrigir domínios placeholders (ex.: `seudominio.com`, `se-site.com`, `mathscool.com` → domínio de produção).
+### 1. SEO (`<head>`)
+- Garantir `<html lang>`, viewport, `<meta name="description">` e `<title>` adequados
+- `<link rel="canonical" href="https://showcase-theta-opal.vercel.app/projects/<name>/">`
+- Open Graph + Twitter Card com **URLs absolutas** de produção (usar `preview.png` ou a hero mais representativa)
+- JSON-LD se representa negócio/organização (`RealEstateAgent`, `CafeOrCoffeeShop`, `Organization`, `WebSite`, etc.)
+- Não duplicar metas válidas; corrigir placeholders (`seudominio.com`, `se-site.com`, `mathscool.com` → domínio de produção)
 
 ### 2. Performance / Core Web Vitals
-- Fontes: **remover `@import url('https://...')`** de CSS (render-blocking) e mover para `<link rel="stylesheet">` no `<head>`, com `preconnect` para `fonts.googleapis.com` / `fonts.gstatic.com`. Incluir apenas famílias realmente usadas.
-- LCP: `<link rel="preload" as="image" href="...hero..." fetchpriority="high">` na imagem hero.
-- Imagens: `decoding="async"` nas significativas; `loading="lazy"` + `width`/`height` (evita CLS) nas abaixo da dobra.
-- Corrigir referências de assets quebradas (ex.: `../imgs/` → `../assets/`).
+- Remover `@import url('https://...')` de CSS (render-blocking) → `<link rel="stylesheet">` no `<head>` + `preconnect` fonts.googleapis/gstatic; incluir só famílias usadas
+- LCP: `<link rel="preload" as="image" ... fetchpriority="high">` na imagem hero
+- Imagens: `decoding="async"` nas significativas; `loading="lazy"` + `width`/`height` (evita CLS) abaixo da dobra
+- Corrigir refs quebradas (ex.: `../imgs/` → `../assets/`)
 
 ### 3. Remover assets não usados
-- Cruzar cada arquivo do projeto (HTML/CSS/JS) com referências em `index.html`, CSS e JS; apagar apenas **imagens** claramente órfãs. Conservador: não apagar CSS/JS referenciados por script nem arquivos de dados (`data/*.json`).
-- Não remover `js/config.js` (gitignored, injetado pelo `vercel-build.sh`).
+- Cruzar arquivos do projeto (HTML/CSS/JS) com referências; apagar apenas **imagens** claramente órfãs. Conservador: não apagar CSS/JS referenciados por script nem arquivos `data/*.json`.
 
 ### 4. Responsividade
-- Garantir media queries mobile e ausência de overflow horizontal; corrigir issues pontuais de elementos posicionados (ex.: ícone centralizado no mobile).
-- Não over-engineering; preservar BEM, mobile-first e funcionalidade.
+- Media queries mobile e ausência de overflow horizontal; corrigir issues pontuais de posicionamento
+- Não over-engineering; preservar BEM, mobile-first e funcionalidade
 
 ### 5. Validação (após alterar cada projeto)
-- HTML bem-formado: `python3 -c` com `html.parser` (sem tags soltas / atributos duplicados).
-- JS: `node --check <arquivo>.js`.
-- Sem referências de assets quebradas (src/href/url() apontando para arquivos existentes).
+- HTML bem-formado: `python3 -c` com `html.parser` (sem tags soltas / atributos duplicados)
+- JS: `node --check <arquivo>.js`
+- Sem refs de assets quebradas (src/href/url() apontando para arquivos existentes)
 
 ## Conventions
-- **BEM** naming for CSS (`.block__element--modifier`)
+- **BEM** naming para CSS (`.block__element--modifier`)
+- **IDs no HTML e nomes em JS/CSS em `snake_case`** (`_`): sem camelCase em variáveis, funções, ids e atributos `for` — exceção apenas para APIs nativas do browser (`getElementById`, `toDataURL`, `devicePixelRatio`, `offsetX`, `fillRect` etc.). CSS usa BEM (`__`/`--`).
+- **Código JS em inglês** (nomes de variáveis e funções); **comentários em pt-BR**; documentação/portugol em português.
 - **Conventional Commits**: `feat`, `fix`, `refactor`, `redesign`, `style`, `docs`, `chore`
-- VSCode: 2-space tabs (`editor.tabSize: 2`)
-- **Mobile-first, responsive, semantic HTML, ARIA labels** — enforced per project standards
-- Cursor: custom `.cursor` / `.cursor__trail` elements (disabled on touch devices)
-- Scroll-triggered card reveal via IntersectionObserver in `js/main.js`
-- Comments: CSS single-line, JS max 2 lines per section
-- **Commit only when explicitly asked** — never commit without permission
-- **Commit por projeto separado**: ao alterar vários projetos, commitar cada um em um commit próprio (ex.: `refactor(real-state): ...`). Arquivos de infra raiz (`vercel.json`, `robots.txt`, `sitemap.xml`) vão em um commit `chore(seo)` à parte.
+- 2-space indent
+- **Mobile-first, responsivo, HTML semântico, ARIA labels** — por padrão em cada projeto
+- Cursor custom `.cursor` / `.cursor__trail` (desabilitado em touch)
+- Card reveal via IntersectionObserver em `js/main.js`
+- Comentários: CSS 1 linha; JS máx 2 linhas por seção
+- **Commit apenas quando explicitamente pedido** — nunca sem permissão
+- **Commit por projeto separado** (ex.: `refactor(real-state): ...`); infra raiz (`vercel.json`, `robots.txt`, `sitemap.xml`) vai em `chore(seo)` à parte
