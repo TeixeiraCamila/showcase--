@@ -5,7 +5,7 @@ async function load_quotes() {
 
   try {
     const response = await fetch(
-      `/projects/exemplo-07--card-stacking/api/quotes?categories=wisdom,philosophy&count=${cards.length}`
+      `/api/quotes?categories=wisdom,philosophy&count=${cards.length}`
     );
     if (!response.ok) throw new Error(`quotes api ${response.status}`);
     const data = await response.json();

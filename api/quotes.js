@@ -1,5 +1,5 @@
 // Proxy Vercel serverless: busca citações na API Ninjas sem expor a chave no client.
-// Uso: GET /projects/exemplo-07--card-stacking/api/quotes?categories=wisdom,philosophy&count=11
+// Uso: GET /api/quotes?categories=wisdom,philosophy&count=11
 
 const UPSTREAM = 'https://api.api-ninjas.com/v2/randomquotes';
 

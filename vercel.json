@@ -2,7 +2,7 @@
   "outputDirectory": ".",
   "buildCommand": "echo 'site estático; sem build step'",
   "functions": {
-    "projects/exemplo-07--card-stacking/api/quotes.js": {
+    "api/quotes.js": {
       "memory": 1024,
       "maxDuration": 10
     }
