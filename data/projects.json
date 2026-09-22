@@ -104,6 +104,19 @@
       ]
     },
     {
+      "id": "09",
+      "title": "RESUME",
+      "category": "landing",
+      "href": "projects/exemplo-09--resume/index.html",
+      "preview": "projects/exemplo-09--resume/preview.png",
+      "description": "Personal front-end developer resume: responsive landing page in English with Vue.js, performance, SEO and scroll-driven SVG animations.",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "JAVASCRIPT"
+      ]
+    },
+    {
       "id": "10",
       "title": "SIGN UP BEARS",
       "category": "tools",
