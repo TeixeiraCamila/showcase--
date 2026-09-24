@@ -26,19 +26,6 @@
   ],
   "projects": [
     {
-      "id": "01",
-      "title": "MODELO",
-      "category": "landing",
-      "href": "projects/exemplo-01--modelo/index.html",
-      "preview": "projects/exemplo-01--modelo/preview.png",
-      "description": "Blank boilerplate (header/main/footer) with pure HTML/CSS/JS to start new projects.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT"
-      ]
-    },
-    {
       "id": "02",
       "title": "REAL STATE",
       "category": "landing",
@@ -104,7 +91,7 @@
     },
     {
       "id": "07",
-      "title": "ENTRE LINHAS",
+      "title": "BETWEEN LINES",
       "category": "animation",
       "href": "projects/exemplo-07--card-stacking/index.html",
       "preview": "projects/exemplo-07--card-stacking/preview.png",
@@ -122,7 +109,7 @@
       "category": "landing",
       "href": "projects/exemplo-09--resume/index.html",
       "preview": "projects/exemplo-09--resume/preview.png",
-      "description": "Modern professional resume building block, responsive with smooth animations.",
+      "description": "Personal front-end developer resume: responsive landing page in English with Vue.js, performance, SEO and scroll-driven SVG animations.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -169,31 +156,6 @@
       ]
     },
     {
-      "id": "13",
-      "title": "VUE 3 CDN MENU",
-      "category": "landing",
-      "href": "projects/exemplo-13/index.html",
-      "preview": "projects/exemplo-13/preview.png",
-      "description": "Landing mockup with an animated navigation menu (desktop mode plus mobile sidebar).",
-      "tags": [
-        "HTML5",
-        "CSS3"
-      ]
-    },
-    {
-      "id": "14",
-      "title": "AROMA",
-      "category": "landing",
-      "href": "projects/exemplo-14--aroma/index.html",
-      "preview": "projects/exemplo-14--aroma/assets/aroma-hero-bg.jpg",
-      "description": "Elegant coffee & brunch landing page with octagonal logo, mobile menu and smooth animations.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT"
-      ]
-    },
-    {
       "id": "15",
       "title": "MATHSCOOL",
       "category": "landing",
@@ -207,122 +169,12 @@
       ]
     },
     {
-      "id": "16",
-      "title": "PIMS",
-      "category": "landing",
-      "href": "projects/exemplo-16--pims/index.html",
-      "preview": "projects/exemplo-16--pims/assets/hero_image.png",
-      "description": "LUMI natural energy drink landing page (tea and fruit based) with minimalist design and smooth animations.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT"
-      ]
-    },
-    {
-      "id": "17",
-      "title": "FLOWER ANIMATION",
-      "category": "animation",
-      "href": "projects/exemplo-17--flower-animation/index.html",
-      "preview": "projects/exemplo-17--flower-animation/assets/flower-02.png",
-      "description": "Interactive floral gallery with SVG/image compositions and smooth hover animations.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT"
-      ]
-    },
-    {
-      "id": "18",
-      "title": "SCRATCH CARD",
-      "category": "tools",
-      "href": "projects/exemplo-18--scratch-card/index.html",
-      "preview": "projects/exemplo-18--scratch-card/preview.png",
-      "description": "Interactive scratch card with Canvas API that reveals the content as you scratch.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT",
-        "Canvas API"
-      ]
-    },
-    {
-      "id": "19",
-      "title": "PET CARE",
-      "category": "landing",
-      "href": "projects/exemplo-19--pet-care/index.html",
-      "preview": "projects/exemplo-19--pet-care/preview.png",
-      "description": "Premium pet care landing page: checkups, grooming, boarding, training and nutrition.",
-      "tags": [
-        "HTML5",
-        "Tailwindcss",
-        "JAVASCRIPT",
-        "GSAP"
-      ]
-    },
-    {
-      "id": "20",
-      "title": "NOVAFLOW",
-      "category": "landing",
-      "href": "projects/exemplo-20--novaflow/index.html",
-      "preview": "projects/exemplo-20--novaflow/preview.png",
-      "description": "Corporate logistics and risk management platform with sliders, parallax and on-scroll animations.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT",
-        "Swiper",
-        "AOS",
-        "GSAP"
-      ]
-    },
-    {
-      "id": "21",
-      "title": "ALPHABET STORE",
-      "category": "landing",
-      "href": "projects/exemplo-21--alphabet-store/index.html",
-      "preview": "projects/exemplo-21--alphabet-store/assets/hero-banner.png",
-      "description": "Creative stationery and desk accessories store with carousel, animations and icons.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT",
-        "Swiper"
-      ]
-    },
-    {
-      "id": "22",
-      "title": "PARALLAX",
-      "category": "animation",
-      "href": "projects/exemplo-22--parallax/index.html",
-      "preview": "projects/exemplo-22--parallax/assets/img_01.png",
-      "description": "Multi-layer parallax effect with smoothed scrolling via GSAP ScrollSmoother.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "GSAP"
-      ]
-    },
-    {
       "id": "23",
       "title": "POMODORO",
       "category": "tools",
       "href": "projects/exemplo-23--pomodoro/index.html",
       "preview": "projects/exemplo-23--pomodoro/preview.png",
       "description": "Pomodoro timer with task management, localStorage and cycle counting.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT"
-      ]
-    },
-    {
-      "id": "24",
-      "title": "SVG ANIMATION",
-      "category": "animation",
-      "href": "projects/exemplo-24--svg-animation/index.html",
-      "preview": "projects/exemplo-24--svg-animation/preview.png",
-      "description": "100% CSS/SVG animation of a stirring cup with a steam effect.",
       "tags": [
         "HTML5",
         "CSS3",
@@ -359,19 +211,6 @@
       "external": true
     },
     {
-      "id": "30",
-      "title": "PIXEL ART MAKER",
-      "category": "tools",
-      "href": "projects/exemplo-29--pixel-art/index.html",
-      "preview": "projects/exemplo-29--pixel-art/preview.png",
-      "description": "Pixel art maker on canvas: N×N grid (4–160), paint/erase, light/dark theme and PNG download.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JAVASCRIPT"
-      ]
-    },
-    {
       "id": "27",
       "title": "CRUNCHY MEAT",
       "category": "landing",
@@ -405,19 +244,6 @@
       "href": "projects/exemplo-28--orbit-gallery/index.html",
       "preview": "projects/exemplo-28--orbit-gallery/preview.png",
       "description": "Monochromatic gallery: images orbit the screen for 5 seconds then stop at random positions; hovering reveals the title in a bottom bar.",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "GSAP"
-      ]
-    },
-    {
-      "id": "31",
-      "title": "ROSIE",
-      "category": "landing",
-      "href": "projects/exemplo-30--rosie/index.html",
-      "preview": "projects/exemplo-30--rosie/preview.png",
-      "description": "Content agency landing page — from posters to branding — that scrolls horizontally instead of vertically, with positive vibes and whimsical touches.",
       "tags": [
         "HTML5",
         "CSS3",
