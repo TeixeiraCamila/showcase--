@@ -1,20 +1,21 @@
 # Infinite Slider
 
-Galeria infinita de filmes vencedores do Oscar com animações GSAP, scroll e swipe.
+Infinite gallery of Oscar-winning films with GSAP animations, scroll and swipe.
 
 ## Stack
 
-- HTML5 semântico
+- Semantic HTML5
 - CSS3 custom properties
 - GSAP (ScrollTrigger, Draggable)
 
-## Estrutura
+## Structure
 
 ```
 css/style.css
 js/script.js
 assets/
+data/slides.json
 index.html
 ```
 
-[Voltar ao Showcase](../../index.html)
+[Back to Showcase](../../index.html)

@@ -1,57 +1,6 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
-      fbq("init", "2499063120584899");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=2499063120584899&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DFTR578LMT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-DFTR578LMT");
-    </script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
@@ -59,9 +8,15 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/classicos/Parasite.jpg"
+      fetchpriority="high"
+    />
     <meta
       name="description"
-      content="Slider infinito de filmes com GSAP — navegue por clássicos do cinema com animações suaves e dados dinâmicos via JSON."
+      content="Infinite movie slider with GSAP — browse cinema classics with smooth animations and dynamic data via JSON."
     />
     <link
       rel="canonical"
@@ -72,29 +27,29 @@
       property="og:url"
       content="https://showcase-theta-opal.vercel.app/projects/exemplo-03--infinite-slider/"
     />
-    <meta property="og:title" content="Infinite Slider — Cinema Clássico" />
+    <meta property="og:title" content="Infinite Slider — Classic Cinema" />
     <meta
       property="og:description"
-      content="Slider infinito de filmes com GSAP — navegue por clássicos do cinema com animações suaves e dados dinâmicos via JSON."
+      content="Infinite movie slider with GSAP — browse cinema classics with smooth animations and dynamic data via JSON."
     />
     <meta
       property="og:image"
       content="https://showcase-theta-opal.vercel.app/projects/exemplo-03--infinite-slider/preview.png"
     />
-    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Showcase" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Infinite Slider — Cinema Clássico" />
+    <meta name="twitter:title" content="Infinite Slider — Classic Cinema" />
     <meta
       name="twitter:description"
-      content="Slider infinito de filmes com GSAP — navegue por clássicos do cinema com animações suaves."
+      content="Infinite movie slider with GSAP — browse cinema classics with smooth animations."
     />
     <meta
       name="twitter:image"
       content="https://showcase-theta-opal.vercel.app/projects/exemplo-03--infinite-slider/preview.png"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title id="page-title">Carregando...</title>
+    <title id="page-title">Loading...</title>
   </head>
   <body>
     <header class="header" role="banner">
@@ -109,15 +64,14 @@
         <div class="slider__container" id="slides-container"></div>
         <div class="slider__vignette" aria-hidden="true"></div>
         <div class="slider__hint">
-          <p>Use o scroll / swipe para navegar (infinito)</p>
+          <p>Use scroll, swipe or arrow keys to navigate (infinite)</p>
           <a href="../../index.html" class="back-button"
-            >← Voltar ao Showcase</a
+            >← Back to Showcase</a
           >
         </div>
         <div class="slider__resume">
           <div class="slider__resume-icon">
-            <img id="resume-image" src="" alt="" />
-            <p id="resume-stars"></p>
+            <img id="resume-image" src="" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="slider__resume-content">
             <span id="resume-obs"></span>

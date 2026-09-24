@@ -1,65 +1,60 @@
 {
-	"title": "Cinco Clássicos Essenciais",
-	"description": "Este conjunto de cinco resumos reúne filmes que conquistaram o Oscar de Melhor Filme e continuam sendo referências fundamentais no cinema.",
+	"title": "Five Essential Classics",
+	"description": "This set of five reviews brings together films that won the Oscar for Best Picture and remain fundamental references in cinema.",
 	"slides": [
 		{
 			"id": 0,
 			"title": "Parasite (2019)",
 			"image": "./assets/images/classicos/Parasite.jpg",
-			"alt": "Cena de Parasite - família Kim em frente à mansão dos Park",
-			"tomatometer": 5,
-			"observation": "Mistura inteligente de gêneros e um final chocante que expõe as divisões de classe.",
+			"alt": "Scene from Parasite - the Kim family in front of the Park mansion",
+			"observation": "Genre-bending satire turned thriller, and the first non-English-language Best Picture winner.",
 			"text": [
-				"Uma família de baixa renda, os Kim, vive em um subsolo apertado e luta para sobreviver. Quando o filho Ki-woo é contratado para dar aulas particulares à filha de uma família riquíssima (os Park), começa uma infiltração gradual: os membros dos Kim passam a ocupar diferentes funções na mansão dos Park por meio de artifícios. A partir daí, o enredo se transforma de sátira social a thriller inquietante, expondo desigualdade, ambição e classe social.",
-				"Foi o primeiro filme falado em língua não-inglês a vencer o Oscar de Melhor Filme. Explora temas de riqueza, privilégio, e a relação simbiótica/perversa entre classes. A vencedora também por Melhor Diretor e Roteiro."
+				"The Kims, a struggling family living in a semi-basement in Seoul, scheme their way into the household of the wealthy Parks: son Ki-woo becomes the tutor, then sister, father and mother infiltrate one by one through forged credentials and staged coincidences.",
+				"Their plan unravels on a stormy night when the long-hidden secrets of the Park mansion's former housekeeper surface, dragging both families into a violent confrontation with radical consequences."
 			]
 		},
 		{
 			"id": 1,
 			"title": "Moonlight (2016)",
-			"image": "./assets/images/classicos/moonlight.jpg",
-			"alt": "Cena de Moonlight - o jovem Chiron na praia",
-			"tomatometer": 5,
-			"observation": "Direção sensível, fotografia poética e trilha emocional que transformam a jornada pessoal em uma experiência universal.",
+			"image": "./assets/images/classicos/Moonlight.jpg",
+			"alt": "Scene from Moonlight - young Chiron at the beach",
+			"observation": "A triptych of identity told in three acts, from 'Little' to his encounter with the sea.",
 			"text": [
-				"A história de Chiron, um jovem negro crescendo em Miami, é contada em três fases — infância, adolescência e vida adulta. Ele enfrenta pobreza, preconceito e o conflito de identidade sexual.",
-				"Primeiro filme com elenco majoritariamente negro e temática LGBTQ+ a vencer o Oscar de Melhor Filme."
+				"Chiron grows up in Miami as 'Little', a quiet boy raised by a struggling, drug-dependent mother; he finds lessons in strength with Juan, a local dealer who takes him under his wing.",
+				"In adulthood, a late-night call from his childhood friend Kevin forces Chiron to face who he has become and revisit the beach where his story began."
 			]
 		},
 		{
 			"id": 2,
 			"title": "Schindler's List (1993)",
 			"image": "./assets/images/classicos/SchindlersList.jpg",
-			"alt": "Cena de Schindler's List - lista de nomes",
-			"tomatometer": 5,
-			"observation": "Impactante, histórico e emocionalmente devastador — um dos filmes mais respeitados de todos os tempos.",
+			"alt": "Scene from Schindler's List - the list of names",
+			"observation": "Spielberg's monochrome epic about a ruthless industrialist's redemption, winner of 7 Oscars.",
 			"text": [
-				"O empresário alemão Oskar Schindler salva mais de mil judeus durante o Holocausto, usando sua fábrica como refúgio.",
-				"Obra-prima de Steven Spielberg, filmada em preto e branco com momentos simbólicos de cor. Um testemunho poderoso da humanidade em meio ao horror."
+				"In Kraków during the German occupation, Oskar Schindler runs an enamelware factory staffed by Jewish workers the SS sees as cheap labor — and profit is all he seems to care about.",
+				"As the Holocaust intensifies, he spends his entire fortune bribing officials to protect 'his' workers, ending the war penniless but with over a thousand lives saved."
 			]
 		},
 		{
 			"id": 3,
 			"title": "Casablanca (1942)",
 			"image": "./assets/images/classicos/casablanca.jpg",
-			"alt": "Cena clássica de Casablanca - Rick e Ilsa no café",
-			"tomatometer": 5,
-			"observation": "Equilíbrio perfeito entre romance e heroísmo — um retrato eterno de sacrifício e honra.",
+			"alt": "Classic scene from Casablanca - Rick and Ilsa at the café",
+			"observation": "Three Oscars and the line 'Here's looking at you, kid' — the archetype of wartime romance.",
 			"text": [
-				"Em meio à Segunda Guerra, Rick reencontra seu antigo amor Ilsa em Casablanca e precisa escolher entre o amor pessoal e o dever moral.",
-				"Clássico absoluto de Hollywood, com diálogos marcantes e trilha inesquecível (“As Time Goes By”)."
+				"Rick Blaine, an exiled American running a nightclub in Vichy-controlled Casablanca, reencounters Ilsa, the woman who left him in Paris — now married to resistance leader Victor Laszlo.",
+				"Caught between his old love and his conscience, Rick must decide whom he helps escape to Lisbon, and at what personal cost."
 			]
 		},
 		{
 			"id": 4,
 			"title": "On the Waterfront (1954)",
 			"image": "./assets/images/classicos/OnTheWaterfront.jpg",
-			"alt": "Cena de On the Waterfront - Marlon Brando no cais",
-			"tomatometer": 5,
-			"observation": "Um marco na história do cinema americano e da interpretação dramática.",
+			"alt": "Scene from On the Waterfront - Marlon Brando at the dock",
+			"observation": "Brando's 'coulda been a contender' moment — eight Oscars and a landmark of method acting.",
 			"text": [
-				"Terry Malloy, um trabalhador portuário, decide enfrentar o sindicato criminoso que domina o cais de Nova York.",
-				"Brando redefine a atuação com realismo e intensidade. O filme retrata coragem moral e denúncia social."
+				"Dockworker Terry Malloy watches his brother get silenced by the mob-run union that controls the New York waterfront, where intimidation and kickbacks rule the docks.",
+				"Pressed by the parish priest and his own guilt, Terry risks everything to testify — and faces the gang on his own terms."
 			]
 		}
 	]
