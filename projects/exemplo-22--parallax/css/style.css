@@ -325,6 +325,6 @@ img {
 /* Tablet / desktop pequeno */
 @media (min-width: 810px) and (max-width: 1439.98px) {
   .hero {
-    height: 133vh;
+    height: 93vh;
   }
 }

@@ -17,11 +17,11 @@
         { el: ".parallax__img--back", speed: 1.0 }
       ];
 
-      const heroEl = document.querySelector(".hero");
+      const hero_el = document.querySelector(".hero");
       // Folga das imagens = 15% da altura do .hero (ver CSS: height:124%, top:0 — sobra embaixo)
-      let buffer = heroEl.offsetHeight * 0.15;
+      let buffer = hero_el.offsetHeight * 0.15;
       window.addEventListener("resize", () => {
-        buffer = heroEl.offsetHeight * 0.15;
+        buffer = hero_el.offsetHeight * 0.15;
       });
 
       ScrollTrigger.create({

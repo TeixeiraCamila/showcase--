@@ -1,14 +1,14 @@
 # Parallax Scroll
 
-Layers in Motion — Parallax ScrollSmoother. Efeito parallax multi-camadas com GSAP ScrollSmoother.
+Layers in Motion — Parallax ScrollSmoother. Multi-layer parallax effect with GSAP ScrollSmoother.
 
 ## Stack
 
-- HTML5 semântico
+- Semantic HTML5
 - CSS3 custom properties
 - GSAP (ScrollTrigger, ScrollSmoother)
 
-## Estrutura
+## Structure
 
 ```
 css/style.css
@@ -17,4 +17,4 @@ assets/
 index.html
 ```
 
-[Voltar ao Showcase](../../index.html)
+[Back to Showcase](../../index.html)
