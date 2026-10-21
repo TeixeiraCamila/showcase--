@@ -58,13 +58,43 @@
       content="Showcase de projetos web em JavaScript: landing pages, animações CSS, GSAP, Canvas, mini apps e exercícios frontend."
     />
     <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://showcase-theta-opal.vercel.app/"
+    />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Showcase" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta
+      property="og:title"
+      content="Showcase - Projetos Web em JavaScript | HTML5 • CSS3 • GSAP"
+    />
+    <meta
+      property="og:description"
+      content="Showcase de projetos web em JavaScript: landing pages, animações CSS, GSAP, Canvas, mini apps e exercícios frontend."
+    />
+    <meta property="og:url" content="https://showcase-theta-opal.vercel.app/" />
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/TeixeiraCamila/showcase/main/assets/previews/exemplo-01.jpg"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/preview.png"
     />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="2481" />
+    <meta property="og:image:height" content="2053" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Showcase - Projetos Web em JavaScript | HTML5 • CSS3 • GSAP"
+    />
+    <meta
+      name="twitter:description"
+      content="Showcase de projetos web em JavaScript: landing pages, animações CSS, GSAP, Canvas, mini apps e exercícios frontend."
+    />
+    <meta
+      name="twitter:image"
+      content="https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/preview.png"
+    />
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="apple-touch-icon" href="./favicon.svg" />
@@ -102,6 +132,7 @@
     <link rel="stylesheet" href="./css/default.css" />
     <link rel="stylesheet" href="./css/variables-main.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/cookie-banner.css" />
 
     <!-- Catálogo: request real iniciada já no <head> (mimetiza app real) e
          gate de render — o 1º paint espera o grid pronto (zero CLS em Chrome;
@@ -292,6 +323,37 @@
       </div>
     </footer>
 
+    <!-- Consentimento de cookies (padrão LGPD do showcase: banner + trackers) -->
+    <aside
+      class="cookie-banner"
+      id="cookie-banner"
+      role="dialog"
+      aria-label="Aviso e consentimento de cookies"
+      aria-describedby="cookie-banner-text"
+    >
+      <p class="cookie-banner__text" id="cookie-banner-text">
+        Este site utiliza cookies para métricas de acesso (Google Analytics e
+        Meta Pixel) e para salvar preferências, como o tema do site.
+      </p>
+      <div class="cookie-banner__actions">
+        <button
+          type="button"
+          class="cookie-banner__btn cookie-banner__btn--primary"
+          data-cookie-action="accept"
+        >
+          Aceitar
+        </button>
+        <button
+          type="button"
+          class="cookie-banner__btn"
+          data-cookie-action="dismiss"
+        >
+          Dispensar
+        </button>
+      </div>
+    </aside>
+
     <script src="./js/main.js" blocking="render"></script>
+    <script src="./js/cookie-banner.js"></script>
   </body>
 </html>

@@ -1,0 +1,39 @@
+# Showcase — Projetos Web em JavaScript
+
+> Showcase de projetos web em JavaScript (HTML5, CSS3, JS vanilla): landing pages, animações com GSAP, Canvas, mini apps e exercícios de frontend. Sem framework e sem build step.
+
+Cada projeto é standalone em `/projects/<nome>/` com seu próprio `index.html`. A galeria filtra os projetos por categoria (landing, animation, tools, quiz) a partir do catálogo `/data/projects.json`.
+
+## Páginas
+
+- [Galeria](https://showcase-theta-opal.vercel.app/): página principal com filtros por categoria e tema claro/escuro
+- [Catálogo JSON](https://showcase-theta-opal.vercel.app/data/projects.json): fonte de verdade dos projetos (id, título, categoria, href, preview, tags)
+
+## Landing pages
+
+- [REAL STATE](https://showcase-theta-opal.vercel.app/projects/exemplo-02--real-state/): landing page de imobiliária de luxo (SK Builders) em HTML5/CSS3/JS
+- [NOTELY](https://showcase-theta-opal.vercel.app/projects/exemplo-04--notely/): e-commerce de cadernos personalizados com Tailwind CSS + GSAP
+- [CATPUCCINO](https://showcase-theta-opal.vercel.app/projects/exemplo-05--catpuccino/): landing de café retrô-moderna com light/dark mode
+- [GROUNDED LUXURY TRAVEL](https://showcase-theta-opal.vercel.app/projects/exemplo-06--grounded/): retiros de respiração (breathwork) com Tailwind CSS
+- [RESUME](https://showcase-theta-opal.vercel.app/projects/exemplo-09--resume/): currículo de dev front-end com Vue.js e animações de scroll
+- [LANDING PAGE](https://showcase-theta-opal.vercel.app/projects/exemplo-12/): template de landing page com tema submarino
+- [MATHSCOOL](https://showcase-theta-opal.vercel.app/projects/exemplo-15--mathscool/): escola de matemática online com planos e cursos (GSAP)
+- [CRUNCHY MEAT](https://showcase-theta-opal.vercel.app/projects/exemplo-26--burger/): landing de hamburgueria com burger interativo que se desmonta em camadas (GSAP)
+- [FLOREA](https://showcase-theta-opal.vercel.app/projects/exemplo-27--florea/): catálogo editorial de flores com filtros dinâmicos (GSAP + Swiper)
+
+## Animação
+
+- [INFINITE SLIDER](https://showcase-theta-opal.vercel.app/projects/exemplo-03--infinite-slider/): galeria infinita de filmes premiados com GSAP
+- [BETWEEN LINES](https://showcase-theta-opal.vercel.app/projects/exemplo-07--card-stacking/): citações de livros em cards empilhados (GSAP ScrollTrigger)
+- [POKEMON 3D STARTERS](https://showcase-theta-opal.vercel.app/projects/exemplo-25--3d/): cena 3D interativa com Three.js e WebGL
+- [ORBIT](https://showcase-theta-opal.vercel.app/projects/exemplo-28--orbit-gallery/): galeria monocromática com imagens em órbita aleatória (GSAP)
+
+## Ferramentas e apps
+
+- [SIGN UP BEARS](https://showcase-theta-opal.vercel.app/projects/exemplo-10--signup-bears/): tela de cadastro com validação (Google/Facebook/e-mail)
+- [POMODORO](https://showcase-theta-opal.vercel.app/projects/exemplo-23--pomodoro/): timer pomodoro com tarefas e persistência em localStorage
+- [BOOK JOURNAL](https://book-journal-chi.vercel.app/): SPA externa de biblioteca pessoal com Vue.js 3 + Pinia
+
+## Quiz
+
+- [JAVASCRIPT QUIZ](https://showcase-theta-opal.vercel.app/projects/exemplo-11--quiz/): quiz interativo com progresso salvo em localStorage e barra de progresso

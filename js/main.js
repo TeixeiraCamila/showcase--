@@ -198,13 +198,12 @@ function renderCard(project, index) {
 
   return `
       <a href="${escapeHtml(project.href)}" class="project-card"
-        ${project.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
-        aria-label="Projeto ${escapeHtml(project.id)}: ${escapeHtml(project.title)}">
+        ${project.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
         <div class="project-card__preview" aria-hidden="true">
           <img src="${escapeHtml(project.preview)}" alt="" ${dimensions} ${loadPriority} decoding="async" />
         </div>
         <div class="project-card__info">
-          <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
+          <h2 class="project-card__title">${escapeHtml(project.title)}</h2>
           <p class="project-card__description">${escapeHtml(project.description)}</p>
           <div class="project-card__tags" aria-label="Tecnologias usadas">
             ${project.tags.map((tag) => `<span class="project-card__tag">${escapeHtml(tag)}</span>`).join('')}
