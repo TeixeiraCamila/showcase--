@@ -30,170 +30,196 @@
       "title": "REAL STATE",
       "category": "landing",
       "href": "projects/exemplo-02--real-state/index.html",
-      "preview": "projects/exemplo-02--real-state/preview.png",
+      "preview": "projects/exemplo-02--real-state/preview.webp",
       "description": "SK Builders - Luxury real estate agency specializing in international property appraisal, sales, purchases and investments.",
       "tags": [
         "HTML5",
         "CSS3",
         "JAVASCRIPT"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "03",
       "title": "INFINITE SLIDER",
       "category": "animation",
       "href": "projects/exemplo-03--infinite-slider/index.html",
-      "preview": "projects/exemplo-03--infinite-slider/preview.png",
+      "preview": "projects/exemplo-03--infinite-slider/preview.webp",
       "description": "Infinite gallery of Oscar-winning movies with GSAP animations, scroll and swipe.",
       "tags": [
         "HTML5",
         "CSS3",
         "GSAP"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "04",
       "title": "NOTELY",
       "category": "landing",
       "href": "projects/exemplo-04--notely/index.html",
-      "preview": "projects/exemplo-04--notely/preview.png",
+      "preview": "projects/exemplo-04--notely/preview.webp",
       "description": "E-commerce landing page for personalized notebooks with Tailwind CSS and GSAP animations.",
       "tags": [
         "HTML5",
         "Tailwindcss",
         "GSAP"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "05",
       "title": "CATPUCCINO",
       "category": "landing",
       "href": "projects/exemplo-05--catpuccino/index.html",
-      "preview": "projects/exemplo-05--catpuccino/preview.png",
+      "preview": "projects/exemplo-05--catpuccino/preview.webp",
       "description": "Cozy coffee for Gen Z Creators. Retro-modern design with light & dark mode.",
       "tags": [
         "HTML5",
         "CSS3",
         "JAVASCRIPT"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "06",
       "title": "GROUNDED LUXURY TRAVEL",
       "category": "landing",
       "href": "projects/exemplo-06--grounded/index.html",
-      "preview": "projects/exemplo-06--grounded/preview.png",
+      "preview": "projects/exemplo-06--grounded/preview.webp",
       "description": "Discover inner stillness through immersive breathwork practice. Group sessions, private coaching, and multi-day retreats in serene natural settings.",
       "tags": [
         "HTML5",
         "Tailwindcss"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "07",
       "title": "BETWEEN LINES",
       "category": "animation",
       "href": "projects/exemplo-07--card-stacking/index.html",
-      "preview": "projects/exemplo-07--card-stacking/preview.png",
+      "preview": "projects/exemplo-07--card-stacking/preview.webp",
       "description": "Citações de livros empilhadas em uma landing page imersiva com animações GSAP.",
       "tags": [
         "HTML5",
         "CSS3",
         "GSAP",
         "Landing Page"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "09",
       "title": "RESUME",
       "category": "landing",
       "href": "projects/exemplo-09--resume/index.html",
-      "preview": "projects/exemplo-09--resume/preview.png",
+      "preview": "projects/exemplo-09--resume/preview.webp",
       "description": "Personal front-end developer resume: responsive landing page in English with Vue.js, performance, SEO and scroll-driven SVG animations.",
       "tags": [
         "HTML5",
         "CSS3",
         "JAVASCRIPT"
-      ]
+      ],
+      "width": 700,
+      "height": 368
     },
     {
       "id": "10",
       "title": "SIGN UP BEARS",
       "category": "tools",
       "href": "projects/exemplo-10--signup-bears/index.html",
-      "preview": "projects/exemplo-10--signup-bears/preview.png",
+      "preview": "projects/exemplo-10--signup-bears/preview.webp",
       "description": "Create your account and join our platform. Sign up with Google, Facebook, or email.",
       "tags": [
         "HTML5",
         "CSS3",
         "JAVASCRIPT"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "11",
       "title": "JAVASCRIPT QUIZ",
       "category": "quiz",
       "href": "projects/exemplo-11--quiz/index.html",
-      "preview": "projects/exemplo-11--quiz/preview.png",
+      "preview": "projects/exemplo-11--quiz/preview.webp",
       "description": "Interactive quiz with localStorage to save progress, visual feedback and a progress bar.",
       "tags": [
         "HTML5",
         "CSS3",
         "JAVASCRIPT"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "12",
       "title": "LANDING PAGE",
       "category": "landing",
       "href": "projects/exemplo-12/index.html",
-      "preview": "projects/exemplo-12/preview.png",
+      "preview": "projects/exemplo-12/preview.webp",
       "description": "Modern landing page template with smooth animations, responsive design and underwater theme.",
       "tags": [
         "HTML5",
         "CSS3",
         "JAVASCRIPT"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "15",
       "title": "MATHSCOOL",
       "category": "landing",
       "href": "projects/exemplo-15--mathscool/index.html",
-      "preview": "projects/exemplo-15--mathscool/preview.png",
+      "preview": "projects/exemplo-15--mathscool/preview.webp",
       "description": "Online math school landing page with live classes, pricing plans, courses and GSAP animations.",
       "tags": [
         "HTML5",
         "CSS3",
         "GSAP"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "23",
       "title": "POMODORO",
       "category": "tools",
       "href": "projects/exemplo-23--pomodoro/index.html",
-      "preview": "projects/exemplo-23--pomodoro/preview.png",
+      "preview": "projects/exemplo-23--pomodoro/preview.webp",
       "description": "Pomodoro timer with task management, localStorage and cycle counting.",
       "tags": [
         "HTML5",
         "CSS3",
         "JAVASCRIPT"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "25",
       "title": "POKEMON 3D STARTERS",
       "category": "animation",
       "href": "projects/exemplo-25--3d/index.html",
-      "preview": "projects/exemplo-25--3d/preview.png",
+      "preview": "projects/exemplo-25--3d/preview.webp",
       "description": "Interactive 3D scene with the 3 classic starter pokemons — Bulbasaur, Charmander and Squirtle — studio lighting with Three.js.",
       "tags": [
         "HTML5",
         "CSS3",
         "Three.js",
         "WebGL"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "26",
@@ -215,40 +241,46 @@
       "title": "CRUNCHY MEAT",
       "category": "landing",
       "href": "projects/exemplo-26--burger/index.html",
-      "preview": "projects/exemplo-26--burger/preview.png",
+      "preview": "projects/exemplo-26--burger/preview.webp",
       "description": "Artisan burger landing page with a creative interaction: the burger takes apart its layers when you click on the CTA, revealing each ingredient.",
       "tags": [
         "HTML5",
         "CSS3",
         "GSAP"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "28",
       "title": "FLOREA",
       "category": "landing",
       "href": "projects/exemplo-27--florea/index.html",
-      "preview": "projects/exemplo-27--florea/preview.png",
+      "preview": "projects/exemplo-27--florea/preview.webp",
       "description": "Floral catalog with an editorial and minimalist aesthetic: bouquets, gifts, wedding arrangements and flower subscription, with dynamic filters and GSAP animations.",
       "tags": [
         "HTML5",
         "CSS3",
         "GSAP",
         "Swiper"
-      ]
+      ],
+      "width": 700,
+      "height": 579
     },
     {
       "id": "29",
       "title": "ORBIT",
       "category": "animation",
       "href": "projects/exemplo-28--orbit-gallery/index.html",
-      "preview": "projects/exemplo-28--orbit-gallery/preview.png",
+      "preview": "projects/exemplo-28--orbit-gallery/preview.webp",
       "description": "Monochromatic gallery: images orbit the screen for 5 seconds then stop at random positions; hovering reveals the title in a bottom bar.",
       "tags": [
         "HTML5",
         "CSS3",
         "GSAP"
-      ]
+      ],
+      "width": 700,
+      "height": 371
     }
   ]
 }

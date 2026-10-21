@@ -1,10 +1,12 @@
 let currentCategory = 'all'
 let allProjects = []
 
+// Request real do catálogo (fetch iniciado no <head> do index.html)
+initCatalog()
+
 document.addEventListener('DOMContentLoaded', () => {
   initCursor()
   initTheme()
-  loadProjects()
 })
 
 function initCursor() {
@@ -87,19 +89,39 @@ function updateBulb(theme) {
   bulb.style.stroke = color
 }
 
-async function loadProjects() {
-  try {
-    const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname)
-    const dataFile = isLocal ? './data/projects-copy.json' : './data/projects.json'
-    const response = await fetch(dataFile)
-    const data = await response.json()
-    allProjects = data.projects
-    renderCategories(data.categories, data.defaultCategory)
-    filterProjects(currentCategory)
-    initScrollAnimations()
-  } catch (error) {
-    console.error('Erro ao carregar projetos:', error)
-  }
+function initCatalog() {
+  // Request real do catálogo (promise iniciada no <head> do index.html)
+  const request = window.__catalog_request ||
+    fetch('./data/projects.json').then((response) => response.json())
+
+  request
+    .then((data) => {
+      allProjects = data.projects
+      // Filtro inicial = defaultCategory do catálogo (landing), sincronizado com o badge
+      currentCategory = data.defaultCategory || 'all'
+      renderCategories(data.categories, currentCategory)
+      filterProjects(currentCategory, { animate: false })
+    })
+    .catch((error) => {
+      console.error('Erro ao carregar o catálogo:', error)
+    })
+    .finally(() => {
+      // Só solta o gate rel=expect depois que o grid está no DOM (zero CLS)
+      releaseRenderGate()
+    })
+}
+
+function releaseRenderGate() {
+  const gate = document.querySelector('link[rel="expect"]')
+  if (!gate) return
+  // Anexa antes de setar o id: a spec só reprocessa o gate em troca de id
+  // em elemento já conectado (WPT element-render-blocking-025)
+  const marker = document.createElement('span')
+  marker.setAttribute('aria-hidden', 'true')
+  document.body.appendChild(marker)
+  marker.id = 'catalog_ready'
+  gate.blocking = ''
+  gate.remove()
 }
 
 function renderCategories(categories, defaultCategory) {
@@ -134,7 +156,7 @@ function setActiveCategory(category) {
   })
 }
 
-function filterProjects(category) {
+function filterProjects(category, options = {}) {
   const container = document.getElementById('projectsGrid')
   if (!container) return
 
@@ -142,15 +164,44 @@ function filterProjects(category) {
     ? allProjects
     : allProjects.filter((p) => p.category === category)
 
-  container.style.opacity = '0'
+  const markup = filtered.map(renderCard).join('')
 
+  // Só anima se for troca de categoria (input do usuário é isento de CLS)
+  const shouldAnimate = options.animate !== false && container.children.length > 0
+
+  // Render síncrono (1º load): conteúdo pronto antes do paint = sem CLS
+  if (!shouldAnimate) {
+    container.innerHTML = markup
+    initScrollAnimations()
+    return
+  }
+
+  // Fade de 200ms na troca de categoria
+  container.style.opacity = '0'
   setTimeout(() => {
-    container.innerHTML = filtered.map((project) => `
+    container.innerHTML = markup
+    container.style.opacity = '1'
+    initScrollAnimations()
+  }, 200)
+}
+
+function renderCard(project, index) {
+  // 3 primeiros cards ficam acima da dobra: sem lazy e com prioridade de rede (LCP)
+  const loadPriority = index < 3
+    ? 'loading="eager" fetchpriority="high"'
+    : 'loading="lazy"'
+
+  // Dimensões explícitas reservam espaço e fecham o audit "unsized images"
+  const dimensions = project.width && project.height
+    ? `width="${project.width}" height="${project.height}"`
+    : ''
+
+  return `
       <a href="${escapeHtml(project.href)}" class="project-card"
         ${project.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
         aria-label="Projeto ${escapeHtml(project.id)}: ${escapeHtml(project.title)}">
         <div class="project-card__preview" aria-hidden="true">
-          <img src="${escapeHtml(project.preview)}" alt="" loading="lazy" />
+          <img src="${escapeHtml(project.preview)}" alt="" ${dimensions} ${loadPriority} decoding="async" />
         </div>
         <div class="project-card__info">
           <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
@@ -160,11 +211,7 @@ function filterProjects(category) {
           </div>
         </div>
       </a>
-    `).join('')
-
-    container.style.opacity = '1'
-    initScrollAnimations()
-  }, 200)
+    `
 }
 
 function escapeHtml(str) {

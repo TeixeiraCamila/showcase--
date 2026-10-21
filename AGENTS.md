@@ -9,7 +9,7 @@
 ## Estrutura
 ```
 index.html, css/main.css, css/variables-main.css, js/main.js  ← galeria (root, não é projeto)
-data/projects.json   ← fonte de verdade da galeria (lista curada)
+data/projects.json  ← fonte de verdade da galeria (lista curada), fetch via HTTP real
 projects/exemplo-NN--name/  ← cada projeto é standalone (index.html, css/, js/, assets/)
 docs/exemplo-design-system.md  ← blueprint template de landing page
 robots.txt, sitemap.xml, vercel.json  ← infra/SEO raiz
@@ -17,12 +17,15 @@ robots.txt, sitemap.xml, vercel.json  ← infra/SEO raiz
 
 ## Regra crítica do catálogo
 - A galeria só exibe o que está em `data/projects.json` — folders sem entrada não aparecem. Ids **não-sequenciais** e omissões são normais (lista curada).
+- A request do catálogo é **real** (`fetch('./data/projects.json')` iniciado no `<head>` do `index.html` via `window.__catalog_request`) — não embutir JSON no HTML nem usar `setTimeout` no 1º render.
+- O 1º paint é segurado por `<link rel="expect" href="#catalog_ready" blocking="render">`: o gate só é liberado quando o grid está no DOM (`releaseRenderGate()` no `js/main.js`) — isso zera o CLS 0,834 que o fetch async causava. Fallback de 5s no `<head>` evita tela branca se o JS falhar.
+- Filtro inicial = `defaultCategory` do catálogo (`landing`), sincronizado com o badge ativo.
 - `href` pode ser URL externa completa (ex.: id 26 aponta para app externo).
 - Manter `sitemap.xml` em sincronia: toda URL usa domínio de produção com **barra final**. Atualizar ao adicionar/remover projeto.
 
 ## Adicionar novo projeto
 1. Criar `projects/exemplo-NN--name/` com `index.html`, `css/`, `js/`
-2. Adicionar entrada em `data/projects.json` (`id`, `title`, `category`, `href`, `preview`, `description`, `tags`)
+2. Adicionar entrada em `data/projects.json` (campos `id`, `title`, `category`, `href`, `preview`, `description`, `tags`)
 3. Preview image em `projects/exemplo-NN--name/preview.png`
 4. Footer volta ao showcase: `<a href="../../index.html">← Voltar ao Showcase</a>`
 5. Adicionar URL no `sitemap.xml`
@@ -62,7 +65,7 @@ Projetos auditados seguem o padrão LGPD: Meta Pixel (`fbq`) + Google Analytics 
 - Corrigir refs quebradas (ex.: `../imgs/` → `../assets/`)
 
 ### 3. Remover assets não usados
-- Cruzar arquivos do projeto (HTML/CSS/JS) com referências; apagar apenas **imagens** claramente órfãs. Conservador: não apagar CSS/JS referenciados por script nem arquivos `data/*.json`.
+- Cruzar arquivos do projeto (HTML/CSS/JS) com referências; apagar apenas **imagens** claramente órfãs. Conservador: não apagar CSS/JS referenciados por script nem `data/projects.json`.
 
 ### 4. Responsividade
 - Media queries mobile e ausência de overflow horizontal; corrigir issues pontuais de posicionamento

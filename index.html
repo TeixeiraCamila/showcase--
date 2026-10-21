@@ -89,8 +89,37 @@
       })();
     </script>
     <title>Showcase - Projetos Web em JavaScript | HTML5 • CSS3 • GSAP</title>
-    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Fonts: preconnect + link direto (antes eram @import encadeado no CSS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700&display=swap"
+    />
+
+    <!-- Ordem preserva o cascade: default → variáveis → regras -->
     <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/variables-main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Catálogo: request real iniciada já no <head> (mimetiza app real) e
+         gate de render — o 1º paint espera o grid pronto (zero CLS em Chrome;
+         browsers sem suporte a rel=expect renderizam antes, com o request async) -->
+    <link rel="expect" href="#catalog_ready" blocking="render" />
+    <script>
+      window.__catalog_request = fetch("./data/projects.json").then(function (r) {
+        return r.json();
+      });
+      // Fallback: se o main.js falhar, solta o gate após 5s (evita tela branca)
+      setTimeout(function () {
+        var gate = document.querySelector('link[rel="expect"]');
+        if (gate) {
+          gate.blocking = "";
+          gate.remove();
+        }
+      }, 5000);
+    </script>
   </head>
 
   <body>
@@ -263,6 +292,6 @@
       </div>
     </footer>
 
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" blocking="render"></script>
   </body>
 </html>
